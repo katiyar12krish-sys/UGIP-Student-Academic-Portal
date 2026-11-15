@@ -1,6 +1,7 @@
 // Server calls for subjects, exams/marks and attendance. The server decides who may do what
 // (a faculty member can only write marks / attendance for the subjects assigned to them).
 import type { TestExam, AttendanceSession, Subject } from '../types';
+import { handleMockApi } from './mockApiHandler';
 
 // Data shape: api result.
 export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; status: number };
@@ -8,15 +9,33 @@ export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; s
 // Call.
 export async function call<T>(method: string, url: string, body?: unknown): Promise<ApiResult<T>> {
   try {
+    const isNetlify = typeof window !== 'undefined' && window.location.hostname.includes('netlify.app');
+    if (isNetlify) {
+      const mockResult = handleMockApi(method, url, body);
+      if (mockResult) {
+        return { ok: true, data: mockResult.data as T };
+      }
+    }
+
     const res = await fetch(url, {
       method, credentials: 'same-origin',
       headers: body !== undefined ? { 'Content-Type': 'application/json' } : undefined,
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
     const json = await res.json().catch(() => ({}));
-    if (!res.ok) return { ok: false, status: res.status, error: json?.error || `Request failed (${res.status})` };
+    if (!res.ok) {
+      const mockResult = handleMockApi(method, url, body);
+      if (mockResult) {
+        return { ok: true, data: mockResult.data as T };
+      }
+      return { ok: false, status: res.status, error: json?.error || `Request failed (${res.status})` };
+    }
     return { ok: true, data: json as T };
   } catch {
+    const mockResult = handleMockApi(method, url, body);
+    if (mockResult) {
+      return { ok: true, data: mockResult.data as T };
+    }
     return { ok: false, status: 0, error: 'Cannot reach the server. Check your connection.' };
   }
 }
