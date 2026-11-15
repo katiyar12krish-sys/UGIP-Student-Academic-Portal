@@ -1,0 +1,851 @@
+[
+ {
+  "id": "stu-diya",
+  "name": "Diya Adhikari",
+  "aadharName": "Diya Adhikari",
+  "aadharNumber": "5347 8526 5552",
+  "phone": "6395564408",
+  "rollNo": "24090050011",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": "General",
+  "gender": "Female",
+  "tenthPercentage": 78.2,
+  "twelfthPercentage": 60.0,
+  "fullAddress": "Nakot, Lohaghat, Champawat, Uttarakhand (Post Office: Malla Khatera)",
+  "motherName": "Renu Devi",
+  "fatherName": "Deepak Singh Adhikari",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 65.8,
+    "cgpa": 7.12
+   },
+   {
+    "semester": 2,
+    "percentage": 66.6,
+    "cgpa": 7.44
+   },
+   {
+    "semester": 3,
+    "percentage": 84.8,
+    "cgpa": 8.48
+   },
+   {
+    "semester": 4,
+    "percentage": 83.8,
+    "cgpa": 8.38
+   }
+  ],
+  "years": []
+ },
+ {
+  "id": "stu-varsha",
+  "name": "Varsha Rana",
+  "aadharName": "Varsha Rana",
+  "aadharNumber": null,
+  "phone": "7618486041",
+  "rollNo": "24090050029",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 64.6,
+  "twelfthPercentage": 57.6,
+  "fullAddress": "Tedaghat, Bari Anjaniya, Khatima, Udham Singh Nagar",
+  "motherName": "Shashi Devi",
+  "fatherName": "Jai Pal Singh",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 65.0,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 67.1,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 80.9,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 84.7,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 7.04
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 8.83
+   }
+  ]
+ },
+ {
+  "id": "stu-raju",
+  "name": "Raju Garkoti",
+  "aadharName": "Raju Garkoti",
+  "aadharNumber": null,
+  "phone": "6398202887",
+  "rollNo": "24090020013",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 60.6,
+  "twelfthPercentage": 75.0,
+  "fullAddress": "Village Tand Malla, Post Office Machiyar, Champawat, Uttarakhand",
+  "motherName": "Deepa Devi",
+  "fatherName": "Dungar Dev",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 65.8,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 69.7,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 74.6,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 71.7,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 7.32
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 7.83
+   }
+  ]
+ },
+ {
+  "id": "stu-jayant",
+  "name": "Jayant Balmiki",
+  "aadharName": "Jayant Balmiki",
+  "aadharNumber": null,
+  "phone": "7505677649",
+  "rollNo": "25090052001",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 60.8,
+  "twelfthPercentage": 43.6,
+  "fullAddress": "Ghasiyara Mandi, Ward No. 9, Tanakpur",
+  "motherName": "Rekha Balmiki",
+  "fatherName": "Shyam Balmiki",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": 71.0,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 70.6,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 7.54
+   }
+  ]
+ },
+ {
+  "id": "stu-sumit",
+  "name": "Sumit Joshi",
+  "aadharName": "Sumit Joshi",
+  "aadharNumber": null,
+  "phone": "6399854521",
+  "rollNo": "25090052005",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 68.0,
+  "twelfthPercentage": 63.2,
+  "fullAddress": "Near Mandi Samiti, Khatima",
+  "motherName": "Mamta Joshi",
+  "fatherName": "Mohan Joshi",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": null,
+    "cgpa": 6.5
+   },
+   {
+    "semester": 4,
+    "percentage": null,
+    "cgpa": 6.13
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 6.32
+   }
+  ]
+ },
+ {
+  "id": "stu-aditya",
+  "name": "Aaditya Singh Kunwar",
+  "aadharName": "Aaditya Singh Kunwar",
+  "aadharNumber": null,
+  "phone": "8979374569",
+  "rollNo": "24090050001",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 74.0,
+  "twelfthPercentage": null,
+  "fullAddress": "Reikot Kunwar, Lohaghat",
+  "motherName": "Seema Kunwar",
+  "fatherName": "Manoj Singh Kunwar",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": null,
+    "cgpa": 6.69
+   },
+   {
+    "semester": 2,
+    "percentage": null,
+    "cgpa": 6.6
+   },
+   {
+    "semester": 3,
+    "percentage": null,
+    "cgpa": 8.47
+   },
+   {
+    "semester": 4,
+    "percentage": null,
+    "cgpa": 8.23
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 6.96
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 8.47
+   }
+  ]
+ },
+ {
+  "id": "stu-neha",
+  "name": "Neha Samant",
+  "aadharName": "Neha Samant",
+  "aadharNumber": null,
+  "phone": "7505911744",
+  "rollNo": "25090052002",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 75.9,
+  "twelfthPercentage": 66.2,
+  "fullAddress": "Bastiya, Tanakpur",
+  "motherName": "Lalita Devi",
+  "fatherName": "Kheem Singh Samant",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": 79.3,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 80.2,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 8.4
+   }
+  ]
+ },
+ {
+  "id": "stu-abdul",
+  "name": "Abdul Ahad",
+  "aadharName": "Abdul Ahad",
+  "aadharNumber": null,
+  "phone": "9897983201",
+  "rollNo": "24090020001",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 66.2,
+  "twelfthPercentage": 54.0,
+  "fullAddress": "Opposite Hotel Parwat, Railway Station Road, Tanakpur",
+  "motherName": "Nahid",
+  "fatherName": "Nazrul Samad",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 67.6,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 70.4,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 74.0,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 78.0,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 6.9
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 7.6
+   }
+  ]
+ },
+ {
+  "id": "stu-muskan",
+  "name": "Muskan Singh",
+  "aadharName": "Muskan Singh",
+  "aadharNumber": null,
+  "phone": "9760662775",
+  "rollNo": "24090050019",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 69.4,
+  "twelfthPercentage": 60.4,
+  "fullAddress": "Sharda Ghat, Ward No. 01, Tanakpur, Champawat, Uttarakhand",
+  "motherName": "Meena",
+  "fatherName": "Rakesh Singh",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 77.3,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 85.0,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 89.3,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 83.9,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": 82.08,
+    "cgpa": 8.64
+   },
+   {
+    "year": 2,
+    "percentage": 85.69,
+    "cgpa": 9.02
+   }
+  ]
+ },
+ {
+  "id": "stu-sameer",
+  "name": "Sameer Kumar",
+  "aadharName": "Sameer Kumar",
+  "aadharNumber": null,
+  "phone": "7817835587",
+  "rollNo": "25090052004",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 87.2,
+  "twelfthPercentage": 77.6,
+  "fullAddress": "Vill. Bamanpuri, Banbasa, P.O. Chandani, Dist. Champawat, Uttarakhand",
+  "motherName": "Durga Devi",
+  "fatherName": "Kamlesh Kumar",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": 80.7,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 84.7,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": 83.32,
+    "cgpa": 8.77
+   }
+  ]
+ },
+ {
+  "id": "stu-uday",
+  "name": "Uday Kumar",
+  "aadharName": "Uday Kumar",
+  "aadharNumber": null,
+  "phone": "8057447759",
+  "rollNo": "24090050028",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 71.0,
+  "twelfthPercentage": null,
+  "fullAddress": "Bari Anjana, Post Jamour, Khatima, Udham Singh Nagar",
+  "motherName": "Vandana Devi",
+  "fatherName": "Rajkumar",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 70.7,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 75.0,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 85.8,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 80.7,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 7.7
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 8.72
+   }
+  ]
+ },
+ {
+  "id": "stu-krishna",
+  "name": "Krishna Katiyar",
+  "aadharName": "Krishna Katiyar",
+  "aadharNumber": null,
+  "phone": "8449495147",
+  "rollNo": "24090050016",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 82.6,
+  "twelfthPercentage": 81.8,
+  "fullAddress": "Ward No. 14, Near Best View Hotel, Khatima, Udham Singh Nagar, Uttarakhand",
+  "motherName": "Anarkali Katiyar",
+  "fatherName": "Ram Sevak Katiyar",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 83.56,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 86.0,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 87.6,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 85.1,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": 77.52,
+    "cgpa": 8.16
+   },
+   {
+    "year": 2,
+    "percentage": 87.3,
+    "cgpa": 9.19
+   }
+  ]
+ },
+ {
+  "id": "stu-anurag",
+  "name": "Anurag Mourya",
+  "aadharName": "Anurag Mourya",
+  "aadharNumber": null,
+  "phone": "9068768351",
+  "rollNo": "24090050007",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": null,
+  "gender": null,
+  "tenthPercentage": 64.4,
+  "twelfthPercentage": 68.4,
+  "fullAddress": "Bhindara, Majhola, Pilibhit, Uttar Pradesh",
+  "motherName": "Sushila Devi",
+  "fatherName": "Om Prakash",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 74.3,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 78.9,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 90.9,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 84.1,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 8.12
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 9.22
+   }
+  ]
+ },
+ {
+  "id": "stu-tarun",
+  "name": "Tarun Giri",
+  "aadharName": "Tarun Giri",
+  "aadharNumber": "9846 5240 0133",
+  "phone": "9528542278",
+  "rollNo": "24090020019",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": "General",
+  "gender": null,
+  "tenthPercentage": 50.0,
+  "twelfthPercentage": null,
+  "fullAddress": "Manhiargot, Khatima Road, Tanakpur, Champawat",
+  "motherName": "Sarita Giri",
+  "fatherName": "Rambir Giri",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 62.3,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 64.2,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 63.1,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 64.7,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": null,
+    "cgpa": 6.94
+   },
+   {
+    "year": 2,
+    "percentage": null,
+    "cgpa": 6.92
+   }
+  ]
+ },
+ {
+  "id": "stu-sachin",
+  "name": "Sachin Singh",
+  "aadharName": "Sachin Singh",
+  "aadharNumber": "9051 0252 7552",
+  "phone": "7055843409",
+  "rollNo": "24090020017",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": "EWS",
+  "gender": null,
+  "tenthPercentage": 54.6,
+  "twelfthPercentage": 60.6,
+  "fullAddress": "Village Adhora, Post Adhora",
+  "motherName": "Dhani Devi",
+  "fatherName": "Jagdish Singh",
+  "semesters": [],
+  "years": [
+   {
+    "year": 1,
+    "percentage": 61.94,
+    "cgpa": 6.52
+   },
+   {
+    "year": 2,
+    "percentage": 65.26,
+    "cgpa": 6.87
+   }
+  ]
+ },
+ {
+  "id": "stu-saurabh",
+  "name": "Saurabh Giri",
+  "aadharName": "Saurabh Giri",
+  "aadharNumber": "8955 9339 0709",
+  "phone": "9870942886",
+  "rollNo": "24021050014",
+  "branch": "CSE",
+  "year": 3,
+  "semester": 5,
+  "batch": "2024-2027",
+  "entryType": "Regular",
+  "category": "OBC",
+  "gender": null,
+  "tenthPercentage": 78.7,
+  "twelfthPercentage": 80.0,
+  "fullAddress": "Village Fushera, Post Dofar, District Bageshwar, Uttarakhand",
+  "motherName": "Neema Devi",
+  "fatherName": "Kundan Giri",
+  "semesters": [
+   {
+    "semester": 1,
+    "percentage": 71.2,
+    "cgpa": null
+   },
+   {
+    "semester": 2,
+    "percentage": 75.8,
+    "cgpa": null
+   },
+   {
+    "semester": 3,
+    "percentage": 71.1,
+    "cgpa": null
+   },
+   {
+    "semester": 4,
+    "percentage": 60.4,
+    "cgpa": null
+   }
+  ],
+  "years": [
+   {
+    "year": 1,
+    "percentage": 75.26,
+    "cgpa": 7.78
+   },
+   {
+    "year": 2,
+    "percentage": 65.26,
+    "cgpa": 6.87
+   }
+  ]
+ },
+ {
+  "id": "stu-harshvardhan",
+  "name": "Harshvardhan Singh Patni",
+  "aadharName": "Harshvardhan Singh Patni",
+  "phone": "7983096250",
+  "rollNo": "25090022002",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": "General",
+  "gender": null,
+  "tenthPercentage": 79.2,
+  "twelfthPercentage": 59.4,
+  "fullAddress": "Near Vivekananda Vidya Mandir, Vishnupuri Colony, Ward No. 11, Tanakpur, Champawat, Uttarakhand",
+  "motherName": "Janki Patni",
+  "fatherName": "Kamal Singh Patni",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": null,
+    "cgpa": 7.67
+   },
+   {
+    "semester": 4,
+    "percentage": null,
+    "cgpa": 6.17
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": 65.74,
+    "cgpa": 6.92
+   }
+  ]
+ },
+ {
+  "id": "stu-pankaj",
+  "name": "Pankaj Bhatt",
+  "aadharName": "Pankaj Bhatt",
+  "aadharNumber": "4293 0824 5423",
+  "phone": "8279947671",
+  "rollNo": "25090022003",
+  "branch": "Civil",
+  "year": 3,
+  "semester": 5,
+  "batch": "2025-2027",
+  "entryType": "Lateral",
+  "category": "EWS",
+  "gender": null,
+  "tenthPercentage": 84.2,
+  "twelfthPercentage": 68.6,
+  "fullAddress": "Village Swala, Post Office Swala, Tehsil Champawat, District Champawat, Uttarakhand",
+  "motherName": "Shanti Devi",
+  "fatherName": "Devi Datt Bhatt",
+  "semesters": [
+   {
+    "semester": 3,
+    "percentage": null,
+    "cgpa": 7.8
+   },
+   {
+    "semester": 4,
+    "percentage": null,
+    "cgpa": 7.7
+   }
+  ],
+  "years": [
+   {
+    "year": 2,
+    "percentage": 73.62,
+    "cgpa": 7.75
+   }
+  ]
+ }
+]

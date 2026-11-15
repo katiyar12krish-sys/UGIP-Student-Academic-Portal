@@ -1,0 +1,592 @@
+[
+  {
+    "id": "sub-cse-101",
+    "code": "991001",
+    "name": "English and Communication Skills - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-102",
+    "code": "991002",
+    "name": "Applied Mathematics - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-cse-103",
+    "code": "991003",
+    "name": "Applied Physics - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-104",
+    "code": "991004",
+    "name": "Applied Chemistry - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-105",
+    "code": "991005",
+    "name": "Computer Fundamentals",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-991006",
+    "code": "991006",
+    "name": "Engineering Graphics - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-991007",
+    "code": "991007",
+    "name": "General Workshop Practice - I",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-991051",
+    "code": "991051",
+    "name": "General Proficiency (Games / NCC / NSS)",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-991052",
+    "code": "991052",
+    "name": "Industrial Exposure (Institute-level assessment)",
+    "branch": "CSE",
+    "semester": 1,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992001",
+    "code": "992001",
+    "name": "English and Communication Skills - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992002",
+    "code": "992002",
+    "name": "Applied Mathematics - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-cse-992003",
+    "code": "992003",
+    "name": "Applied Physics - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992004",
+    "code": "992004",
+    "name": "Applied Chemistry - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992005",
+    "code": "992005",
+    "name": "Environmental Science & Energy Management",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-cse-992006",
+    "code": "992006",
+    "name": "Engineering Graphics - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992007",
+    "code": "992007",
+    "name": "General Workshop Practice - II",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992051",
+    "code": "992051",
+    "name": "General Proficiency (Games / NCC / NSS)",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-992052",
+    "code": "992052",
+    "name": "Industrial Exposure (Institute-level assessment)",
+    "branch": "CSE",
+    "semester": 2,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-301",
+    "code": "25053001",
+    "name": "Concepts of C Programming",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-053001",
+    "code": "25053004",
+    "name": "Fundamentals of Internet & Web Design",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-053002",
+    "code": "25053005",
+    "name": "Open Source Software",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-053003",
+    "code": "25053002",
+    "name": "Computer Organization",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 3,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-cse-053004",
+    "code": "25053006",
+    "name": "Office Application",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-053005",
+    "code": "25053003",
+    "name": "Operating System",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-053052",
+    "code": "053052",
+    "name": "Industrial Exposure (Assessment at Institute)",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-013054",
+    "code": "013054",
+    "name": "General Proficiency",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-25053007",
+    "code": "25053007",
+    "name": "Minor Project - I",
+    "branch": "CSE",
+    "semester": 3,
+    "year": 2,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-rdbms",
+    "code": "CSE-RDBMS",
+    "name": "Relational Database Management System (RDBMS)",
+    "branch": "CSE",
+    "semester": 4,
+    "year": 2,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-hw",
+    "code": "055003",
+    "name": "Computer Hardware and Servicing",
+    "branch": "CSE",
+    "semester": 5,
+    "year": 3,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-501",
+    "code": "055001",
+    "name": "Java Programming",
+    "branch": "CSE",
+    "semester": 5,
+    "year": 3,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-055002",
+    "code": "055002",
+    "name": "Software Engineering",
+    "branch": "CSE",
+    "semester": 5,
+    "year": 3,
+    "credits": 5,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-cse-055004",
+    "code": "055004",
+    "name": "Android Application Development",
+    "branch": "CSE",
+    "semester": 5,
+    "year": 3,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-cse-055005",
+    "code": "055005",
+    "name": "Minor Project Work",
+    "branch": "CSE",
+    "semester": 5,
+    "year": 3,
+    "credits": 7,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991001",
+    "code": "991001",
+    "name": "English and Communication Skills - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991002",
+    "code": "991002",
+    "name": "Applied Mathematics - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-ce-991003",
+    "code": "991003",
+    "name": "Applied Physics - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991004",
+    "code": "991004",
+    "name": "Applied Chemistry - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991005",
+    "code": "991005",
+    "name": "Computer Fundamentals",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991006",
+    "code": "991006",
+    "name": "Engineering Graphics - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991007",
+    "code": "991007",
+    "name": "General Workshop Practice - I",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991051",
+    "code": "991051",
+    "name": "General Proficiency (Games / NCC / NSS)",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-991052",
+    "code": "991052",
+    "name": "Industrial Exposure (Institute-level assessment)",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-101",
+    "code": "CE-101",
+    "name": "Building Construction & Materials",
+    "branch": "Civil",
+    "semester": 1,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992001",
+    "code": "992001",
+    "name": "English and Communication Skills - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992002",
+    "code": "992002",
+    "name": "Applied Mathematics - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-ce-992003",
+    "code": "992003",
+    "name": "Applied Physics - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992004",
+    "code": "992004",
+    "name": "Applied Chemistry - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992005",
+    "code": "992005",
+    "name": "Environmental Science & Energy Management",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": false
+  },
+  {
+    "id": "sub-ce-992006",
+    "code": "992006",
+    "name": "Engineering Graphics - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 3,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992007",
+    "code": "992007",
+    "name": "General Workshop Practice - II",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 2,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992051",
+    "code": "992051",
+    "name": "General Proficiency (Games / NCC / NSS)",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-992052",
+    "code": "992052",
+    "name": "Industrial Exposure (Institute-level assessment)",
+    "branch": "Civil",
+    "semester": 2,
+    "year": 1,
+    "credits": 1,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-301",
+    "code": "023003",
+    "name": "Basic Surveying",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-023001",
+    "code": "023001",
+    "name": "Engineering Mechanics",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 5,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-023006",
+    "code": "023006",
+    "name": "Fluid Mechanics",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 6,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-023004",
+    "code": "023004",
+    "name": "Building Material and Construction",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 5,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-023005",
+    "code": "023005",
+    "name": "Building Drawing",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-023_6",
+    "code": "023.6",
+    "name": "Electrical & Mechanical Engineering Systems",
+    "branch": "Civil",
+    "semester": 3,
+    "year": 2,
+    "credits": 4,
+    "hasPractical": true
+  },
+  {
+    "id": "sub-ce-501",
+    "code": "CE-501",
+    "name": "Reinforced Cement Concrete (RCC) Design",
+    "branch": "Civil",
+    "semester": 5,
+    "year": 3,
+    "credits": 4,
+    "hasPractical": true
+  }
+]

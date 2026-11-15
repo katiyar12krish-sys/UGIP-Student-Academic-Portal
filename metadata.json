@@ -1,0 +1,8 @@
+{
+  "name": "Uttarakhand Government Institute of Polytechnic Portal",
+  "description": "Smart Academic & College Management Portal for Uttarakhand Government Institute of Polytechnic with 3 dedicated login portals (Admin, Faculty, Student), subject-class material dispatch, bulk student marks Excel export, encrypted security logs, and role management.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

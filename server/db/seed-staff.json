@@ -1,0 +1,107 @@
+[
+  {
+    "id": "usr-admin-1",
+    "username": "admin",
+    "role": "admin",
+    "name": "Mr. K.K. Srivastav",
+    "email": "principal.ugip@gov.in",
+    "phone": "+91 94120 89234",
+    "department": "CSE",
+    "designation": "Principal & Chief Administrator",
+    "subjectIds": []
+  },
+  {
+    "id": "fac-hod-cse",
+    "username": "jitendra_cse",
+    "role": "faculty",
+    "name": "Mr. Jitendra Parsad",
+    "email": "jitendra.cse@ugip.gov.in",
+    "phone": "+91 98371 45012",
+    "department": "CSE",
+    "designation": "HOD - Computer Science Engineering",
+    "subjectIds": [
+      "sub-cse-301",
+      "sub-cse-501"
+    ]
+  },
+  {
+    "id": "fac-hod-bs",
+    "username": "vijay_bs",
+    "role": "faculty",
+    "name": "Mr. Vijay Singh Negi",
+    "email": "vijay.basicsciences@ugip.gov.in",
+    "phone": "+91 97561 88219",
+    "department": "CSE",
+    "designation": "HOD - Applied Sciences & Humanities",
+    "subjectIds": [
+      "sub-cse-101"
+    ]
+  },
+  {
+    "id": "fac-chem",
+    "username": "bhawana_chem",
+    "role": "faculty",
+    "name": "Mrs. Bhawana Verma",
+    "email": "bhawana.chemistry@ugip.gov.in",
+    "phone": "+91 94111 44321",
+    "department": "CSE",
+    "designation": "Lecturer in Applied Chemistry",
+    "subjectIds": [
+      "sub-cse-104"
+    ]
+  },
+  {
+    "id": "fac-cse-1",
+    "username": "bhawana_cse",
+    "role": "faculty",
+    "name": "Mrs. Bhawana Bisht",
+    "email": "bhawana.cse@ugip.gov.in",
+    "phone": "+91 98370 19283",
+    "department": "CSE",
+    "designation": "Lecturer in CSE",
+    "subjectIds": [
+      "sub-cse-105"
+    ]
+  },
+  {
+    "id": "fac-math",
+    "username": "richa_math",
+    "role": "faculty",
+    "name": "Mrs. Richa Khakwal",
+    "email": "richa.maths@ugip.gov.in",
+    "phone": "+91 96901 22345",
+    "department": "CSE",
+    "designation": "Lecturer in Applied Mathematics",
+    "subjectIds": [
+      "sub-cse-102"
+    ]
+  },
+  {
+    "id": "fac-phys",
+    "username": "shailendra_phys",
+    "role": "faculty",
+    "name": "Mr. Shailendra Kumar",
+    "email": "shailendra.physics@ugip.gov.in",
+    "phone": "+91 94121 99881",
+    "department": "CSE",
+    "designation": "Lecturer in Applied Physics",
+    "subjectIds": [
+      "sub-cse-103"
+    ]
+  },
+  {
+    "id": "fac-civil",
+    "username": "virendra_civil",
+    "role": "faculty",
+    "name": "Mr. Virendra Singh Taragi",
+    "email": "virendra.civil@ugip.gov.in",
+    "phone": "+91 98372 66543",
+    "department": "Civil",
+    "designation": "Lecturer & HOD Incharge - Civil Engineering",
+    "subjectIds": [
+      "sub-ce-101",
+      "sub-ce-301",
+      "sub-ce-501"
+    ]
+  }
+]

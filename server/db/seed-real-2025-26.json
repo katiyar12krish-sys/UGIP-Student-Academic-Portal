@@ -1,0 +1,4378 @@
+{
+ "_source": "Transcribed by hand from result 8.pdf (UBTER Cross List 3rd Sem 2025-26 Winter, dated 22-01-2026) and rdbms .pdf (CSE 2nd year 4th sem RDBMS sessional record 2025-26). Check against the originals before relying on it.",
+ "students": [
+  {
+   "rollNo": "24090020001",
+   "name": "Abdul Ahad",
+   "fatherName": "Nazrul Samad",
+   "dob": "2006-12-03",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090020010",
+   "name": "Nirmal Singh Rana",
+   "fatherName": "Sanjesh Singh Rana",
+   "dob": "2005-12-20",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090020011",
+   "name": "Payal",
+   "fatherName": "Pappu Singh",
+   "dob": "2007-09-18",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090020013",
+   "name": "Raju Garkoti",
+   "fatherName": "Dungar Dev",
+   "dob": "2007-07-12",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050001",
+   "name": "Aaditya Singh Kunwar",
+   "fatherName": "Manoj Singh Kunwar",
+   "dob": "2006-02-04",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050002",
+   "name": "Aashish Chand",
+   "fatherName": "Naresh Chand",
+   "dob": "2002-02-18",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050003",
+   "name": "Abhishek Rana",
+   "fatherName": "Dinesh Singh Rana",
+   "dob": "2007-02-16",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050004",
+   "name": "Adeep Kumar",
+   "fatherName": "Bihari Prasad",
+   "dob": "2005-01-14",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050005",
+   "name": "Ankit",
+   "fatherName": "Chandrabhanu",
+   "dob": "2007-10-12",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050006",
+   "name": "Anshuman Tamta",
+   "fatherName": "Manoj Kumar Tamta",
+   "dob": "2006-03-28",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050007",
+   "name": "Anurag Mourya",
+   "fatherName": "Om Prakash",
+   "dob": "2006-12-07",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050008",
+   "name": "Ashu",
+   "fatherName": "Raju",
+   "dob": "2006-04-05",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050009",
+   "name": "Chetan Pant",
+   "fatherName": "Suresh Chandra Pant",
+   "dob": "2007-07-01",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050010",
+   "name": "Deepak Garkoti",
+   "fatherName": "Mohan Chandra Garkoti",
+   "dob": "2007-10-10",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050011",
+   "name": "Diya Adhikari",
+   "fatherName": "Deepak Singh Adhikari",
+   "dob": "2006-08-10",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050012",
+   "name": "Himanshi Samant",
+   "fatherName": "Dan Singh Samant",
+   "dob": "2002-12-24",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050013",
+   "name": "Jatin Kumar",
+   "fatherName": "Gopal Singh",
+   "dob": "2005-03-28",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050014",
+   "name": "Kavita",
+   "fatherName": "Kundan Singh",
+   "dob": "2007-03-02",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050015",
+   "name": "Km Sanjana Chauhan",
+   "fatherName": "Amar Singh Chauhan",
+   "dob": "2003-05-18",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050016",
+   "name": "Krishna Katiyar",
+   "fatherName": "Ram Sevak Katiyar",
+   "dob": "2006-08-20",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050017",
+   "name": "Kumar Mangalam",
+   "fatherName": "Veerendra Kumar",
+   "dob": "2007-11-07",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050019",
+   "name": "Muskan Singh",
+   "fatherName": "Rakesh Singh",
+   "dob": "2004-08-05",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050020",
+   "name": "Neeraj Joshi",
+   "fatherName": "Kedar Datt Joshi",
+   "dob": "2007-04-04",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050021",
+   "name": "Nishant",
+   "fatherName": "Bachchi Ram",
+   "dob": "2003-05-09",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050023",
+   "name": "Prashant Kumar",
+   "fatherName": "Lalit Kumar",
+   "dob": "2004-02-29",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050024",
+   "name": "Preeti",
+   "fatherName": "Harendra Maurya",
+   "dob": "2006-08-22",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050025",
+   "name": "Ritu Rana",
+   "fatherName": "Anil Singh",
+   "dob": "2007-08-20",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050026",
+   "name": "Rohan Singh",
+   "fatherName": "Narayan Singh",
+   "dob": "2005-03-25",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050027",
+   "name": "Sumit Bisht",
+   "fatherName": "Kundan Singh",
+   "dob": "2006-11-06",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050028",
+   "name": "Uday Kumar",
+   "fatherName": "Rajkumar",
+   "dob": "2007-10-09",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050029",
+   "name": "Varsha Rana",
+   "fatherName": "Jai Pal Singh",
+   "dob": "2007-07-18",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "24090050030",
+   "name": "Varun Singh",
+   "fatherName": "Dattram Singh",
+   "dob": "2007-03-22",
+   "branch": "CSE",
+   "batch": "2024-2027",
+   "entryType": "Regular"
+  },
+  {
+   "rollNo": "25090052001",
+   "name": "Jayant Balmiki",
+   "fatherName": "Shyam Balmiki",
+   "dob": "2002-08-08",
+   "branch": "CSE",
+   "batch": "2025-2027",
+   "entryType": "Lateral"
+  },
+  {
+   "rollNo": "25090052002",
+   "name": "Neha Samant",
+   "fatherName": "Kheem Singh Samant",
+   "dob": "2007-11-03",
+   "branch": "CSE",
+   "batch": "2025-2027",
+   "entryType": "Lateral"
+  },
+  {
+   "rollNo": "25090052003",
+   "name": "Nitin Kohli",
+   "fatherName": "Madan Ram",
+   "dob": "2006-05-05",
+   "branch": "CSE",
+   "batch": "2025-2027",
+   "entryType": "Lateral"
+  },
+  {
+   "rollNo": "25090052004",
+   "name": "Sameer Kumar",
+   "fatherName": "Kamlesh Kumar",
+   "dob": "2008-10-10",
+   "branch": "CSE",
+   "batch": "2025-2027",
+   "entryType": "Lateral"
+  },
+  {
+   "rollNo": "25090052005",
+   "name": "Sumit Joshi",
+   "fatherName": "Mohan Joshi",
+   "dob": "2007-01-14",
+   "branch": "CSE",
+   "batch": "2025-2027",
+   "entryType": "Lateral"
+  }
+ ],
+ "boardResults": [
+  {
+   "rollNo": "24090020001",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 273,
+   "practicalTotal": 366,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 689,
+   "maxTotal": 1000,
+   "sgpa": 7.4,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 52,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 60,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 48,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 74,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 53,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 60,
+     "practical": 76,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090020010",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 252,
+   "practicalTotal": 315,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 617,
+   "maxTotal": 1000,
+   "sgpa": 6.73,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 76,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 50,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 36,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "P",
+     "gradePoint": 4
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 56,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 54,
+     "practical": 62,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 36,
+     "practical": 59,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090020011",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 338,
+   "practicalTotal": 384,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 772,
+   "maxTotal": 1000,
+   "sgpa": 8.33,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 79,
+     "practical": 76,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 69,
+     "practical": 77,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 69,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 58,
+     "practical": 78,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 63,
+     "practical": 78,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090020013",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 351,
+   "practicalTotal": 345,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 746,
+   "maxTotal": 1000,
+   "sgpa": 8.03,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 66,
+     "practical": 73,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 81,
+     "practical": 76,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 76,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 70,
+     "practical": 58,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 58,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050001",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 345,
+   "practicalTotal": 397,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 792,
+   "maxTotal": 1000,
+   "sgpa": 8.47,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 75,
+     "practical": 80,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 68,
+     "practical": 79,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 56,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 72,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 74,
+     "practical": 81,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050002",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 350,
+   "practicalTotal": 407,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 807,
+   "maxTotal": 1000,
+   "sgpa": 8.6,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 65,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 66,
+     "practical": 81,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 84,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 80,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 52,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 83,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050003",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 231,
+   "practicalTotal": 319,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 600,
+   "maxTotal": 1000,
+   "sgpa": 6.53,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 59,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 49,
+     "practical": 62,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 42,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 61,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 39,
+     "practical": 64,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 42,
+     "practical": 60,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050004",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 278,
+   "practicalTotal": 272,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 600,
+   "maxTotal": 1000,
+   "sgpa": 6.67,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991006 Engineering Graphics-I 045|040",
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 59,
+     "practical": 51,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 63,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 54,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 56,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 52,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 50,
+     "practical": 58,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050005",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 395,
+   "practicalTotal": 412,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 857,
+   "maxTotal": 1000,
+   "sgpa": 9.07,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 69,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 71,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 75,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 92,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 88,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050006",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 196,
+   "practicalTotal": 269,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 515,
+   "maxTotal": 1000,
+   "sgpa": 5.8,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991002 Applied Mathematics-I 008|030 (B); 991006 Engineering Graphics-I 009|026 (B)",
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 45,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 47,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 36,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "P",
+     "gradePoint": 4
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 34,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 34,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050007",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 428,
+   "practicalTotal": 431,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 909,
+   "maxTotal": 1000,
+   "sgpa": 9.7,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 78,
+     "practical": 85,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 86,
+     "practical": 87,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 87,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 87,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 89,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 88,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050008",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 292,
+   "practicalTotal": 353,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 695,
+   "maxTotal": 1000,
+   "sgpa": 7.6,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 62,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 63,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 57,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 68,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 60,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 50,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050009",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 388,
+   "practicalTotal": 379,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 817,
+   "maxTotal": 1000,
+   "sgpa": 8.8,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 83,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 82,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 79,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 79,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 67,
+     "practical": 74,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 77,
+     "practical": 80,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050010",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 204,
+   "practicalTotal": 284,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 538,
+   "maxTotal": 1000,
+   "sgpa": 5.9,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991003 Applied Physics-I 013|017",
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 40,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 50,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 34,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "P",
+     "gradePoint": 4
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 60,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 44,
+     "practical": 57,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 36,
+     "practical": 58,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050011",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 369,
+   "practicalTotal": 429,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 848,
+   "maxTotal": 1000,
+   "sgpa": 8.93,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991006 Engineering Graphics-I 053|048",
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 71,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 87,
+     "practical": 87,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 70,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 81,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 60,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050012",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 305,
+   "practicalTotal": 381,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 736,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 70,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 66,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 61,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 70,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 59,
+     "practical": 73,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 49,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050013",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 161,
+   "practicalTotal": 189,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 400,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "BACK",
+   "promoted": null,
+   "backPapers": "053003 Digital Techniques (BK); 053005 Operating System (BK); 053006 Programming in C (BK)",
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 34,
+     "practical": 51,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 34,
+     "practical": 51,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 27,
+     "practical": null,
+     "theoryNote": "BK",
+     "practicalNote": null,
+     "grade": "F",
+     "gradePoint": 0
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 42,
+     "practical": 16,
+     "theoryNote": null,
+     "practicalNote": "BK",
+     "grade": "F",
+     "gradePoint": 0
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 24,
+     "practical": 18,
+     "theoryNote": "BK",
+     "practicalNote": "BK",
+     "grade": "F",
+     "gradePoint": 0
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050014",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 276,
+   "practicalTotal": 353,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 679,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991002 Applied Mathematics-I 014|038 (B); 991006 Engineering Graphics-I 030|037",
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 69,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 60,
+     "practical": 74,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 53,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 56,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 38,
+     "practical": 70,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050015",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 358,
+   "practicalTotal": 384,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 792,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991006 Engineering Graphics-I 017|040 (B)",
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 72,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 67,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 74,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 67,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 75,
+     "practical": 77,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 70,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050016",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 397,
+   "practicalTotal": 429,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 876,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 73,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 75,
+     "practical": 88,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 83,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 93,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 73,
+     "practical": 85,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050017",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 187,
+   "practicalTotal": 264,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 501,
+   "maxTotal": 1000,
+   "sgpa": 5.47,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 40,
+     "practical": 52,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 38,
+     "practical": 51,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 34,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "P",
+     "gradePoint": 4
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 40,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 35,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050019",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 414,
+   "practicalTotal": 429,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 893,
+   "maxTotal": 1000,
+   "sgpa": 9.2,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 84,
+     "practical": 85,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 84,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 90,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 82,
+     "practical": 89,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 74,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050020",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 319,
+   "practicalTotal": 381,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 750,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 66,
+     "practical": 78,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 72,
+     "practical": 78,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 66,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 70,
+     "practical": 77,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 45,
+     "practical": 76,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050021",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 216,
+   "practicalTotal": 311,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 577,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 46,
+     "practical": 68,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 45,
+     "practical": 63,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 40,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "P",
+     "gradePoint": 4
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 60,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 48,
+     "practical": 58,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 37,
+     "practical": 62,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050023",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 249,
+   "practicalTotal": 282,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 581,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 63,
+     "practical": 52,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 60,
+     "practical": 61,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 46,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 56,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 34,
+     "practical": 56,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 46,
+     "practical": 57,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050024",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 271,
+   "practicalTotal": 293,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 614,
+   "maxTotal": 1000,
+   "sgpa": null,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": "991002 Applied Mathematics-I 013|033 (B)",
+   "remarks": "SGPA not readable on the scanned sheet - please fill it in from the original",
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 62,
+     "practical": 51,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 45,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 61,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 46,
+     "practical": 66,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 57,
+     "practical": 66,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050025",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 374,
+   "practicalTotal": 412,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 836,
+   "maxTotal": 1000,
+   "sgpa": 8.87,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 81,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 87,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 81,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 61,
+     "practical": 81,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 64,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050026",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 182,
+   "practicalTotal": 272,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 504,
+   "maxTotal": 1000,
+   "sgpa": 5.7,
+   "result": "PBP",
+   "promoted": true,
+   "backPapers": "053006 Programming in C theory (BK)",
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 41,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 40,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 43,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 34,
+     "practical": 53,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 24,
+     "practical": 55,
+     "theoryNote": "BK",
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050027",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 189,
+   "practicalTotal": 281,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 520,
+   "maxTotal": 1000,
+   "sgpa": 5.77,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 37,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 39,
+     "practical": 58,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 41,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 54,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 37,
+     "practical": 57,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 35,
+     "practical": 57,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "C",
+     "gradePoint": 5
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050028",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 390,
+   "practicalTotal": 418,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 858,
+   "maxTotal": 1000,
+   "sgpa": 9.03,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 72,
+     "practical": 80,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 80,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 87,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 69,
+     "practical": 86,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 82,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050029",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 352,
+   "practicalTotal": 407,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 809,
+   "maxTotal": 1000,
+   "sgpa": 8.73,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 75,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 64,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 79,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 80,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 54,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "24090050030",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 316,
+   "practicalTotal": 356,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 722,
+   "maxTotal": 1000,
+   "sgpa": 7.9,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 56,
+     "practical": 74,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 81,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 62,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 64,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 63,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 54,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "25090052001",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 298,
+   "practicalTotal": 362,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 710,
+   "maxTotal": 1000,
+   "sgpa": 7.6,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 75,
+     "practical": 75,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 68,
+     "practical": 79,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 53,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 65,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 53,
+     "practical": 72,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 49,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "25090052002",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 326,
+   "practicalTotal": 416,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 792,
+   "maxTotal": 1000,
+   "sgpa": 8.33,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 71,
+     "practical": 84,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 63,
+     "practical": 85,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 63,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 77,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 60,
+     "practical": 88,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 69,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "25090052003",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 305,
+   "practicalTotal": 398,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 753,
+   "maxTotal": 1000,
+   "sgpa": 8.13,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 61,
+     "practical": 80,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 77,
+     "practical": 78,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 52,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 87,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 59,
+     "practical": 71,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 56,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "25090052004",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 349,
+   "practicalTotal": 408,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 807,
+   "maxTotal": 1000,
+   "sgpa": 8.7,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 59,
+     "practical": 85,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 79,
+     "practical": 82,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 81,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A+",
+     "gradePoint": 9
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 83,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 67,
+     "practical": 77,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 63,
+     "practical": 81,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "A",
+     "gradePoint": 8
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  },
+  {
+   "rollNo": "25090052005",
+   "semester": 3,
+   "examSession": "2025-26 (Winter)",
+   "theoryTotal": 217,
+   "practicalTotal": 301,
+   "gp": 25,
+   "ie": 25,
+   "semTotal": 568,
+   "maxTotal": 1000,
+   "sgpa": 6.5,
+   "result": "PASS",
+   "promoted": true,
+   "backPapers": null,
+   "remarks": null,
+   "subjects": [
+    {
+     "code": "053001",
+     "name": "Internet of Things",
+     "theory": 45,
+     "practical": 56,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053002",
+     "name": "Data Communication",
+     "theory": 42,
+     "practical": 55,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053003",
+     "name": "Digital Techniques",
+     "theory": 51,
+     "practical": null,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053004",
+     "name": "Office Application",
+     "theory": null,
+     "practical": 63,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B+",
+     "gradePoint": 7
+    },
+    {
+     "code": "053005",
+     "name": "Operating System",
+     "theory": 41,
+     "practical": 64,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "053006",
+     "name": "Programming in C",
+     "theory": 38,
+     "practical": 63,
+     "theoryNote": null,
+     "practicalNote": null,
+     "grade": "B",
+     "gradePoint": 6
+    },
+    {
+     "code": "013054",
+     "name": "General Proficiency",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    },
+    {
+     "code": "053052",
+     "name": "Industrial Exposure (Assessment at Institute)",
+     "theory": null,
+     "practical": 25,
+     "grade": "O",
+     "gradePoint": 10
+    }
+   ]
+  }
+ ],
+ "rdbmsSessional": {
+  "academicYear": "2025-26",
+  "semester": 4,
+  "date": "2026-04-15",
+  "tests": [
+   "CT-1",
+   "CT-2",
+   "CT-3",
+   "CT-4",
+   "CT-5",
+   "MCQ-1",
+   "MCQ-2",
+   "MCQ-3",
+   "MCQ-4",
+   "MCQ-5"
+  ],
+  "maxEach": 10,
+  "rows": [
+   {
+    "rollNo": "24090020001",
+    "marks": [
+     7.0,
+     4.0,
+     8.0,
+     7.0,
+     5.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090020010",
+    "marks": [
+     3.0,
+     3.0,
+     5.0,
+     5.0,
+     5.0,
+     4.0,
+     9.0,
+     9.5,
+     9.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090020011",
+    "marks": [
+     10.0,
+     9.0,
+     7.0,
+     7.0,
+     10.0,
+     10.0,
+     5.0,
+     10.0,
+     10.0,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090020013",
+    "marks": [
+     7.0,
+     2.0,
+     5.0,
+     5.0,
+     8.0,
+     8.5,
+     9.5,
+     10.0,
+     5.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050001",
+    "marks": [
+     9.0,
+     5.0,
+     9.0,
+     7.0,
+     7.0,
+     9.5,
+     9.0,
+     9.5,
+     9.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050002",
+    "marks": [
+     6.0,
+     6.0,
+     2.0,
+     7.0,
+     5.0,
+     5.0,
+     7.5,
+     10.0,
+     10.0,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090050003",
+    "marks": [
+     3.0,
+     2.0,
+     0.0,
+     3.0,
+     0.0,
+     0.0,
+     10.0,
+     9.5,
+     10.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050004",
+    "marks": [
+     7.0,
+     6.0,
+     5.0,
+     5.0,
+     5.0,
+     0.0,
+     9.0,
+     8.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "rollNo": "24090050005",
+    "marks": [
+     9.0,
+     6.0,
+     10.0,
+     7.0,
+     6.0,
+     8.0,
+     9.0,
+     9.5,
+     10.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050006",
+    "marks": [
+     5.0,
+     4.0,
+     6.0,
+     3.0,
+     3.0,
+     10.0,
+     0.0,
+     0.0,
+     0.0,
+     8.5
+    ]
+   },
+   {
+    "rollNo": "24090050007",
+    "marks": [
+     10.0,
+     9.0,
+     9.0,
+     10.0,
+     8.0,
+     10.0,
+     10.0,
+     10.0,
+     9.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050008",
+    "marks": [
+     7.0,
+     2.0,
+     6.0,
+     5.0,
+     5.0,
+     6.0,
+     10.0,
+     9.5,
+     6.0,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090050009",
+    "marks": [
+     2.0,
+     5.0,
+     6.0,
+     9.0,
+     5.0,
+     10.0,
+     9.5,
+     9.5,
+     9.5,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090050010",
+    "marks": [
+     3.0,
+     6.0,
+     1.0,
+     5.0,
+     1.0,
+     7.0,
+     7.0,
+     8.5,
+     5.0,
+     5.0
+    ]
+   },
+   {
+    "rollNo": "24090050011",
+    "marks": [
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     9.5,
+     10.0,
+     9.0,
+     9.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050012",
+    "marks": [
+     8.0,
+     7.0,
+     5.0,
+     8.0,
+     8.0,
+     10.0,
+     9.5,
+     9.0,
+     9.5,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090050014",
+    "marks": [
+     6.0,
+     4.0,
+     6.0,
+     6.0,
+     8.0,
+     8.0,
+     6.0,
+     5.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "rollNo": "24090050015",
+    "marks": [
+     10.0,
+     7.0,
+     6.0,
+     9.0,
+     9.0,
+     10.0,
+     10.0,
+     10.0,
+     0.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050016",
+    "marks": [
+     10.0,
+     8.0,
+     9.0,
+     9.0,
+     8.0,
+     10.0,
+     10.0,
+     9.5,
+     10.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050017",
+    "marks": [
+     1.0,
+     5.0,
+     4.0,
+     5.0,
+     5.0,
+     6.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "rollNo": "24090050019",
+    "marks": [
+     9.0,
+     8.0,
+     5.0,
+     8.0,
+     10.0,
+     10.0,
+     10.0,
+     9.5,
+     9.0,
+     9.0
+    ]
+   },
+   {
+    "rollNo": "24090050020",
+    "marks": [
+     7.0,
+     6.0,
+     7.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     9.5,
+     9.0,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "24090050021",
+    "marks": [
+     1.0,
+     0.0,
+     1.0,
+     3.0,
+     0.0,
+     0.0,
+     5.0,
+     8.5,
+     0.0,
+     0.0
+    ]
+   },
+   {
+    "rollNo": "24090050023",
+    "marks": [
+     1.0,
+     3.0,
+     0.0,
+     5.0,
+     5.0,
+     8.5,
+     8.0,
+     8.5,
+     9.0,
+     8.5
+    ]
+   },
+   {
+    "rollNo": "24090050024",
+    "marks": [
+     6.0,
+     7.0,
+     10.0,
+     8.0,
+     6.0,
+     9.5,
+     9.0,
+     10.0,
+     5.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050025",
+    "marks": [
+     10.0,
+     8.0,
+     10.0,
+     9.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050026",
+    "marks": [
+     6.0,
+     5.0,
+     1.0,
+     5.0,
+     4.0,
+     5.0,
+     10.0,
+     9.5,
+     5.0,
+     5.0
+    ]
+   },
+   {
+    "rollNo": "24090050027",
+    "marks": [
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     6.5,
+     5.0,
+     5.5,
+     5.0,
+     5.0
+    ]
+   },
+   {
+    "rollNo": "24090050028",
+    "marks": [
+     10.0,
+     8.0,
+     9.0,
+     6.0,
+     7.0,
+     9.5,
+     9.5,
+     9.5,
+     9.5,
+     8.5
+    ]
+   },
+   {
+    "rollNo": "24090050029",
+    "marks": [
+     8.0,
+     10.0,
+     9.0,
+     10.0,
+     9.0,
+     9.5,
+     9.0,
+     9.5,
+     9.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "24090050030",
+    "marks": [
+     7.0,
+     6.0,
+     6.0,
+     7.0,
+     5.0,
+     5.0,
+     7.5,
+     9.0,
+     8.0,
+     5.0
+    ]
+   },
+   {
+    "rollNo": "25090052001",
+    "marks": [
+     8.0,
+     6.0,
+     6.0,
+     5.0,
+     6.0,
+     6.0,
+     9.5,
+     8.0,
+     8.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "25090052002",
+    "marks": [
+     10.0,
+     10.0,
+     9.0,
+     9.0,
+     10.0,
+     9.0,
+     10.0,
+     9.5,
+     10.0,
+     8.0
+    ]
+   },
+   {
+    "rollNo": "25090052003",
+    "marks": [
+     7.0,
+     6.0,
+     9.0,
+     7.0,
+     9.0,
+     9.5,
+     10.0,
+     9.5,
+     10.0,
+     9.5
+    ]
+   },
+   {
+    "rollNo": "25090052004",
+    "marks": [
+     10.0,
+     8.0,
+     7.0,
+     7.0,
+     8.0,
+     10.0,
+     9.5,
+     10.0,
+     9.5,
+     10.0
+    ]
+   },
+   {
+    "rollNo": "25090052005",
+    "marks": [
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     5.0,
+     0.0,
+     0.0,
+     8.5,
+     0.0,
+     8.5
+    ]
+   }
+  ]
+ }
+}
