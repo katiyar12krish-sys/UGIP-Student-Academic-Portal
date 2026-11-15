@@ -971,8 +971,9 @@ Please evaluate rigorously and return STRICT JSON with the following schema:
 async function startServer() {
   const isProd = process.env.NODE_ENV === 'production';
 
-  if (!isProd) {
-    const { createServer: createViteServer } = await import('vite');
+  if (!isProd && process.env.NETLIFY !== 'true' && !process.env.AWS_LAMBDA_FUNCTION_NAME) {
+    const vitePkg = 'vite';
+    const { createServer: createViteServer } = await import(vitePkg);
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',

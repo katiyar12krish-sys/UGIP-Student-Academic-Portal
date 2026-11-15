@@ -10,6 +10,7 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
   included_files = ["server/**", "data/**"]
+  external_node_modules = ["node:sqlite", "pdfkit"]
 
 [[redirects]]
   from = "/api/*"
