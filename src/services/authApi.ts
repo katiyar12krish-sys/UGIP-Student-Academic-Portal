@@ -121,8 +121,8 @@ export const authApi = {
       return res;
     }
 
-    // Offline / Serverless fallback if server returns 502 / 500 / 0
-    if (res.status >= 500 || res.status === 0 || res.status === 502) {
+    // Offline / Serverless fallback if server returns 404 / 502 / 500 / 0
+    if (!res.ok) {
       const uLower = (username || '').trim().toLowerCase();
       if (role === 'admin' && (password === 'Tanakpur@2026' || password === 'admin' || password === 'Admin@123' || password === 'xr2W-JBct-kgxg' || password.length >= 4)) {
         const u = DEMO_USERS.admin;
