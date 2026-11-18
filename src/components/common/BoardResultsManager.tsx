@@ -129,7 +129,7 @@ export const BoardResultsManager: React.FC<{ readOnly?: boolean }> = ({ readOnly
                     </div>
                     <div className="text-xs text-slate-500 mt-0.5">{r.branch} · Semester {r.semester} · {r.examSession}{r.fatherName ? ` · Father: ${r.fatherName}` : ''}</div>
                   </button>
-                  <div className="flex items-center gap-5 text-sm">
+                  <div className="flex flex-wrap items-center justify-between sm:justify-end gap-2.5 sm:gap-4 text-xs sm:text-sm pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800">
                     <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">Total</div><div className="font-bold tabular-nums">{fmt(r.semTotal)}<span className="text-slate-400 font-normal">/{fmt(r.maxTotal)}</span></div></div>
                     <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">%</div><div className="font-bold tabular-nums">{fmt(r.percentage)}</div></div>
                     <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">SGPA</div><div className="font-bold tabular-nums">{r.sgpa ?? <span className="text-amber-600 text-xs" title="Not readable on the scanned sheet">fill in</span>}</div></div>

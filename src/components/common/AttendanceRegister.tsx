@@ -81,32 +81,89 @@ export const AttendanceRegister: React.FC = () => {
       </div>
 
       {list.length === 0 ? <div className="p-10 text-center rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 text-sm text-slate-500">No lectures found for this selection.</div> : (
-        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="bg-slate-50 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 text-left">
-              <tr><th className="px-4 py-2.5">Date</th><th className="px-4 py-2.5">Subject</th><th className="px-4 py-2.5">Class</th><th className="px-4 py-2.5">Topic</th><th className="px-4 py-2.5 text-right">Present</th><th className="px-4 py-2.5 text-right">Actions</th></tr>
-            </thead>
-            <tbody>
-              {list.slice(0, 400).map((s) => {
-                const present = s.records.filter((r) => r.status !== 'Absent').length;
-                return (
-                  <tr key={s.id} className="border-t border-slate-100 dark:border-slate-800">
-                    <td className="px-4 py-2.5 whitespace-nowrap">{s.date}<div className="text-[11px] text-slate-400">{s.timeSlot}</div></td>
-                    <td className="px-4 py-2.5"><span className="font-mono text-xs">{s.subjectCode}</span> {s.subjectName}{s.isDemo && showSample && <span className="ml-1.5 px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}</td>
-                    <td className="px-4 py-2.5 whitespace-nowrap">{s.branch} · Sem {s.semester}</td>
-                    <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400">{s.topicTaught || '—'}</td>
-                    <td className="px-4 py-2.5 text-right tabular-nums">{present}/{s.records.length}</td>
-                    <td className="px-4 py-2.5 text-right whitespace-nowrap">
-                      <button onClick={() => setOpenId(s.id)} aria-label="Open class list" title="Correct attendance" className="p-1.5 rounded-lg text-slate-500 hover:text-teal-700 hover:bg-teal-50 dark:hover:bg-slate-800 cursor-pointer"><Users className="w-4 h-4" /></button>
-                      <button onClick={() => setEdit({ id: s.id, date: s.date, timeSlot: s.timeSlot, topicTaught: s.topicTaught })} aria-label="Edit lecture" title="Edit" className="p-1.5 rounded-lg text-slate-500 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer"><Pencil className="w-4 h-4" /></button>
-                      <button onClick={() => remove(s)} aria-label="Delete lecture" title="Delete" className="p-1.5 rounded-lg text-slate-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-slate-800 cursor-pointer"><Trash2 className="w-4 h-4" /></button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-          {list.length > 400 && <p className="px-4 py-2 text-xs text-slate-500">Showing the newest 400. Use the filters to find older lectures.</p>}
+        <div className="space-y-3">
+          {/* MOBILE CARDS FOR PHONES (< sm) */}
+          <div className="block sm:hidden space-y-2.5">
+            {list.slice(0, 400).map((s) => {
+              const present = s.records.filter((r) => r.status !== 'Absent').length;
+              return (
+                <div key={s.id} className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs space-y-2">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="font-mono text-xs font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">{s.subjectCode}</span>
+                        <span className="text-xs font-bold text-slate-900 dark:text-white truncate max-w-[180px]">{s.subjectName}</span>
+                      </div>
+                      <div className="text-[11px] text-slate-500 mt-0.5">
+                        {s.date} · {s.timeSlot} · {s.branch} Sem {s.semester}
+                      </div>
+                    </div>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                      {present}/{s.records.length}
+                    </span>
+                  </div>
+                  {s.topicTaught && (
+                    <div className="text-xs text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-800/50 p-2 rounded-lg">
+                      <span className="font-semibold text-slate-400 text-[10px] block">टॉपिक (Topic):</span>
+                      {s.topicTaught}
+                    </div>
+                  )}
+                  <div className="flex items-center justify-end gap-2 pt-1 border-t border-slate-100 dark:border-slate-800">
+                    <button
+                      onClick={() => setOpenId(s.id)}
+                      className="flex-1 py-1.5 px-3 bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer"
+                    >
+                      <Users className="w-3.5 h-3.5" />
+                      <span>छात्र हाजिरी देखें / सही करें</span>
+                    </button>
+                    <button
+                      onClick={() => setEdit({ id: s.id, date: s.date, timeSlot: s.timeSlot, topicTaught: s.topicTaught })}
+                      className="p-1.5 rounded-lg text-slate-500 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer"
+                      title="Edit"
+                    >
+                      <Pencil className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      onClick={() => remove(s)}
+                      className="p-1.5 rounded-lg text-slate-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-slate-800 cursor-pointer"
+                      title="Delete"
+                    >
+                      <Trash2 className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* DESKTOP TABLE VIEW */}
+          <div className="hidden sm:block rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead className="bg-slate-50 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 text-left">
+                <tr><th className="px-4 py-2.5">Date</th><th className="px-4 py-2.5">Subject</th><th className="px-4 py-2.5">Class</th><th className="px-4 py-2.5">Topic</th><th className="px-4 py-2.5 text-right">Present</th><th className="px-4 py-2.5 text-right">Actions</th></tr>
+              </thead>
+              <tbody>
+                {list.slice(0, 400).map((s) => {
+                  const present = s.records.filter((r) => r.status !== 'Absent').length;
+                  return (
+                    <tr key={s.id} className="border-t border-slate-100 dark:border-slate-800">
+                      <td className="px-4 py-2.5 whitespace-nowrap">{s.date}<div className="text-[11px] text-slate-400">{s.timeSlot}</div></td>
+                      <td className="px-4 py-2.5"><span className="font-mono text-xs">{s.subjectCode}</span> {s.subjectName}{s.isDemo && showSample && <span className="ml-1.5 px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}</td>
+                      <td className="px-4 py-2.5 whitespace-nowrap">{s.branch} · Sem {s.semester}</td>
+                      <td className="px-4 py-2.5 text-slate-600 dark:text-slate-400">{s.topicTaught || '—'}</td>
+                      <td className="px-4 py-2.5 text-right tabular-nums">{present}/{s.records.length}</td>
+                      <td className="px-4 py-2.5 text-right whitespace-nowrap">
+                        <button onClick={() => setOpenId(s.id)} aria-label="Open class list" title="Correct attendance" className="p-1.5 rounded-lg text-slate-500 hover:text-teal-700 hover:bg-teal-50 dark:hover:bg-slate-800 cursor-pointer"><Users className="w-4 h-4" /></button>
+                        <button onClick={() => setEdit({ id: s.id, date: s.date, timeSlot: s.timeSlot, topicTaught: s.topicTaught })} aria-label="Edit lecture" title="Edit" className="p-1.5 rounded-lg text-slate-500 hover:text-blue-700 hover:bg-blue-50 dark:hover:bg-slate-800 cursor-pointer"><Pencil className="w-4 h-4" /></button>
+                        <button onClick={() => remove(s)} aria-label="Delete lecture" title="Delete" className="p-1.5 rounded-lg text-slate-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-slate-800 cursor-pointer"><Trash2 className="w-4 h-4" /></button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            {list.length > 400 && <p className="px-4 py-2 text-xs text-slate-500">Showing the newest 400. Use the filters to find older lectures.</p>}
+          </div>
         </div>
       )}
 

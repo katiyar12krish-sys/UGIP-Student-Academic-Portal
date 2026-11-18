@@ -144,6 +144,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
 
   // Mobile navigation state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuSearchQuery, setMenuSearchQuery] = useState('');
   const contentTopRef = useRef<HTMLDivElement>(null);
 
   const handleSwitchTab = (tabId: any) => {
@@ -393,14 +394,22 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
     { id: 'overview', label: '🏠 होम' },
     { id: 'pyq', label: '📝 पेपर्स (50M)' },
     { id: 'attendance', label: `📊 हाजिरी (${attStats.overallPercent}%)` },
-    { id: 'results', label: '🏆 मार्क्स' },
-    { id: 'timetable', label: '📅 टाइमटेबल' },
-    { id: 'syllabus', label: '📖 सिलेबस' },
+    { id: 'doubt-chat', label: '💬 डाउट्स Q&A' },
     { id: 'online-tests', label: '✍️ टेस्ट' },
-    { id: 'doubt-chat', label: '💬 डाउट्स' },
-    { id: 'material-hub', label: '📁 नोट्स' },
+    { id: 'material-hub', label: '📁 नोट्स व पीडीएफ' },
+    { id: 'results', label: '🏆 मार्क्स' },
     { id: 'ai-tutor', label: '🤖 AI साथी' },
-    { id: 'my-profile', label: '👤 प्रोफाइल' },
+    { id: 'syllabus', label: '📖 सिलेबस UBTER' },
+    { id: 'timetable', label: '📅 टाइमटेबल' },
+    { id: 'exam-schedule', label: '🗓️ परीक्षा डेटशीट' },
+    { id: 'ubter-result', label: '🌐 बोर्ड रिजल्ट' },
+    { id: 'practicals', label: '🔬 प्रैक्टिकल्स' },
+    { id: 'placements', label: '💼 प्लेसमेंट हब' },
+    { id: 'placement-prep', label: '🎯 रिज्यूमे स्कोर' },
+    { id: 'mock-interview', label: '🎥 मॉक इंटरव्यू' },
+    { id: 'my-qr-id', label: '📷 स्टूडेंट QR' },
+    { id: 'achievements', label: '🏅 ऑनर्स गैलरी' },
+    { id: 'my-profile', label: '👤 प्रोफाइल व पासवर्ड' },
   ];
 
   const activeTabObj = studentNavTabs.find((t) => t.id === activeTab) || studentNavTabs[0];
@@ -410,7 +419,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
     <div id="student-dashboard-container" className="space-y-6 pb-24 sm:pb-8">
       <MyLoginCard />
       {/* Student Banner */}
-      <div className="ugip-hero bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+      <div className="ugip-hero bg-slate-900 text-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <div className="w-48 h-48 border-4 border-blue-400 rounded-full"></div>
         </div>
@@ -1643,9 +1652,9 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
         <div className={`fixed inset-0 z-50 flex items-end ${forceMobileView ? '' : 'sm:hidden'} bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-150`}>
           <div className="w-full bg-white dark:bg-slate-900 rounded-t-3xl max-h-[85vh] flex flex-col border-t border-slate-200 dark:border-slate-800 shadow-2xl animate-in slide-in-from-bottom duration-200">
             {/* Drawer Drag handle & Header */}
-            <div className="p-4 pb-2 border-b border-slate-200 dark:border-slate-800 shrink-0">
+            <div className="p-4 pb-3 border-b border-slate-200 dark:border-slate-800 shrink-0">
               <div className="w-12 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-3" />
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2 mb-2">
                 <div>
                   <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
                     <span>📱 छात्र पोर्टल मेनू</span>
@@ -1658,44 +1667,58 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                   </p>
                 </div>
                 <button
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setMenuSearchQuery('');
+                  }}
                   className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
+
+              {/* Instant Search Bar inside Drawer */}
+              <div className="relative mt-2">
+                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                <input
+                  type="text"
+                  value={menuSearchQuery}
+                  onChange={(e) => setMenuSearchQuery(e.target.value)}
+                  placeholder="🔍 कोई भी विकल्प खोजें / Search student options..."
+                  className="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                {menuSearchQuery && (
+                  <button
+                    onClick={() => setMenuSearchQuery('')}
+                    className="absolute right-2.5 top-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs p-1"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
             </div>
 
-            {/* Scrollable List of Tabs grouped by category */}
-            <div className="overflow-y-auto p-4 space-y-4 flex-1">
-              {['Academics', 'Assessment', 'AI & Doubts', 'Career', 'Account'].map((cat) => {
-                const catTabs = studentNavTabs.filter((t) => t.category === cat);
-                if (catTabs.length === 0) return null;
-                const catLabel =
-                  cat === 'Academics'
-                    ? '📚 शैक्षणिक एवं अध्ययन (Academics & Study)'
-                    : cat === 'Assessment'
-                    ? '📊 हाजिरी, परीक्षा एवं रिजल्ट्स'
-                    : cat === 'AI & Doubts'
-                    ? '🤖 AI टूल्स एवं डाउट समाधान'
-                    : cat === 'Career'
-                    ? '💼 करियर, प्लेसमेंट व इंटरव्यू'
-                    : '👤 मेरा अकाउंट एवं सुरक्षा';
-
-                return (
-                  <div key={cat} className="space-y-1.5">
-                    <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
-                      {catLabel}
-                    </div>
-                    <div className="grid grid-cols-1 gap-1">
-                      {catTabs.map((tab) => {
+            {/* Scrollable List of Tabs grouped by category or search results */}
+            <div className="overflow-y-auto p-4 pb-20 space-y-4 flex-1">
+              {menuSearchQuery.trim() ? (
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                    Matching Options ({studentNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
+                  </div>
+                  <div className="grid grid-cols-1 gap-1">
+                    {studentNavTabs
+                      .filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase()))
+                      .map((tab) => {
                         const Icon = tab.icon;
                         const isActive = activeTab === tab.id;
                         return (
                           <button
                             key={tab.id}
-                            onClick={() => handleSwitchTab(tab.id)}
-                            className={`w-full p-2.5 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                            onClick={() => {
+                              handleSwitchTab(tab.id);
+                              setMenuSearchQuery('');
+                            }}
+                            className={`w-full p-3 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
                               isActive
                                 ? 'bg-blue-600 text-white shadow-xs'
                                 : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -1707,9 +1730,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                             </div>
                             {tab.badge && (
                               <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
-                                isActive
-                                  ? 'bg-blue-500 text-white'
-                                  : 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
+                                isActive ? 'bg-blue-500 text-white' : 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
                               }`}>
                                 {tab.badge}
                               </span>
@@ -1717,10 +1738,66 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                           </button>
                         );
                       })}
-                    </div>
                   </div>
-                );
-              })}
+                </div>
+              ) : (
+                ['Academics', 'Assessment', 'AI & Doubts', 'Career', 'Account'].map((cat) => {
+                  const catTabs = studentNavTabs.filter((t) => t.category === cat);
+                  if (catTabs.length === 0) return null;
+                  const catLabel =
+                    cat === 'Academics'
+                      ? '📚 शैक्षणिक एवं अध्ययन (Academics & Study)'
+                      : cat === 'Assessment'
+                      ? '📊 हाजिरी, परीक्षा एवं रिजल्ट्स'
+                      : cat === 'AI & Doubts'
+                      ? '🤖 AI टूल्स एवं डाउट समाधान'
+                      : cat === 'Career'
+                      ? '💼 करियर, प्लेसमेंट व इंटरव्यू'
+                      : '👤 मेरा अकाउंट एवं सुरक्षा';
+
+                  return (
+                    <div key={cat} className="space-y-1.5">
+                      <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                        {catLabel}
+                      </div>
+                      <div className="grid grid-cols-1 gap-1">
+                        {catTabs.map((tab) => {
+                          const Icon = tab.icon;
+                          const isActive = activeTab === tab.id;
+                          return (
+                            <button
+                              key={tab.id}
+                              onClick={() => {
+                                handleSwitchTab(tab.id);
+                                setMenuSearchQuery('');
+                              }}
+                              className={`w-full p-3 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                                isActive
+                                  ? 'bg-blue-600 text-white shadow-xs'
+                                  : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                              }`}
+                            >
+                              <div className="flex items-center gap-2.5 min-w-0">
+                                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
+                                <span className="truncate">{tab.label}</span>
+                              </div>
+                              {tab.badge && (
+                                <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
+                                  isActive
+                                    ? 'bg-blue-500 text-white'
+                                    : 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
+                                }`}>
+                                  {tab.badge}
+                                </span>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
             </div>
           </div>
         </div>

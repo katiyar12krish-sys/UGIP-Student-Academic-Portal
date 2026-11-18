@@ -141,6 +141,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
 
   // Mobile navigation state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [menuSearchQuery, setMenuSearchQuery] = useState('');
   const contentTopRef = useRef<HTMLDivElement>(null);
 
   const handleSwitchTab = (tabId: any) => {
@@ -368,8 +369,15 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
     { id: 'class-dispatch', label: '📤 क्लास डिस्पेच' },
     { id: 'material-hub', label: '📁 नोट्स व पीडीएफ' },
     { id: 'attendance-analysis', label: '📊 हाजिरी एनालिसिस' },
-    { id: 'syllabus', label: '📖 सिलेबस' },
-    { id: 'online-tests', label: '✍️ टेस्ट' },
+    { id: 'syllabus', label: '📖 सिलेबस UBTER' },
+    { id: 'online-tests', label: '✍️ ऑनलाइन टेस्ट' },
+    { id: 'board-results', label: '🏆 बोर्ड रिजल्ट्स' },
+    { id: 'attendance-register', label: '📋 हाजिरी रजिस्टर' },
+    { id: 'timetable', label: '📅 टाइमटेबल' },
+    { id: 'placement-tracker', label: '💼 प्लेसमेंट हब' },
+    { id: 'data-center', label: '📁 डेटा सेंटर' },
+    { id: 'news', label: `📢 सूचनाएं (${notices.length})` },
+    { id: 'my-profile', label: '👤 प्रोफाइल' },
   ].filter((tab) => tabAllowed(tab.id));
 
   const activeTabObj = facultyNavTabs.find((t) => t.id === activeTab) || facultyNavTabs[0];
@@ -379,7 +387,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
     <div id="faculty-dashboard-container" className="space-y-6 pb-24 sm:pb-8">
       {loginMgr && <LoginManager onClose={() => setLoginMgr(null)} initialQuery={loginMgr.q} />}
       {/* Faculty Hero Banner */}
-      <div className="ugip-hero bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
+      <div className="ugip-hero bg-slate-900 text-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg relative overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <div className="w-48 h-48 border-4 border-blue-400 rounded-full"></div>
         </div>
@@ -1428,9 +1436,9 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
         <div className={`fixed inset-0 z-50 flex items-end ${forceMobileView ? '' : 'sm:hidden'} bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-150`}>
           <div className="w-full bg-white dark:bg-slate-900 rounded-t-3xl max-h-[85vh] flex flex-col border-t border-slate-200 dark:border-slate-800 shadow-2xl animate-in slide-in-from-bottom duration-200">
             {/* Drawer Drag handle & Header */}
-            <div className="p-4 pb-2 border-b border-slate-200 dark:border-slate-800 shrink-0">
+            <div className="p-4 pb-3 border-b border-slate-200 dark:border-slate-800 shrink-0">
               <div className="w-12 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-3" />
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-2 mb-2">
                 <div>
                   <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
                     <span>📱 फैकल्टी पोर्टल मेनू</span>
@@ -1443,44 +1451,58 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
                   </p>
                 </div>
                 <button
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    setMenuSearchQuery('');
+                  }}
                   className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
+
+              {/* Instant Search Bar inside Drawer */}
+              <div className="relative mt-2">
+                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+                <input
+                  type="text"
+                  value={menuSearchQuery}
+                  onChange={(e) => setMenuSearchQuery(e.target.value)}
+                  placeholder="🔍 कोई भी विकल्प खोजें / Search faculty options..."
+                  className="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+                {menuSearchQuery && (
+                  <button
+                    onClick={() => setMenuSearchQuery('')}
+                    className="absolute right-2.5 top-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs p-1"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
             </div>
 
-            {/* Scrollable List of Tabs grouped by category */}
-            <div className="overflow-y-auto p-4 space-y-4 flex-1">
-              {['Database & Students', 'Attendance & Classes', 'Academics & Tests', 'Placement & Career', 'Account & Data'].map((cat) => {
-                const catTabs = facultyNavTabs.filter((t) => t.category === cat);
-                if (catTabs.length === 0) return null;
-                const catLabel =
-                  cat === 'Database & Students'
-                    ? '👥 छात्र डेटाबेस व एनालिटिक्स (1st, 2nd, 3rd Yr)'
-                    : cat === 'Attendance & Classes'
-                    ? '📷 QR हाजिरी व अटेंडेंस एनालिसिस'
-                    : cat === 'Academics & Tests'
-                    ? '📚 परीक्षा, क्वेश्चन पेपर्स (50M) व लाइव डाउट्स'
-                    : cat === 'Placement & Career'
-                    ? '💼 प्लेसमेंट हब व रिज्यूमे ट्रैकर'
-                    : '📁 डेटा सेंटर, पासवर्ड्स व प्रोफाइल';
-
-                return (
-                  <div key={cat} className="space-y-1.5">
-                    <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
-                      {catLabel}
-                    </div>
-                    <div className="grid grid-cols-1 gap-1">
-                      {catTabs.map((tab) => {
+            {/* Scrollable List of Tabs grouped by category or search results */}
+            <div className="overflow-y-auto p-4 pb-20 space-y-4 flex-1">
+              {menuSearchQuery.trim() ? (
+                <div className="space-y-1.5">
+                  <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                    Matching Options ({facultyNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
+                  </div>
+                  <div className="grid grid-cols-1 gap-1">
+                    {facultyNavTabs
+                      .filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase()))
+                      .map((tab) => {
                         const Icon = tab.icon;
                         const isActive = activeTab === tab.id;
                         return (
                           <button
                             key={tab.id}
-                            onClick={() => handleSwitchTab(tab.id)}
-                            className={`w-full p-2.5 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                            onClick={() => {
+                              handleSwitchTab(tab.id);
+                              setMenuSearchQuery('');
+                            }}
+                            className={`w-full p-3 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
                               isActive
                                 ? 'bg-amber-600 text-white shadow-xs'
                                 : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
@@ -1492,9 +1514,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
                             </div>
                             {tab.badge && (
                               <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
-                                isActive
-                                  ? 'bg-amber-500 text-white'
-                                  : 'bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300'
+                                isActive ? 'bg-amber-500 text-white' : 'bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300'
                               }`}>
                                 {tab.badge}
                               </span>
@@ -1502,10 +1522,66 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
                           </button>
                         );
                       })}
-                    </div>
                   </div>
-                );
-              })}
+                </div>
+              ) : (
+                ['Database & Students', 'Attendance & Classes', 'Academics & Tests', 'Placement & Career', 'Account & Data'].map((cat) => {
+                  const catTabs = facultyNavTabs.filter((t) => t.category === cat);
+                  if (catTabs.length === 0) return null;
+                  const catLabel =
+                    cat === 'Database & Students'
+                      ? '👥 छात्र डेटाबेस व एनालिटिक्स (1st, 2nd, 3rd Yr)'
+                      : cat === 'Attendance & Classes'
+                      ? '📷 QR हाजिरी व अटेंडेंस एनालिसिस'
+                      : cat === 'Academics & Tests'
+                      ? '📚 परीक्षा, क्वेश्चन पेपर्स (50M) व लाइव डाउट्स'
+                      : cat === 'Placement & Career'
+                      ? '💼 प्लेसमेंट हब व रिज्यूमे ट्रैकर'
+                      : '📁 डेटा सेंटर, पासवर्ड्स व प्रोफाइल';
+
+                  return (
+                    <div key={cat} className="space-y-1.5">
+                      <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                        {catLabel}
+                      </div>
+                      <div className="grid grid-cols-1 gap-1">
+                        {catTabs.map((tab) => {
+                          const Icon = tab.icon;
+                          const isActive = activeTab === tab.id;
+                          return (
+                            <button
+                              key={tab.id}
+                              onClick={() => {
+                                handleSwitchTab(tab.id);
+                                setMenuSearchQuery('');
+                              }}
+                              className={`w-full p-3 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                                isActive
+                                  ? 'bg-amber-600 text-white shadow-xs'
+                                  : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                              }`}
+                            >
+                              <div className="flex items-center gap-2.5 min-w-0">
+                                <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-amber-600 dark:text-amber-400'}`} />
+                                <span className="truncate">{tab.label}</span>
+                              </div>
+                              {tab.badge && (
+                                <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
+                                  isActive
+                                    ? 'bg-amber-500 text-white'
+                                    : 'bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300'
+                                }`}>
+                                  {tab.badge}
+                                </span>
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
             </div>
           </div>
         </div>

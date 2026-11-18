@@ -129,7 +129,96 @@ export const LoginManager: React.FC<{ onClose: () => void; initialBranch?: strin
           {msg && <span className="font-bold text-blue-700 dark:text-blue-300">{msg}</span>}
         </div>
 
-        <div className="overflow-x-auto">
+        {/* MOBILE CARD VIEW FOR PHONES (< sm) */}
+        <div className="block sm:hidden divide-y divide-slate-100 dark:divide-slate-800 p-2 space-y-3">
+          {rows === null && <div className="p-6 text-center text-xs text-slate-500">Loading…</div>}
+          {rows?.length === 0 && <div className="p-6 text-center text-xs text-slate-500">No students match.</div>}
+          {rows?.map((r) => (
+            <div key={r.studentId} className="p-3.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 space-y-2.5">
+              <div className="flex items-start justify-between">
+                <div>
+                  <h4 className="font-bold text-sm text-slate-900 dark:text-white">{r.name}</h4>
+                  <p className="text-[11px] text-slate-500">{r.branch} · Year {r.year} · Sem {r.semester}</p>
+                </div>
+                <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                  {r.student.username}
+                </span>
+              </div>
+
+              {/* Student Password Section */}
+              <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+                <div className="flex items-center justify-between">
+                  <span className="text-[11px] font-bold text-slate-700 dark:text-slate-300">Student Password:</span>
+                  <button
+                    disabled={busy}
+                    onClick={() => newPw(r, r.student.userId, r.name)}
+                    className="text-[11px] font-bold text-blue-600 hover:underline cursor-pointer"
+                  >
+                    {r.student.status === 'not_issued' ? '➕ Make password' : '🔄 New password'}
+                  </button>
+                </div>
+                <div>
+                  <Pw status={r.student.status} temp={r.student.tempPassword} />
+                </div>
+              </div>
+
+              {/* Parents Section */}
+              <div className="p-2.5 rounded-lg bg-violet-50/50 dark:bg-violet-950/20 border border-violet-100 dark:border-violet-900/40 space-y-2">
+                <span className="text-[11px] font-bold text-violet-800 dark:text-violet-300 block">
+                  Parent Logins ({r.parents.length}):
+                </span>
+                {r.parents.map((p) => (
+                  <div key={p.userId} className="flex flex-wrap items-center justify-between gap-1 pb-1 border-b border-violet-100 dark:border-violet-900/30 last:border-none">
+                    <div>
+                      <span className="font-mono text-xs font-bold">{p.username}</span>
+                      <span className="text-[10px] text-slate-500 ml-1">({p.relation || 'Parent'})</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Pw status={p.status} temp={p.tempPassword} />
+                      <button
+                        disabled={busy}
+                        onClick={() => newPw(r, p.userId, `${p.relation || 'Parent'} of ${r.name}`)}
+                        className="text-[10px] font-bold text-blue-600 hover:underline cursor-pointer"
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </div>
+                ))}
+
+                <div className="flex gap-2 pt-1">
+                  {!r.parents.some((p) => p.relation === 'Father') && (
+                    <button
+                      disabled={busy}
+                      onClick={() => act(async () => {
+                        const x = await authApi.createParentLogin(r.studentId, 'Father');
+                        return x.ok ? `Father login made for ${r.name}.` : x.error;
+                      })}
+                      className="px-2 py-1 rounded-lg bg-violet-100 hover:bg-violet-200 text-violet-800 text-[10px] font-bold cursor-pointer"
+                    >
+                      + Father login
+                    </button>
+                  )}
+                  {!r.parents.some((p) => p.relation === 'Mother') && (
+                    <button
+                      disabled={busy}
+                      onClick={() => act(async () => {
+                        const x = await authApi.createParentLogin(r.studentId, 'Mother');
+                        return x.ok ? `Mother login made for ${r.name}.` : x.error;
+                      })}
+                      className="px-2 py-1 rounded-lg bg-violet-100 hover:bg-violet-200 text-violet-800 text-[10px] font-bold cursor-pointer"
+                    >
+                      + Mother login
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* DESKTOP TABLE VIEW */}
+        <div className="hidden sm:block overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead><tr className="bg-slate-50 dark:bg-slate-800 text-slate-500 uppercase tracking-wider font-bold">
               <th className="p-3">Student</th><th className="p-3">Student login ID</th><th className="p-3">Student password</th><th className="p-3">Parent login</th>

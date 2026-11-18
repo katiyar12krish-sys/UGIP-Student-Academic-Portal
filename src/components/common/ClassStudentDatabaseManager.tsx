@@ -461,7 +461,106 @@ export const ClassStudentDatabaseManager: React.FC<ClassStudentDatabaseManagerPr
           </span>
         </div>
 
-        <div className="overflow-x-auto">
+        {/* MOBILE CARD VIEW FOR PHONES (< sm) */}
+        <div className="block sm:hidden divide-y divide-slate-100 dark:divide-slate-800 p-2 space-y-3">
+          {filteredStudents.length === 0 ? (
+            <div className="p-8 text-center text-xs text-slate-500 dark:text-slate-400">
+              No student records found matching the current filters.
+            </div>
+          ) : (
+            filteredStudents.map((st, idx) => {
+              const isAnurag = st.id === 'stu-anurag';
+              const att = getAttendancePercent(st.id);
+              return (
+                <div
+                  key={st.id}
+                  className={`p-3.5 rounded-2xl border transition-all ${
+                    isAnurag
+                      ? 'bg-amber-50/50 dark:bg-amber-950/20 border-amber-300 dark:border-amber-800 shadow-xs'
+                      : 'bg-white dark:bg-slate-800/90 border-slate-200 dark:border-slate-700 shadow-2xs'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-center gap-2.5">
+                      <div className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold text-xs ${
+                        isAnurag ? 'bg-amber-500 text-white' : 'bg-blue-600 text-white'
+                      }`}>
+                        {st.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-slate-900 dark:text-white leading-tight">
+                          {st.name}
+                        </h4>
+                        <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-0.5">
+                          UBTER: <span className="font-bold text-slate-800 dark:text-slate-200">{st.ubterRollNumber || st.rollNo}</span>
+                        </div>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-mono font-bold text-slate-400">#{idx + 1}</span>
+                  </div>
+
+                  <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                      {st.branch} · Year {st.year} (Sem {st.semester})
+                    </span>
+                    <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
+                      (att ?? 0) >= 75 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300' : 'bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300'
+                    }`}>
+                      हाजिरी: {att === null ? '—' : `${att}%`}
+                    </span>
+                    <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">
+                      {st.recordStatus || 'Active'}
+                    </span>
+                  </div>
+
+                  <div className="mt-2 pt-2 border-t border-slate-100 dark:border-slate-700/60 grid grid-cols-2 gap-2 text-[11px] text-slate-600 dark:text-slate-300">
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">मोबाइल (Phone):</span>
+                      <a href={`tel:${st.phone}`} className="font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-1">
+                        <Phone className="w-3 h-3 text-emerald-600" /> {st.phone || '—'}
+                      </a>
+                    </div>
+                    <div>
+                      <span className="text-slate-400 text-[10px] block">अकादमिक (10th / 12th):</span>
+                      <span className="font-bold">{pct(st.highSchoolPercentage)} / {pct(st.intermediatePercentage)}</span>
+                    </div>
+                    <div className="col-span-2">
+                      <span className="text-slate-400 text-[10px] block">अभिभावक (Parent):</span>
+                      <span className="truncate block">{st.fatherName ? `पिता: ${st.fatherName}` : st.parentName || '—'}</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between gap-2">
+                    <button
+                      onClick={() => setViewingStudent(st)}
+                      className="flex-1 py-1.5 px-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg text-xs font-bold flex items-center justify-center gap-1 cursor-pointer"
+                    >
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>डोज़ियर (Dossier)</span>
+                    </button>
+                    <button
+                      onClick={() => handleStartEdit(st)}
+                      className="py-1.5 px-3 bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer"
+                    >
+                      <Edit3 className="w-3.5 h-3.5" />
+                      <span>एडिट</span>
+                    </button>
+                    <button
+                      onClick={() => handleOpenDirectNotice(st)}
+                      className="py-1.5 px-2.5 bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 rounded-lg text-xs font-bold flex items-center gap-1 cursor-pointer"
+                      title="Direct Notice"
+                    >
+                      <Send className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })
+          )}
+        </div>
+
+        {/* DESKTOP TABLE VIEW (hidden on mobile, visible sm and up) */}
+        <div className="hidden sm:block overflow-x-auto">
           <table className="w-full text-left text-xs">
             <thead className="bg-slate-100 dark:bg-slate-700/80 text-slate-700 dark:text-slate-300 uppercase tracking-wider font-bold border-b border-slate-200 dark:border-slate-600">
               <tr>

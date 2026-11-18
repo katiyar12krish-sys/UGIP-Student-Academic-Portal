@@ -219,8 +219,8 @@ const MainPortalView: React.FC = () => {
       )}
 
       {/* Institutional Status & Role Switcher Subheader */}
-      <section aria-label="Portal Navigation" className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-16 sm:top-20 z-30 shadow-xs transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <section aria-label="Portal Navigation" className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 relative sm:sticky sm:top-20 z-30 shadow-xs transition-colors">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2.5">
           <div className="flex items-center gap-3 text-xs">
             <button
               onClick={() => setViewMode('landing')}
@@ -351,7 +351,7 @@ const MainPortalView: React.FC = () => {
           </div>
         </main>
       ) : (
-        <main className="flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-6 space-y-6">
+        <main className="flex-1 max-w-[1600px] w-full mx-auto p-2.5 sm:p-6 lg:p-6 space-y-4 sm:space-y-6">
           {!profileReady && <div className="py-20 text-center text-sm text-slate-500">Loading your profile…</div>}
           {profileReady && currentUser.role === 'admin' && <AdminDashboard onLogout={handleLogout} />}
           {profileReady && currentUser.role === 'faculty' && <FacultyDashboard onLogout={handleLogout} />}

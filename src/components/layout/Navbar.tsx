@@ -146,8 +146,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       <header id="main-header" className="sticky top-0 z-40 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border-b border-slate-200/70 dark:border-slate-800 shadow-xs transition-colors duration-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-14 sm:h-20">
             {/* Crest & Title */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-blue-900 via-blue-700 to-blue-500 flex items-center justify-center text-white font-black text-xs sm:text-sm tracking-tight ring-2 ring-amber-400/70 shrink-0 shadow-md">
@@ -175,12 +175,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Actions */}
             <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
-              {/* Laptop Phone View Mode Toggle Button */}
+              {/* Laptop Phone View Mode Toggle Button - ONLY shown on Desktop/Laptop */}
               {onToggleMobilePreview && (
                 <button
                   id="navbar-phone-preview-btn"
                   onClick={onToggleMobilePreview}
-                  className={`px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer border shadow-2xs ${
+                  className={`hidden md:inline-flex px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg text-xs font-bold items-center gap-1.5 transition-all cursor-pointer border shadow-2xs ${
                     isMobilePreviewMode
                       ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-500 ring-2 ring-emerald-300 dark:ring-emerald-800'
                       : 'bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800'
@@ -188,7 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   title={isMobilePreviewMode ? 'Exit Phone View / Back to Laptop View' : 'Preview Phone View (390px Mobile Viewport)'}
                 >
                   <Smartphone className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
-                  <span className="hidden sm:inline font-extrabold">
+                  <span className="font-extrabold">
                     {isMobilePreviewMode ? '📱 Exit Phone View' : '📱 Phone View'}
                   </span>
                 </button>

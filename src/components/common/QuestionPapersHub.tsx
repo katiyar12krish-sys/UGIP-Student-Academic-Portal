@@ -585,134 +585,138 @@ const PaperRow: React.FC<{
           <span className="text-[10px] text-slate-400 font-medium">
             {p.paper.size}
           </span>
+          {p.canRemove && (
+            <button
+              disabled={busy}
+              onClick={() => onRemove(p)}
+              title="हटाएं (Remove)"
+              className="p-1 rounded text-rose-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950 cursor-pointer"
+            >
+              <Trash2 className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
       </div>
 
       {/* Question Paper Row */}
-      <div className="flex flex-wrap items-center gap-1.5 pt-1">
-        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 w-24 shrink-0">
-          प्रश्न पत्र (Paper)
+      <div className="pt-1 space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-2">
+        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block sm:inline-block sm:w-28 shrink-0">
+          📄 प्रश्न पत्र (Paper):
         </span>
-        <button
-          type="button"
-          onClick={() => onOpenViewer(p, 'paper')}
-          className={`${btn} bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600`}
-        >
-          <Eye className="w-3.5 h-3.5" />
-          <span>खोलें / Open</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => openInNewTab(p.paper.url, `${p.subjectName} Paper`)}
-          title="नए टैब में खोलें"
-          className={`${btn} bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200`}
-        >
-          <ExternalLink className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">नया टैब</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => triggerDownload(p.paper.name, p.paper.url)}
-          className={`${btn} bg-blue-600 hover:bg-blue-700 text-white`}
-        >
-          <Download className="w-3.5 h-3.5" />
-          <span>डाउनलोड</span>
-        </button>
-        {p.canRemove && (
-          <>
-            <button
-              disabled={busy}
-              onClick={() => paperRef.current?.click()}
-              className={`${btn} text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700`}
-            >
-              <Upload className="w-3.5 h-3.5" />
-              <span>बदलें</span>
-            </button>
-            <input
-              ref={paperRef}
-              type="file"
-              accept={ACCEPT}
-              hidden
-              onChange={(e) => {
-                onPaper(p, e.target.files?.[0]);
-                e.target.value = '';
-              }}
-            />
-          </>
-        )}
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-1.5 flex-1">
+          <button
+            type="button"
+            onClick={() => onOpenViewer(p, 'paper')}
+            className={`${btn} bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600`}
+          >
+            <Eye className="w-3.5 h-3.5" />
+            <span>खोलें / Open</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => triggerDownload(p.paper.name, p.paper.url)}
+            className={`${btn} bg-blue-600 hover:bg-blue-700 text-white`}
+          >
+            <Download className="w-3.5 h-3.5" />
+            <span>डाउनलोड</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => openInNewTab(p.paper.url, `${p.subjectName} Paper`)}
+            title="नए टैब में खोलें"
+            className={`${btn} bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200`}
+          >
+            <ExternalLink className="w-3.5 h-3.5" />
+            <span>नया टैब</span>
+          </button>
+          {p.canRemove && (
+            <>
+              <button
+                disabled={busy}
+                onClick={() => paperRef.current?.click()}
+                className={`${btn} text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700`}
+              >
+                <Upload className="w-3.5 h-3.5" />
+                <span>बदलें</span>
+              </button>
+              <input
+                ref={paperRef}
+                type="file"
+                accept={ACCEPT}
+                hidden
+                onChange={(e) => {
+                  onPaper(p, e.target.files?.[0]);
+                  e.target.value = '';
+                }}
+              />
+            </>
+          )}
+        </div>
       </div>
 
       {/* Answer Key Row */}
-      <div className="flex flex-wrap items-center gap-1.5">
-        <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 w-24 shrink-0">
-          उत्तर कुंजी (Key)
+      <div className="pt-1 space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-2">
+        <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 block sm:inline-block sm:w-28 shrink-0">
+          🔑 उत्तर कुंजी (Key):
         </span>
-        {p.answer ? (
-          <>
-            <button
-              type="button"
-              onClick={() => onOpenViewer(p, 'answer')}
-              className={`${btn} bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800`}
-            >
-              <Eye className="w-3.5 h-3.5" />
-              <span>हल देखें / Key</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => openInNewTab(p.answer?.url || '', `${p.subjectName} Answer Key`)}
-              title="नए टैब में उत्तर कुंजी खोलें"
-              className={`${btn} bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200`}
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">नया टैब</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => triggerDownload(p.answer?.name || `${p.subjectCode}_AnswerKey.html`, p.answer?.url || '')}
-              className={`${btn} bg-emerald-600 hover:bg-emerald-700 text-white`}
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span>डाउनलोड</span>
-            </button>
-          </>
-        ) : (
-          <span className="text-[11px] text-slate-400 italic">शीघ्र उपलब्ध होगी</span>
-        )}
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-1.5 flex-1">
+          {p.answer ? (
+            <>
+              <button
+                type="button"
+                onClick={() => onOpenViewer(p, 'answer')}
+                className={`${btn} bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800`}
+              >
+                <Eye className="w-3.5 h-3.5" />
+                <span>हल देखें / Key</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => triggerDownload(p.answer?.name || `${p.subjectCode}_AnswerKey.html`, p.answer?.url || '')}
+                className={`${btn} bg-emerald-600 hover:bg-emerald-700 text-white`}
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span>डाउनलोड</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => openInNewTab(p.answer?.url || '', `${p.subjectName} Answer Key`)}
+                title="नए टैब में उत्तर कुंजी खोलें"
+                className={`${btn} bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200`}
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>नया टैब</span>
+              </button>
+            </>
+          ) : (
+            <span className="text-[11px] text-slate-400 italic py-1 col-span-2 sm:col-span-1">शीघ्र उपलब्ध होगी</span>
+          )}
 
-        {p.canEdit && (
-          <>
-            <button
-              disabled={busy}
-              onClick={() => ansRef.current?.click()}
-              className={`${btn} text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950 border border-emerald-300/40`}
-            >
-              <KeyRound className="w-3.5 h-3.5" />
-              <span>{busy ? 'अपलोड हो रहा है...' : p.answer ? 'उत्तर कुंजी बदलें' : 'उत्तर कुंजी जोड़ें'}</span>
-            </button>
-            <input
-              ref={ansRef}
-              type="file"
-              accept={ACCEPT}
-              hidden
-              onChange={(e) => {
-                onAnswer(p, e.target.files?.[0]);
-                e.target.value = '';
-              }}
-            />
-          </>
-        )}
-
-        {p.canRemove && (
-          <button
-            disabled={busy}
-            onClick={() => onRemove(p)}
-            title="हटाएं (Remove)"
-            className={`${btn} ml-auto text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950 p-2`}
-          >
-            <Trash2 className="w-3.5 h-3.5" />
-          </button>
-        )}
+          {p.canEdit && (
+            <>
+              <button
+                disabled={busy}
+                onClick={() => ansRef.current?.click()}
+                className={`${btn} text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950 border border-emerald-300/40 col-span-2 sm:col-span-1`}
+              >
+                <KeyRound className="w-3.5 h-3.5" />
+                <span>{busy ? 'अपलोड हो रहा है...' : p.answer ? 'उत्तर कुंजी बदलें' : 'उत्तर कुंजी जोड़ें'}</span>
+              </button>
+              <input
+                ref={ansRef}
+                type="file"
+                accept={ACCEPT}
+                hidden
+                onChange={(e) => {
+                  onAnswer(p, e.target.files?.[0]);
+                  e.target.value = '';
+                }}
+              />
+            </>
+          )}
+        </div>
       </div>
+
 
       {p.answer?.updatedBy && (
         <p className="text-[10px] text-slate-400 pt-0.5">

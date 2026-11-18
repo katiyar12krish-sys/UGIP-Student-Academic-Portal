@@ -48,6 +48,16 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
   const [activeTicketId, setActiveTicketId] = useState<string>(
     studentDoubtTickets[0]?.id || ''
   );
+  const chatThreadRef = React.useRef<HTMLDivElement>(null);
+
+  const handleSelectTicket = (id: string) => {
+    setActiveTicketId(id);
+    if (typeof window !== 'undefined' && window.innerWidth < 1024) {
+      setTimeout(() => {
+        chatThreadRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  };
   // Reply input (kept in screen state)
   const [replyInput, setReplyInput] = useState('');
   // Is the 'ask pop-up' shown on screen? (true / false)
@@ -272,7 +282,7 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
                 return (
                   <button
                     key={ticket.id}
-                    onClick={() => setActiveTicketId(ticket.id)}
+                    onClick={() => handleSelectTicket(ticket.id)}
                     className={`w-full p-4 rounded-xl border text-left transition-all cursor-pointer ${
                       isSelected
                         ? 'bg-blue-50/90 dark:bg-blue-950/40 border-blue-500 shadow-sm'
@@ -316,7 +326,7 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
         </div>
 
         {/* RIGHT COLUMN: ACTIVE THREAD & CHAT */}
-        <div className="lg:col-span-7">
+        <div ref={chatThreadRef} className="lg:col-span-7">
           {activeTicket ? (
             <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col h-[650px]">
               {/* TICKET HEADER */}
