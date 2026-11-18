@@ -2,7 +2,7 @@
 // Admin dashboard: left menu + the chosen screen (students, faculty, subjects, exams, attendance,
 // Step 18: Academic Year & Promotion, UBTER Board Results, Attendance Register, practicals, placement...).
 // ===================================================================================================
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useCollege } from '../../context/CollegeContext';
 import {
   UserProfile,
@@ -49,6 +49,8 @@ import {
   HelpCircle,
   UserCog,
   Target,
+  Menu,
+  X,
 } from 'lucide-react';
 import { PlacementTracker } from '../placement/PlacementPrep';   // placement preparation of every student (resume ATS + practice tests)
 import { MyProfileCard } from '../common/MyProfileCard';             // self-service: own details + own password
@@ -94,6 +96,7 @@ import { LoginManager } from '../common/LoginManager';
 // Data shape: admin dashboard props.
 interface AdminDashboardProps {
   onLogout?: () => void;
+  forceMobileView?: boolean;
 }
 
 // Faculty credential editor.
@@ -124,7 +127,7 @@ const FacultyCredentialEditor: React.FC<{ faculty: UserProfile }> = ({ faculty }
 );
 
 // Screen part: admin dashboard.
-export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
+export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceMobileView = false }) => {
   const {
     users,
     addUser,
@@ -180,6 +183,20 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
     | 'quiz-drill'
     | 'ai-diagnostics'
   >('overview');
+
+  // Mobile navigation state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const contentTopRef = useRef<HTMLDivElement>(null);
+
+  const handleSwitchTab = (tabId: any) => {
+    setActiveTab(tabId);
+    setMobileMenuOpen(false);
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      setTimeout(() => {
+        contentTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  };
 
   // Is the 'add student pop-up' shown on screen? (true / false)
   const [showAddStudentModal, setShowAddStudentModal] = useState(false);
@@ -258,6 +275,54 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   // Average attendance of the whole college from the classes actually recorded this academic year (no invented number).
   const attTotals = Object.values(attendanceSummary).reduce((a, r) => ({ total: a.total + (r.total || 0), attended: a.attended + (r.attended || 0) }), { total: 0, attended: 0 });
   const avgAttendance = attTotals.total ? Math.round((attTotals.attended / attTotals.total) * 1000) / 10 : null;
+
+  const adminNavTabs = [
+    { id: 'overview', label: t.overview, icon: BarChart3, category: 'Core Admin' },
+    { id: 'class-database', label: `Students · 1st, 2nd, 3rd Yr (${studentsList.length})`, icon: GraduationCap, badge: `${studentsList.length}`, category: 'Students' },
+    { id: 'academic-year', label: 'Academic Year & Promotion', icon: CalendarDays, badge: 'New', category: 'Core Admin' },
+    { id: 'board-results', label: 'UBTER Board Results', icon: Award, badge: 'New', category: 'Academics & Exams' },
+    { id: 'papers', label: 'Question Papers & Answer Keys', icon: FileText, badge: '50M', category: 'Academics & Exams' },
+    { id: 'attendance-register', label: 'Attendance Register (edit)', icon: UserCheck, category: 'Attendance' },
+    { id: 'attendance-analysis', label: 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Auto', category: 'Attendance' },
+    { id: 'staff-attendance', label: t.staffGateRegister, icon: UserCheck, category: 'Attendance' },
+    { id: 'online-tests', label: 'Online Tests & Tasks', icon: Award, badge: 'Alerts', category: 'Academics & Exams' },
+    { id: 'doubt-resolution', label: 'Real-Time Doubt Q&A', icon: HelpCircle, badge: 'Live Chat', category: 'Academics & Exams' },
+    { id: 'class-dispatch', label: 'Class & Subject Dispatcher', icon: Send, badge: 'Direct', category: 'Academics & Exams' },
+    { id: 'data-center', label: 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New', category: 'Data & Access' },
+    { id: 'logins', label: 'Logins & Passwords', icon: KeyRound, badge: 'Vault', category: 'Data & Access' },
+    { id: 'faculty', label: `Faculty Role Control (${facultyList.length})`, icon: Users, badge: 'Admin Only', category: 'Faculty' },
+    { id: 'security-audit', label: 'Security Audit Logs', icon: Activity, badge: 'SHA-256', category: 'Security' },
+    { id: 'subjects', label: `${t.curriculum} (${subjects.length})`, icon: BookOpen, category: 'Academics & Exams' },
+    { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: 'Academics & Exams' },
+    { id: 'timetable', label: t.timetable, icon: Clock, category: 'Academics & Exams' },
+    { id: 'practicals', label: t.practicals, icon: FlaskConical, category: 'Academics & Exams' },
+    { id: 'materials', label: t.studyMaterials, icon: FolderDown, category: 'Academics & Exams' },
+    { id: 'placements', label: 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil', category: 'Placement' },
+    { id: 'placement-tracker', label: 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New', category: 'Placement' },
+    { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal', category: 'Students' },
+    { id: 'categories', label: t.categoryRoster, icon: Shield, category: 'Students' },
+    { id: 'achievements', label: t.honorsGallery, icon: Trophy, category: 'Placement' },
+    { id: 'news', label: `${t.newsCirculars} (${notices.length})`, icon: Megaphone, category: 'Core Admin' },
+    { id: 'ai-diagnostics', label: 'AI Diagnostic Engine', icon: Sparkles, badge: 'AI', category: 'Core Admin' },
+    { id: 'my-profile', label: 'My Profile & Password', icon: UserCog, category: 'Data & Access' },
+  ];
+
+  const quickTabs = [
+    { id: 'overview', label: '🏠 होम' },
+    { id: 'class-database', label: `👥 छात्र (${studentsList.length})` },
+    { id: 'attendance-register', label: '📊 हाजिरी' },
+    { id: 'papers', label: '📝 पेपर्स (50M)' },
+    { id: 'board-results', label: '🏆 बोर्ड रिजल्ट्स' },
+    { id: 'data-center', label: '📁 डेटा सेंटर' },
+    { id: 'logins', label: '🔑 पासवर्ड्स' },
+    { id: 'attendance-analysis', label: '📈 हाजिरी एनालिसिस' },
+    { id: 'faculty', label: '👨‍🏫 फैकल्टी' },
+    { id: 'academic-year', label: '🗓️ सेशन' },
+    { id: 'news', label: '📢 सूचनाएं' },
+  ];
+
+  const activeTabObj = adminNavTabs.find((t) => t.id === activeTab || (t.id === 'class-database' && activeTab === 'students')) || adminNavTabs[0];
+  const ActiveIcon = activeTabObj.icon;
 
   const filteredStudents = studentsList.filter((s) => {
     const matchesSearch =
@@ -374,7 +439,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
   };
 
   return (
-    <div id="admin-dashboard-container" className="space-y-6">
+    <div id="admin-dashboard-container" className="space-y-6 pb-24 sm:pb-8">
       {loginMgr && <LoginManager onClose={() => setLoginMgr(null)} initialQuery={loginMgr.q} />}
       {/* Admin Title & Quick Status */}
       <div className="ugip-hero bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
@@ -426,50 +491,64 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
         </div>
       </div>
 
-      <div className="sm:flex sm:gap-5 sm:items-start space-y-6 sm:space-y-0">
-      {/* Fixed sidebar navigation */}
-      <aside className="ugip-menu flex flex-col overflow-y-auto overflow-x-hidden gap-1 p-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs max-h-72 sm:max-h-[calc(100vh-2rem)] sm:w-52 lg:w-64 sm:shrink-0 sm:sticky sm:top-4">
+      {/* MOBILE COMPACT NAVIGATION HEADER (< sm or forced phone view) */}
+      <div className={`${forceMobileView ? 'block' : 'sm:hidden'} space-y-2.5`}>
+        {/* Active Tab Bar + "All Tabs" button */}
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 shadow-xs flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
+              <ActiveIcon className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">Active Admin Section</div>
+              <div className="text-xs font-black text-slate-900 dark:text-white truncate">{activeTabObj.label}</div>
+            </div>
+          </div>
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-xs shrink-0 cursor-pointer"
+          >
+            <Menu className="w-3.5 h-3.5" />
+            <span>सभी मेनू ({adminNavTabs.length})</span>
+          </button>
+        </div>
+
+        {/* Quick Horizontal Carousel */}
+        <div className="flex items-center gap-1.5 overflow-x-auto py-1 px-0.5 no-scrollbar touch-pan-x">
+          {quickTabs.map((q) => {
+            const isActive = activeTab === q.id || (q.id === 'class-database' && activeTab === 'students');
+            return (
+              <button
+                key={q.id}
+                onClick={() => handleSwitchTab(q.id)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-blue-600 text-white shadow-xs'
+                    : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700'
+                }`}
+              >
+                {q.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className={`${forceMobileView ? 'block' : 'sm:flex sm:gap-5 sm:items-start'} space-y-6 sm:space-y-0`}>
+      {/* Desktop sidebar navigation - Hidden on mobile */}
+      <aside className={`ugip-menu ${forceMobileView ? 'hidden' : 'hidden sm:flex'} flex-col overflow-y-auto overflow-x-hidden gap-1 p-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs sm:max-h-[calc(100vh-2rem)] sm:w-52 lg:w-64 sm:shrink-0 sm:sticky sm:top-4`}>
         <div className="px-3 pt-2 pb-3">
           <div className="text-[10px] font-extrabold tracking-widest text-blue-800 dark:text-blue-300 uppercase">Admin Portal</div>
           <div className="text-sm font-extrabold text-slate-900 dark:text-white">Administrator</div>
         </div>
-        {[
-          { id: 'overview', label: t.overview, icon: BarChart3 },
-          { id: 'academic-year', label: 'Academic Year & Promotion', icon: CalendarDays, badge: 'New' },
-          { id: 'board-results', label: 'UBTER Board Results', icon: Award, badge: 'New' },
-          { id: 'attendance-register', label: 'Attendance Register (edit)', icon: UserCheck },
-          { id: 'class-database', label: `Students · 1st, 2nd, 3rd Yr (${studentsList.length})`, icon: GraduationCap },
-          { id: 'my-profile', label: 'My Profile & Password', icon: UserCog },
-          { id: 'placement-tracker', label: 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New' },
-          { id: 'logins', label: 'Logins & Passwords', icon: KeyRound },
-          { id: 'attendance-analysis', label: 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Automatic' },
-          { id: 'online-tests', label: 'Online Tests & Tasks', icon: Award, badge: 'Targeted Alerts' },
-          { id: 'doubt-resolution', label: 'Real-Time Doubt Q&A', icon: HelpCircle, badge: 'Live Chat' },
-          { id: 'class-dispatch', label: 'Class & Subject Dispatcher', icon: Send, badge: 'Direct' },
-          { id: 'data-center', label: 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New' },
-          { id: 'categories', label: t.categoryRoster, icon: Shield },
-          { id: 'faculty', label: `Faculty Role Control (${facultyList.length})`, icon: Users, badge: 'Admin Only' },
-          { id: 'security-audit', label: 'Security Audit Logs', icon: Activity, badge: 'SHA-256' },
-          { id: 'staff-attendance', label: t.staffGateRegister, icon: UserCheck },
-          { id: 'subjects', label: `${t.curriculum} (${subjects.length})`, icon: BookOpen },
-          { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise' },
-          { id: 'timetable', label: t.timetable, icon: Clock },
-          { id: 'practicals', label: t.practicals, icon: FlaskConical },
-          { id: 'materials', label: t.studyMaterials, icon: FolderDown },
-          { id: 'placements', label: 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil' },
-          { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal' },
-          { id: 'achievements', label: t.honorsGallery, icon: Trophy },
-          { id: 'news', label: `${t.newsCirculars} (${notices.length})`, icon: Megaphone },
-          { id: 'papers', label: 'Question Papers & Answer Keys', icon: FileText },
-          { id: 'ai-diagnostics', label: 'AI Diagnostic Engine', icon: Sparkles, badge: 'AI' },
-        ].map((tab) => {
+        {adminNavTabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id || (tab.id === 'class-database' && activeTab === 'students');
           return (
             <button
               key={tab.id}
               id={`admin-tab-${tab.id}`}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => handleSwitchTab(tab.id as any)}
               className={`px-3.5 py-2.5 w-full text-left rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 whitespace-normal cursor-pointer ${
                 isActive
                   ? 'ugip-menu-on'
@@ -492,7 +571,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       </aside>
 
       {/* Content area */}
-      <div className="flex-1 min-w-0 space-y-6">
+      <div ref={contentTopRef} className="flex-1 min-w-0 space-y-6">
 
       {/* OVERVIEW */}
       {activeTab === 'overview' && (
@@ -1116,6 +1195,149 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       />
       </div>
       </div>
+
+      {/* MOBILE ALL-TABS SLIDE-OVER DRAWER MODAL */}
+      {mobileMenuOpen && (
+        <div className={`fixed inset-0 z-50 flex items-end ${forceMobileView ? '' : 'sm:hidden'} bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-150`}>
+          <div className="w-full bg-white dark:bg-slate-900 rounded-t-3xl max-h-[85vh] flex flex-col border-t border-slate-200 dark:border-slate-800 shadow-2xl animate-in slide-in-from-bottom duration-200">
+            {/* Drawer Drag handle & Header */}
+            <div className="p-4 pb-2 border-b border-slate-200 dark:border-slate-800 shrink-0">
+              <div className="w-12 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-3" />
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                    <span>📱 एडमिन पोर्टल मेनू</span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                      {adminNavTabs.length} ऑप्शन्स
+                    </span>
+                  </h3>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                    Chief Administrator • Full Management Control
+                  </p>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable List of Tabs grouped by category */}
+            <div className="overflow-y-auto p-4 space-y-4 flex-1">
+              {['Core Admin', 'Students', 'Academics & Exams', 'Attendance', 'Data & Access', 'Faculty', 'Placement', 'Security'].map((cat) => {
+                const catTabs = adminNavTabs.filter((t) => t.category === cat);
+                if (catTabs.length === 0) return null;
+                const catLabel =
+                  cat === 'Core Admin'
+                    ? '⚙️ कॉलेज एडमिनिस्ट्रेशन (Core Admin)'
+                    : cat === 'Students'
+                    ? '👥 छात्र डेटाबेस व एनालिटिक्स (150 Students)'
+                    : cat === 'Academics & Exams'
+                    ? '📚 परीक्षा, सिलेबस एवं क्वेश्चन पेपर्स (50M)'
+                    : cat === 'Attendance'
+                    ? '📊 उपस्थिति व अटेंडेंस रजिस्टर (Attendance)'
+                    : cat === 'Data & Access'
+                    ? '📁 डेटा सेंटर, एक्सेल व लॉगिन पासवर्ड्स'
+                    : cat === 'Faculty'
+                    ? '👨‍🏫 फैकल्टी कंट्रोल व असाइनमेंट'
+                    : cat === 'Placement'
+                    ? '💼 प्लेसमेंट हब, रिज्यूमे एवं अचीवमेंट्स'
+                    : '🔒 सिक्यूरिटी एवं ऑडिट लॉग्स';
+
+                return (
+                  <div key={cat} className="space-y-1.5">
+                    <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                      {catLabel}
+                    </div>
+                    <div className="grid grid-cols-1 gap-1">
+                      {catTabs.map((tab) => {
+                        const Icon = tab.icon;
+                        const isActive = activeTab === tab.id || (tab.id === 'class-database' && activeTab === 'students');
+                        return (
+                          <button
+                            key={tab.id}
+                            onClick={() => handleSwitchTab(tab.id)}
+                            className={`w-full p-2.5 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                              isActive
+                                ? 'bg-blue-600 text-white shadow-xs'
+                                : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                            }`}
+                          >
+                            <div className="flex items-center gap-2.5 min-w-0">
+                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
+                              <span className="truncate">{tab.label}</span>
+                            </div>
+                            {tab.badge && (
+                              <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
+                                isActive
+                                  ? 'bg-blue-500 text-white'
+                                  : 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
+                              }`}>
+                                {tab.badge}
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MOBILE STICKY BOTTOM NAVIGATION BAR */}
+      <nav aria-label="Admin Mobile Navigation" className={`fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-2 py-1.5 flex items-center justify-around ${forceMobileView ? 'flex' : 'sm:hidden'} shadow-lg`}>
+        <button
+          onClick={() => handleSwitchTab('overview')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'overview' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <BarChart3 className="w-4 h-4" />
+          <span>होम</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('class-database')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'class-database' || activeTab === 'students' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <GraduationCap className="w-4 h-4" />
+          <span>छात्र 150</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('attendance-register')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'attendance-register' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <UserCheck className="w-4 h-4" />
+          <span>हाजिरी</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('papers')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'papers' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <FileText className="w-4 h-4" />
+          <span>पेपर्स</span>
+        </button>
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold text-blue-600 dark:text-blue-400 transition-colors cursor-pointer"
+        >
+          <div className="w-4 h-4 flex items-center justify-center">
+            <Menu className="w-4 h-4" />
+          </div>
+          <span>मेनू ({adminNavTabs.length})</span>
+        </button>
+      </nav>
     </div>
   );
 };

@@ -18,7 +18,7 @@ import { ToastContainer } from './components/common/ToastContainer';
 import { FeedbackHost } from './components/common/ui/feedback';   // Step 18: nicer messages + confirm dialogs for the whole app
 import { ChatLauncher } from './components/chat/ChatLauncher';
 import { Role } from './types';
-import { ShieldCheck, UserCheck, GraduationCap, School, MapPin, LayoutGrid, Calendar, X } from 'lucide-react';
+import { ShieldCheck, UserCheck, GraduationCap, School, MapPin, LayoutGrid, Calendar, X, Smartphone } from 'lucide-react';
 
 // Main portal view.
 const MainPortalView: React.FC = () => {
@@ -35,6 +35,8 @@ const MainPortalView: React.FC = () => {
   } = useCollege();
   // View mode (kept in screen state)
   const [viewMode, setViewMode] = useState<'landing' | 'portal'>('landing');
+  // Laptop-to-Phone preview switcher
+  const [isMobilePreviewMode, setIsMobilePreviewMode] = useState(false);
   // Is it qr scanner open? (true / false)
   const [isQRScannerOpen, setIsQRScannerOpen] = useState(false);
 
@@ -157,6 +159,8 @@ const MainPortalView: React.FC = () => {
         onOpenQRScanner={() => setIsQRScannerOpen(true)}
         onBackToLanding={() => setViewMode('landing')}
         onLogout={handleLogout}
+        isMobilePreviewMode={isMobilePreviewMode}
+        onToggleMobilePreview={() => setIsMobilePreviewMode((prev) => !prev)}
       />
 
       {/* Persistent Admin Impersonation Banner & Reminder */}
@@ -292,16 +296,71 @@ const MainPortalView: React.FC = () => {
         </div>
       </section>
 
-      {/* Main Content Area */}
-      <main className="flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-6 space-y-6">
-        {!profileReady && <div className="py-20 text-center text-sm text-slate-500">Loading your profile…</div>}
-        {profileReady && currentUser.role === 'admin' && <AdminDashboard onLogout={handleLogout} />}
-        {profileReady && currentUser.role === 'faculty' && <FacultyDashboard onLogout={handleLogout} />}
-        {profileReady && currentUser.role === 'parent' && <ParentDashboard onLogout={handleLogout} />}
-        {profileReady && currentUser.role === 'student' && (
-          <StudentDashboard onOpenQRScanner={() => setIsQRScannerOpen(true)} onLogout={handleLogout} />
-        )}
-      </main>
+      {/* Main Content Area: Responsive Laptop View or Hardware-Framed Mobile View */}
+      {isMobilePreviewMode ? (
+        <main className="flex-1 w-full py-4 px-2 sm:px-6 flex flex-col items-center justify-start bg-slate-950/80 backdrop-blur-xs min-h-[calc(100vh-140px)] animate-in fade-in duration-200">
+          {/* Phone Frame Quick Header Bar */}
+          <div className="w-full max-w-[420px] mb-3 px-4 py-2 bg-slate-900 border border-slate-700 rounded-2xl shadow-xl flex items-center justify-between text-white text-xs">
+            <div className="flex items-center gap-2">
+              <Smartphone className="w-4 h-4 text-emerald-400" />
+              <span className="font-bold">📱 Phone View Mode (390px × 844px)</span>
+            </div>
+            <button
+              onClick={() => setIsMobilePreviewMode(false)}
+              className="px-2.5 py-1 bg-rose-600 hover:bg-rose-700 text-white font-extrabold text-[11px] rounded-lg cursor-pointer transition-colors shadow-xs"
+            >
+              ✕ Laptop View
+            </button>
+          </div>
+
+          {/* Smartphone Hardware Mockup Container */}
+          <div className="w-full max-w-[412px] h-[844px] max-h-[85vh] bg-slate-100 dark:bg-slate-950 rounded-[44px] shadow-2xl border-[10px] border-slate-800 dark:border-slate-800 overflow-hidden relative flex flex-col ring-2 ring-slate-700/50">
+            {/* Top Speaker / Dynamic Island */}
+            <div className="h-6 bg-slate-800 flex items-center justify-center shrink-0 select-none">
+              <div className="w-24 h-3.5 bg-black rounded-full flex items-center justify-center gap-2">
+                <div className="w-2 h-2 rounded-full bg-slate-900 border border-slate-800"></div>
+                <div className="w-8 h-1 bg-slate-700 rounded-full"></div>
+              </div>
+            </div>
+
+            {/* Simulated Phone Scrollable Viewport */}
+            <div className="flex-1 overflow-y-auto overflow-x-hidden p-2.5 space-y-4 mobile-viewport-simulated">
+              {!profileReady && <div className="py-20 text-center text-sm text-slate-500">Loading your profile…</div>}
+              {profileReady && currentUser.role === 'admin' && (
+                <AdminDashboard onLogout={handleLogout} forceMobileView={true} />
+              )}
+              {profileReady && currentUser.role === 'faculty' && (
+                <FacultyDashboard onLogout={handleLogout} forceMobileView={true} />
+              )}
+              {profileReady && currentUser.role === 'parent' && (
+                <ParentDashboard onLogout={handleLogout} />
+              )}
+              {profileReady && currentUser.role === 'student' && (
+                <StudentDashboard
+                  onOpenQRScanner={() => setIsQRScannerOpen(true)}
+                  onLogout={handleLogout}
+                  forceMobileView={true}
+                />
+              )}
+            </div>
+
+            {/* Bottom Home Bar */}
+            <div className="h-4 bg-slate-800 flex items-center justify-center shrink-0 select-none">
+              <div className="w-28 h-1 bg-slate-500 rounded-full"></div>
+            </div>
+          </div>
+        </main>
+      ) : (
+        <main className="flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-6 space-y-6">
+          {!profileReady && <div className="py-20 text-center text-sm text-slate-500">Loading your profile…</div>}
+          {profileReady && currentUser.role === 'admin' && <AdminDashboard onLogout={handleLogout} />}
+          {profileReady && currentUser.role === 'faculty' && <FacultyDashboard onLogout={handleLogout} />}
+          {profileReady && currentUser.role === 'parent' && <ParentDashboard onLogout={handleLogout} />}
+          {profileReady && currentUser.role === 'student' && (
+            <StudentDashboard onOpenQRScanner={() => setIsQRScannerOpen(true)} onLogout={handleLogout} />
+          )}
+        </main>
+      )}
 
       {/* Global QR Scanner Modal */}
       <QRScannerModal

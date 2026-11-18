@@ -1,0 +1,5060 @@
+[
+  {
+    "id": "stu-24090020001",
+    "name": "Abdul Ahad",
+    "rollNo": "24090020001",
+    "fatherName": "Nazrul Samad",
+    "motherName": "Nahid",
+    "dob": "2006-12-03",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "9897983201",
+    "email": "24090020001@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Opposite Hotel Parwat, Railway Station Road, Tanakpur",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.6,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 70.4,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 74.0,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 78.0,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020010",
+    "name": "Nirmal Singh Rana",
+    "rollNo": "24090020010",
+    "fatherName": "Sanjesh Singh Rana",
+    "motherName": "",
+    "dob": "2005-12-20",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090020010@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020011",
+    "name": "Payal",
+    "rollNo": "24090020011",
+    "fatherName": "Pappu Singh",
+    "motherName": "",
+    "dob": "2007-09-18",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090020011@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020013",
+    "name": "Raju Garkoti",
+    "rollNo": "24090020013",
+    "fatherName": "Dungar Dev",
+    "motherName": "Deepa Devi",
+    "dob": "2007-07-12",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "6398202887",
+    "email": "24090020013@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Village Tand Malla, Post Office Machiyar, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 65.8,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 69.7,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 74.6,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 71.7,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050001",
+    "name": "Aaditya Singh Kunwar",
+    "rollNo": "24090050001",
+    "fatherName": "Manoj Singh Kunwar",
+    "motherName": "Seema Kunwar",
+    "dob": "2006-02-04",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "8979374569",
+    "email": "24090050001@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Reikot Kunwar, Lohaghat",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": null,
+        "cgpa": 6.69
+      },
+      {
+        "semester": 2,
+        "percentage": null,
+        "cgpa": 6.6
+      },
+      {
+        "semester": 3,
+        "percentage": null,
+        "cgpa": 8.47
+      },
+      {
+        "semester": 4,
+        "percentage": null,
+        "cgpa": 8.23
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050002",
+    "name": "Aashish Chand",
+    "rollNo": "24090050002",
+    "fatherName": "Naresh Chand",
+    "motherName": "",
+    "dob": "2002-02-18",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050002@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050003",
+    "name": "Abhishek Rana",
+    "rollNo": "24090050003",
+    "fatherName": "Dinesh Singh Rana",
+    "motherName": "",
+    "dob": "2007-02-16",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050003@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050004",
+    "name": "Adeep Kumar",
+    "rollNo": "24090050004",
+    "fatherName": "Bihari Prasad",
+    "motherName": "",
+    "dob": "2005-01-14",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050004@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050005",
+    "name": "Ankit",
+    "rollNo": "24090050005",
+    "fatherName": "Chandrabhanu",
+    "motherName": "",
+    "dob": "2007-10-12",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050005@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050006",
+    "name": "Anshuman Tamta",
+    "rollNo": "24090050006",
+    "fatherName": "Manoj Kumar Tamta",
+    "motherName": "",
+    "dob": "2006-03-28",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050006@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050007",
+    "name": "Anurag Mourya",
+    "rollNo": "24090050007",
+    "fatherName": "Om Prakash",
+    "motherName": "Sushila Devi",
+    "dob": "2006-12-07",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "9068768351",
+    "email": "24090050007@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Bhindara, Majhola, Pilibhit, Uttar Pradesh",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 74.3,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 78.9,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 90.9,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 84.1,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050008",
+    "name": "Ashu",
+    "rollNo": "24090050008",
+    "fatherName": "Raju",
+    "motherName": "",
+    "dob": "2006-04-05",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050008@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050009",
+    "name": "Chetan Pant",
+    "rollNo": "24090050009",
+    "fatherName": "Suresh Chandra Pant",
+    "motherName": "",
+    "dob": "2007-07-01",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050009@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050010",
+    "name": "Deepak Garkoti",
+    "rollNo": "24090050010",
+    "fatherName": "Mohan Chandra Garkoti",
+    "motherName": "",
+    "dob": "2007-10-10",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050010@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050011",
+    "name": "Diya Adhikari",
+    "rollNo": "24090050011",
+    "fatherName": "Deepak Singh Adhikari",
+    "motherName": "Renu Devi",
+    "dob": "2006-08-10",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "6395564408",
+    "email": "24090050011@ugip.ac.in",
+    "aadharNumber": "5347 8526 5552",
+    "fullAddress": "Nakot, Lohaghat, Champawat, Uttarakhand (Post Office: Malla Khatera)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 65.8,
+        "cgpa": 7.12
+      },
+      {
+        "semester": 2,
+        "percentage": 66.6,
+        "cgpa": 7.44
+      },
+      {
+        "semester": 3,
+        "percentage": 84.8,
+        "cgpa": 8.48
+      },
+      {
+        "semester": 4,
+        "percentage": 83.8,
+        "cgpa": 8.38
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050012",
+    "name": "Himanshi Samant",
+    "rollNo": "24090050012",
+    "fatherName": "Dan Singh Samant",
+    "motherName": "",
+    "dob": "2002-12-24",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090050012@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050013",
+    "name": "Jatin Kumar",
+    "rollNo": "24090050013",
+    "fatherName": "Gopal Singh",
+    "motherName": "",
+    "dob": "2005-03-28",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050013@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050014",
+    "name": "Kavita",
+    "rollNo": "24090050014",
+    "fatherName": "Kundan Singh",
+    "motherName": "",
+    "dob": "2007-03-02",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090050014@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050015",
+    "name": "Km Sanjana Chauhan",
+    "rollNo": "24090050015",
+    "fatherName": "Amar Singh Chauhan",
+    "motherName": "",
+    "dob": "2003-05-18",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090050015@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050016",
+    "name": "Krishna Katiyar",
+    "rollNo": "24090050016",
+    "fatherName": "Ram Sevak Katiyar",
+    "motherName": "Anarkali Katiyar",
+    "dob": "2006-08-20",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "8449495147",
+    "email": "24090050016@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Ward No. 14, Near Best View Hotel, Khatima, Udham Singh Nagar, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 83.56,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 86.0,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 87.6,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 85.1,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050017",
+    "name": "Kumar Mangalam",
+    "rollNo": "24090050017",
+    "fatherName": "Veerendra Kumar",
+    "motherName": "",
+    "dob": "2007-11-07",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050017@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050019",
+    "name": "Muskan Singh",
+    "rollNo": "24090050019",
+    "fatherName": "Rakesh Singh",
+    "motherName": "Meena",
+    "dob": "2004-08-05",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Female",
+    "phone": "9760662775",
+    "email": "24090050019@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Sharda Ghat, Ward No. 01, Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 77.3,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 85.0,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 89.3,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 83.9,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050020",
+    "name": "Neeraj Joshi",
+    "rollNo": "24090050020",
+    "fatherName": "Kedar Datt Joshi",
+    "motherName": "",
+    "dob": "2007-04-04",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050020@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050021",
+    "name": "Nishant",
+    "rollNo": "24090050021",
+    "fatherName": "Bachchi Ram",
+    "motherName": "",
+    "dob": "2003-05-09",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050021@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050023",
+    "name": "Prashant Kumar",
+    "rollNo": "24090050023",
+    "fatherName": "Lalit Kumar",
+    "motherName": "",
+    "dob": "2004-02-29",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050023@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050024",
+    "name": "Preeti",
+    "rollNo": "24090050024",
+    "fatherName": "Harendra Maurya",
+    "motherName": "",
+    "dob": "2006-08-22",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090050024@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050025",
+    "name": "Ritu Rana",
+    "rollNo": "24090050025",
+    "fatherName": "Anil Singh",
+    "motherName": "",
+    "dob": "2007-08-20",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "",
+    "email": "24090050025@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050026",
+    "name": "Rohan Singh",
+    "rollNo": "24090050026",
+    "fatherName": "Narayan Singh",
+    "motherName": "",
+    "dob": "2005-03-25",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050026@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050027",
+    "name": "Sumit Bisht",
+    "rollNo": "24090050027",
+    "fatherName": "Kundan Singh",
+    "motherName": "",
+    "dob": "2006-11-06",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050027@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050028",
+    "name": "Uday Kumar",
+    "rollNo": "24090050028",
+    "fatherName": "Rajkumar",
+    "motherName": "Vandana Devi",
+    "dob": "2007-10-09",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Male",
+    "phone": "8057447759",
+    "email": "24090050028@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Bari Anjana, Post Jamour, Khatima, Udham Singh Nagar",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.7,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 75.0,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 85.8,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 80.7,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050029",
+    "name": "Varsha Rana",
+    "rollNo": "24090050029",
+    "fatherName": "Jai Pal Singh",
+    "motherName": "Shashi Devi",
+    "dob": "2007-07-18",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": null,
+    "gender": "Female",
+    "phone": "7618486041",
+    "email": "24090050029@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Tedaghat, Bari Anjaniya, Khatima, Udham Singh Nagar",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 65.0,
+        "cgpa": null
+      },
+      {
+        "semester": 2,
+        "percentage": 67.1,
+        "cgpa": null
+      },
+      {
+        "semester": 3,
+        "percentage": 80.9,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 84.7,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-24090050030",
+    "name": "Varun Singh",
+    "rollNo": "24090050030",
+    "fatherName": "Dattram Singh",
+    "motherName": "",
+    "dob": "2007-03-22",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "24090050030@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052001",
+    "name": "Jayant Balmiki",
+    "rollNo": "25090052001",
+    "fatherName": "Shyam Balmiki",
+    "motherName": "Rekha Balmiki",
+    "dob": "2002-08-08",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Lateral",
+    "category": null,
+    "gender": "Male",
+    "phone": "7505677649",
+    "email": "25090052001@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Ghasiyara Mandi, Ward No. 9, Tanakpur",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 3,
+        "percentage": 71.0,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 70.6,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052002",
+    "name": "Neha Samant",
+    "rollNo": "25090052002",
+    "fatherName": "Kheem Singh Samant",
+    "motherName": "Lalita Devi",
+    "dob": "2007-11-03",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Lateral",
+    "category": null,
+    "gender": "Male",
+    "phone": "7505911744",
+    "email": "25090052002@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Bastiya, Tanakpur",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 3,
+        "percentage": 79.3,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052003",
+    "name": "Nitin Kohli",
+    "rollNo": "25090052003",
+    "fatherName": "Madan Ram",
+    "motherName": "",
+    "dob": "2006-05-05",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Lateral",
+    "category": "General",
+    "gender": "Male",
+    "phone": "",
+    "email": "25090052003@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 72.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 2,
+        "percentage": 74.5,
+        "cgpa": 7.8
+      },
+      {
+        "semester": 3,
+        "percentage": 78.0,
+        "cgpa": 8.1
+      },
+      {
+        "semester": 4,
+        "percentage": 80.2,
+        "cgpa": 8.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052004",
+    "name": "Sameer Kumar",
+    "rollNo": "25090052004",
+    "fatherName": "Kamlesh Kumar",
+    "motherName": "Durga Devi",
+    "dob": "2008-10-10",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Lateral",
+    "category": null,
+    "gender": "Male",
+    "phone": "7817835587",
+    "email": "25090052004@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Vill. Bamanpuri, Banbasa, P.O. Chandani, Dist. Champawat, Uttarakhand",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 3,
+        "percentage": 80.7,
+        "cgpa": null
+      },
+      {
+        "semester": 4,
+        "percentage": 84.7,
+        "cgpa": null
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052005",
+    "name": "Sumit Joshi",
+    "rollNo": "25090052005",
+    "fatherName": "Mohan Joshi",
+    "motherName": "Mamta Joshi",
+    "dob": "2007-01-14",
+    "branch": "CSE",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Lateral",
+    "category": null,
+    "gender": "Male",
+    "phone": "6399854521",
+    "email": "25090052005@ugip.ac.in",
+    "aadharNumber": null,
+    "fullAddress": "Near Mandi Samiti, Khatima",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 3,
+        "percentage": null,
+        "cgpa": 6.5
+      },
+      {
+        "semester": 4,
+        "percentage": null,
+        "cgpa": 6.13
+      }
+    ]
+  },
+  {
+    "id": "stu-24021050014",
+    "name": "Saurabh Giri",
+    "rollNo": "24021050014",
+    "enrolmentNo": "652",
+    "fatherName": "Kundan Giri",
+    "motherName": "Neema Devi",
+    "dob": "2006-01-30",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9870942886",
+    "email": "sallugoswami994@gmail.com",
+    "aadharNumber": "895593390709",
+    "fullAddress": "Nanital, NANITAL, UTTARAKHAND (PIN: 263157)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020003",
+    "name": "Ashutosh Pandey",
+    "rollNo": "24090020003",
+    "enrolmentNo": "519",
+    "fatherName": "Rajendra Pandey",
+    "motherName": "Rashmi Pandey",
+    "dob": "2007-07-06",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7817863110",
+    "email": "ashupahadi03@gmail.com",
+    "aadharNumber": "673021352590",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020004",
+    "name": "Chetan Singh Kunwar",
+    "rollNo": "24090020004",
+    "enrolmentNo": "564",
+    "fatherName": "Kushal Singh Kunwer",
+    "motherName": "Sunita Pandey",
+    "dob": "2006-03-25",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7618457608",
+    "email": "yuvraajsinghkunwar@gmail.com",
+    "aadharNumber": "831243156202",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020005",
+    "name": "Himanshu Giri",
+    "rollNo": "24090020005",
+    "enrolmentNo": "561",
+    "fatherName": "Suresh Giri Goswami",
+    "motherName": "Dhana Goswami",
+    "dob": "2004-06-12",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "8439961631",
+    "email": "hggoswami237r@gmail.com",
+    "aadharNumber": "301980960404",
+    "fullAddress": "ALMORA, ALMORA, UTTARAKHAND (PIN: 263601)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020008",
+    "name": "Mohammad Uzaif",
+    "rollNo": "24090020008",
+    "enrolmentNo": "555",
+    "fatherName": "Mahboob",
+    "motherName": "Kalsoam",
+    "dob": "2007-07-22",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "6395722841",
+    "email": "khankhan@gmail.com",
+    "aadharNumber": "260578557958",
+    "fullAddress": "Pantnagar, U.S.NAGAR, UTTARAKHAND (PIN: 263145)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020012",
+    "name": "Piyush Tamta",
+    "rollNo": "24090020012",
+    "enrolmentNo": "571",
+    "fatherName": "Lalit Mohan",
+    "motherName": "Mamta Devi",
+    "dob": "2006-01-17",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "7983599056",
+    "email": "piyushtamta925@gmail.com",
+    "aadharNumber": "400876967323",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020014",
+    "name": "Rishabh Singh Mahar",
+    "rollNo": "24090020014",
+    "enrolmentNo": "568",
+    "fatherName": "Deepak Singh Mahar",
+    "motherName": "Neela Devi",
+    "dob": "2005-04-09",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9756883003",
+    "email": "rishabhsingh@gmail.com",
+    "aadharNumber": "881352562550",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020017",
+    "name": "Sachin Singh",
+    "rollNo": "24090020017",
+    "enrolmentNo": "560",
+    "fatherName": "Jagdish Singh",
+    "motherName": "Dhani Devi",
+    "dob": "2007-01-12",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7579004956",
+    "email": "sachinmahara162@gmail.com",
+    "aadharNumber": "905102527552",
+    "fullAddress": "NANITAL, NANITAL, UTTARAKHAND (PIN: 263001)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020018",
+    "name": "Sangeeta Kunwar",
+    "rollNo": "24090020018",
+    "enrolmentNo": "570",
+    "fatherName": "Krishna Singh",
+    "motherName": "Rekha Devi",
+    "dob": "2009-04-01",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9639460150",
+    "email": "www.sangeetakunwar@gmail.com",
+    "aadharNumber": "548326898457",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-24090020019",
+    "name": "Tarun Giri",
+    "rollNo": "24090020019",
+    "enrolmentNo": "567",
+    "fatherName": "Rambir Giri",
+    "motherName": "Sarita Giri",
+    "dob": "2004-06-28",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9528542278",
+    "email": "teamindiatgls5412@gmail.com",
+    "aadharNumber": "984652400133",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022001",
+    "name": "Ashish Tamta",
+    "rollNo": "25090022001",
+    "enrolmentNo": "646",
+    "fatherName": "Premlal",
+    "motherName": "Guddi Devi",
+    "dob": "2006-07-10",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "8126277240",
+    "email": "tamta420ct@gmail.com",
+    "aadharNumber": "236015613277",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022002",
+    "name": "Harshvardhan Singh Patni",
+    "rollNo": "25090022002",
+    "enrolmentNo": "645",
+    "fatherName": "Kamal Singh Patni",
+    "motherName": "Janki Patni",
+    "dob": "2008-03-16",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9045111018",
+    "email": "harshvardhansinghpatni@gmail.com",
+    "aadharNumber": "692505784587",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022003",
+    "name": "Pankaj Bhatt",
+    "rollNo": "25090022003",
+    "enrolmentNo": "644",
+    "fatherName": "Devi Datt Bhatt",
+    "motherName": "Shanti Devi",
+    "dob": "2008-03-24",
+    "branch": "Civil",
+    "year": 3,
+    "semester": 5,
+    "batch": "2024-2027",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8006564904",
+    "email": "pankubhatt336@gmail.com",
+    "aadharNumber": "429308245423",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 68.0,
+        "cgpa": 7.2
+      },
+      {
+        "semester": 2,
+        "percentage": 70.5,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 3,
+        "percentage": 73.0,
+        "cgpa": 7.6
+      },
+      {
+        "semester": 4,
+        "percentage": 75.2,
+        "cgpa": 7.8
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050001",
+    "name": "Abhay",
+    "rollNo": "25090050001",
+    "enrolmentNo": "588",
+    "fatherName": "Vineet",
+    "motherName": "Neelam",
+    "dob": "2006-02-25",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7060679831",
+    "email": "abhay@gmail.com",
+    "aadharNumber": "404912774796",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050002",
+    "name": "Aditya Saxena",
+    "rollNo": "25090050002",
+    "enrolmentNo": "605",
+    "fatherName": "Rakesh Saxena",
+    "motherName": "Vandana Saxena",
+    "dob": "2008-06-13",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "8006777320",
+    "email": "saxenaadtiya@gmail.com",
+    "aadharNumber": "873024541596",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050003",
+    "name": "Anil Pandey",
+    "rollNo": "25090050003",
+    "enrolmentNo": "599",
+    "fatherName": "Ram Dutt Pandey",
+    "motherName": "Kalwati Devi",
+    "dob": "2008-04-10",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8534806097",
+    "email": "pandeyanil2621q@gmail.com",
+    "aadharNumber": "827679846388",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050004",
+    "name": "Ankita Kushwaha",
+    "rollNo": "25090050004",
+    "enrolmentNo": "595",
+    "fatherName": "Mahesh Kushwaha",
+    "motherName": "Dropati Devi",
+    "dob": "2003-05-11",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "8954154733",
+    "email": "ankitakushwaha02002@gmail.com",
+    "aadharNumber": "975822762653",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050006",
+    "name": "Anshika Pandey",
+    "rollNo": "25090050006",
+    "enrolmentNo": "607",
+    "fatherName": "Jagdish Chandra Pandey",
+    "motherName": "Chandra Pandey",
+    "dob": "2007-04-10",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9368086692",
+    "email": "anshikapandey@gmail.com",
+    "aadharNumber": "777135025691",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050007",
+    "name": "Gagan Pilkhwal",
+    "rollNo": "25090050007",
+    "enrolmentNo": "604",
+    "fatherName": "Virendra Singh",
+    "motherName": "Khasti Devi",
+    "dob": "2005-07-22",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8218143740",
+    "email": "pilkhwalgagan@gmail.com",
+    "aadharNumber": "417107541744",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050008",
+    "name": "Gurpreet Singh",
+    "rollNo": "25090050008",
+    "enrolmentNo": "615",
+    "fatherName": "Gurvinder Singh",
+    "motherName": "Rakshapal Kaur",
+    "dob": "2001-08-05",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8474918191",
+    "email": "sirf.jeet13@gmail.com",
+    "aadharNumber": "370167626581",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050011",
+    "name": "Khushi Singh",
+    "rollNo": "25090050011",
+    "enrolmentNo": "601",
+    "fatherName": "Babalu Singh",
+    "motherName": "Barkha Devi",
+    "dob": "2006-04-10",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9368246300",
+    "email": "skushisingh27@gmail.com",
+    "aadharNumber": "969779745456",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050012",
+    "name": "Km Kumkum",
+    "rollNo": "25090050012",
+    "enrolmentNo": "592",
+    "fatherName": "Mallu Prasad",
+    "motherName": "Devi",
+    "dob": "2002-11-14",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Female",
+    "phone": "7618395022",
+    "email": "kumkumkhatima@gmail.com",
+    "aadharNumber": "959926458996",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050015",
+    "name": "Muskan",
+    "rollNo": "25090050015",
+    "enrolmentNo": "616",
+    "fatherName": "Afjal Hussain",
+    "motherName": "Shabana Hussain",
+    "dob": "2005-07-25",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9557172763",
+    "email": "25090050015@ugip.ac.in",
+    "aadharNumber": "965689270670",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050016",
+    "name": "Nancy Sharma",
+    "rollNo": "25090050016",
+    "enrolmentNo": "608",
+    "fatherName": "Rajkumar",
+    "motherName": "Rekha Sharma",
+    "dob": "2004-09-13",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "9997243259",
+    "email": "nancysharma9021aa@gmail.com",
+    "aadharNumber": "816531155289",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050017",
+    "name": "Neelam Saxena",
+    "rollNo": "25090050017",
+    "enrolmentNo": "596",
+    "fatherName": "Dharamveer Saxena",
+    "motherName": "Babli Devi",
+    "dob": "2008-08-15",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "8077799273",
+    "email": "neelamn39397009@gmail.com",
+    "aadharNumber": "689221164872",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050018",
+    "name": "Palak",
+    "rollNo": "25090050018",
+    "enrolmentNo": "613",
+    "fatherName": "Ram Kumar",
+    "motherName": "Asha Devi",
+    "dob": "2007-01-09",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "7037190770",
+    "email": "pakak.saini@gmail.com",
+    "aadharNumber": "965723981077",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050019",
+    "name": "Pooja Kushwaha",
+    "rollNo": "25090050019",
+    "enrolmentNo": "594",
+    "fatherName": "Umesh Kushwaha",
+    "motherName": "Meena Devi",
+    "dob": "2003-10-22",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "7533958913",
+    "email": "poojakushwaha02003@gmail.com",
+    "aadharNumber": "264717864784",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050020",
+    "name": "Pradeep Singh",
+    "rollNo": "25090050020",
+    "enrolmentNo": "603",
+    "fatherName": "Jhankar Singh",
+    "motherName": "Kusum Devi",
+    "dob": "2007-06-05",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9068725566",
+    "email": "prad33p07@gmail.com",
+    "aadharNumber": "931801162304",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050021",
+    "name": "Priyanshi Rastogi",
+    "rollNo": "25090050021",
+    "enrolmentNo": "602",
+    "fatherName": "Rajesh Kumar Rastogi",
+    "motherName": "Arti Rastogi",
+    "dob": "2007-07-29",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "9675646266",
+    "email": "25090050021@ugip.ac.in",
+    "aadharNumber": "943674282435",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050022",
+    "name": "Sagar Garkoti",
+    "rollNo": "25090050022",
+    "enrolmentNo": "586",
+    "fatherName": "Amarnath",
+    "motherName": "Asha Garkoti",
+    "dob": "2007-08-24",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9719616117",
+    "email": "sagargarkoti50@gmail.com",
+    "aadharNumber": "560079553651",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050023",
+    "name": "Shahzil Ansari",
+    "rollNo": "25090050023",
+    "enrolmentNo": "598",
+    "fatherName": "Abdul Gaffar",
+    "motherName": "Shaista Praveen",
+    "dob": "2008-11-29",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9528558672",
+    "email": "sagargarkoti50@gmail.com",
+    "aadharNumber": "574159500546",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050024",
+    "name": "Shivansh Rastogi",
+    "rollNo": "25090050024",
+    "enrolmentNo": "611",
+    "fatherName": "Rajiv Chandra Rastogi",
+    "motherName": "Seema Rastogi",
+    "dob": "2007-08-13",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9389009624",
+    "email": "rastogishivansh7812@gmail.com",
+    "aadharNumber": "555725874145",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050025",
+    "name": "Umesh Pandey",
+    "rollNo": "25090050025",
+    "enrolmentNo": "590",
+    "fatherName": "Kailash Chandra Pandey",
+    "motherName": "Lata Pandey",
+    "dob": "2009-01-07",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "EWS",
+    "gender": "Male",
+    "phone": "7505307952",
+    "email": "up9377764@gmail.com",
+    "aadharNumber": "552826393453",
+    "fullAddress": "Pantnagar, U.S.NAGAR, UTTARAKHAND (PIN: 263145)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050026",
+    "name": "Uvais",
+    "rollNo": "25090050026",
+    "enrolmentNo": "587",
+    "fatherName": "Alauddin",
+    "motherName": "Zohru Bee",
+    "dob": "2007-07-07",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9997286137",
+    "email": "us4916043@gmail.com",
+    "aadharNumber": "972135711103",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050028",
+    "name": "Vanshika Saxena",
+    "rollNo": "25090050028",
+    "enrolmentNo": "609",
+    "fatherName": "Sushil Saxena",
+    "motherName": "Shikha",
+    "dob": "2010-03-12",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Female",
+    "phone": "9368891561",
+    "email": "kferoj495@gmail.com",
+    "aadharNumber": "227094292056",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090050029",
+    "name": "Yogita Garkoti",
+    "rollNo": "25090050029",
+    "enrolmentNo": "597",
+    "fatherName": "Rewadhar Garkoti",
+    "motherName": "Ganga Devi",
+    "dob": "2008-06-01",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9411952443",
+    "email": "yogitagarkoti@gmail.com",
+    "aadharNumber": "643786992087",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052001",
+    "name": "Alok Singh Bohra",
+    "rollNo": "25090052001",
+    "enrolmentNo": "700",
+    "fatherName": "Rajendra Singh Bohra",
+    "motherName": "Bachi Devi",
+    "dob": "2009-03-01",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9917025924",
+    "email": "bohraamit04@gmail.com",
+    "aadharNumber": "672103942838",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262528)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052002",
+    "name": "Mahima Bhandari",
+    "rollNo": "25090052002",
+    "enrolmentNo": "699",
+    "fatherName": "Vijay Singh Bhandari",
+    "motherName": "Sunita Devi",
+    "dob": "2008-01-01",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "9012773186",
+    "email": "bhandarimahima160@gmail.com",
+    "aadharNumber": "990289757765",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052003",
+    "name": "Rahul Singh",
+    "rollNo": "25090052003",
+    "enrolmentNo": "701",
+    "fatherName": "Naresh Singh",
+    "motherName": "Anju Devi",
+    "dob": "2008-04-26",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9012965889",
+    "email": "rahulsingh@gmail.com",
+    "aadharNumber": "629020001273",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052004",
+    "name": "Ritik Nath Goswami",
+    "rollNo": "25090052004",
+    "enrolmentNo": "707",
+    "fatherName": "Vishnu Nath Goswami",
+    "motherName": "Asha Devi",
+    "dob": "2008-04-19",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9027728711",
+    "email": "ritikgoswami654@gmail.com",
+    "aadharNumber": "874818796802",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052005",
+    "name": "Shivam Sharma",
+    "rollNo": "25090052005",
+    "enrolmentNo": "655",
+    "fatherName": "Hemant Sharma",
+    "motherName": "Hemlata Sharma",
+    "dob": "2007-12-05",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7456009729",
+    "email": "shivasharma@gmail.com",
+    "aadharNumber": "218562512845",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052006",
+    "name": "Vikram Singh",
+    "rollNo": "25090052006",
+    "enrolmentNo": "698",
+    "fatherName": "Satypal",
+    "motherName": "Khema Devi",
+    "dob": "2008-12-13",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9458142609",
+    "email": "rautela1312@gmail.com",
+    "aadharNumber": "769484621789",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      },
+      {
+        "semester": 2,
+        "percentage": 72.5,
+        "cgpa": 7.6
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052007",
+    "name": "Aditya Singh",
+    "rollNo": "25090052007",
+    "enrolmentNo": "702",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-08-29",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Lateral Entry",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9359563835",
+    "email": "singhaditya99157@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052008",
+    "name": "Anoop Kumar",
+    "rollNo": "25090052008",
+    "enrolmentNo": "614",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2005-07-11",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Lateral Entry",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9758505203",
+    "email": "anoopkumar110712@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052009",
+    "name": "Mahesh Yadav",
+    "rollNo": "25090052009",
+    "enrolmentNo": "610",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-08-04",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Lateral Entry",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9651888228",
+    "email": "maheshtnk820@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      }
+    ]
+  },
+  {
+    "id": "stu-25090052010",
+    "name": "Uvaish Ansari",
+    "rollNo": "25090052010",
+    "enrolmentNo": "600",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-02-20",
+    "branch": "CSE",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Lateral Entry",
+    "category": "General",
+    "gender": "Male",
+    "phone": "8192912283",
+    "email": "kferoj495@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 70.0,
+        "cgpa": 7.4
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020001",
+    "name": "Aakash Singh",
+    "rollNo": "25090020001",
+    "enrolmentNo": "637",
+    "fatherName": "Satendra Singh",
+    "motherName": "Munni Devi",
+    "dob": "2006-07-09",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9760686960",
+    "email": "aakashsingh28173@gmail.com",
+    "aadharNumber": "685480158229",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020003",
+    "name": "Aditya Negi",
+    "rollNo": "25090020003",
+    "enrolmentNo": "624",
+    "fatherName": "Bishan Singh Negi",
+    "motherName": "Deepa Negi",
+    "dob": "2007-07-21",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9761064694",
+    "email": "25090020003@ugip.ac.in",
+    "aadharNumber": "584472961381",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020004",
+    "name": "Ankush Bhardwaj",
+    "rollNo": "25090020004",
+    "enrolmentNo": "631",
+    "fatherName": "Jitendra Kumar",
+    "motherName": "Kunti Devi",
+    "dob": "2002-09-04",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9719966073",
+    "email": "ankushb2003@gmail.com",
+    "aadharNumber": "985199782095",
+    "fullAddress": "Haldwani, Nanital, UTTARAKHAND (PIN: 263139)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020007",
+    "name": "Babita Dhami",
+    "rollNo": "25090020007",
+    "enrolmentNo": "627",
+    "fatherName": "Bahadur Singh Dhami",
+    "motherName": "Janki Devi",
+    "dob": "2008-01-19",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "7983389187",
+    "email": "babitadhami@gmail.com",
+    "aadharNumber": "630938016741",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020008",
+    "name": "Darshil Pandey",
+    "rollNo": "25090020008",
+    "enrolmentNo": "618",
+    "fatherName": "Anil Pandey",
+    "motherName": "Maheswary Pandey",
+    "dob": "2008-01-26",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9368980219",
+    "email": "darshilpandey28@gmail.com",
+    "aadharNumber": "767140414837",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020010",
+    "name": "Himesh Singh",
+    "rollNo": "25090020010",
+    "enrolmentNo": "634",
+    "fatherName": "Naveen Singh",
+    "motherName": "Janki Devi",
+    "dob": "2008-04-15",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9286109851",
+    "email": "himanshubarshwas15@gmail.com",
+    "aadharNumber": "820577765504",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020013",
+    "name": "Kartik Valmiki",
+    "rollNo": "25090020013",
+    "enrolmentNo": "641",
+    "fatherName": "Shyam Singh Valmiki",
+    "motherName": "Anita",
+    "dob": "2008-03-12",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "9119012986",
+    "email": "rajkartik336@gmail.com",
+    "aadharNumber": "213613134674",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020014",
+    "name": "Laxman",
+    "rollNo": "25090020014",
+    "enrolmentNo": "625",
+    "fatherName": "Rajendra Kumar",
+    "motherName": "Hema Devi",
+    "dob": "2006-04-10",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "8755268813",
+    "email": "laxman262309@gmail.com",
+    "aadharNumber": "32880312602",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020015",
+    "name": "Mohit Bohra",
+    "rollNo": "25090020015",
+    "enrolmentNo": "642",
+    "fatherName": "Himmat Singh Bohra",
+    "motherName": "Anita Bohra",
+    "dob": "2007-01-07",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8954521643",
+    "email": "mb0900045@gmail.com",
+    "aadharNumber": "634853489977",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020016",
+    "name": "Mohit Prasad",
+    "rollNo": "25090020016",
+    "enrolmentNo": "632",
+    "fatherName": "Narayan Ram",
+    "motherName": "Kalawati Devi",
+    "dob": "2007-08-26",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "9761939231",
+    "email": "mohitprasad47@gmail.com",
+    "aadharNumber": "423201179163",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020017",
+    "name": "Rakshit Kaloni",
+    "rollNo": "25090020017",
+    "enrolmentNo": "629",
+    "fatherName": "Harish Chandra Kaloni",
+    "motherName": "Geeta Kaloni",
+    "dob": "2009-10-11",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9720419779",
+    "email": "chkaloni@gmail.com",
+    "aadharNumber": "313390503997",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020019",
+    "name": "Robin Singh Mehta",
+    "rollNo": "25090020019",
+    "enrolmentNo": "635",
+    "fatherName": "Suresh Singh",
+    "motherName": "Munni Devi",
+    "dob": "2008-08-05",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "705578223",
+    "email": "09robinmehta@gmail.com",
+    "aadharNumber": "367481914513",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020020",
+    "name": "Rohit Pandey",
+    "rollNo": "25090020020",
+    "enrolmentNo": "620",
+    "fatherName": "Dinesh Chandra Pandey",
+    "motherName": "Hema Pandey",
+    "dob": "2005-09-07",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "8477098833",
+    "email": "rohitpandey@gmail.com",
+    "aadharNumber": "891507831095",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020021",
+    "name": "Sanjay Dutt Joshi",
+    "rollNo": "25090020021",
+    "enrolmentNo": "619",
+    "fatherName": "Keshav Dutt Joshi",
+    "motherName": "Lalita Devi",
+    "dob": "2007-03-06",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9411319239",
+    "email": "sumitjoshi0008.sy@gmail.com",
+    "aadharNumber": "895482813047",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020022",
+    "name": "Sumit Bohra",
+    "rollNo": "25090020022",
+    "enrolmentNo": "636",
+    "fatherName": "Mahesh Bohra",
+    "motherName": "Chanchala Devi",
+    "dob": "2009-08-08",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "6395587182",
+    "email": "boharsumit79@gmail.com",
+    "aadharNumber": "800654989501",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020023",
+    "name": "Sumit Mahar",
+    "rollNo": "25090020023",
+    "enrolmentNo": "633",
+    "fatherName": "Suresh Singh Mahar",
+    "motherName": "Mamta Mahar",
+    "dob": "2008-02-11",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9027372569",
+    "email": "maharsumit9643@gmail.com",
+    "aadharNumber": "399088784653",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020024",
+    "name": "Sumit Maurya",
+    "rollNo": "25090020024",
+    "enrolmentNo": "638",
+    "fatherName": "Kishan Maurya",
+    "motherName": "Puspa Devi",
+    "dob": "2007-06-15",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9389812488",
+    "email": "sm7411349@gmail.com",
+    "aadharNumber": "843484762940",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020025",
+    "name": "Uday Chand",
+    "rollNo": "25090020025",
+    "enrolmentNo": "643",
+    "fatherName": "Surendra Chand",
+    "motherName": "Rekha Chand",
+    "dob": "2007-04-09",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9997237240",
+    "email": "udaychand8086@gmail.com",
+    "aadharNumber": "700875265899",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090020026",
+    "name": "Vishal Kumar Morya",
+    "rollNo": "25090020026",
+    "enrolmentNo": "639",
+    "fatherName": "Vijay Pal Mourya",
+    "motherName": "Bhagwati Devi",
+    "dob": "2007-08-15",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "9286466614",
+    "email": "pvijaypal08@gmail.com",
+    "aadharNumber": "951657051626",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022001",
+    "name": "Anshu Samant",
+    "rollNo": "25090022001",
+    "enrolmentNo": "696",
+    "fatherName": "Kalyan Singh Samant",
+    "motherName": "Rekha Devi",
+    "dob": "2008-09-08",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Female",
+    "phone": "7906307725",
+    "email": "samantanshu4@gmail.com",
+    "aadharNumber": "665473955385",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022002",
+    "name": "Kartik Joshi",
+    "rollNo": "25090022002",
+    "enrolmentNo": "693",
+    "fatherName": "Dinesh Chandra Joshi",
+    "motherName": "Prema Joshi",
+    "dob": "2008-03-12",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9560365997",
+    "email": "kj956036997@gmail.com",
+    "aadharNumber": "317420705411",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022003",
+    "name": "Pankaj Bhatt",
+    "rollNo": "25090022003",
+    "enrolmentNo": "694",
+    "fatherName": "Ravish Chandra Bhatt",
+    "motherName": "Bhawana Devi",
+    "dob": "2009-05-19",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "7983423677",
+    "email": "pankajbhatt772008@gmail.com",
+    "aadharNumber": "545054240295",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022004",
+    "name": "Sachin Singh Chauhan",
+    "rollNo": "25090022004",
+    "enrolmentNo": "695",
+    "fatherName": "Balwant Singh Chauhan",
+    "motherName": "Deepa Devi",
+    "dob": "2009-08-05",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9012645017",
+    "email": "sachinsinghchauhan@gmail.com",
+    "aadharNumber": "819066835236",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262580)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022005",
+    "name": "Radhe Singh",
+    "rollNo": "25090022005",
+    "enrolmentNo": "707",
+    "fatherName": "Vishwadev Singh",
+    "motherName": "Parwati Devi",
+    "dob": "2007-06-25",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "UR",
+    "gender": "Male",
+    "phone": "9528929989",
+    "email": "radhesingh1028@gmail.com",
+    "aadharNumber": "926736376410",
+    "fullAddress": "Banbasa, Champawat, Uttarakhand (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022006",
+    "name": "Sachn Gangwar",
+    "rollNo": "25090022006",
+    "enrolmentNo": "702",
+    "fatherName": "Shishupal",
+    "motherName": "Sunita Devi",
+    "dob": "2008-04-26",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "OBC",
+    "gender": "Male",
+    "phone": "8126080600",
+    "email": "sg4945771@gmail.com",
+    "aadharNumber": "385452829428",
+    "fullAddress": "Banbasa, Champawat, Uttarakhand (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022007",
+    "name": "Amit",
+    "rollNo": "25090022007",
+    "enrolmentNo": "697",
+    "fatherName": "Satypal",
+    "motherName": "Guddi Devi",
+    "dob": "2005-03-15",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Regular",
+    "category": "SC",
+    "gender": "Male",
+    "phone": "6395814248",
+    "email": "amitkumar9841@gmail.com",
+    "aadharNumber": "534547959188",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      },
+      {
+        "semester": 2,
+        "percentage": 69.8,
+        "cgpa": 7.3
+      }
+    ]
+  },
+  {
+    "id": "stu-25090022008",
+    "name": "Kamlesh Bharti",
+    "rollNo": "25090022008",
+    "enrolmentNo": "623",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "1997-05-10",
+    "branch": "Civil",
+    "year": 2,
+    "semester": 3,
+    "batch": "2025-2028",
+    "entryType": "Lateral Entry",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7251879442",
+    "email": "skbharti275@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": [
+      {
+        "semester": 1,
+        "percentage": 67.5,
+        "cgpa": 7.1
+      }
+    ]
+  },
+  {
+    "id": "stu-26090050001",
+    "name": "Mayank Maurya",
+    "rollNo": "26090050001",
+    "enrolmentNo": "653",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2009-06-26",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9720777479",
+    "email": "shubhamkushwaha41337@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Nausar, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050002",
+    "name": "Khushi",
+    "rollNo": "26090050002",
+    "enrolmentNo": "654",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2009-10-06",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "7500668384",
+    "email": "brijmohanrathour@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Majhola, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050003",
+    "name": "Shivam Sharma",
+    "rollNo": "26090050003",
+    "enrolmentNo": "655",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-12-05",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9012783788",
+    "email": "shivam9012sharma@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Bisalpur, PILIBHIT, UTTAR PRADESH (PIN: 262201)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050004",
+    "name": "Shaurya Joshi",
+    "rollNo": "26090050004",
+    "enrolmentNo": "656",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2011-10-19",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9458139856",
+    "email": "renujoshi123stf@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Karki Farm, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050005",
+    "name": "Yuvraj Singh",
+    "rollNo": "26090050005",
+    "enrolmentNo": "657",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-09-23",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "8279317655",
+    "email": "yuvrajsinghys7778@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Nausar, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050006",
+    "name": "Trilok-Singh Chauhan",
+    "rollNo": "26090050006",
+    "enrolmentNo": "658",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-08-31",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7351830779",
+    "email": "rishichauhan3035@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khetalasanda \nkham, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050007",
+    "name": "Kusum Khati",
+    "rollNo": "26090050007",
+    "enrolmentNo": "659",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-01-22",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "9627464167",
+    "email": "kusumkhati9627@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Gaindakhali, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050008",
+    "name": "Vaishnavi Giri",
+    "rollNo": "26090050008",
+    "enrolmentNo": "660",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-11-11",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "9286004876",
+    "email": "vasishnavigiri@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050009",
+    "name": "Payal Kashyap",
+    "rollNo": "26090050009",
+    "enrolmentNo": "661",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-09-22",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "8923221887",
+    "email": "kashyapp9380@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050010",
+    "name": "Navita",
+    "rollNo": "26090050010",
+    "enrolmentNo": "662",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2012-06-04",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "7817854937",
+    "email": "navita@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Bamangaon, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050011",
+    "name": "Pranshu Yadav",
+    "rollNo": "26090050011",
+    "enrolmentNo": "663",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-09-16",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9870682712",
+    "email": "pranshuyadav16@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050012",
+    "name": "Abhishek Kushwah",
+    "rollNo": "26090050012",
+    "enrolmentNo": "664",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-01-01",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9259166029",
+    "email": "26090050012@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050013",
+    "name": "Monika Bhatiya",
+    "rollNo": "26090050013",
+    "enrolmentNo": "665",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-01-07",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "9084806021",
+    "email": "bhatiyamonika78@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050014",
+    "name": "Neeraj -Singh Fartyal",
+    "rollNo": "26090050014",
+    "enrolmentNo": "666",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-10-04",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7452039595",
+    "email": "26090050014@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050015",
+    "name": "Deepak Jyal",
+    "rollNo": "26090050015",
+    "enrolmentNo": "667",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-07-13",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "8650724570",
+    "email": "jyaldeepak448@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050016",
+    "name": "Ayush-Singh Adhikari",
+    "rollNo": "26090050016",
+    "enrolmentNo": "668",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-07-27",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "8630265529",
+    "email": "26090050016@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050017",
+    "name": "Laxmi",
+    "rollNo": "26090050017",
+    "enrolmentNo": "669",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2010-09-08",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "9410373056",
+    "email": "26090050017@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050018",
+    "name": "Saniya",
+    "rollNo": "26090050018",
+    "enrolmentNo": "670",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2009-07-23",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "7466902234",
+    "email": "26090050018@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050019",
+    "name": "Ritesh",
+    "rollNo": "26090050019",
+    "enrolmentNo": "671",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2010-06-22",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7453958651",
+    "email": "kesavsagar62@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050020",
+    "name": "Abhishek Chaudhary",
+    "rollNo": "26090050020",
+    "enrolmentNo": "672",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-08-07",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9548050474",
+    "email": "abhishekchaudary943@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050021",
+    "name": "Vanshika Chand",
+    "rollNo": "26090050021",
+    "enrolmentNo": "673",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-11-14",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "6398262227",
+    "email": "26090050021@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Banbasa, CHAMPAWAT, UTTARAKHAND (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050022",
+    "name": "Manshi",
+    "rollNo": "26090050022",
+    "enrolmentNo": "674",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2005-03-23",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "6396619228",
+    "email": "26090050022@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050023",
+    "name": "Avantika Arya",
+    "rollNo": "26090050023",
+    "enrolmentNo": "675",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-07-21",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "8126624985",
+    "email": "avantikanu18@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Champawat, CHAMPAWAT, UTTARAKHAND (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050024",
+    "name": "Karan-Singh Khati",
+    "rollNo": "26090050024",
+    "enrolmentNo": "676",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-06-21",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7820090912",
+    "email": "singhkaran36@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050025",
+    "name": "Jay Kashyap",
+    "rollNo": "26090050025",
+    "enrolmentNo": "677",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-11-22",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9012206523",
+    "email": "keshanlalkashyap@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050026",
+    "name": "Shah-Alam Ansari",
+    "rollNo": "26090050026",
+    "enrolmentNo": "678",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2026-01-25",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9412903143",
+    "email": "shahalamansari3@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050027",
+    "name": "Vinita Kharkwal",
+    "rollNo": "26090050027",
+    "enrolmentNo": "679",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-03-24",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "8954319934",
+    "email": "viniktakharkwal24@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, CHAMPAWAT, UTTARAKHAND (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090050028",
+    "name": "Piyush Kumar",
+    "rollNo": "26090050028",
+    "enrolmentNo": "680",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2008-01-15",
+    "branch": "CSE",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "8534094787",
+    "email": "rp7865050@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Amaun, U.S.NAGAR, UTTARAKHAND (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020001",
+    "name": "Aditya Singh",
+    "rollNo": "26090020001",
+    "enrolmentNo": "685",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2011-03-30",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9027387930",
+    "email": "aditya18261@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020002",
+    "name": "Ayush Kumar",
+    "rollNo": "26090020002",
+    "enrolmentNo": "688",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-12-13",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9389006218",
+    "email": "anchuanchu619@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Phagpur, Champawat, Uttarakhand (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020003",
+    "name": "Jay Joshi",
+    "rollNo": "26090020003",
+    "enrolmentNo": "690",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2009-08-16",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9759628732",
+    "email": "26090020003@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Kichha, Udham Singh Nagar, Uttarakhand (PIN: 263148)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020004",
+    "name": "Kapil Joshi",
+    "rollNo": "26090020004",
+    "enrolmentNo": "682",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2006-06-26",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7579122130",
+    "email": "kj5223852@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Champawat, Champawat, Uttarakhand (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020005",
+    "name": "Mahak",
+    "rollNo": "26090020005",
+    "enrolmentNo": "681",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-09-06",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "9557525423",
+    "email": "ranamahak666@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, Udham Singh Nagar, Uttarakhand (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020006",
+    "name": "Mahesh-Singh Rawal",
+    "rollNo": "26090020006",
+    "enrolmentNo": "684",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-05-24",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9259120697",
+    "email": "maheshrawa2407@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Chandani, Champawat, Uttarakhand (PIN: 262310)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020007",
+    "name": "Nandani",
+    "rollNo": "26090020007",
+    "enrolmentNo": "683",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2007-11-02",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "8394860853",
+    "email": "kumarrajesh938@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Khatima, Udham Singh Nagar, Uttarakhand (PIN: 262308)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020008",
+    "name": "Pankaj",
+    "rollNo": "26090020008",
+    "enrolmentNo": "689",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2005-09-25",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9286435502",
+    "email": "pankajoshi077@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Champawat, Champawat, Uttarakhand (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020009",
+    "name": "Pawnesh -Singh Papola",
+    "rollNo": "26090020009",
+    "enrolmentNo": "692",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2009-08-01",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7906106015",
+    "email": "durgeshsinghpapola@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Almora, Almora, Uttarakhand (PIN: 263622)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020010",
+    "name": "Praveen Singh",
+    "rollNo": "26090020010",
+    "enrolmentNo": "686",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2011-02-08",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "7830035944",
+    "email": "26090020010@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Champawat, Champawat, Uttarakhand (PIN: 262523)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020011",
+    "name": "Soni",
+    "rollNo": "26090020011",
+    "enrolmentNo": "691",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2005-02-05",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Female",
+    "phone": "8447436234",
+    "email": "sonipatelsansi@gmail.com",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  },
+  {
+    "id": "stu-26090020012",
+    "name": "Virat",
+    "rollNo": "26090020012",
+    "enrolmentNo": "687",
+    "fatherName": "",
+    "motherName": "",
+    "dob": "2010-05-12",
+    "branch": "Civil",
+    "year": 1,
+    "semester": 1,
+    "batch": "2026-2029",
+    "entryType": "Regular",
+    "category": "General",
+    "gender": "Male",
+    "phone": "9761019047",
+    "email": "26090020012@ugip.ac.in",
+    "aadharNumber": "",
+    "fullAddress": "Tanakpur, Champawat, Uttarakhand (PIN: 262309)",
+    "recordStatus": "Active",
+    "studentPassword": "Student@123",
+    "semesters": []
+  }
+]

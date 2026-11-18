@@ -23,6 +23,7 @@ import {
   Globe,
   Check,
   FileSpreadsheet,
+  Smartphone,
 } from 'lucide-react';
 import { MySQLSchemaViewerModal } from '../common/MySQLSchemaViewerModal';
 import { AIStudyAssistantModal } from '../common/AIStudyAssistantModal';
@@ -39,10 +40,18 @@ interface NavbarProps {
   onOpenQRScanner: () => void;
   onBackToLanding?: () => void;
   onLogout?: () => void;
+  isMobilePreviewMode?: boolean;
+  onToggleMobilePreview?: () => void;
 }
 
 // Screen part: navbar.
-export const Navbar: React.FC<NavbarProps> = ({ onOpenQRScanner, onBackToLanding, onLogout }) => {
+export const Navbar: React.FC<NavbarProps> = ({
+  onOpenQRScanner,
+  onBackToLanding,
+  onLogout,
+  isMobilePreviewMode = false,
+  onToggleMobilePreview,
+}) => {
   const {
     currentUser,
     switchRole,
@@ -166,6 +175,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenQRScanner, onBackToLanding
 
             {/* Actions */}
             <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
+              {/* Laptop Phone View Mode Toggle Button */}
+              {onToggleMobilePreview && (
+                <button
+                  id="navbar-phone-preview-btn"
+                  onClick={onToggleMobilePreview}
+                  className={`px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-all cursor-pointer border shadow-2xs ${
+                    isMobilePreviewMode
+                      ? 'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-500 ring-2 ring-emerald-300 dark:ring-emerald-800'
+                      : 'bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900 text-indigo-700 dark:text-indigo-300 border-indigo-200 dark:border-indigo-800'
+                  }`}
+                  title={isMobilePreviewMode ? 'Exit Phone View / Back to Laptop View' : 'Preview Phone View (390px Mobile Viewport)'}
+                >
+                  <Smartphone className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
+                  <span className="hidden sm:inline font-extrabold">
+                    {isMobilePreviewMode ? '📱 Exit Phone View' : '📱 Phone View'}
+                  </span>
+                </button>
+              )}
+
               {/* Back to Gateway */}
               {onBackToLanding && (
                 <button

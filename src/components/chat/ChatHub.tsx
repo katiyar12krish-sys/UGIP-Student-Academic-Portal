@@ -521,7 +521,7 @@ const GroupEditor: React.FC<{ existing: ChatThread | null; onDone: (t: ChatThrea
   // An existing group: start from its members (the admin is always in every group, so not listed).
   useEffect(() => {
     if (!existing) return;
-    chatApi.members(existing.id).then((r) => { if (r.ok) setChosen(new Map(r.data.filter((p) => p.role !== 'admin').map((p) => [p.id, p]))); });
+    chatApi.members(existing.id).then((r) => { if (r.ok && Array.isArray(r.data)) setChosen(new Map(r.data.filter((p) => p.role !== 'admin').map((p) => [p.id, p]))); });
   }, [existing]);
   // Search people.
   useEffect(() => {
@@ -608,7 +608,7 @@ export const ChatHub: React.FC<{ onClose: () => void; onUnread?: () => void }> =
   // Loads the data from the server.
   const refresh = useCallback(async () => {
     const r = await chatApi.threads();
-    if (r.ok) { setThreads(r.data); setErr(''); onUnread?.(); } else setErr(r.error);
+    if (r.ok) { setThreads(Array.isArray(r.data) ? r.data : []); setErr(''); onUnread?.(); } else setErr(r.error);
   }, [onUnread]);
 
   // Runs automatically whenever these change: refresh.
@@ -621,7 +621,7 @@ export const ChatHub: React.FC<{ onClose: () => void; onUnread?: () => void }> =
     setPicking(false); setActive(r.data); refresh();
   };
 
-  const shown = (threads || []).filter((t) => (kind === 'all' || (kind === 'groups') === !!t.isGroup) && (!filter.trim() || `${t.other.name} ${t.other.label} ${t.aboutStudent?.name || ''}`.toLowerCase().includes(filter.trim().toLowerCase())));
+  const shown = (Array.isArray(threads) ? threads : []).filter((t) => (kind === 'all' || (kind === 'groups') === !!t.isGroup) && (!filter.trim() || `${t?.other?.name || ''} ${t?.other?.label || ''} ${t?.aboutStudent?.name || ''}`.toLowerCase().includes(filter.trim().toLowerCase())));
   // Group saved / deleted.
   const groupDone = (t: ChatThread | null) => { setGroupEdit(null); setActive(t); refresh(); };
   const activeFresh = active ? (threads || []).find((t) => t.id === active.id) || active : null;

@@ -46,6 +46,8 @@ import {
   Printer,
   UserCog,
   Target,
+  Menu,
+  KeyRound,
 } from 'lucide-react';
 import { PlacementPracticeCenter } from '../placement/PlacementPrep';   // placement practice / mock tests + resume ATS score
 import { MyProfileCard } from '../common/MyProfileCard';             // self-service: own details + own password
@@ -78,6 +80,7 @@ import { PreviousYearPaper } from '../../types';
 interface StudentDashboardProps {
   onOpenQRScanner: () => void;
   onLogout?: () => void;
+  forceMobileView?: boolean;
 }
 
 /** Shows a saved value, or a clear "not added yet" note. Never invents data (the old screen showed another student's numbers when a field was blank). */
@@ -88,7 +91,7 @@ const shown = (v: unknown) => (v === undefined || v === null || String(v).trim()
 const shownPct = (v: unknown) => { const t = String(v ?? '').replace(/%/g, '').trim(); return !t || /^n\/?a$/i.test(t) ? NOT_ADDED : /cgpa/i.test(t) ? t : `${t}%`; };
 
 // Screen part: student dashboard.
-export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScanner, onLogout }) => {
+export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScanner, onLogout, forceMobileView = false }) => {
   const {
     currentUser,
     users,
@@ -138,6 +141,20 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
     | 'ai-quiz-drill'
     | 'ai-tutor'
   >('overview');
+
+  // Mobile navigation state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const contentTopRef = useRef<HTMLDivElement>(null);
+
+  const handleSwitchTab = (tabId: any) => {
+    setActiveTab(tabId);
+    setMobileMenuOpen(false);
+    if (typeof window !== 'undefined' && window.innerWidth < 640) {
+      setTimeout(() => {
+        contentTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+  };
 
   // Is the 'my password' shown on screen? (true / false)
   const [showMyPassword, setShowMyPassword] = useState(false);
@@ -348,8 +365,49 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
     }
   };
 
+  const studentNavTabs = [
+    { id: 'overview', label: t.overview, icon: Layers, category: 'Academics' },
+    { id: 'my-profile', label: 'My Profile (edit)', icon: UserCog, category: 'Account' },
+    { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: 'Academics' },
+    { id: 'online-tests', label: `Online Tests (${onlineTestAssignments.filter(t => t.branch === currentUser.branch && t.year === currentUser.year).length})`, icon: Award, badge: 'Due', category: 'Assessment' },
+    { id: 'doubt-chat', label: `Doubt Resolution (Q&A)`, icon: MessageSquareQuote, badge: 'Live Chat', category: 'AI & Doubts' },
+    { id: 'class-materials', label: `Class Subject Materials (${myClassDispatches.length})`, icon: Send, badge: 'Direct', category: 'Academics' },
+    { id: 'material-hub', label: 'Document & Material Hub', icon: FolderDown, badge: 'Course PDFs', category: 'Academics' },
+    { id: 'exam-schedule', label: t.examSchedule, icon: Calendar, badge: 'Datesheet', category: 'Academics' },
+    { id: 'ubter-result', label: 'UBTER Result', icon: ExternalLink, badge: 'Official', category: 'Assessment' },
+    { id: 'my-qr-id', label: 'My Student QR & ID', icon: QrCode, category: 'Account' },
+    { id: 'timetable', label: t.timetable, icon: Clock, category: 'Academics' },
+    { id: 'practicals', label: t.practicals, icon: FlaskConical, category: 'Academics' },
+    { id: 'attendance', label: `${t.attendance} (${attStats.overallPercent}%)`, icon: QrCode, badge: `${attStats.overallPercent}%`, category: 'Assessment' },
+    { id: 'results', label: t.resultsMarks, icon: Award, category: 'Assessment' },
+    { id: 'placements', label: 'TPO Placement Portal', icon: Briefcase, badge: 'Jobs 2026', category: 'Career' },
+    { id: 'placement-prep', label: 'Placement Practice & Resume Score', icon: Target, badge: 'New', category: 'Career' },
+    { id: 'mock-interview', label: 'Mock Interview Portal', icon: Video, badge: 'Camera + AI', category: 'Career' },
+    { id: 'achievements', label: t.honorsGallery, icon: Trophy, category: 'Career' },
+    { id: 'pyq', label: 'Question Papers & Answer Keys', icon: Download, badge: 'UBTER 50M', category: 'Academics' },
+    { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Day 1 ➔ Today', category: 'Assessment' },
+    { id: 'ai-tutor', label: 'AI Study Saathi', icon: Sparkles, badge: '24/7 AI', category: 'AI & Doubts' },
+  ];
+
+  const quickTabs = [
+    { id: 'overview', label: '🏠 होम' },
+    { id: 'pyq', label: '📝 पेपर्स (50M)' },
+    { id: 'attendance', label: `📊 हाजिरी (${attStats.overallPercent}%)` },
+    { id: 'results', label: '🏆 मार्क्स' },
+    { id: 'timetable', label: '📅 टाइमटेबल' },
+    { id: 'syllabus', label: '📖 सिलेबस' },
+    { id: 'online-tests', label: '✍️ टेस्ट' },
+    { id: 'doubt-chat', label: '💬 डाउट्स' },
+    { id: 'material-hub', label: '📁 नोट्स' },
+    { id: 'ai-tutor', label: '🤖 AI साथी' },
+    { id: 'my-profile', label: '👤 प्रोफाइल' },
+  ];
+
+  const activeTabObj = studentNavTabs.find((t) => t.id === activeTab) || studentNavTabs[0];
+  const ActiveIcon = activeTabObj.icon;
+
   return (
-    <div id="student-dashboard-container" className="space-y-6">
+    <div id="student-dashboard-container" className="space-y-6 pb-24 sm:pb-8">
       <MyLoginCard />
       {/* Student Banner */}
       <div className="ugip-hero bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden">
@@ -475,9 +533,52 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
         </div>
       )}
 
-      <div className="sm:flex sm:gap-5 sm:items-start space-y-6 sm:space-y-0">
-      {/* Fixed sidebar navigation */}
-      <aside id="student-sidebar" className="ugip-menu flex flex-col overflow-y-auto overflow-x-hidden gap-1 p-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs max-h-72 sm:max-h-[calc(100vh-2rem)] sm:w-52 lg:w-64 sm:shrink-0 sm:sticky sm:top-4">
+      {/* MOBILE COMPACT NAVIGATION HEADER (< sm or forced phone view) */}
+      <div className={`${forceMobileView ? 'block' : 'sm:hidden'} space-y-2.5`}>
+        {/* Active Tab Bar + "All Tabs" button */}
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-3 shadow-xs flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900 flex items-center justify-center shrink-0 text-blue-600 dark:text-blue-400">
+              <ActiveIcon className="w-4 h-4" />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">Active Section</div>
+              <div className="text-xs font-black text-slate-900 dark:text-white truncate">{activeTabObj.label}</div>
+            </div>
+          </div>
+          <button
+            onClick={() => setMobileMenuOpen(true)}
+            className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-xs shrink-0 cursor-pointer"
+          >
+            <Menu className="w-3.5 h-3.5" />
+            <span>सभी मेनू ({studentNavTabs.length})</span>
+          </button>
+        </div>
+
+        {/* Quick Horizontal Carousel */}
+        <div className="flex items-center gap-1.5 overflow-x-auto py-1 px-0.5 no-scrollbar touch-pan-x">
+          {quickTabs.map((q) => {
+            const isActive = activeTab === q.id;
+            return (
+              <button
+                key={q.id}
+                onClick={() => handleSwitchTab(q.id)}
+                className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap shrink-0 transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-blue-600 text-white shadow-xs'
+                    : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700'
+                }`}
+              >
+                {q.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className={`${forceMobileView ? 'block' : 'sm:flex sm:gap-5 sm:items-start'} space-y-6 sm:space-y-0`}>
+      {/* Desktop sidebar navigation - Hidden on mobile */}
+      <aside id="student-sidebar" className={`ugip-menu ${forceMobileView ? 'hidden' : 'hidden sm:flex'} flex-col overflow-y-auto overflow-x-hidden gap-1 p-2 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs sm:max-h-[calc(100vh-2rem)] sm:w-52 lg:w-64 sm:shrink-0 sm:sticky sm:top-4`}>
         <div className="px-3 pt-2 pb-3">
           <div className="text-[10px] font-extrabold tracking-widest text-blue-800 dark:text-blue-300 uppercase">Student Portal</div>
           <div className="text-sm font-extrabold text-slate-900 dark:text-white truncate">{currentUser.name}</div>
@@ -486,36 +587,14 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
             <div className="text-emerald-700 dark:text-emerald-400">{currentUser.year === 1 ? '1st' : currentUser.year === 2 ? '2nd' : '3rd'} Year • {currentUser.branch === 'Civil' ? 'Civil' : 'Computer'}</div>
           </div>
         </div>
-        {[
-          { id: 'overview', label: t.overview, icon: Layers },
-          { id: 'my-profile', label: 'My Profile (edit)', icon: UserCog },
-          { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise' },
-          { id: 'online-tests', label: `Online Tests (${onlineTestAssignments.filter(t => t.branch === currentUser.branch && t.year === currentUser.year).length})`, icon: Award, badge: 'Due' },
-          { id: 'doubt-chat', label: `Doubt Resolution (Q&A)`, icon: MessageSquareQuote, badge: 'Live Chat' },
-          { id: 'class-materials', label: `Class Subject Materials (${myClassDispatches.length})`, icon: Send, badge: 'Direct' },
-          { id: 'material-hub', label: 'Document & Material Hub', icon: FolderDown, badge: 'Course PDFs' },
-          { id: 'exam-schedule', label: t.examSchedule, icon: Calendar, badge: 'Datesheet' },
-          { id: 'ubter-result', label: 'UBTER Result', icon: ExternalLink, badge: 'Official' },
-          { id: 'my-qr-id', label: 'My Student QR & ID', icon: QrCode },
-          { id: 'timetable', label: t.timetable, icon: Clock },
-          { id: 'practicals', label: t.practicals, icon: FlaskConical },
-          { id: 'attendance', label: `${t.attendance} (${attStats.overallPercent}%)`, icon: QrCode },
-          { id: 'results', label: t.resultsMarks, icon: Award },
-          { id: 'placements', label: 'TPO Placement Portal', icon: Briefcase, badge: 'Jobs 2026' },
-          { id: 'placement-prep', label: 'Placement Practice & Resume Score', icon: Target, badge: 'New' },
-          { id: 'mock-interview', label: 'Mock Interview Portal', icon: Video, badge: 'Camera + AI' },
-          { id: 'achievements', label: t.honorsGallery, icon: Trophy },
-          { id: 'pyq', label: 'Question Papers & Answer Keys', icon: Download },
-          { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Day 1 ➔ Today' },
-          { id: 'ai-tutor', label: 'AI Study Saathi', icon: Sparkles, badge: '24/7 AI' },
-        ].map((tab) => {
+        {studentNavTabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
           return (
             <button
               key={tab.id}
               id={`student-tab-${tab.id}`}
-              onClick={() => setActiveTab(tab.id as any)}
+              onClick={() => handleSwitchTab(tab.id as any)}
               className={`px-3.5 py-2.5 w-full text-left rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 whitespace-normal cursor-pointer ${
                 isActive
                   ? 'ugip-menu-on'
@@ -538,7 +617,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       </aside>
 
       {/* Content area */}
-      <div className="flex-1 min-w-0 space-y-6">
+      <div ref={contentTopRef} className="flex-1 min-w-0 space-y-6">
 
       {/* Tab "overview" */}
       {activeTab === 'overview' && (
@@ -586,7 +665,35 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       )}
 
       {/* 1. ONLINE TESTS & TIMED ASSIGNMENTS */}
-      {activeTab === 'my-profile' && <MyProfileCard showPassword={false} />}
+      {activeTab === 'my-profile' && (
+        <div className="space-y-4">
+          <div className="p-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-200 dark:border-amber-800 rounded-2xl flex flex-wrap items-center justify-between gap-3 shadow-xs">
+            <div>
+              <h4 className="font-bold text-sm text-amber-900 dark:text-amber-200 flex items-center gap-2">
+                <KeyRound className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+                पासवर्ड सेटिंग्स एवं रीसेट (Password Self-Service)
+              </h4>
+              <p className="text-xs text-amber-700 dark:text-amber-300 mt-0.5">
+                आप नीचे दिए गए फॉर्म से अपना पासवर्ड बदल सकते हैं अथवा पंजीकृत मोबाइल पर SMS ओटीपी द्वारा रीसेट कर सकते हैं।
+              </p>
+            </div>
+            <button
+              onClick={() => {
+                setOtpPhoneInput(currentUser.phone || '');
+                setOtpStage('request');
+                setOtpFeedback(null);
+                setOtpError(null);
+                setShowPasswordOtpModal(true);
+              }}
+              className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow-md cursor-pointer transition-colors flex items-center gap-1.5"
+            >
+              <KeyRound className="w-3.5 h-3.5" />
+              <span>SMS OTP द्वारा पासवर्ड रीसेट करें</span>
+            </button>
+          </div>
+          <MyProfileCard showPassword={true} />
+        </div>
+      )}
       {activeTab === 'placement-prep' && <PlacementPracticeCenter />}
 
       {activeTab === 'online-tests' && (
@@ -709,7 +816,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {activeTab === 'results' && (
         <div className="space-y-4">
           {tests.map((t) => {
-            const myMark = t.results.find((r) => r.studentId === currentUser.id);
+            const myMark = (t.results || []).find((r) => r.studentId === currentUser.id);
             if (!myMark) return null;
             return (
               <div
@@ -1530,6 +1637,143 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       )}
       </div>
       </div>
+
+      {/* MOBILE ALL-TABS SLIDE-OVER DRAWER MODAL */}
+      {mobileMenuOpen && (
+        <div className={`fixed inset-0 z-50 flex items-end ${forceMobileView ? '' : 'sm:hidden'} bg-slate-950/70 backdrop-blur-xs animate-in fade-in duration-150`}>
+          <div className="w-full bg-white dark:bg-slate-900 rounded-t-3xl max-h-[85vh] flex flex-col border-t border-slate-200 dark:border-slate-800 shadow-2xl animate-in slide-in-from-bottom duration-200">
+            {/* Drawer Drag handle & Header */}
+            <div className="p-4 pb-2 border-b border-slate-200 dark:border-slate-800 shrink-0">
+              <div className="w-12 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-3" />
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
+                    <span>📱 छात्र पोर्टल मेनू</span>
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+                      {studentNavTabs.length} ऑप्शन्स
+                    </span>
+                  </h3>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                    {currentUser.name} • Year {currentUser.year} {currentUser.branch}
+                  </p>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Scrollable List of Tabs grouped by category */}
+            <div className="overflow-y-auto p-4 space-y-4 flex-1">
+              {['Academics', 'Assessment', 'AI & Doubts', 'Career', 'Account'].map((cat) => {
+                const catTabs = studentNavTabs.filter((t) => t.category === cat);
+                if (catTabs.length === 0) return null;
+                const catLabel =
+                  cat === 'Academics'
+                    ? '📚 शैक्षणिक एवं अध्ययन (Academics & Study)'
+                    : cat === 'Assessment'
+                    ? '📊 हाजिरी, परीक्षा एवं रिजल्ट्स'
+                    : cat === 'AI & Doubts'
+                    ? '🤖 AI टूल्स एवं डाउट समाधान'
+                    : cat === 'Career'
+                    ? '💼 करियर, प्लेसमेंट व इंटरव्यू'
+                    : '👤 मेरा अकाउंट एवं सुरक्षा';
+
+                return (
+                  <div key={cat} className="space-y-1.5">
+                    <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
+                      {catLabel}
+                    </div>
+                    <div className="grid grid-cols-1 gap-1">
+                      {catTabs.map((tab) => {
+                        const Icon = tab.icon;
+                        const isActive = activeTab === tab.id;
+                        return (
+                          <button
+                            key={tab.id}
+                            onClick={() => handleSwitchTab(tab.id)}
+                            className={`w-full p-2.5 rounded-xl text-left text-xs font-bold flex items-center justify-between transition-all cursor-pointer ${
+                              isActive
+                                ? 'bg-blue-600 text-white shadow-xs'
+                                : 'bg-slate-50 dark:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                            }`}
+                          >
+                            <div className="flex items-center gap-2.5 min-w-0">
+                              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
+                              <span className="truncate">{tab.label}</span>
+                            </div>
+                            {tab.badge && (
+                              <span className={`text-[10px] px-2 py-0.5 rounded-md font-bold shrink-0 ${
+                                isActive
+                                  ? 'bg-blue-500 text-white'
+                                  : 'bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300'
+                              }`}>
+                                {tab.badge}
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MOBILE STICKY BOTTOM NAVIGATION BAR */}
+      <nav aria-label="Student Mobile Navigation" className={`fixed bottom-0 inset-x-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 px-2 py-1.5 flex items-center justify-around ${forceMobileView ? 'flex' : 'sm:hidden'} shadow-lg`}>
+        <button
+          onClick={() => handleSwitchTab('overview')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'overview' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <Layers className="w-4 h-4" />
+          <span>होम</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('pyq')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'pyq' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <Download className="w-4 h-4" />
+          <span>पेपर्स</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('attendance')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'attendance' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <QrCode className="w-4 h-4" />
+          <span>हाजिरी</span>
+        </button>
+        <button
+          onClick={() => handleSwitchTab('results')}
+          className={`flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold transition-colors cursor-pointer ${
+            activeTab === 'results' ? 'text-blue-600 dark:text-blue-400' : 'text-slate-500 dark:text-slate-400'
+          }`}
+        >
+          <Award className="w-4 h-4" />
+          <span>मार्क्स</span>
+        </button>
+        <button
+          onClick={() => setMobileMenuOpen(true)}
+          className="flex flex-col items-center gap-0.5 px-2 py-1 rounded-xl text-[10px] font-bold text-blue-600 dark:text-blue-400 transition-colors cursor-pointer"
+        >
+          <div className="w-4 h-4 flex items-center justify-center">
+            <Menu className="w-4 h-4" />
+          </div>
+          <span>मेनू ({studentNavTabs.length})</span>
+        </button>
+      </nav>
     </div>
   );
 };

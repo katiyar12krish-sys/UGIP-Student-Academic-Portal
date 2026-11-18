@@ -14,13 +14,30 @@ export interface MaterialInput {
 // Data shape: material patch.
 export interface MaterialPatch { title?: string; description?: string; category?: DocumentMaterialItem['category']; tags?: string[]; linkUrl?: string }
 
-/** Step 1: the file itself as the request body (not base64, not JSON). The name travels in a header. */
+/** Step 1: the file itself with fallback to base64 dataUrl for offline/Netlify static preview */
 export async function uploadFile(file: File): Promise<ApiResult<UploadedFile>> {
   try {
+    let dataUrl = '';
+    try {
+      dataUrl = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(typeof reader.result === 'string' ? reader.result : '');
+        reader.onerror = () => resolve('');
+        reader.readAsDataURL(file);
+      });
+    } catch {}
+
+    const payload = JSON.stringify({
+      name: file.name,
+      size: file.size,
+      mime: file.type || 'application/pdf',
+      dataUrl,
+    });
+
     const res = await fetch('/api/files', {
       method: 'POST', credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/octet-stream', 'X-File-Name': encodeURIComponent(file.name) },
-      body: file,
+      headers: { 'Content-Type': 'application/json', 'X-File-Name': encodeURIComponent(file.name) },
+      body: payload,
     });
     const json = await res.json().catch(() => ({}));
     if (!res.ok) return { ok: false, status: res.status, error: json?.error || `Upload failed (${res.status})` };

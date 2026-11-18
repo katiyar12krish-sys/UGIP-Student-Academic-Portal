@@ -16,11 +16,11 @@ import { useCollege } from '../../context/CollegeContext';
 import { PortalAuthModal } from './PortalAuthModal';
 import type { Role } from '../../types';
 
-/** The three login boxes, each with its own accent colour. */
+/** The three login boxes, with Student placed first for convenience. */
 const BOXES: { role: Role; title: string; sub: string; icon: React.ElementType; tint: string; ring: string }[] = [
-  { role: 'admin', title: 'Admin', sub: 'Principal / office', icon: ShieldCheck, tint: 'from-blue-900 to-blue-600', ring: 'ring-blue-600' },
-  { role: 'faculty', title: 'Faculty', sub: 'Lecturers & HODs', icon: UserCheck, tint: 'from-emerald-700 to-teal-500', ring: 'ring-emerald-600' },
-  { role: 'student', title: 'Student', sub: 'Login with roll number', icon: GraduationCap, tint: 'from-amber-600 to-orange-500', ring: 'ring-amber-500' },
+  { role: 'student', title: 'Student', sub: 'Roll No. & Password', icon: GraduationCap, tint: 'from-blue-600 to-indigo-600', ring: 'ring-blue-500' },
+  { role: 'faculty', title: 'Faculty', sub: 'Subject Lecturers & HODs', icon: UserCheck, tint: 'from-emerald-700 to-teal-500', ring: 'ring-emerald-600' },
+  { role: 'admin', title: 'Admin', sub: 'Principal & Office Only', icon: ShieldCheck, tint: 'from-slate-900 to-slate-700', ring: 'ring-slate-700' },
 ];
 
 // Screen part: login page.

@@ -16,14 +16,17 @@ export interface PaperSubject { code: string; name: string; semester: number; br
 export interface NewPaperInput {
   kind: PaperKind; title?: string; subjectCode: string; subjectName: string; branch: string; semester: number; examYear?: string;
   paperFileId: string; answerFileId?: string;
+  paperUrl?: string; answerUrl?: string; paperName?: string; answerName?: string;
 }
 
 export const papersApi = {
   list: () => call<QuestionPaper[]>('GET', '/api/question-papers'),
   subjects: () => call<PaperSubject[]>('GET', '/api/question-papers/subjects'),
   create: (p: NewPaperInput) => call<QuestionPaper>('POST', '/api/question-papers', p),
-  setAnswer: (id: string, fileId: string) => call<QuestionPaper>('PUT', `/api/question-papers/${encodeURIComponent(id)}/answer`, { fileId }),
-  setPaper: (id: string, fileId: string) => call<QuestionPaper>('PUT', `/api/question-papers/${encodeURIComponent(id)}/paper`, { fileId }),
+  setAnswer: (id: string, fileId: string, extra?: { url?: string; name?: string }) =>
+    call<QuestionPaper>('PUT', `/api/question-papers/${encodeURIComponent(id)}/answer`, { fileId, ...extra }),
+  setPaper: (id: string, fileId: string, extra?: { url?: string; name?: string }) =>
+    call<QuestionPaper>('PUT', `/api/question-papers/${encodeURIComponent(id)}/paper`, { fileId, ...extra }),
   remove: (id: string) => call<{ ok: true }>('DELETE', `/api/question-papers/${encodeURIComponent(id)}`),
   restoreSamples: () => call<{ ok: true; restored: number }>('POST', '/api/question-papers/restore-samples', {}),
 };

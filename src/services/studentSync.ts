@@ -82,6 +82,7 @@ function fromApi(d: any, existing?: UserProfile): UserProfile {
     tenthPercentage: d.tenthPercentage != null ? `${d.tenthPercentage}%` : undefined, twelfthPercentage: d.twelfthPercentage != null ? `${d.twelfthPercentage}%` : undefined,
     fullAddress: d.fullAddress ?? undefined, motherName: d.motherName ?? undefined, fatherName: d.fatherName ?? undefined,
     recordStatus: d.recordStatus ?? base.recordStatus,
+    studentPassword: d.studentPassword || 'Student@123',
     avatar: d.photoUrl || (String(base.avatar || '').startsWith('/api/photos/') ? '' : base.avatar) || '',     // server-stored photo wins; an older browser-only photo stays until replaced
     // the server copy wins (the old code kept the browser copy, so edits made on another device never showed up)
     semestersPercentage: sem,

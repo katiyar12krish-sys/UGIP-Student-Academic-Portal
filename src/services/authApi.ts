@@ -101,16 +101,7 @@ const DEMO_USERS: Record<string, AuthUser> = {
 
 export const authApi = {
   me: async () => {
-    const res = await req<{ user: AuthUser }>('GET', '/api/auth/me');
-    if (res.ok) return res;
-    try {
-      const stored = localStorage.getItem('ugip_offline_user');
-      if (stored) {
-        const user = JSON.parse(stored) as AuthUser;
-        return { ok: true, data: { user } };
-      }
-    } catch {}
-    return res;
+    return req<{ user: AuthUser }>('GET', '/api/auth/me');
   },
   login: async (username: string, password: string, role: string, subjectId?: string) => {
     const res = await req<{ user?: AuthUser; mfaRequired?: true; challenge?: string }>('POST', '/api/auth/login', { username, password, role, subjectId });

@@ -27,11 +27,12 @@ export function useServerNotifications(userId: string | undefined, add: (n: Omit
       if (!r.ok || stopped) return;
       let seen: number[] = [];
       try { seen = JSON.parse(localStorage.getItem(key) || '[]'); } catch { /* start fresh */ }
-      const fresh = r.data.items.filter((i) => !i.read && !seen.includes(i.id) && Date.now() - i.createdAt < 24 * 3600_000).reverse().slice(-5);
+      const items = Array.isArray(r.data?.items) ? r.data.items : [];
+      const fresh = items.filter((i) => !i.read && !seen.includes(i.id) && Date.now() - i.createdAt < 24 * 3600_000).reverse().slice(-5);
       for (const i of fresh) {
         addRef.current({ title: i.title, message: i.body, category: categoryOf(i.kind), priority: i.kind === 'absent' || i.kind === 'low_attendance' ? 'high' : 'normal' });
       }
-      const ids = r.data.items.filter((i) => !i.read).map((i) => i.id);
+      const ids = items.filter((i) => !i.read).map((i) => i.id);
       if (ids.length) {
         try { localStorage.setItem(key, JSON.stringify([...seen, ...ids].slice(-200))); } catch { /* storage full */ }
         await pushApi.markRead(ids);
