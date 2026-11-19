@@ -714,17 +714,17 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {activeTab === 'placement-prep' && <PlacementPracticeCenter />}
 
       {activeTab === 'online-tests' && (
-        <OnlineTestAssignmentManager mode="student" />
+        <OnlineTestAssignmentManager mode="student" forceMobileView={forceMobileView} />
       )}
 
       {/* 2. REAL-TIME DOUBT RESOLUTION & EXPERT Q&A */}
       {activeTab === 'doubt-chat' && (
-        <RealtimeDoubtResolutionHub mode="student" />
+        <RealtimeDoubtResolutionHub mode="student" forceMobileView={forceMobileView} />
       )}
 
       {/* Class & Subject Dispatched Materials (Direct class transmission) */}
       {activeTab === 'class-materials' && (
-        <ClassSubjectDispatcher mode="student" />
+        <ClassSubjectDispatcher mode="student" forceMobileView={forceMobileView} />
       )}
 
       {/* Tab "exam-schedule" */}
@@ -746,7 +746,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {/* Step 19: ONE result tab: real results saved by the college + the official UBTER website (the old look-alike login was removed) */}
       {activeTab === 'ubter-result' && (
         <div className="space-y-4">
-          <BoardResultsManager readOnly />
+          <BoardResultsManager readOnly forceMobileView={forceMobileView} />
           <a href="https://ubter.in/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-blue-400 text-sm">
             <span><b>Official UBTER website</b><span className="block text-xs text-slate-500">Result, admit card and date sheet straight from the board (opens in a new tab).</span></span>
             <span className="text-blue-700 font-semibold">ubter.in →</span>
@@ -863,7 +863,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {/* Tab "placements" */}
       {activeTab === 'placements' && <InternshipPlacementPortal allowPost={false} />}
       {/* Tab "material-hub" */}
-      {activeTab === 'material-hub' && <DocumentMaterialHub mode="student" />}
+      {activeTab === 'material-hub' && <DocumentMaterialHub mode="student" forceMobileView={forceMobileView} />}
       {/* Tab "mock-interview" */}
       {activeTab === 'mock-interview' && <MockInterviewPortal />}
       {/* Tab "achievements" */}
@@ -874,7 +874,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {activeTab === 'performance-analytics' && <StudentPerformanceAnalyticsDashboard />}
 
       {/* Tab "pyq" */}
-      {activeTab === 'pyq' && <QuestionPapersHub />}
+      {activeTab === 'pyq' && <QuestionPapersHub forceMobileView={forceMobileView} />}
 
       {/* Tab "ai-tutor" */}
       {activeTab === 'ai-tutor' && (

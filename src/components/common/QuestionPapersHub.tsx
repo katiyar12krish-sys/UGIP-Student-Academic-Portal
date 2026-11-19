@@ -148,7 +148,11 @@ async function pickAndUpload(file: File | undefined): Promise<{ id?: string; dat
   return r.ok ? { id: r.data.fileId, dataUrl } : { error: r.error };
 }
 
-export const QuestionPapersHub: React.FC = () => {
+interface QuestionPapersHubProps {
+  forceMobileView?: boolean;
+}
+
+export const QuestionPapersHub: React.FC<QuestionPapersHubProps> = ({ forceMobileView = false }) => {
   const { authUser } = useCollege();
   const isStaff = authUser?.role === 'admin' || authUser?.role === 'faculty';
   const isAdmin = authUser?.role === 'admin';
@@ -261,21 +265,21 @@ export const QuestionPapersHub: React.FC = () => {
               UBTER बोर्ड परीक्षा प्रारूप (कुल 50 अंक: खण्ड क 10x1 अंक, खण्ड ख 5x4 अंक, खण्ड ग 2x10 अंक)। प्रश्न पत्र व उत्तर कुंजी ऑनलाइन देखें या PDF डाउनलोड करें।
             </p>
           </div>
-          <div className="flex flex-wrap items-center gap-2 shrink-0">
+          <div className="grid grid-cols-1 sm:flex sm:items-center gap-2 w-full sm:w-auto">
             <button
               onClick={() => setPanel(panel === 'download' ? 'none' : 'download')}
-              className={`${btn} border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800`}
+              className={`${btn} w-full sm:w-auto border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800`}
             >
               <FolderDown className="w-4 h-4 text-emerald-600" />
-              <span>पेपर डाउनलोड / Download</span>
+              <span>पेपर डाउनलोड (Download)</span>
             </button>
             {isStaff && (
               <button
                 onClick={() => setPanel(panel === 'upload' ? 'none' : 'upload')}
-                className={`${btn} bg-blue-600 hover:bg-blue-700 text-white shadow-sm`}
+                className={`${btn} w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white shadow-sm`}
               >
                 <FolderUp className="w-4 h-4" />
-                <span>नया पेपर अपलोड / Upload</span>
+                <span>नया पेपर अपलोड (Upload)</span>
               </button>
             )}
           </div>
@@ -599,23 +603,28 @@ const PaperRow: React.FC<{
       </div>
 
       {/* Question Paper Row */}
-      <div className="pt-1 space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-2">
-        <span className="text-[11px] font-bold text-slate-600 dark:text-slate-300 block sm:inline-block sm:w-28 shrink-0">
-          📄 प्रश्न पत्र (Paper):
-        </span>
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-1.5 flex-1">
+      <div className="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className="text-xs font-bold text-slate-800 dark:text-slate-200 shrink-0">
+            📄 प्रश्न पत्र:
+          </span>
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+            {p.paper.name || 'UBTER Board Paper'}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 sm:flex sm:items-center gap-1.5 shrink-0">
           <button
             type="button"
             onClick={() => onOpenViewer(p, 'paper')}
-            className={`${btn} bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600`}
+            className={`${btn} py-1.5 px-2.5 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600`}
           >
             <Eye className="w-3.5 h-3.5" />
-            <span>खोलें / Open</span>
+            <span>देखें</span>
           </button>
           <button
             type="button"
             onClick={() => triggerDownload(p.paper.name, p.paper.url)}
-            className={`${btn} bg-blue-600 hover:bg-blue-700 text-white`}
+            className={`${btn} py-1.5 px-2.5 bg-blue-600 hover:bg-blue-700 text-white`}
           >
             <Download className="w-3.5 h-3.5" />
             <span>डाउनलोड</span>
@@ -624,17 +633,17 @@ const PaperRow: React.FC<{
             type="button"
             onClick={() => openInNewTab(p.paper.url, `${p.subjectName} Paper`)}
             title="नए टैब में खोलें"
-            className={`${btn} bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200`}
+            className={`${btn} py-1.5 px-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200`}
           >
             <ExternalLink className="w-3.5 h-3.5" />
-            <span>नया टैब</span>
+            <span className="sm:hidden">नया टैब</span>
           </button>
           {p.canRemove && (
             <>
               <button
                 disabled={busy}
                 onClick={() => paperRef.current?.click()}
-                className={`${btn} text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700`}
+                className={`${btn} py-1.5 px-2 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-300 dark:border-slate-700`}
               >
                 <Upload className="w-3.5 h-3.5" />
                 <span>बदलें</span>
@@ -655,25 +664,30 @@ const PaperRow: React.FC<{
       </div>
 
       {/* Answer Key Row */}
-      <div className="pt-1 space-y-1.5 sm:space-y-0 sm:flex sm:items-center sm:gap-2">
-        <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 block sm:inline-block sm:w-28 shrink-0">
-          🔑 उत्तर कुंजी (Key):
-        </span>
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:items-center gap-1.5 flex-1">
+      <div className="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 shrink-0">
+            🔑 उत्तर कुंजी:
+          </span>
+          <span className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+            {p.answer ? p.answer.name || 'Verified Solution' : 'शीघ्र उपलब्ध होगी'}
+          </span>
+        </div>
+        <div className="grid grid-cols-2 sm:flex sm:items-center gap-1.5 shrink-0">
           {p.answer ? (
             <>
               <button
                 type="button"
                 onClick={() => onOpenViewer(p, 'answer')}
-                className={`${btn} bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800`}
+                className={`${btn} py-1.5 px-2.5 bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800`}
               >
                 <Eye className="w-3.5 h-3.5" />
-                <span>हल देखें / Key</span>
+                <span>हल देखें</span>
               </button>
               <button
                 type="button"
                 onClick={() => triggerDownload(p.answer?.name || `${p.subjectCode}_AnswerKey.html`, p.answer?.url || '')}
-                className={`${btn} bg-emerald-600 hover:bg-emerald-700 text-white`}
+                className={`${btn} py-1.5 px-2.5 bg-emerald-600 hover:bg-emerald-700 text-white`}
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>डाउनलोड</span>
@@ -682,14 +696,16 @@ const PaperRow: React.FC<{
                 type="button"
                 onClick={() => openInNewTab(p.answer?.url || '', `${p.subjectName} Answer Key`)}
                 title="नए टैब में उत्तर कुंजी खोलें"
-                className={`${btn} bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200`}
+                className={`${btn} py-1.5 px-2 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200`}
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span>नया टैब</span>
+                <span className="sm:hidden">नया टैब</span>
               </button>
             </>
           ) : (
-            <span className="text-[11px] text-slate-400 italic py-1 col-span-2 sm:col-span-1">शीघ्र उपलब्ध होगी</span>
+            p.canEdit && (
+              <span className="text-[11px] text-slate-400 italic">कुंजी जोड़ें</span>
+            )
           )}
 
           {p.canEdit && (
@@ -697,10 +713,10 @@ const PaperRow: React.FC<{
               <button
                 disabled={busy}
                 onClick={() => ansRef.current?.click()}
-                className={`${btn} text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950 border border-emerald-300/40 col-span-2 sm:col-span-1`}
+                className={`${btn} py-1.5 px-2 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950 border border-emerald-300/40`}
               >
                 <KeyRound className="w-3.5 h-3.5" />
-                <span>{busy ? 'अपलोड हो रहा है...' : p.answer ? 'उत्तर कुंजी बदलें' : 'उत्तर कुंजी जोड़ें'}</span>
+                <span>{busy ? 'अपलोडिंग...' : p.answer ? 'बदलें' : 'अपलोड'}</span>
               </button>
               <input
                 ref={ansRef}

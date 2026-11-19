@@ -23,7 +23,7 @@ const fmt = (v: number | null | undefined) => (v === null || v === undefined ? '
 const EMPTY_SUBJECT: BoardResultSubject = { code: '', name: '', theory: null, practical: null, grade: '', gradePoint: null };
 
 // Screen part: board results manager.
-export const BoardResultsManager: React.FC<{ readOnly?: boolean }> = ({ readOnly = false }) => {
+export const BoardResultsManager: React.FC<{ readOnly?: boolean; forceMobileView?: boolean }> = ({ readOnly = false, forceMobileView = false }) => {
   const { users, currentUser } = useCollege();
   const showSample = useSeesSample();   // SAMPLE badges only for admin / CSE HOD
   // List of rows shown on this screen
@@ -120,25 +120,61 @@ export const BoardResultsManager: React.FC<{ readOnly?: boolean }> = ({ readOnly
           <div className="space-y-3">
             {shown.map((r) => (
               <div key={r.id} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                <div className="p-4 flex flex-col lg:flex-row lg:items-center gap-3">
-                  <button onClick={() => setOpen(open === r.id ? null : r.id)} className="flex-1 min-w-0 text-left cursor-pointer">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="font-semibold text-slate-900 dark:text-white">{r.studentName}</span>
-                      <span className="font-mono text-xs text-slate-500">{r.rollNo}</span>
-                      {r.isDemo && showSample && <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}
+                <div className="p-3.5 sm:p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                  {/* Top: Student Name + Roll + Result Badge (Always side-by-side) */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2">
+                      <button onClick={() => setOpen(open === r.id ? null : r.id)} className="flex-1 min-w-0 text-left cursor-pointer">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-tight">{r.studentName}</span>
+                          <span className="font-mono text-xs text-slate-500 font-bold">({r.rollNo})</span>
+                          {r.isDemo && showSample && <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}
+                        </div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex flex-wrap items-center gap-1.5">
+                          <span>{r.branch} · Sem {r.semester}</span>
+                          <span>·</span>
+                          <span>{r.examSession}</span>
+                          {r.fatherName && (
+                            <>
+                              <span>·</span>
+                              <span className="text-slate-700 dark:text-slate-300 font-semibold">पिता: {r.fatherName}</span>
+                            </>
+                          )}
+                        </div>
+                      </button>
+                      <span className={`px-2.5 py-1 rounded-full text-xs font-black shrink-0 ${resultTone(r.result)}`}>
+                        {r.result || '—'}
+                      </span>
                     </div>
-                    <div className="text-xs text-slate-500 mt-0.5">{r.branch} · Semester {r.semester} · {r.examSession}{r.fatherName ? ` · Father: ${r.fatherName}` : ''}</div>
-                  </button>
-                  <div className="flex flex-wrap items-center justify-between sm:justify-end gap-2.5 sm:gap-4 text-xs sm:text-sm pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800">
-                    <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">Total</div><div className="font-bold tabular-nums">{fmt(r.semTotal)}<span className="text-slate-400 font-normal">/{fmt(r.maxTotal)}</span></div></div>
-                    <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">%</div><div className="font-bold tabular-nums">{fmt(r.percentage)}</div></div>
-                    <div className="text-center"><div className="text-[10px] uppercase tracking-wide text-slate-500">SGPA</div><div className="font-bold tabular-nums">{r.sgpa ?? <span className="text-amber-600 text-xs" title="Not readable on the scanned sheet">fill in</span>}</div></div>
-                    <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${resultTone(r.result)}`}>{r.result || '—'}</span>
-                    <button onClick={() => setOpen(open === r.id ? null : r.id)} aria-label="Show subjects" className="p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer">{open === r.id ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}</button>
-                    {!readOnly && <>
-                      <button onClick={() => setEditing(JSON.parse(JSON.stringify(r)))} aria-label="Edit result" className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-700 hover:bg-indigo-50 dark:hover:bg-indigo-950 cursor-pointer"><Pencil className="w-4 h-4" /></button>
-                      <button onClick={() => remove(r)} aria-label="Delete result" className="p-1.5 rounded-lg text-slate-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950 cursor-pointer"><Trash2 className="w-4 h-4" /></button>
-                    </>}
+                  </div>
+
+                  {/* Marks Badges Row & Actions */}
+                  <div className="flex items-center justify-between lg:justify-end gap-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 lg:border-t-0 lg:pt-0 shrink-0">
+                    <div className="flex items-center gap-1.5 text-xs">
+                      <div className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
+                        <span className="text-[9px] text-slate-400 block font-semibold uppercase">Total</span>
+                        <span className="font-bold tabular-nums text-xs">{fmt(r.semTotal)}/{fmt(r.maxTotal)}</span>
+                      </div>
+                      <div className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
+                        <span className="text-[9px] text-slate-400 block font-semibold uppercase">%</span>
+                        <span className="font-bold tabular-nums text-xs">{fmt(r.percentage)}%</span>
+                      </div>
+                      <div className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
+                        <span className="text-[9px] text-slate-400 block font-semibold uppercase">SGPA</span>
+                        <span className="font-bold tabular-nums text-xs">{r.sgpa ?? '—'}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1 shrink-0">
+                      <button onClick={() => setOpen(open === r.id ? null : r.id)} aria-label="Show subjects" className="py-1.5 px-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1 cursor-pointer">
+                        <span className="hidden sm:inline">{open === r.id ? 'बंद करें' : 'विषय अंक'}</span>
+                        {open === r.id ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                      </button>
+                      {!readOnly && <>
+                        <button onClick={() => setEditing(JSON.parse(JSON.stringify(r)))} aria-label="Edit result" className="p-1.5 rounded-lg text-slate-500 hover:text-indigo-700 hover:bg-indigo-50 dark:hover:bg-indigo-950 cursor-pointer"><Pencil className="w-3.5 h-3.5" /></button>
+                        <button onClick={() => remove(r)} aria-label="Delete result" className="p-1.5 rounded-lg text-slate-500 hover:text-rose-700 hover:bg-rose-50 dark:hover:bg-rose-950 cursor-pointer"><Trash2 className="w-3.5 h-3.5" /></button>
+                      </>}
+                    </div>
                   </div>
                 </div>
                 {open === r.id && (

@@ -27,10 +27,11 @@ import { ClassQuestionBoard } from './ClassQuestionBoard';          // questions
 // Data shape: realtime doubt resolution hub props.
 interface RealtimeDoubtResolutionHubProps {
   mode?: 'student' | 'faculty' | 'admin';
+  forceMobileView?: boolean;
 }
 
 // Screen part: realtime doubt resolution hub.
-export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProps> = ({ mode = 'student' }) => {
+export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProps> = ({ mode = 'student', forceMobileView = false }) => {
   const {
     currentUser,
     subjects,
@@ -262,9 +263,9 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
       </div>
 
       {/* SPLIT VIEW: THREAD LIST (LEFT) + ACTIVE DISCUSSION (RIGHT) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className={`grid ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-12'} gap-6`}>
         {/* LEFT COLUMN: LIST OF DOUBTS */}
-        <div className="lg:col-span-5 space-y-3">
+        <div className={`${forceMobileView ? 'w-full' : 'lg:col-span-5'} space-y-3`}>
           <div className="text-xs font-bold uppercase tracking-wider text-slate-400">
             Doubt Threads ({filteredTickets.length})
           </div>
@@ -326,7 +327,7 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
         </div>
 
         {/* RIGHT COLUMN: ACTIVE THREAD & CHAT */}
-        <div ref={chatThreadRef} className="lg:col-span-7">
+        <div ref={chatThreadRef} className={`${forceMobileView ? 'w-full' : 'lg:col-span-7'}`}>
           {activeTicket ? (
             <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden flex flex-col h-[650px]">
               {/* TICKET HEADER */}

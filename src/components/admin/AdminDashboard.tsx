@@ -597,7 +597,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
       {activeTab === 'overview' && (
         <div className="space-y-6">
           <LegacyDataCard />
-          <div className="ugip-stats grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6">
+          <div className={`ugip-stats grid ${forceMobileView ? 'grid-cols-2 gap-2.5' : 'grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6'}`}>
             <div className="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
                 <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">Total Students</p>
@@ -683,7 +683,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
         <div className="space-y-3">
           {/* Step 19: the old separate "Students" list is reached from here (photos, quick list) so the menu has one student entry */}
           <div className="flex justify-end"><button onClick={() => setActiveTab('students')} className="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 text-xs font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">Photos & quick list →</button></div>
-          <ClassStudentDatabaseManager mode="admin" />
+          <ClassStudentDatabaseManager mode="admin" forceMobileView={forceMobileView} />
         </div>
       )}
       {/* Tab "logins" */}
@@ -698,22 +698,22 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
 
       {/* 2. ONLINE TESTS & ASSIGNMENTS WITH TIME REMINDER TRIGGER */}
       {activeTab === 'online-tests' && (
-        <OnlineTestAssignmentManager mode="admin" />
+        <OnlineTestAssignmentManager mode="admin" forceMobileView={forceMobileView} />
       )}
 
       {/* 3. REAL-TIME DOUBT RESOLUTION & Q&A HUB */}
       {activeTab === 'doubt-resolution' && (
-        <RealtimeDoubtResolutionHub mode="admin" />
+        <RealtimeDoubtResolutionHub mode="admin" forceMobileView={forceMobileView} />
       )}
 
       {/* CLASS & SUBJECT DISPATCHER */}
-      {activeTab === 'class-dispatch' && <ClassSubjectDispatcher mode="admin" />}
+      {activeTab === 'class-dispatch' && <ClassSubjectDispatcher mode="admin" forceMobileView={forceMobileView} />}
       {/* Step 18 */}
       {activeTab === 'academic-year' && <div className="space-y-6"><ExamCalendar canEdit /><AcademicYearManager onChanged={refreshAcademic} /></div>}
       {/* Tab "board-results" */}
-      {activeTab === 'board-results' && <BoardResultsManager />}
+      {activeTab === 'board-results' && <BoardResultsManager forceMobileView={forceMobileView} />}
       {/* Tab "attendance-register" */}
-      {activeTab === 'attendance-register' && <AttendanceRegister />}
+      {activeTab === 'attendance-register' && <AttendanceRegister forceMobileView={forceMobileView} />}
 
       {/* STUDENTS DIRECTORY */}
       {activeTab === 'students' && (
@@ -989,7 +989,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
       {/* Tab "practicals" */}
       {activeTab === 'practicals' && <PracticalLabManager isFacultyOrAdmin={true} />}
       {/* Tab "materials" */}
-      {activeTab === 'materials' && <DocumentMaterialHub mode="admin" />}
+      {activeTab === 'materials' && <DocumentMaterialHub mode="admin" forceMobileView={forceMobileView} />}
       {/* Tab "placements" */}
       {activeTab === 'placements' && <InternshipPlacementPortal allowPost={true} />}
       {/* Tab "performance-analytics" */}
@@ -1002,7 +1002,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
       {activeTab === 'news' && <CollegeNewsSection allowPublish={true} />}
 
       {/* PAPERS */}
-      {activeTab === 'papers' && <QuestionPapersHub />}
+      {activeTab === 'papers' && <QuestionPapersHub forceMobileView={forceMobileView} />}
 
       {/* AI DIAGNOSTICS */}
       {activeTab === 'ai-diagnostics' && (

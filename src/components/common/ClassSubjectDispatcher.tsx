@@ -46,6 +46,7 @@ import { notify, confirmDialog } from './ui/feedback';              // Step 18: 
 // Data shape: class subject dispatcher props.
 interface ClassSubjectDispatcherProps {
   mode: 'faculty' | 'student' | 'admin';
+  forceMobileView?: boolean;
 }
 
 // Step 10: everything here is on the server. The class comes from the subject, files are uploaded to the server and
@@ -55,7 +56,7 @@ const FILE_HINT = 'PDF, JPEG, PNG, Word, PowerPoint or Excel. Up to 10 MB.';
 const FILE_ACCEPT = '.pdf,.jpg,.jpeg,.png,.docx,.pptx,.xlsx';
 
 // Screen part: class subject dispatcher.
-export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ mode }) => {
+export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ mode, forceMobileView = false }) => {
   const {
     currentUser,
     users,
@@ -368,16 +369,16 @@ export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ 
             </p>
           </div>
 
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="grid grid-cols-1 sm:flex sm:items-center gap-2 w-full sm:w-auto">
             {mode !== 'student' && (
               <button
                 type="button"
                 onClick={() => setShowPhoneManagerModal(true)}
-                className="px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                className="w-full sm:w-auto px-3.5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                 title="View & update student contact mobile numbers"
               >
                 <Phone className="w-4 h-4 text-emerald-200" />
-                <span>Class Student Numbers ({classStudents.length})</span>
+                <span>Class Numbers ({classStudents.length})</span>
               </button>
             )}
 
@@ -385,18 +386,18 @@ export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ 
             <button
               id="open-dispatch-modal-btn"
               onClick={() => { setFormError(null); setShowDispatchModal(true); }}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0"
+              className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
               title="Upload PDF, notes, lecture documents, pyq or assignments"
             >
               <Upload className="w-4 h-4 text-cyan-200" />
-              <span>Upload & Dispatch Class Material (PDF / Notes / Tasks)</span>
+              <span>Upload & Dispatch Material</span>
             </button>
             )}
 
             <button
               type="button"
               onClick={() => setIsExpanded(!isExpanded)}
-              className="p-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl transition-all cursor-pointer"
+              className="p-2.5 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-xl transition-all cursor-pointer hidden sm:flex items-center justify-center"
               title={isExpanded ? 'Collapse Full View' : 'Expand Fullscreen View'}
             >
               {isExpanded ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}

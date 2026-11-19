@@ -40,6 +40,22 @@ const MainPortalView: React.FC = () => {
   // Is it qr scanner open? (true / false)
   const [isQRScannerOpen, setIsQRScannerOpen] = useState(false);
 
+  // Sync is-mobile-preview body class so global styles can adapt seamlessly
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      if (isMobilePreviewMode) {
+        document.body.classList.add('is-mobile-preview');
+      } else {
+        document.body.classList.remove('is-mobile-preview');
+      }
+    }
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.classList.remove('is-mobile-preview');
+      }
+    };
+  }, [isMobilePreviewMode]);
+
   // Is it admin authenticated? (true / false)
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
   // Is it faculty authenticated? (true / false)
@@ -314,7 +330,10 @@ const MainPortalView: React.FC = () => {
           </div>
 
           {/* Smartphone Hardware Mockup Container */}
-          <div className="w-full max-w-[412px] h-[844px] max-h-[85vh] bg-slate-100 dark:bg-slate-950 rounded-[44px] shadow-2xl border-[10px] border-slate-800 dark:border-slate-800 overflow-hidden relative flex flex-col ring-2 ring-slate-700/50">
+          <div
+            className="ugip-phone-frame w-full max-w-[412px] h-[844px] max-h-[85vh] bg-slate-100 dark:bg-slate-950 rounded-[44px] shadow-2xl border-[10px] border-slate-800 dark:border-slate-800 overflow-hidden relative flex flex-col ring-2 ring-slate-700/50"
+            style={{ contain: 'paint layout', transform: 'translateZ(0)' }}
+          >
             {/* Top Speaker / Dynamic Island */}
             <div className="h-6 bg-slate-800 flex items-center justify-center shrink-0 select-none">
               <div className="w-24 h-3.5 bg-black rounded-full flex items-center justify-center gap-2">

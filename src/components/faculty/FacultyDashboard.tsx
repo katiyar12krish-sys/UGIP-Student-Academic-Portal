@@ -564,7 +564,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
 
       {/* 1. CLASS-WISE STUDENT MASTER DATABASE & EXCEL SPREADSHEETS */}
       {activeTab === 'class-database' && (
-        <ClassStudentDatabaseManager mode="faculty" />
+        <ClassStudentDatabaseManager mode="faculty" forceMobileView={forceMobileView} />
       )}
 
       {/* AUTOMATIC YEAR-WISE ATTENDANCE ANALYSIS & TRENDS */}
@@ -574,22 +574,22 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
 
       {/* 2. ONLINE TESTS & ASSIGNMENTS WITH TIME REMINDER TRIGGER */}
       {activeTab === 'online-tests' && (
-        <OnlineTestAssignmentManager mode="faculty" />
+        <OnlineTestAssignmentManager mode="faculty" forceMobileView={forceMobileView} />
       )}
 
       {/* 3. REAL-TIME DOUBT RESOLUTION & Q&A HUB */}
       {activeTab === 'doubt-resolution' && (
-        <RealtimeDoubtResolutionHub mode="faculty" />
+        <RealtimeDoubtResolutionHub mode="faculty" forceMobileView={forceMobileView} />
       )}
 
       {/* 4. CLASS & SUBJECT DISPATCHER */}
       {activeTab === 'class-dispatch' && (
-        <ClassSubjectDispatcher mode="faculty" />
+        <ClassSubjectDispatcher mode="faculty" forceMobileView={forceMobileView} />
       )}
 
       {/* 5. DOCUMENT & MATERIAL HUB */}
       {activeTab === 'material-hub' && (
-        <DocumentMaterialHub mode="faculty" />
+        <DocumentMaterialHub mode="faculty" forceMobileView={forceMobileView} />
       )}
 
       {/* 3. QR CLASS ATTENDANCE */}
@@ -1081,12 +1081,12 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
       {/* Tab "practicals" */}
       {activeTab === 'practicals' && <PracticalLabManager isFacultyOrAdmin={true} />}
       {/* Tab "board-results" */}
-      {activeTab === 'board-results' && <BoardResultsManager />}
+      {activeTab === 'board-results' && <BoardResultsManager forceMobileView={forceMobileView} />}
       {/* Tab "attendance-register" */}
-      {activeTab === 'attendance-register' && <AttendanceRegister />}
+      {activeTab === 'attendance-register' && <AttendanceRegister forceMobileView={forceMobileView} />}
       {/* Tab "logins" */}
       {activeTab === 'my-profile' && <MyProfileCard />}
-      {activeTab === 'question-papers' && <QuestionPapersHub />}
+      {activeTab === 'question-papers' && <QuestionPapersHub forceMobileView={forceMobileView} />}
       {activeTab === 'placement-tracker' && <PlacementTracker />}
       {activeTab === 'logins' && <PasswordCenter />}
       {/* Tab "timetable" */}

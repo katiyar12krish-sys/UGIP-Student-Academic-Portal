@@ -19,7 +19,7 @@ import { editsApi } from '../../services/step18Api';
 import { notify, confirmDialog } from './ui/feedback';
 
 // Screen part: attendance register.
-export const AttendanceRegister: React.FC = () => {
+export const AttendanceRegister: React.FC<{ forceMobileView?: boolean }> = ({ forceMobileView = false }) => {
   const { attendanceSessions, users, refreshAcademic } = useCollege();
   const showSample = useSeesSample();   // SAMPLE badges only for admin / CSE HOD
   // Branch (kept in screen state)
@@ -82,8 +82,8 @@ export const AttendanceRegister: React.FC = () => {
 
       {list.length === 0 ? <div className="p-10 text-center rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 text-sm text-slate-500">No lectures found for this selection.</div> : (
         <div className="space-y-3">
-          {/* MOBILE CARDS FOR PHONES (< sm) */}
-          <div className="block sm:hidden space-y-2.5">
+          {/* MOBILE CARDS FOR PHONES (< sm or forced mobile) */}
+          <div className={`${forceMobileView ? 'block' : 'block sm:hidden'} space-y-2.5`}>
             {list.slice(0, 400).map((s) => {
               const present = s.records.filter((r) => r.status !== 'Absent').length;
               return (
@@ -136,8 +136,8 @@ export const AttendanceRegister: React.FC = () => {
             })}
           </div>
 
-          {/* DESKTOP TABLE VIEW */}
-          <div className="hidden sm:block rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-x-auto">
+          {/* DESKTOP TABLE VIEW (hidden on mobile or forced mobile) */}
+          <div className={`${forceMobileView ? 'hidden' : 'hidden sm:block'} rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 overflow-x-auto`}>
             <table className="w-full text-sm">
               <thead className="bg-slate-50 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 text-left">
                 <tr><th className="px-4 py-2.5">Date</th><th className="px-4 py-2.5">Subject</th><th className="px-4 py-2.5">Class</th><th className="px-4 py-2.5">Topic</th><th className="px-4 py-2.5 text-right">Present</th><th className="px-4 py-2.5 text-right">Actions</th></tr>

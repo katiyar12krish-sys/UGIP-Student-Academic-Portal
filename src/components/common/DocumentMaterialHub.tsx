@@ -40,6 +40,7 @@ interface DocumentMaterialHubProps {
   mode?: 'faculty' | 'student' | 'admin';
   initialBranch?: BranchCode | 'All';
   initialSemester?: number | 'All';
+  forceMobileView?: boolean;
 }
 
 // Screen part: document material hub.
@@ -47,6 +48,7 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
   mode,
   initialBranch,
   initialSemester,
+  forceMobileView = false,
 }) => {
   const { currentUser, subjects } = useCollege();
 
@@ -373,14 +375,14 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
         </div>
 
         {/* Action Controls */}
-        <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+        <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
           {(currentMode === 'faculty' || currentMode === 'admin') && (
             <button
               onClick={() => {
                 resetForm();
                 setIsUploadModalOpen(true);
               }}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer"
             >
               <Upload className="w-4 h-4" />
               <span>Upload Document / Link</span>
@@ -551,7 +553,7 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className={`grid ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'} gap-5`}>
           {filteredMaterials.map((mat) => {
             const isExpanded = !!expandedDescMap[mat.id];
             const isEnrolledMatch =

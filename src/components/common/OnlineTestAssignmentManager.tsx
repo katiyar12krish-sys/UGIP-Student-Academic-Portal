@@ -34,6 +34,7 @@ import { TestAnalysisPanel } from './TestAnalysisPanel';           // student-wi
 // Data shape: online test assignment manager props.
 interface OnlineTestAssignmentManagerProps {
   mode?: 'faculty' | 'admin' | 'student';
+  forceMobileView?: boolean;
 }
 
 /** Parse lines: Question | option A | option B | option C | option D | correct option number (1-4) | explanation (optional) */
@@ -51,7 +52,7 @@ const parseQuestions = (text: string): TestQuestion[] =>
     .filter((q) => q.question && q.options.length >= 2 && q.correctIndex >= 0 && q.correctIndex < q.options.length);
 
 // Screen part: online test assignment manager.
-export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerProps> = ({ mode = 'faculty' }) => {
+export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerProps> = ({ mode = 'faculty', forceMobileView = false }) => {
   const {
     currentUser,
     users,
@@ -339,7 +340,7 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
           {(mode === 'faculty' || mode === 'admin') && (
             <button
               onClick={() => setShowCreateModal(true)}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer shrink-0"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
               <span>Create Online Test / Task</span>
@@ -450,7 +451,7 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
+                    <div className="flex flex-wrap items-center gap-1.5 mb-1.5">
                       <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">
                         {test.branch} · Year {test.year} (Sem {test.semester})
                       </span>
@@ -466,7 +467,7 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
                     </p>
                   </div>
 
-                  <div className="text-right">
+                  <div className="text-right shrink-0">
                     <span className="px-2 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-black border border-emerald-200 dark:border-emerald-800">
                       {test.totalMarks} Marks
                     </span>
@@ -478,7 +479,7 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
                 </p>
 
                 {/* DEADLINE & SUBMISSION PROGRESS */}
-                <div className="grid grid-cols-2 gap-3 text-xs">
+                <div className={`grid ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'} gap-2.5 text-xs`}>
                   <div className="p-3 bg-slate-50 dark:bg-slate-800/70 rounded-xl space-y-1">
                     <span className="text-[10px] text-slate-400 uppercase font-bold flex items-center gap-1">
                       <Clock className="w-3 h-3 text-amber-500" /> Deadline Expiry
@@ -492,7 +493,7 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
                     <span className="text-[10px] text-slate-400 uppercase font-bold flex items-center gap-1">
                       <Users className="w-3 h-3 text-blue-500" /> Class Submissions
                     </span>
-                    <div className="font-bold text-slate-800 dark:text-slate-200 flex items-center justify-between">
+                    <div className="font-bold text-slate-800 dark:text-slate-200 flex flex-wrap items-center justify-between gap-1">
                       <span>{submittedCount} / {totalClassStrength} Submitted</span>
                       <span className={`text-[10px] font-bold ${unsubmittedCount > 0 ? 'text-rose-500' : 'text-emerald-500'}`}>
                         ({unsubmittedCount} Pending)
