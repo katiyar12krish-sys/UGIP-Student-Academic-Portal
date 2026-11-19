@@ -423,7 +423,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <div className="w-48 h-48 border-4 border-blue-400 rounded-full"></div>
         </div>
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="flex items-start gap-4">
             <div className="flex flex-col items-center">
               <UserAvatar
@@ -631,41 +631,49 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {/* Tab "overview" */}
       {activeTab === 'overview' && (
         <div className="space-y-6">
-          <div className="ugip-stats grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs">
-              <span className="text-xs font-bold text-slate-500 uppercase">Class Enrolled</span>
-              <p className="text-2xl font-black text-slate-900 dark:text-white mt-1">
-                {currentUser.branch}
-              </p>
-              <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold mt-1">Year {currentUser.year} · Sem {currentUser.semester}</p>
+          <div className="ugip-stats grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Class Enrolled</span>
+                <p className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
+                  {currentUser.branch}
+                </p>
+              </div>
+              <p className="text-[11px] sm:text-xs text-blue-600 dark:text-blue-400 font-semibold mt-2 truncate">Year {currentUser.year} · Sem {currentUser.semester}</p>
             </div>
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs">
-              <span className="text-xs font-bold text-slate-500 uppercase">Class Materials</span>
-              <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">
-                {myClassDispatches.length} Packs
-              </p>
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Class Materials</span>
+                <p className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">
+                  {myClassDispatches.length} Packs
+                </p>
+              </div>
               <button
                 onClick={() => setActiveTab('class-materials')}
-                className="text-xs text-emerald-600 hover:underline font-bold mt-1 block"
+                className="text-[11px] sm:text-xs text-emerald-600 hover:underline font-bold mt-2 block text-left truncate"
               >
                 View Dispatched Tasks →
               </button>
             </div>
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs">
-              <span className="text-xs font-bold text-slate-500 uppercase">Attendance Status</span>
-              <p
-                className={`text-2xl font-black mt-1 ${
-                  attStats.overallPercent >= 75 ? 'text-emerald-600' : 'text-rose-600'
-                }`}
-              >
-                {attStats.overallPercent}%
-              </p>
-              <p className="text-[11px] text-slate-500 mt-1">Min 75% required for UBTER Exam</p>
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Attendance Status</span>
+                <p
+                  className={`text-xl sm:text-2xl font-black mt-1 ${
+                    attStats.overallPercent >= 75 ? 'text-emerald-600' : 'text-rose-600'
+                  }`}
+                >
+                  {attStats.overallPercent}%
+                </p>
+              </div>
+              <p className="text-[10px] sm:text-[11px] text-slate-500 mt-2 truncate">Min 75% required for UBTER Exam</p>
             </div>
-            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs">
-              <span className="text-xs font-bold text-slate-500 uppercase">Sessional Average</span>
-              <p className="text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">{acadSummary.avgMarksPercent}%</p>
-              <p className="text-[11px] text-emerald-600 font-semibold mt-1">Passed: {acadSummary.passedTestsCount} Tests</p>
+            <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
+              <div>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Sessional Average</span>
+                <p className="text-xl sm:text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">{acadSummary.avgMarksPercent}%</p>
+              </div>
+              <p className="text-[10px] sm:text-[11px] text-emerald-600 font-semibold mt-2 truncate">Passed: {acadSummary.passedTestsCount} Tests</p>
             </div>
           </div>
 

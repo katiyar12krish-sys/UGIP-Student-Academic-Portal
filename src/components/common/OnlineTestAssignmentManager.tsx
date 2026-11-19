@@ -286,7 +286,11 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
 
   // Report rows.
   const reportRows = (t: OnlineTestAssignment) =>
-    studentsList.filter((u) => u.branch === t.branch && u.year === t.year).map((st) => ({ st, res: t.results?.[st.id], submitted: t.submittedStudentIds.includes(st.id) }));
+    studentsList.filter((u) => u.branch === t.branch && u.year === t.year).map((st) => ({
+      st,
+      res: Array.isArray(t.results) ? (t.results as any[]).find((r: any) => r.studentId === st.id) : (t.results as any)?.[st.id],
+      submitted: (t.submittedStudentIds || []).includes(st.id) || (Array.isArray(t.results) ? (t.results as any[]).some((r: any) => r.studentId === st.id) : !!(t.results as any)?.[st.id]),
+    }));
 
   // Build report export.
   const buildReportExport = (t: OnlineTestAssignment): ExportTable => ({
@@ -435,9 +439,9 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
               (s) => s.branch === test.branch && s.year === test.year
             );
             const totalClassStrength = classStudents.length;
-            const submittedCount = test.submittedCount ?? test.submittedStudentIds.length;
+            const submittedCount = test.submittedCount ?? ((test.submittedStudentIds || []).length || (Array.isArray(test.results) ? test.results.length : Object.keys(test.results || {}).length));
             const unsubmittedCount = Math.max(0, totalClassStrength - submittedCount);
-            const isUserSubmitted = currentUser.role === 'student' && test.submittedStudentIds.includes(currentUser.id);
+            const isUserSubmitted = currentUser.role === 'student' && ((test.submittedStudentIds || []).includes(currentUser.id) || (Array.isArray(test.results) ? (test.results as any[]).some((r: any) => r.studentId === currentUser.id) : !!(test.results as any)?.[currentUser.id]));
 
             return (
               <div

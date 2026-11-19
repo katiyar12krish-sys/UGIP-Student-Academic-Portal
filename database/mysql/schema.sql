@@ -17,7 +17,7 @@ CREATE TABLE branches (
   code VARCHAR(10) PRIMARY KEY,                -- CSE, CIVIL
   name VARCHAR(100) NOT NULL   -- name: full name
 );
--- Subjects of each branch and semester (official UBTER codes).
+-- Subjects of each br                      anch and semester (official UBTER codes).
 CREATE TABLE subjects (
   id INT PRIMARY KEY AUTO_INCREMENT,   -- id: unique id of the row
   branch_code VARCHAR(10) NOT NULL, semester TINYINT NOT NULL,   -- branch_code: branch (branches.code) · semester: semester 1-6

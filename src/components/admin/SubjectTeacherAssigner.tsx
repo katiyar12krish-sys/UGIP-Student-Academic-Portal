@@ -8,14 +8,14 @@ import { BookOpen, Check } from 'lucide-react';
 import { useCollege } from '../../context/CollegeContext';
 
 export const SubjectTeacherAssigner: React.FC = () => {
-  const { subjects, users, updateSubject } = useCollege();
+  const { subjects = [], users = [], updateSubject } = useCollege();
   const [branch, setBranch] = useState<'CSE' | 'Civil'>('CSE');
   const [semester, setSemester] = useState<number>(1);
   const [saved, setSaved] = useState<string | null>(null);
   const [busy, setBusy] = useState<string | null>(null);
 
-  const teachers = useMemo(() => users.filter((u) => u.role === 'faculty').sort((a, b) => a.name.localeCompare(b.name)), [users]);
-  const list = useMemo(() => subjects.filter((s) => s.branch === branch && s.semester === semester), [subjects, branch, semester]);
+  const teachers = useMemo(() => (users || []).filter((u) => u.role === 'faculty').sort((a, b) => (a.name || '').localeCompare(b.name || '')), [users]);
+  const list = useMemo(() => (subjects || []).filter((s) => s.branch === branch && s.semester === semester), [subjects, branch, semester]);
   const unassigned = list.filter((s) => !s.facultyId).length;
 
   const assign = async (subjectId: string, facultyId: string) => {

@@ -130,9 +130,9 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     }
 
     if (role === 'admin') {
-      const allowedAdminPasswords = ['Tanakpur@2026', 'Admin@123', 'admin123', 'xr2W-JBct-kgxg'];
+      const allowedAdminPasswords = ['Tanakpur@2026', 'Admin@123', 'admin', 'admin123', 'xr2W-JBct-kgxg'];
       if (!allowedAdminPasswords.includes(password)) {
-        return { status: 401, data: { ok: false, error: 'गलत एडमिन पासवर्ड! (Default: Tanakpur@2026)' } };
+        return { status: 401, data: { ok: false, error: 'गलत एडमिन पासवर्ड! कृपया सही पासवर्ड दर्ज करें। (Default: Tanakpur@2026)' } };
       }
       const adminUser = {
         id: 'usr-admin-1',
@@ -157,8 +157,8 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
         return { status: 400, data: { ok: false, error: 'कृपया अपना विषय चुनें / Please choose your subject.' } };
       }
       const allowedFacultyPasswords = ['Faculty@123', 'cse123', 'faculty', 'Tanakpur@2026', 'Admin@123'];
-      if (!allowedFacultyPasswords.includes(password) && password.length < 4) {
-        return { status: 401, data: { ok: false, error: 'गलत फैकल्टी पासवर्ड! (Default: Faculty@123)' } };
+      if (!allowedFacultyPasswords.includes(password)) {
+        return { status: 401, data: { ok: false, error: 'गलत फैकल्टी पासवर्ड! कृपया सही पासवर्ड दर्ज करें। (Default: Faculty@123)' } };
       }
       const facultyUser = {
         id: 'usr-fac-1',
@@ -183,9 +183,13 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
       if (!username) {
         return { status: 400, data: { ok: false, error: 'कृपया अपना रोल नंबर दर्ज करें / Enter your roll number.' } };
       }
-      const allowedStudentPasswords = ['Student@123', '123456', 'student', 'Tanakpur@2026', '2026'];
-      if (!allowedStudentPasswords.includes(password) && password.length < 4) {
-        return { status: 401, data: { ok: false, error: 'गलत पासवर्ड! (Default: Student@123)' } };
+      const creds = getStored<Record<string, string>>('ugip_mock_credentials_v1', {});
+      const userSpecificPw = creds[username] || creds[username.toLowerCase()];
+      const allowedStudentPasswords = ['Student@123', 'UGIP@1234', '123456', 'student', 'Tanakpur@2026', '2026'];
+      if (userSpecificPw) allowedStudentPasswords.push(userSpecificPw);
+
+      if (!allowedStudentPasswords.includes(password)) {
+        return { status: 401, data: { ok: false, error: 'गलत पासवर्ड! कृपया सही पासवर्ड दर्ज करें। (Default: UGIP@1234)' } };
       }
       const allStudents = getStored<any[]>('ugip_mock_students_v5', ALL_STUDENTS);
       const foundStudent = allStudents.find((s) => s.rollNo === username || s.id === username || s.enrolmentNo === username) || {
@@ -563,35 +567,231 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     return { status: 200, data: list };
   }
 
-  // Online Quizzes & Tests
+  // Online Quizzes & Tests & Timed Assignments (Step 7)
   if (pathname === '/api/online-tests') {
-    return {
-      status: 200,
-      data: [
-        {
-          id: 'test-1',
-          title: 'Mathematics Unit Test 1',
-          subjectName: 'Applied Mathematics-I',
-          durationMinutes: 45,
-          totalQuestions: 25,
-          totalMarks: 50,
-          status: 'completed',
-          score: 44,
-          maxScore: 50,
-        },
-        {
-          id: 'test-2',
-          title: 'C Programming Syntax & Pointers Drill',
-          subjectName: 'Programming in C',
-          durationMinutes: 30,
-          totalQuestions: 20,
-          totalMarks: 40,
-          status: 'active',
-          score: null,
-          maxScore: 40,
+    const defaultOnlineTests = [
+      {
+        id: 'test-1',
+        title: 'Mathematics Unit Test 1 (Derivations & Matrices)',
+        subjectCode: '051001',
+        subjectName: 'Applied Mathematics-I',
+        branch: 'CSE',
+        year: 1,
+        semester: 1,
+        deadlineDate: '2026-11-30',
+        deadlineTime: '17:00',
+        totalMarks: 50,
+        description: 'First comprehensive unit test covering matrices, determinants and differential calculus.',
+        assignedByFacultyName: 'Er. Jitendra Kumar',
+        submittedStudentIds: ['stu-24090050007', 'stu-anurag'],
+        remindersSentCount: 1,
+        questionCount: 5,
+        status: 'active',
+        questions: [
+          { question: 'What is the determinant of an identity matrix of size 3x3?', options: ['0', '1', '3', '-1'], correctIndex: 1, explanation: 'The determinant of any identity matrix is always 1.' },
+          { question: 'If A is a square matrix, then (A + A^T) is always:', options: ['Symmetric', 'Skew-Symmetric', 'Orthogonal', 'Singular'], correctIndex: 0, explanation: 'A + A^T is always symmetric since (A + A^T)^T = A^T + A = A + A^T.' },
+          { question: 'What is the derivative of sin(2x) with respect to x?', options: ['cos(2x)', '2 cos(2x)', '-2 cos(2x)', '2 sin(x)'], correctIndex: 1, explanation: 'By chain rule, d/dx(sin(2x)) = 2*cos(2x).' },
+          { question: 'The rank of a non-zero matrix cannot be:', options: ['0', '1', '2', '3'], correctIndex: 0, explanation: 'Rank of non-zero matrix is always >= 1.' },
+          { question: 'What is the limit of sin(x)/x as x approaches 0?', options: ['0', 'Infinity', '1', 'Undefined'], correctIndex: 2, explanation: 'Standard trigonometric limit: lim x->0 sin(x)/x = 1.' }
+        ],
+        results: {
+          'stu-24090050007': { score: 44, total: 50, percentage: 88, correct: 4, wrong: 1, grade: 'A+' },
+          'stu-anurag': { score: 44, total: 50, percentage: 88, correct: 4, wrong: 1, grade: 'A+' }
         }
-      ],
+      },
+      {
+        id: 'test-2',
+        title: 'C Programming Syntax & Pointers Drill',
+        subjectCode: '052001',
+        subjectName: 'Programming in C',
+        branch: 'CSE',
+        year: 1,
+        semester: 2,
+        deadlineDate: '2026-12-05',
+        deadlineTime: '18:00',
+        totalMarks: 40,
+        description: 'Drill on pointer arithmetic, dynamic memory allocation and struct pointers.',
+        assignedByFacultyName: 'Er. Jitendra Kumar',
+        submittedStudentIds: ['stu-anurag'],
+        remindersSentCount: 0,
+        questionCount: 4,
+        status: 'active',
+        questions: [
+          { question: 'Which function allocates memory and initializes all bytes to zero in C?', options: ['malloc()', 'calloc()', 'realloc()', 'free()'], correctIndex: 1, explanation: 'calloc() clears memory to zero.' },
+          { question: 'What is the size of a pointer on a 64-bit architecture?', options: ['2 bytes', '4 bytes', '8 bytes', '16 bytes'], correctIndex: 2, explanation: 'On 64-bit systems, pointers are 8 bytes.' },
+          { question: 'Which symbol is used for dereferencing a pointer?', options: ['&', '*', '->', '%'], correctIndex: 1, explanation: '* is the dereference operator.' },
+          { question: 'What does malloc() return if allocation fails?', options: ['0', 'NULL', '-1', 'Void'], correctIndex: 1, explanation: 'malloc returns NULL on failure.' }
+        ],
+        results: {
+          'stu-anurag': { score: 36, total: 40, percentage: 90, correct: 4, wrong: 0, grade: 'A+' }
+        }
+      }
+    ];
+
+    if (normMethod === 'POST') {
+      const tests = getStored<any[]>('ugip_mock_online_tests_v2', defaultOnlineTests);
+      const newTest = {
+        id: `test-${Date.now()}`,
+        title: body?.title || 'New Online Test',
+        subjectCode: body?.subjectCode || '053001',
+        subjectName: body?.subjectName || 'Data Structures',
+        branch: body?.branch || 'CSE',
+        year: body?.year || 2,
+        semester: body?.semester || 3,
+        deadlineDate: body?.deadlineDate || '2026-12-30',
+        deadlineTime: body?.deadlineTime || '17:00',
+        totalMarks: body?.totalMarks || 50,
+        description: body?.description || '',
+        assignedByFacultyName: 'Er. Jitendra Kumar',
+        submittedStudentIds: [],
+        remindersSentCount: 0,
+        questionCount: (body?.questions || []).length,
+        status: 'active',
+        questions: body?.questions || [],
+        results: {}
+      };
+      tests.unshift(newTest);
+      setStored('ugip_mock_online_tests_v2', tests);
+      return { status: 200, data: newTest };
+    }
+
+    const tests = getStored<any[]>('ugip_mock_online_tests_v2', defaultOnlineTests);
+    return { status: 200, data: tests };
+  }
+
+  // Online test subroutes
+  if (pathname.startsWith('/api/online-tests/')) {
+    const parts = pathname.split('/');
+    const testId = decodeURIComponent(parts[3] || '');
+    const action = parts[4];
+    const defaultOnlineTests = [
+      {
+        id: 'test-1',
+        title: 'Mathematics Unit Test 1 (Derivations & Matrices)',
+        subjectCode: '051001',
+        subjectName: 'Applied Mathematics-I',
+        branch: 'CSE',
+        year: 1,
+        semester: 1,
+        deadlineDate: '2026-11-30',
+        deadlineTime: '17:00',
+        totalMarks: 50,
+        description: 'First comprehensive unit test covering matrices, determinants and differential calculus.',
+        assignedByFacultyName: 'Er. Jitendra Kumar',
+        submittedStudentIds: ['stu-24090050007', 'stu-anurag'],
+        remindersSentCount: 1,
+        questionCount: 5,
+        status: 'active',
+        questions: [
+          { question: 'What is the determinant of an identity matrix of size 3x3?', options: ['0', '1', '3', '-1'], correctIndex: 1, explanation: 'The determinant of any identity matrix is always 1.' },
+          { question: 'If A is a square matrix, then (A + A^T) is always:', options: ['Symmetric', 'Skew-Symmetric', 'Orthogonal', 'Singular'], correctIndex: 0, explanation: 'A + A^T is always symmetric since (A + A^T)^T = A^T + A = A + A^T.' },
+          { question: 'What is the derivative of sin(2x) with respect to x?', options: ['cos(2x)', '2 cos(2x)', '-2 cos(2x)', '2 sin(x)'], correctIndex: 1, explanation: 'By chain rule, d/dx(sin(2x)) = 2*cos(2x).' },
+          { question: 'The rank of a non-zero matrix cannot be:', options: ['0', '1', '2', '3'], correctIndex: 0, explanation: 'Rank of non-zero matrix is always >= 1.' },
+          { question: 'What is the limit of sin(x)/x as x approaches 0?', options: ['0', 'Infinity', '1', 'Undefined'], correctIndex: 2, explanation: 'Standard trigonometric limit: lim x->0 sin(x)/x = 1.' }
+        ],
+        results: {
+          'stu-24090050007': { score: 44, total: 50, percentage: 88, correct: 4, wrong: 1, grade: 'A+' },
+          'stu-anurag': { score: 44, total: 50, percentage: 88, correct: 4, wrong: 1, grade: 'A+' }
+        }
+      }
+    ];
+    const tests = getStored<any[]>('ugip_mock_online_tests_v2', defaultOnlineTests);
+    const foundTest = tests.find((t) => t.id === testId) || defaultOnlineTests[0];
+
+    if (action === 'questions' && normMethod === 'GET') {
+      const safeQuestions = (foundTest?.questions || []).map((q: any) => ({
+        question: q.question,
+        options: q.options || [],
+      }));
+      return { status: 200, data: { questions: safeQuestions } };
+    }
+
+    if (action === 'submit' && normMethod === 'POST') {
+      const answers: (number | null)[] = body?.answers || [];
+      const questions: any[] = foundTest?.questions || [];
+      let correct = 0;
+      let wrong = 0;
+      const review = questions.map((q: any, i: number) => {
+        const yourIndex = answers[i] ?? null;
+        if (yourIndex === q.correctIndex) correct++;
+        else wrong++;
+        return { ...q, yourIndex };
+      });
+      const totalMarks = foundTest?.totalMarks || 50;
+      const score = questions.length ? Math.round((correct / questions.length) * totalMarks) : totalMarks;
+      const percentage = Math.round((score / totalMarks) * 100);
+      const grade = percentage >= 80 ? 'A+' : percentage >= 60 ? 'A' : percentage >= 40 ? 'B' : 'F';
+      const result = { score, total: totalMarks, percentage, correct, wrong, grade };
+
+      const currUser = getStored<any>('ugip_mock_curr_user_v2', { id: 'stu-current', name: 'Current Student' });
+      if (!foundTest.submittedStudentIds) foundTest.submittedStudentIds = [];
+      if (!foundTest.submittedStudentIds.includes(currUser.id)) {
+        foundTest.submittedStudentIds.push(currUser.id);
+      }
+      if (!foundTest.results) foundTest.results = {};
+      foundTest.results[currUser.id] = result;
+      setStored('ugip_mock_online_tests_v2', tests);
+
+      return { status: 200, data: { result, review, test: foundTest } };
+    }
+
+    if (action === 'remind' && normMethod === 'POST') {
+      foundTest.remindersSentCount = (foundTest.remindersSentCount || 0) + 1;
+      setStored('ugip_mock_online_tests_v2', tests);
+      return { status: 200, data: { pending: 15, sentCount: 15, targetStudents: ['24090050001', '24090050002'] } };
+    }
+  }
+
+  // Faculty Role Permissions Hub
+  if (pathname === '/api/admin/faculty-permissions') {
+    const defaultFeatures = [
+      { key: 'marks', label: 'Marks & exams' },
+      { key: 'attendance', label: 'Attendance' },
+      { key: 'practicals', label: 'Lab practicals' },
+      { key: 'online_tests', label: 'Online tests' },
+      { key: 'materials', label: 'Study materials' },
+      { key: 'dispatch', label: 'Class dispatch' },
+      { key: 'doubts', label: 'Doubt Q&A' },
+      { key: 'notices', label: 'Notices' },
+      { key: 'board_results', label: 'Board results' },
+      { key: 'student_logins', label: 'Student logins' },
+      { key: 'placement', label: 'Placement' },
+      { key: 'data_center', label: 'Data Center' },
+      { key: 'question_papers', label: 'Question papers' },
+    ];
+    const defaultFaculty = [
+      { id: 'usr-fac-1', name: 'Er. Jitendra Kumar', username: 'jitendra_cse', department: 'CSE', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053001', code: '053001', name: 'Data Structures Using C', branch: 'CSE', semester: 3 }] },
+      { id: 'usr-fac-2', name: 'Er. Priya Sharma', username: 'priya_cse', department: 'CSE', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053002', code: '053002', name: 'Object Oriented Programming Java', branch: 'CSE', semester: 3 }] },
+      { id: 'usr-fac-3', name: 'Er. Rajesh Verma', username: 'rajesh_cse', department: 'CSE', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053003', code: '053003', name: 'Database Management System', branch: 'CSE', semester: 3 }] },
+      { id: 'usr-fac-4', name: 'Er. Sunita Bisht', username: 'sunita_cse', department: 'CSE', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053004', code: '053004', name: 'Computer Architecture & Maintenance', branch: 'CSE', semester: 3 }] },
+      { id: 'usr-fac-5', name: 'Er. Vikram Joshi', username: 'vikram_civil', department: 'Civil', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053005', code: '053005', name: 'Building Construction & Materials', branch: 'Civil', semester: 3 }] },
+      { id: 'usr-fac-6', name: 'Er. Neha Tiwari', username: 'neha_civil', department: 'Civil', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053006', code: '053006', name: 'Surveying-I & Field Work', branch: 'Civil', semester: 3 }] },
+      { id: 'usr-fac-7', name: 'Er. Deepa Mehta', username: 'deepa_civil', department: 'Civil', perms: { marks: true, attendance: true, practicals: true, online_tests: true, materials: true, dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true, placement: true, data_center: true, question_papers: true }, subjects: [{ id: 'sub-053007', code: '053007', name: 'Fluid Mechanics & Hydraulics', branch: 'Civil', semester: 3 }] },
+    ];
+    const facRows = getStored<any[]>('ugip_mock_fac_perms_v1', defaultFaculty);
+    return { status: 200, data: { features: defaultFeatures, faculty: facRows } };
+  }
+
+  if (pathname.startsWith('/api/admin/faculty-permissions/') && normMethod === 'PUT') {
+    const parts = pathname.split('/');
+    const facId = decodeURIComponent(parts[4] || '');
+    const newPerms = body?.perms || {};
+    const facRows = getStored<any[]>('ugip_mock_fac_perms_v1', []);
+    const match = facRows.find((f) => f.id === facId);
+    if (match) {
+      match.perms = newPerms;
+      setStored('ugip_mock_fac_perms_v1', facRows);
+    }
+    return { status: 200, data: { ok: true, perms: newPerms } };
+  }
+
+  if (pathname === '/api/me/permissions') {
+    const allPerms = {
+      marks: true, attendance: true, practicals: true, online_tests: true, materials: true,
+      dispatch: true, doubts: true, notices: true, board_results: true, student_logins: true,
+      placement: true, data_center: true, question_papers: true
     };
+    return { status: 200, data: { role: 'admin', perms: allPerms, subjectIds: [] } };
   }
 
   // Resumes Hub
@@ -1486,9 +1686,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     return { status: 200, data: defaultDispatches };
   }
 
-  if (pathname === '/api/online-tests') {
-    return { status: 200, data: [] };
-  }
+
 
   if (pathname === '/api/notifications') {
     return { status: 200, data: { items: [], unread: 0 } };

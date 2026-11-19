@@ -55,6 +55,9 @@ async function req<T>(method: string, url: string, body?: unknown): Promise<Resu
     if (isStatic) {
       const mockResult = handleMockApi(method, url, body);
       if (mockResult) {
+        if (mockResult.status >= 400) {
+          return { ok: false, status: mockResult.status, error: mockResult.data?.error || 'गलत पासवर्ड या अमान्य विवरण।' };
+        }
         return { ok: true, data: mockResult.data as T };
       }
     }
@@ -68,6 +71,9 @@ async function req<T>(method: string, url: string, body?: unknown): Promise<Resu
     if (!res.ok || contentType.includes('text/html')) {
       const mockResult = handleMockApi(method, url, body);
       if (mockResult) {
+        if (mockResult.status >= 400) {
+          return { ok: false, status: mockResult.status, error: mockResult.data?.error || 'गलत पासवर्ड या अमान्य विवरण।' };
+        }
         return { ok: true, data: mockResult.data as T };
       }
       const json = await res.json().catch(() => ({}));
@@ -78,6 +84,9 @@ async function req<T>(method: string, url: string, body?: unknown): Promise<Resu
   } catch {
     const mockResult = handleMockApi(method, url, body);
     if (mockResult) {
+      if (mockResult.status >= 400) {
+        return { ok: false, status: mockResult.status, error: mockResult.data?.error || 'गलत पासवर्ड या अमान्य विवरण।' };
+      }
       return { ok: true, data: mockResult.data as T };
     }
     return { ok: false, status: 0, error: 'Cannot reach the server. Check your connection.' };
@@ -136,63 +145,6 @@ export const authApi = {
         try { localStorage.setItem('ugip_offline_user', JSON.stringify(res.data.user)); } catch {}
       }
       return res;
-    }
-
-    // Offline / Serverless fallback if server returns 404 / 502 / 500 / 0
-    if (!res.ok) {
-      const uLower = (username || '').trim().toLowerCase();
-      if (role === 'admin' && (password === 'Tanakpur@2026' || password === 'admin' || password === 'Admin@123' || password === 'xr2W-JBct-kgxg' || password.length >= 4)) {
-        const u = DEMO_USERS.admin;
-        try { localStorage.setItem('ugip_offline_user', JSON.stringify(u)); } catch {}
-        return { ok: true, data: { user: u } };
-      }
-      if (role === 'faculty') {
-        const f = {
-          id: `usr-fac-${uLower || '1'}`,
-          username: uLower || 'faculty',
-          role: 'faculty' as const,
-          name: uLower ? uLower.replace(/_/g, ' ').toUpperCase() : 'Faculty Lecturer',
-          email: `${uLower || 'faculty'}@ugip.ac.in`,
-          phone: '9876543211',
-          department: 'CSE',
-          designation: 'Lecturer',
-          studentId: null,
-          subjectIds: subjectId ? [subjectId] : ['053001'],
-          childIds: [],
-          mustChangePassword: false,
-          mfaEnabled: false,
-          mfaSetupRequired: false,
-          consentRequired: false,
-          minor: false,
-          photoUrl: null,
-          subjectScope: subjectId || null,
-        };
-        try { localStorage.setItem('ugip_offline_user', JSON.stringify(f)); } catch {}
-        return { ok: true, data: { user: f } };
-      }
-      if (role === 'student') {
-        const s = {
-          id: `usr-stu-${uLower || '1'}`,
-          username: uLower || '23053001',
-          role: 'student' as const,
-          name: 'Student User',
-          email: `${uLower}@ugip.ac.in`,
-          phone: '9876543212',
-          department: 'CSE',
-          designation: null,
-          studentId: `stu-${uLower || '1'}`,
-          subjectIds: [],
-          childIds: [],
-          mustChangePassword: false,
-          mfaEnabled: false,
-          mfaSetupRequired: false,
-          consentRequired: false,
-          minor: false,
-          photoUrl: null,
-        };
-        try { localStorage.setItem('ugip_offline_user', JSON.stringify(s)); } catch {}
-        return { ok: true, data: { user: s } };
-      }
     }
 
     return res;
