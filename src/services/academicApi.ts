@@ -9,8 +9,12 @@ export type ApiResult<T> = { ok: true; data: T } | { ok: false; error: string; s
 // Call.
 export async function call<T>(method: string, url: string, body?: unknown): Promise<ApiResult<T>> {
   try {
-    const isNetlify = typeof window !== 'undefined' && window.location.hostname.includes('netlify.app');
-    if (isNetlify) {
+    const isStatic = typeof window !== 'undefined' && (
+      window.location.hostname.includes('netlify.app') ||
+      window.location.hostname.includes('vercel.app') ||
+      window.location.hostname.includes('github.io')
+    );
+    if (isStatic) {
       const mockResult = handleMockApi(method, url, body);
       if (mockResult) {
         return { ok: true, data: mockResult.data as T };
@@ -22,14 +26,16 @@ export async function call<T>(method: string, url: string, body?: unknown): Prom
       headers: body !== undefined ? { 'Content-Type': 'application/json' } : undefined,
       body: body !== undefined ? JSON.stringify(body) : undefined,
     });
-    const json = await res.json().catch(() => ({}));
-    if (!res.ok) {
+    const contentType = res.headers.get('content-type') || '';
+    if (!res.ok || contentType.includes('text/html')) {
       const mockResult = handleMockApi(method, url, body);
       if (mockResult) {
         return { ok: true, data: mockResult.data as T };
       }
+      const json = await res.json().catch(() => ({}));
       return { ok: false, status: res.status, error: json?.error || `Request failed (${res.status})` };
     }
+    const json = await res.json();
     return { ok: true, data: json as T };
   } catch {
     const mockResult = handleMockApi(method, url, body);

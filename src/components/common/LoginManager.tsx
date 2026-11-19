@@ -73,7 +73,7 @@ export const LoginManager: React.FC<{ onClose: () => void; initialBranch?: strin
   // Loads the data from the server.
   const load = useCallback(async () => {
     const r = await authApi.listLogins({ branch: branch || undefined, year: year ? Number(year) : undefined, q: q.trim() || undefined });
-    if (r.ok) { setRows(r.data); setMsg(''); } else setMsg(r.error);
+    if (r.ok && Array.isArray(r.data)) { setRows(r.data); setMsg(''); } else if (r.ok) { setRows([]); setMsg(''); } else setMsg(r.error);
   }, [branch, year, q]);
   // Runs automatically whenever these change: rows.
   useEffect(() => { const t = setTimeout(load, 250); return () => clearTimeout(t); }, [load]);

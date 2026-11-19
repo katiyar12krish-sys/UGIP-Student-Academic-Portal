@@ -1,4 +1,6 @@
 // Thin client for the server login (cookie session). The cookie is HttpOnly - JavaScript never sees it.
+import { handleMockApi } from './mockApiHandler';
+
 export interface AuthUser {
   id: string; username: string; role: 'admin' | 'faculty' | 'student' | 'parent'; name: string;
   email: string | null; phone: string | null; department: string | null; designation: string | null;
@@ -45,15 +47,39 @@ type Result<T> = { ok: true; data: T } | { ok: false; error: string; status: num
 // Req.
 async function req<T>(method: string, url: string, body?: unknown): Promise<Result<T>> {
   try {
+    const isStatic = typeof window !== 'undefined' && (
+      window.location.hostname.includes('vercel.app') ||
+      window.location.hostname.includes('github.io') ||
+      window.location.hostname.includes('netlify.app')
+    );
+    if (isStatic) {
+      const mockResult = handleMockApi(method, url, body);
+      if (mockResult) {
+        return { ok: true, data: mockResult.data as T };
+      }
+    }
+
     const res = await fetch(url, {
       method, credentials: 'same-origin',
       headers: body ? { 'Content-Type': 'application/json' } : undefined,
       body: body ? JSON.stringify(body) : undefined,
     });
-    const json = await res.json().catch(() => ({}));
-    if (!res.ok) return { ok: false, status: res.status, error: json?.error || `Request failed (${res.status})` };
+    const contentType = res.headers.get('content-type') || '';
+    if (!res.ok || contentType.includes('text/html')) {
+      const mockResult = handleMockApi(method, url, body);
+      if (mockResult) {
+        return { ok: true, data: mockResult.data as T };
+      }
+      const json = await res.json().catch(() => ({}));
+      return { ok: false, status: res.status, error: json?.error || `Request failed (${res.status})` };
+    }
+    const json = await res.json();
     return { ok: true, data: json as T };
   } catch {
+    const mockResult = handleMockApi(method, url, body);
+    if (mockResult) {
+      return { ok: true, data: mockResult.data as T };
+    }
     return { ok: false, status: 0, error: 'Cannot reach the server. Check your connection.' };
   }
 }

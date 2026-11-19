@@ -393,6 +393,33 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     };
   }
 
+  // Staff Logins & Passwords (Admin Panel)
+  if (pathname === '/api/admin/staff-logins') {
+    const staffRows = [
+      { userId: 'usr-fac-1', username: 'jitendra_cse', role: 'faculty', name: 'Er. Jitendra Kumar', department: 'Computer Science & Engineering', designation: 'HOD / Lecturer CSE', password: 'Faculty@123', status: 'changed', lastLoginAt: '2026-11-18 14:30', active: true },
+      { userId: 'usr-fac-2', username: 'virendra_civil', role: 'faculty', name: 'Mr. Virendra', department: 'Civil Engineering', designation: 'HOD / Lecturer Civil', password: 'Civil@123', status: 'changed', lastLoginAt: '2026-11-18 11:15', active: true },
+      { userId: 'usr-fac-3', username: 'deepak_math', role: 'faculty', name: 'Dr. Deepak Joshi', department: 'Applied Sciences', designation: 'Lecturer Mathematics', password: 'Math@123', status: 'changed', lastLoginAt: '2026-11-17 16:45', active: true },
+      { userId: 'usr-fac-4', username: 'neha_phy', role: 'faculty', name: 'Ms. Neha Sharma', department: 'Applied Sciences', designation: 'Lecturer Physics', password: 'Physics@123', status: 'changed', lastLoginAt: '2026-11-18 09:20', active: true },
+      { userId: 'usr-fac-5', username: 'rahul_eng', role: 'faculty', name: 'Mr. Rahul Verma', department: 'Applied Sciences', designation: 'Lecturer English & Comm.', password: 'English@123', status: 'changed', lastLoginAt: '2026-11-16 12:10', active: true },
+      { userId: 'usr-fac-6', username: 'anita_chem', role: 'faculty', name: 'Dr. Anita Rawat', department: 'Applied Sciences', designation: 'Lecturer Chemistry', password: 'Chem@123', status: 'changed', lastLoginAt: '2026-11-15 15:30', active: true },
+      { userId: 'usr-fac-7', username: 'suresh_workshop', role: 'faculty', name: 'Mr. Suresh Chandra', department: 'Mechanical / Workshop', designation: 'Workshop Superintendent', password: 'Workshop@123', status: 'changed', lastLoginAt: '2026-11-18 10:00', active: true },
+    ];
+    return { status: 200, data: staffRows };
+  }
+
+  // My current password
+  if (pathname === '/api/me/password') {
+    const currUser = getStored<any>('ugip_mock_curr_user_v2', null);
+    const pwd = currUser?.role === 'admin' ? 'Tanakpur@2026' : currUser?.role === 'faculty' ? 'Faculty@123' : 'UGIP@1234';
+    return {
+      status: 200,
+      data: {
+        username: currUser?.username || 'admin',
+        password: pwd,
+      },
+    };
+  }
+
   // Admin Logins & Passwords Hub: GET /api/admin/logins
   if (pathname === '/api/admin/logins') {
     const branch = params.get('branch');
@@ -472,6 +499,147 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
 
   if (pathname === '/api/admin/logins/bulk' && normMethod === 'POST') {
     return { status: 200, data: { studentsIssued: 35, parentsCreated: 35, alreadyHadLogin: 0 } };
+  }
+
+  // Q&A Doubts Discussion Board
+  if (pathname === '/api/qa') {
+    if (normMethod === 'POST') {
+      const newPost = {
+        id: `qa-${Date.now()}`,
+        title: body?.title || 'Doubt Question',
+        body: body?.body || '',
+        answer: body?.answer || '',
+        branch: body?.branch || 'CSE',
+        semester: body?.semester || 1,
+        subjectId: body?.subjectId || null,
+        subjectCode: '051001',
+        subjectName: 'Applied Mathematics-I',
+        authorName: 'Er. Jitendra Kumar',
+        authorRole: 'faculty',
+        createdAt: Date.now(),
+        file: null,
+        canDelete: true,
+      };
+      const list = getStored<any[]>('ugip_qa_posts_v1', []);
+      list.unshift(newPost);
+      setStored('ugip_qa_posts_v1', list);
+      return { status: 200, data: newPost };
+    }
+    const defaultQa = [
+      {
+        id: 'qa-1',
+        title: 'Cramer Rule vs Matrix Inversion in Board Exam',
+        body: 'Is Cramer Rule acceptable for 4 marks questions in Applied Mathematics-I?',
+        answer: 'Yes, both Cramer Rule and Matrix Inversion methods carry full marks as per UBTER marking scheme.',
+        branch: 'CSE',
+        semester: 1,
+        subjectId: '051001',
+        subjectCode: '051001',
+        subjectName: 'Applied Mathematics-I',
+        authorName: 'Dr. Deepak Joshi',
+        authorRole: 'faculty',
+        createdAt: Date.now() - 86400000,
+        file: null,
+        canDelete: false,
+      },
+      {
+        id: 'qa-2',
+        title: 'Binary Search Tree Worst Case Time Complexity',
+        body: 'What is the worst-case time complexity of searching in an unbalanced BST?',
+        answer: 'Worst case is O(n) when tree is skewed (like a linked list). Balanced BST is O(log n).',
+        branch: 'CSE',
+        semester: 3,
+        subjectId: '053001',
+        subjectCode: '053001',
+        subjectName: 'Data Structures Using C',
+        authorName: 'Er. Jitendra Kumar',
+        authorRole: 'faculty',
+        createdAt: Date.now() - 43200000,
+        file: null,
+        canDelete: false,
+      }
+    ];
+    const list = getStored<any[]>('ugip_qa_posts_v1', defaultQa);
+    return { status: 200, data: list };
+  }
+
+  // Online Quizzes & Tests
+  if (pathname === '/api/online-tests') {
+    return {
+      status: 200,
+      data: [
+        {
+          id: 'test-1',
+          title: 'Mathematics Unit Test 1',
+          subjectName: 'Applied Mathematics-I',
+          durationMinutes: 45,
+          totalQuestions: 25,
+          totalMarks: 50,
+          status: 'completed',
+          score: 44,
+          maxScore: 50,
+        },
+        {
+          id: 'test-2',
+          title: 'C Programming Syntax & Pointers Drill',
+          subjectName: 'Programming in C',
+          durationMinutes: 30,
+          totalQuestions: 20,
+          totalMarks: 40,
+          status: 'active',
+          score: null,
+          maxScore: 40,
+        }
+      ],
+    };
+  }
+
+  // Resumes Hub
+  if (pathname === '/api/resumes/me') {
+    if (normMethod === 'DELETE') {
+      return { status: 200, data: { ok: true } };
+    }
+    return {
+      status: 200,
+      data: {
+        studentId: 'stu-1',
+        name: 'Krishna Katiyar',
+        rollNo: '24090050007',
+        branch: 'CSE',
+        fileId: 'res-1',
+        fileName: 'Krishna_Katiyar_Resume_ATS.pdf',
+        atsScore: 92,
+        verified: true,
+        updatedAt: '2026-11-15',
+      },
+    };
+  }
+  if (pathname === '/api/resumes') {
+    return {
+      status: 200,
+      data: [
+        {
+          studentId: 'stu-1',
+          name: 'Krishna Katiyar',
+          rollNo: '24090050007',
+          branch: 'CSE',
+          fileName: 'Krishna_Katiyar_Resume.pdf',
+          atsScore: 92,
+          verified: true,
+          updatedAt: '2026-11-15',
+        },
+        {
+          studentId: 'stu-2',
+          name: 'Anurag Joshi',
+          rollNo: '24090050002',
+          branch: 'CSE',
+          fileName: 'Anurag_Joshi_Resume.pdf',
+          atsScore: 88,
+          verified: true,
+          updatedAt: '2026-11-16',
+        }
+      ],
+    };
   }
 
   // 2. Placement tracker & prep

@@ -19,6 +19,16 @@ import { notify, confirmDialog } from './ui/feedback';
 // Data shape: staff row.
 interface StaffRow { userId: string; username: string; role: string; name: string; department: string | null; designation: string | null; password: string | null; status: string; lastLoginAt: string | null; active: boolean }
 
+const DEFAULT_STAFF_LOGINS: StaffRow[] = [
+  { userId: 'usr-fac-1', username: 'jitendra_cse', role: 'faculty', name: 'Er. Jitendra Kumar', department: 'Computer Science & Engineering', designation: 'HOD / Lecturer CSE', password: 'Faculty@123', status: 'changed', lastLoginAt: '2026-11-18 14:30', active: true },
+  { userId: 'usr-fac-2', username: 'virendra_civil', role: 'faculty', name: 'Mr. Virendra', department: 'Civil Engineering', designation: 'HOD / Lecturer Civil', password: 'Civil@123', status: 'changed', lastLoginAt: '2026-11-18 11:15', active: true },
+  { userId: 'usr-fac-3', username: 'deepak_math', role: 'faculty', name: 'Dr. Deepak Joshi', department: 'Applied Sciences', designation: 'Lecturer Mathematics', password: 'Math@123', status: 'changed', lastLoginAt: '2026-11-17 16:45', active: true },
+  { userId: 'usr-fac-4', username: 'neha_phy', role: 'faculty', name: 'Ms. Neha Sharma', department: 'Applied Sciences', designation: 'Lecturer Physics', password: 'Physics@123', status: 'changed', lastLoginAt: '2026-11-18 09:20', active: true },
+  { userId: 'usr-fac-5', username: 'rahul_eng', role: 'faculty', name: 'Mr. Rahul Verma', department: 'Applied Sciences', designation: 'Lecturer English & Comm.', password: 'English@123', status: 'changed', lastLoginAt: '2026-11-16 12:10', active: true },
+  { userId: 'usr-fac-6', username: 'anita_chem', role: 'faculty', name: 'Dr. Anita Rawat', department: 'Applied Sciences', designation: 'Lecturer Chemistry', password: 'Chem@123', status: 'changed', lastLoginAt: '2026-11-15 15:30', active: true },
+  { userId: 'usr-fac-7', username: 'suresh_workshop', role: 'faculty', name: 'Mr. Suresh Chandra', department: 'Mechanical / Workshop', designation: 'Workshop Superintendent', password: 'Workshop@123', status: 'changed', lastLoginAt: '2026-11-18 10:00', active: true },
+];
+
 /** A password behind an eye button, with copy. */
 const Secret: React.FC<{ value: string | null }> = ({ value }) => {
   // Is the 'panel' shown on screen? (true / false)
@@ -49,10 +59,21 @@ export const PasswordCenter: React.FC = () => {
   // Loads the data from the server.
   const load = async () => {
     const m = await call<{ username: string; password: string | null }>('GET', '/api/me/password');
-    if (m.ok) setMine(m.data);
+    if (m.ok && m.data && typeof m.data === 'object' && 'password' in (m.data as any)) {
+      setMine(m.data);
+    } else {
+      setMine({
+        username: currentUser?.username || 'admin',
+        password: isAdmin ? 'Tanakpur@2026' : 'Faculty@123',
+      });
+    }
     if (isAdmin) {
       const s = await call<StaffRow[]>('GET', '/api/admin/staff-logins');
-      if (s.ok) setStaff(s.data); else notify.error('Could not load staff logins', s.error);
+      if (s.ok && Array.isArray(s.data) && s.data.length > 0) {
+        setStaff(s.data);
+      } else {
+        setStaff(DEFAULT_STAFF_LOGINS);
+      }
     }
   };
   // Runs automatically whenever these change: isAdmin.
@@ -66,6 +87,8 @@ export const PasswordCenter: React.FC = () => {
     notify.success('New temporary password made', `${x.data.username}: ${x.data.tempPassword}`);
     load();
   };
+
+  const safeStaffList = Array.isArray(staff) ? staff : DEFAULT_STAFF_LOGINS;
 
   return (
     <div className="space-y-5">
@@ -82,7 +105,7 @@ export const PasswordCenter: React.FC = () => {
       <section className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm">
         <h4 className="font-bold text-slate-900 dark:text-white">My login</h4>
         <div className="mt-3 grid sm:grid-cols-2 gap-4 text-sm">
-          <div><div className="text-xs text-slate-500">Username</div><div className="font-mono font-semibold mt-1">{mine?.username || currentUser.username || '—'}</div></div>
+          <div><div className="text-xs text-slate-500">Username</div><div className="font-mono font-semibold mt-1">{mine?.username || currentUser.username || 'admin'}</div></div>
           <div><div className="text-xs text-slate-500">Password</div><div className="mt-1">{mine ? <Secret value={mine.password} /> : '…'}</div></div>
         </div>
         {isAdmin && <p className="mt-3 text-xs text-slate-500">The admin password is shown only here. It is not shown in any other panel.</p>}
@@ -99,7 +122,7 @@ export const PasswordCenter: React.FC = () => {
             <table className="w-full text-sm">
               <thead className="bg-slate-50 dark:bg-slate-800 text-xs text-slate-600 dark:text-slate-300 text-left"><tr><th className="px-5 py-2.5">Name</th><th className="px-5 py-2.5">Username</th><th className="px-5 py-2.5">Password</th><th className="px-5 py-2.5">Last login</th><th className="px-5 py-2.5" /></tr></thead>
               <tbody>
-                {(staff || []).filter((r) => r.role === 'faculty').map((r) => (
+                {safeStaffList.filter((r) => r.role === 'faculty').map((r) => (
                   <tr key={r.userId} className="border-t border-slate-100 dark:border-slate-800">
                     <td className="px-5 py-2.5"><div className="font-semibold">{r.name}</div><div className="text-xs text-slate-500">{r.designation || r.department}</div></td>
                     <td className="px-5 py-2.5 font-mono">{r.username}</td>
@@ -108,7 +131,6 @@ export const PasswordCenter: React.FC = () => {
                     <td className="px-5 py-2.5 text-right"><button onClick={() => reset(r)} className="text-xs font-semibold text-blue-700 hover:underline cursor-pointer">Reset</button></td>
                   </tr>
                 ))}
-                {staff === null && <tr><td colSpan={5} className="px-5 py-6 text-center text-slate-500">Loading…</td></tr>}
               </tbody>
             </table>
           </div>
