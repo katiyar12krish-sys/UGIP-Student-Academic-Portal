@@ -142,7 +142,7 @@ export const authApi = {
     const res = await req<{ user?: AuthUser; mfaRequired?: true; challenge?: string }>('POST', '/api/auth/login', { username, password, role, subjectId });
     if (res.ok) {
       if (res.data.user) {
-        try { localStorage.setItem('ugip_offline_user', JSON.stringify(res.data.user)); } catch {}
+        try { sessionStorage.setItem('ugip_offline_user', JSON.stringify(res.data.user)); } catch {}
       }
       return res;
     }
@@ -151,7 +151,10 @@ export const authApi = {
   },
   loginMfa: (challenge: string, code: string) => req<{ user: AuthUser }>('POST', '/api/auth/login/mfa', { challenge, code }),
   logout: async () => {
-    try { localStorage.removeItem('ugip_offline_user'); } catch {}
+    try {
+      sessionStorage.removeItem('ugip_offline_user');
+      localStorage.removeItem('ugip_offline_user');
+    } catch {}
     return req<{ ok: true }>('POST', '/api/auth/logout', {});
   },
   changePassword: (currentPassword: string, newPassword: string) => req<{ ok: true }>('POST', '/api/auth/change-password', { currentPassword, newPassword }),

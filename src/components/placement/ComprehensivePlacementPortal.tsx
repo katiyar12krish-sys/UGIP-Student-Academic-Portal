@@ -85,11 +85,13 @@ interface ComprehensivePlacementPortalProps {
     | 'college-records'
     | 'share-experience'
     | 'mock-interview';
+  forceMobileView?: boolean;
 }
 
 // Screen part: comprehensive placement portal.
 export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortalProps> = ({
   initialTab = 'drives',
+  forceMobileView = false,
 }) => {
   const {
     currentUser,
@@ -613,7 +615,7 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
       {/* Top Banner & Header */}
       <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-blue-500/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className={`relative z-10 flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-6`}>
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center gap-1.5">
@@ -632,11 +634,11 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full md:w-auto">
             {(currentUser.role === 'admin' || currentUser.role === 'faculty') && (
               <button
                 onClick={() => handleInitiateProtectedAction('add-drive')}
-                className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
+                className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>Post Placement Drive</span>
@@ -645,7 +647,7 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
             {/* Step 19: one button to the trusted CSE & Civil job links inside the portal (replaces the outside "Sarkari Result" links) */}
             <button
               onClick={() => setActiveTab('sarkari-naukri')}
-              className="px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer ring-2 ring-emerald-400/40"
+              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer ring-2 ring-emerald-400/40"
             >
               <Briefcase className="w-4 h-4" />
               <span>Job Links – CSE & Civil</span>

@@ -109,7 +109,7 @@ const FacultyCredentialEditor: React.FC<{ faculty: UserProfile }> = ({ faculty }
       </span>
       <span className="text-[10px] text-amber-700 dark:text-amber-400 font-medium">Admin Controlled</span>
     </div>
-    <div className="flex items-center justify-between gap-3 text-xs">
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
       <div>
         <span className="block text-[10px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">Username</span>
         <span className="font-mono font-bold text-slate-800 dark:text-slate-100">{faculty.username || '—'}</span>
@@ -117,12 +117,12 @@ const FacultyCredentialEditor: React.FC<{ faculty: UserProfile }> = ({ faculty }
       <button
         type="button"
         onClick={() => issueTempPasswordFor(faculty.id, faculty.name)}
-        className="px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shadow-2xs shrink-0"
+        className="w-full sm:w-auto px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shadow-2xs text-center justify-center shrink-0"
       >
         Issue new password
       </button>
     </div>
-    <span className="block text-[10px] text-slate-400">Teachers sign in by choosing their subject + this password. Only the admin sees or resets faculty passwords; they are never sent to another teacher.</span>
+    <span className="block text-[10px] text-slate-400 leading-tight">Teachers sign in by choosing their subject + this password. Only the admin sees or resets faculty passwords; they are never sent to another teacher.</span>
   </div>
 );
 
@@ -464,7 +464,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
           <div className="w-48 h-48 border-4 border-blue-400 rounded-full"></div>
         </div>
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+        <div className={`relative z-10 flex flex-col ${forceMobileView ? '' : 'lg:flex-row lg:items-center'} justify-between gap-5`}>
           <div className="space-y-2 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 uppercase tracking-wider">
@@ -480,7 +480,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:flex lg:flex-wrap gap-2.5 w-full lg:w-auto">
+          <div className={`grid grid-cols-1 ${forceMobileView ? 'gap-2.5 w-full' : 'sm:grid-cols-3 lg:flex lg:flex-wrap gap-2.5 w-full lg:w-auto'}`}>
             <button
               onClick={() => setShowStudentScannerModal(true)}
               className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
@@ -693,7 +693,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
 
       {/* AUTOMATIC YEAR-WISE ATTENDANCE ANALYSIS & TRENDS */}
       {activeTab === 'attendance-analysis' && (
-        <YearwiseAttendanceAnalysis allowEdit={true} />
+        <YearwiseAttendanceAnalysis allowEdit={true} forceMobileView={forceMobileView} />
       )}
 
       {/* 2. ONLINE TESTS & ASSIGNMENTS WITH TIME REMINDER TRIGGER */}
@@ -853,7 +853,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}>
             {filteredFaculty.map((fac) => (
               <div
                 key={fac.id}
@@ -957,7 +957,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
               <Plus className="w-4 h-4" /> Add Subject
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className={`grid gap-4 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}>
             {subjects.map((sub) => (
               <div
                 key={sub.id}
@@ -991,9 +991,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
       {/* Tab "materials" */}
       {activeTab === 'materials' && <DocumentMaterialHub mode="admin" forceMobileView={forceMobileView} />}
       {/* Tab "placements" */}
-      {activeTab === 'placements' && <InternshipPlacementPortal allowPost={true} />}
+      {activeTab === 'placements' && <InternshipPlacementPortal allowPost={true} forceMobileView={forceMobileView} />}
       {/* Tab "performance-analytics" */}
-      {activeTab === 'performance-analytics' && <StudentPerformanceAnalyticsDashboard />}
+      {activeTab === 'performance-analytics' && <StudentPerformanceAnalyticsDashboard forceMobileView={forceMobileView} />}
       {/* Tab "quiz-drill" */}
       {activeTab === 'quiz-drill' && <AIQuizDrillAndAnalytics />}
       {/* Tab "achievements" */}

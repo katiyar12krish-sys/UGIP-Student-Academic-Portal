@@ -112,6 +112,36 @@ function setStored<T>(key: string, val: T): void {
   } catch {}
 }
 
+// Session-scoped storage: automatically resets when the user closes their browser/tab
+function getSessionStored<T>(key: string, def: T): T {
+  try {
+    if (typeof sessionStorage === 'undefined') return def;
+    const val = sessionStorage.getItem(key);
+    return val ? JSON.parse(val) : def;
+  } catch {
+    return def;
+  }
+}
+
+function setSessionStored<T>(key: string, val: T): void {
+  try {
+    if (typeof sessionStorage !== 'undefined') {
+      sessionStorage.setItem(key, JSON.stringify(val));
+    }
+  } catch {}
+}
+
+// Ensure old persistent logins from localStorage are cleared
+try {
+  if (typeof localStorage !== 'undefined') {
+    localStorage.removeItem('ugip_mock_curr_user_v2');
+    localStorage.removeItem('ugip_mock_curr_user');
+    localStorage.removeItem('ugip_offline_user');
+    localStorage.removeItem('ugip_admin_session_active');
+    localStorage.removeItem('UGIP_CURRENT_USER');
+  }
+} catch {}
+
 export function handleMockApi(method: string, path: string, body?: any): { status: number; data: any } | null {
   const normMethod = (method || 'GET').toUpperCase();
   const urlObj = new URL(path, 'http://localhost');
@@ -148,7 +178,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
         minor: false,
         photoUrl: null,
       };
-      setStored('ugip_mock_curr_user_v2', adminUser);
+      setSessionStored('ugip_mock_curr_user_v2', adminUser);
       return { status: 200, data: { ok: true, user: adminUser } };
     }
 
@@ -175,7 +205,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
         minor: false,
         photoUrl: null,
       };
-      setStored('ugip_mock_curr_user_v2', facultyUser);
+      setSessionStored('ugip_mock_curr_user_v2', facultyUser);
       return { status: 200, data: { ok: true, user: facultyUser } };
     }
 
@@ -220,7 +250,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
         minor: false,
         photoUrl: null,
       };
-      setStored('ugip_mock_curr_user_v2', studentUser);
+      setSessionStored('ugip_mock_curr_user_v2', studentUser);
       return { status: 200, data: { ok: true, user: studentUser } };
     }
 
@@ -239,12 +269,12 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
       minor: false,
       photoUrl: null,
     };
-    setStored('ugip_mock_curr_user_v2', parentUser);
+    setSessionStored('ugip_mock_curr_user_v2', parentUser);
     return { status: 200, data: { ok: true, user: parentUser } };
   }
 
   if (pathname === '/api/auth/me') {
-    const user = getStored<any>('ugip_mock_curr_user_v2', null);
+    const user = getSessionStored<any>('ugip_mock_curr_user_v2', null);
     if (!user) {
       return { status: 401, data: { ok: false, error: 'Not authenticated' } };
     }
@@ -253,6 +283,8 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
 
   if (pathname === '/api/auth/logout') {
     try {
+      sessionStorage.removeItem('ugip_mock_curr_user_v2');
+      sessionStorage.removeItem('ugip_offline_user');
       localStorage.removeItem('ugip_mock_curr_user_v2');
       localStorage.removeItem('ugip_mock_curr_user');
       localStorage.removeItem('ugip_offline_user');
@@ -283,7 +315,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
   }
 
   if (pathname === '/api/auth/change-password' && normMethod === 'POST') {
-    const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null);
+    const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null);
     const uName = currUser?.username || 'admin';
     const creds = getStored<Record<string, string>>('ugip_mock_credentials_v1', {});
     if (body?.newPassword) {
@@ -308,7 +340,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
 
   // Self-Service Profile: GET /api/me/profile & PUT /api/me/profile
   if (pathname === '/api/me/profile') {
-    const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null) || {
+    const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null) || {
       id: 'usr-admin-1',
       username: 'admin',
       role: 'admin',
@@ -378,7 +410,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
 
   // Self-Service Login Info
   if (pathname === '/api/me/login-info') {
-    const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null);
+    const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null);
     return {
       status: 200,
       data: {
@@ -413,7 +445,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
 
   // My current password
   if (pathname === '/api/me/password') {
-    const currUser = getStored<any>('ugip_mock_curr_user_v2', null);
+    const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null);
     const pwd = currUser?.role === 'admin' ? 'Tanakpur@2026' : currUser?.role === 'faculty' ? 'Faculty@123' : 'UGIP@1234';
     return {
       status: 200,
@@ -723,7 +755,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
       const grade = percentage >= 80 ? 'A+' : percentage >= 60 ? 'A' : percentage >= 40 ? 'B' : 'F';
       const result = { score, total: totalMarks, percentage, correct, wrong, grade };
 
-      const currUser = getStored<any>('ugip_mock_curr_user_v2', { id: 'stu-current', name: 'Current Student' });
+      const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', { id: 'stu-current', name: 'Current Student' });
       if (!foundTest.submittedStudentIds) foundTest.submittedStudentIds = [];
       if (!foundTest.submittedStudentIds.includes(currUser.id)) {
         foundTest.submittedStudentIds.push(currUser.id);
@@ -1289,7 +1321,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     let list = getStored<any[]>('ugip_mock_notices_v2', DEFAULT_NOTICES);
 
     if (normMethod === 'POST') {
-      const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null);
+      const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null);
       const newNotice = {
         id: `not-${Date.now()}`,
         title: body?.title || 'Notice Announcement',
@@ -1423,7 +1455,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
     let doubts = getStored<any[]>('ugip_mock_doubts_v2', DEFAULT_DOUBTS);
 
     if (normMethod === 'POST') {
-      const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null);
+      const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null);
       const subjects = getStored<any[]>('ugip_mock_subjects', INITIAL_SUBJECTS);
       const sub = subjects.find((s) => s.id === body?.subjectId || s.code === body?.subjectId);
       const newDoubt = {
@@ -1460,7 +1492,7 @@ export function handleMockApi(method: string, path: string, body?: any): { statu
       const doubtId = decodeURIComponent(parts[0]);
 
       if (normMethod === 'POST') {
-        const currUser = getStored<any>('ugip_mock_curr_user_v2', null) || getStored<any>('ugip_offline_user', null);
+        const currUser = getSessionStored<any>('ugip_mock_curr_user_v2', null) || getSessionStored<any>('ugip_offline_user', null);
         const newReply = {
           id: `rep-${Date.now()}`,
           senderRole: currUser?.role || 'faculty',

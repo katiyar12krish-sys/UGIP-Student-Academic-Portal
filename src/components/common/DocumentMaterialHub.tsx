@@ -346,7 +346,7 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
       )}
 
       {/* Top Header Banner */}
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className={`bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-4`}>
         <div className="space-y-1.5">
           <div className="flex items-center gap-2">
             <span className="p-2.5 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
@@ -375,7 +375,7 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
         </div>
 
         {/* Action Controls */}
-        <div className="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
           {(currentMode === 'faculty' || currentMode === 'admin') && (
             <button
               onClick={() => {
@@ -437,9 +437,9 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
 
       {/* FILTER & SEARCH CONSOLE */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs space-y-3">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-xs">
+        <div className={`flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-3 text-xs`}>
           {/* Search Input */}
-          <div className="relative w-full md:w-80">
+          <div className={`relative w-full ${forceMobileView ? '' : 'md:w-80'}`}>
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"

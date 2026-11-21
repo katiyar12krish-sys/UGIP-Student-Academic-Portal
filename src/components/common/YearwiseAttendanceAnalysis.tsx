@@ -32,6 +32,7 @@ interface YearwiseAttendanceAnalysisProps {
   initialYear?: 1 | 2 | 3 | 'all';
   initialBranch?: BranchCode | 'all';
   allowEdit?: boolean;
+  forceMobileView?: boolean;
 }
 
 // Screen part: yearwise attendance analysis.
@@ -39,6 +40,7 @@ export const YearwiseAttendanceAnalysis: React.FC<YearwiseAttendanceAnalysisProp
   initialYear = 'all',
   initialBranch = 'all',
   allowEdit = true,
+  forceMobileView = false,
 }) => {
   const {
     users,
@@ -333,7 +335,7 @@ export const YearwiseAttendanceAnalysis: React.FC<YearwiseAttendanceAnalysisProp
       </div>
 
       {/* 3. FOUR EXECUTIVE KPI ANALYTICS CARDS (BADE BADE CARDS) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className={`grid gap-4 ${forceMobileView ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'}`}>
         {/* Card 1: Total Enrolled */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-xs flex items-center gap-4">
           <div className="p-3.5 bg-blue-100 dark:bg-blue-950/70 rounded-2xl text-blue-600 dark:text-blue-400">
@@ -416,7 +418,7 @@ export const YearwiseAttendanceAnalysis: React.FC<YearwiseAttendanceAnalysisProp
           <span className="text-xs text-slate-400">Live Aggregate from Student Records</span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className={`grid gap-4 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-3'}`}>
           {yearBreakdowns.map((yb) => (
             <div
               key={yb.year}
@@ -523,7 +525,7 @@ export const YearwiseAttendanceAnalysis: React.FC<YearwiseAttendanceAnalysisProp
           <span>Subject-Wise Attendance Trends & Faculty Engagement</span>
         </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className={`grid gap-3 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
           {subjectBreakdown.slice(0, 6).map((sub) => (
             <div
               key={sub.id}
@@ -546,20 +548,22 @@ export const YearwiseAttendanceAnalysis: React.FC<YearwiseAttendanceAnalysisProp
                 </div>
               </div>
 
-              <div className="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 flex items-center justify-between text-xs">
-                <span className="text-slate-500">Average:</span>
-                <span
-                  className={`font-black ${
-                    sub.avgAttendance >= 75
-                      ? 'text-emerald-600'
-                      : sub.avgAttendance >= 60
-                      ? 'text-amber-600'
-                      : 'text-rose-600'
-                  }`}
-                >
-                  {sub.avgAttendance}%
-                </span>
-                <span className="text-[10px] text-slate-400">
+              <div className="mt-3 pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center justify-between gap-1 text-xs">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-slate-500">Average:</span>
+                  <span
+                    className={`font-black ${
+                      sub.avgAttendance >= 75
+                        ? 'text-emerald-600'
+                        : sub.avgAttendance >= 60
+                        ? 'text-amber-600'
+                        : 'text-rose-600'
+                    }`}
+                  >
+                    {sub.avgAttendance}%
+                  </span>
+                </div>
+                <span className="text-[10px] text-slate-400 font-semibold">
                   {sub.atRiskCount} students &lt;75%
                 </span>
               </div>

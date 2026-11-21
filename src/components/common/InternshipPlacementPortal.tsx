@@ -7,9 +7,10 @@ import { ComprehensivePlacementPortal } from '../placement/ComprehensivePlacemen
 // Data shape: internship placement portal props.
 interface InternshipPlacementPortalProps {
   allowPost?: boolean;
+  forceMobileView?: boolean;
 }
 
 // Screen part: internship placement portal.
-export const InternshipPlacementPortal: React.FC<InternshipPlacementPortalProps> = () => {
-  return <ComprehensivePlacementPortal />;
+export const InternshipPlacementPortal: React.FC<InternshipPlacementPortalProps> = ({ forceMobileView = false }) => {
+  return <ComprehensivePlacementPortal forceMobileView={forceMobileView} />;
 };

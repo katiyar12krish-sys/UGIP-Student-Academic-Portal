@@ -44,12 +44,14 @@ import {
 interface StudentPerformanceAnalyticsDashboardProps {
   initialStudentId?: string;
   onExit?: () => void;
+  forceMobileView?: boolean;
 }
 
 // Screen part: student performance analytics dashboard.
 export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAnalyticsDashboardProps> = ({
   initialStudentId,
   onExit,
+  forceMobileView = false,
 }) => {
   const { currentUser, users, subjects, studentProgressPoints, t } = useCollege();
 
@@ -612,9 +614,9 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
           {/* ========================================================================= */}
           {/* SECTION 1: VISUAL CHARTS (DAILY PERFORMANCE & SUCCESS/FAILURE RATES) */}
           {/* ========================================================================= */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className={`grid gap-6 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-3'}`}>
             {/* Chart 1: Daily Quiz Success vs Failure Rate (Stacked Bar Visualization) */}
-            <div className="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4">
+            <div className={`${forceMobileView ? '' : 'lg:col-span-2'} bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4`}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
                 <div>
                   <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">

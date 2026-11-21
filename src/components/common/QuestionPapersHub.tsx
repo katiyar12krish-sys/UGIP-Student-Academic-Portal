@@ -372,7 +372,7 @@ export const QuestionPapersHub: React.FC<QuestionPapersHubProps> = ({ forceMobil
           <h4 className="text-xs font-extrabold uppercase tracking-wide text-slate-500 dark:text-slate-400 px-1">
             Semester {s}
           </h4>
-          <div className="grid gap-3 lg:grid-cols-2">
+          <div className={`grid gap-3 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-2'}`}>
             {[...subjects.entries()].map(([k, list]) => (
               <article
                 key={k}
@@ -603,7 +603,7 @@ const PaperRow: React.FC<{
       </div>
 
       {/* Question Paper Row */}
-      <div className="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800">
+      <div className="pt-2 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800">
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="text-xs font-bold text-slate-800 dark:text-slate-200 shrink-0">
             📄 प्रश्न पत्र:
@@ -612,11 +612,11 @@ const PaperRow: React.FC<{
             {p.paper.name || 'UBTER Board Paper'}
           </span>
         </div>
-        <div className="grid grid-cols-2 sm:flex sm:items-center gap-1.5 shrink-0">
+        <div className="flex flex-wrap items-center gap-1.5 w-full">
           <button
             type="button"
             onClick={() => onOpenViewer(p, 'paper')}
-            className={`${btn} py-1.5 px-2.5 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600`}
+            className={`${btn} py-1.5 px-2.5 bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 dark:hover:bg-slate-600 flex-1 sm:flex-initial justify-center`}
           >
             <Eye className="w-3.5 h-3.5" />
             <span>देखें</span>
@@ -624,7 +624,7 @@ const PaperRow: React.FC<{
           <button
             type="button"
             onClick={() => triggerDownload(p.paper.name, p.paper.url)}
-            className={`${btn} py-1.5 px-2.5 bg-blue-600 hover:bg-blue-700 text-white`}
+            className={`${btn} py-1.5 px-2.5 bg-blue-600 hover:bg-blue-700 text-white flex-1 sm:flex-initial justify-center`}
           >
             <Download className="w-3.5 h-3.5" />
             <span>डाउनलोड</span>
@@ -633,10 +633,10 @@ const PaperRow: React.FC<{
             type="button"
             onClick={() => openInNewTab(p.paper.url, `${p.subjectName} Paper`)}
             title="नए टैब में खोलें"
-            className={`${btn} py-1.5 px-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200`}
+            className={`${btn} py-1.5 px-2.5 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 justify-center`}
           >
             <ExternalLink className="w-3.5 h-3.5" />
-            <span className="sm:hidden">नया टैब</span>
+            <span>नया टैब</span>
           </button>
           {p.canRemove && (
             <>
@@ -664,7 +664,7 @@ const PaperRow: React.FC<{
       </div>
 
       {/* Answer Key Row */}
-      <div className="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800">
+      <div className="pt-2 flex flex-col gap-2 border-t border-slate-100 dark:border-slate-800">
         <div className="flex items-center gap-1.5 min-w-0">
           <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 shrink-0">
             🔑 उत्तर कुंजी:
@@ -673,13 +673,13 @@ const PaperRow: React.FC<{
             {p.answer ? p.answer.name || 'Verified Solution' : 'शीघ्र उपलब्ध होगी'}
           </span>
         </div>
-        <div className="grid grid-cols-2 sm:flex sm:items-center gap-1.5 shrink-0">
+        <div className="flex flex-wrap items-center gap-1.5 w-full">
           {p.answer ? (
             <>
               <button
                 type="button"
                 onClick={() => onOpenViewer(p, 'answer')}
-                className={`${btn} py-1.5 px-2.5 bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800`}
+                className={`${btn} py-1.5 px-2.5 bg-emerald-50 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800 flex-1 sm:flex-initial justify-center`}
               >
                 <Eye className="w-3.5 h-3.5" />
                 <span>हल देखें</span>
@@ -687,7 +687,7 @@ const PaperRow: React.FC<{
               <button
                 type="button"
                 onClick={() => triggerDownload(p.answer?.name || `${p.subjectCode}_AnswerKey.html`, p.answer?.url || '')}
-                className={`${btn} py-1.5 px-2.5 bg-emerald-600 hover:bg-emerald-700 text-white`}
+                className={`${btn} py-1.5 px-2.5 bg-emerald-600 hover:bg-emerald-700 text-white flex-1 sm:flex-initial justify-center`}
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>डाउनलोड</span>
@@ -696,10 +696,10 @@ const PaperRow: React.FC<{
                 type="button"
                 onClick={() => openInNewTab(p.answer?.url || '', `${p.subjectName} Answer Key`)}
                 title="नए टैब में उत्तर कुंजी खोलें"
-                className={`${btn} py-1.5 px-2 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200`}
+                className={`${btn} py-1.5 px-2.5 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-200 justify-center`}
               >
                 <ExternalLink className="w-3.5 h-3.5" />
-                <span className="sm:hidden">नया टैब</span>
+                <span>नया टैब</span>
               </button>
             </>
           ) : (

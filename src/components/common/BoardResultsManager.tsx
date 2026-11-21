@@ -120,36 +120,34 @@ export const BoardResultsManager: React.FC<{ readOnly?: boolean; forceMobileView
           <div className="space-y-3">
             {shown.map((r) => (
               <div key={r.id} className="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm overflow-hidden">
-                <div className="p-3.5 sm:p-4 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
-                  {/* Top: Student Name + Roll + Result Badge (Always side-by-side) */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-2">
-                      <button onClick={() => setOpen(open === r.id ? null : r.id)} className="flex-1 min-w-0 text-left cursor-pointer">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-tight">{r.studentName}</span>
-                          <span className="font-mono text-xs text-slate-500 font-bold">({r.rollNo})</span>
-                          {r.isDemo && showSample && <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}
-                        </div>
-                        <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex flex-wrap items-center gap-1.5">
-                          <span>{r.branch} · Sem {r.semester}</span>
-                          <span>·</span>
-                          <span>{r.examSession}</span>
-                          {r.fatherName && (
-                            <>
-                              <span>·</span>
-                              <span className="text-slate-700 dark:text-slate-300 font-semibold">पिता: {r.fatherName}</span>
-                            </>
-                          )}
-                        </div>
-                      </button>
-                      <span className={`px-2.5 py-1 rounded-full text-xs font-black shrink-0 ${resultTone(r.result)}`}>
-                        {r.result || '—'}
-                      </span>
-                    </div>
+                <div className="p-3.5 sm:p-4 flex flex-col gap-3">
+                  {/* Top: Student Name + Roll + Father Name + Result Badge (Full Width) */}
+                  <div className="flex items-start justify-between gap-2">
+                    <button onClick={() => setOpen(open === r.id ? null : r.id)} className="flex-1 min-w-0 text-left cursor-pointer">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-tight">{r.studentName}</span>
+                        <span className="font-mono text-xs text-slate-500 font-bold">({r.rollNo})</span>
+                        {r.isDemo && showSample && <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-bold">SAMPLE</span>}
+                      </div>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 flex flex-wrap items-center gap-1.5">
+                        <span className="font-semibold text-slate-700 dark:text-slate-300">{r.branch} · Sem {r.semester}</span>
+                        <span>·</span>
+                        <span>{r.examSession}</span>
+                        {r.fatherName && (
+                          <>
+                            <span>·</span>
+                            <span className="text-slate-700 dark:text-slate-300 font-semibold">पिता: {r.fatherName}</span>
+                          </>
+                        )}
+                      </div>
+                    </button>
+                    <span className={`px-2.5 py-1 rounded-full text-xs font-black shrink-0 ${resultTone(r.result)}`}>
+                      {r.result || '—'}
+                    </span>
                   </div>
 
                   {/* Marks Badges Row & Actions */}
-                  <div className="flex items-center justify-between lg:justify-end gap-2.5 pt-2 border-t border-slate-100 dark:border-slate-800 lg:border-t-0 lg:pt-0 shrink-0">
+                  <div className="flex flex-wrap items-center justify-between gap-2.5 pt-2 border-t border-slate-100 dark:border-slate-800">
                     <div className="flex items-center gap-1.5 text-xs">
                       <div className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-700 dark:text-slate-300">
                         <span className="text-[9px] text-slate-400 block font-semibold uppercase">Total</span>
@@ -166,8 +164,8 @@ export const BoardResultsManager: React.FC<{ readOnly?: boolean; forceMobileView
                     </div>
 
                     <div className="flex items-center gap-1 shrink-0">
-                      <button onClick={() => setOpen(open === r.id ? null : r.id)} aria-label="Show subjects" className="py-1.5 px-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1 cursor-pointer">
-                        <span className="hidden sm:inline">{open === r.id ? 'बंद करें' : 'विषय अंक'}</span>
+                      <button onClick={() => setOpen(open === r.id ? null : r.id)} aria-label="Show subjects" className="py-1.5 px-2.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center gap-1 cursor-pointer">
+                        <span>{open === r.id ? 'बंद करें' : 'विषय अंक'}</span>
                         {open === r.id ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
                       </button>
                       {!readOnly && <>
