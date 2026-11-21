@@ -273,8 +273,8 @@ export const CollegeNewsSection: React.FC<CollegeNewsSectionProps> = ({
           })}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center gap-3">
-          <div className="relative flex-1 w-full">
+        <div className="flex flex-col gap-3">
+          <div className="relative w-full">
             <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
@@ -284,7 +284,7 @@ export const CollegeNewsSection: React.FC<CollegeNewsSectionProps> = ({
               className="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-700 font-semibold text-xs rounded-xl focus:border-blue-600 placeholder:text-slate-400 shadow-xs"
             />
           </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-2 w-full">
             <div className="flex items-center gap-1.5 shrink-0 text-xs text-slate-500 dark:text-slate-400 font-semibold">
               <Filter className="w-3.5 h-3.5" />
               <span>Priority:</span>
@@ -292,7 +292,7 @@ export const CollegeNewsSection: React.FC<CollegeNewsSectionProps> = ({
             <select
               value={selectedPriority}
               onChange={(e) => setSelectedPriority(e.target.value)}
-              className="px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-700 font-bold text-xs rounded-xl focus:border-blue-600 shadow-xs cursor-pointer"
+              className="w-full sm:w-auto px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-300 dark:border-slate-700 font-bold text-xs rounded-xl focus:border-blue-600 shadow-xs cursor-pointer"
             >
               <option value="All">All Priorities</option>
               <option value="Urgent">Urgent Only</option>

@@ -880,13 +880,13 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
       {activeTab === 'ai-tutor' && (
         <div className="space-y-6">
           <div className="bg-gradient-to-br from-teal-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <div className="p-3 bg-emerald-500/20 rounded-2xl border border-emerald-400/30">
+            <div className="flex flex-col gap-3.5">
+              <div className="flex items-start gap-3">
+                <div className="p-3 bg-emerald-500/20 rounded-2xl border border-emerald-400/30 shrink-0 mt-0.5">
                   <Brain className="w-6 h-6 text-emerald-300" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-2">
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
                     <h3 className="font-extrabold text-lg sm:text-xl">
                       UGIP AI Study Saathi (यूजीआईपी एआई स्टडी साथी)
                     </h3>
@@ -894,14 +894,14 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                       Trilingual AI Tutor
                     </span>
                   </div>
-                  <p className="text-xs text-emerald-200/80">
+                  <p className="text-xs text-emerald-200/80 mt-1">
                     Ask doubts in Hindi (हिन्दी), English, or Hinglish (हिंग्लिश) 24/7.
                   </p>
                 </div>
               </div>
 
               {/* Language selection buttons: Hindi, English, Hinglish */}
-              <div className="flex items-center bg-white/10 rounded-xl p-1 border border-white/15 text-xs font-bold self-start sm:self-auto">
+              <div className="flex flex-wrap items-center bg-white/10 rounded-xl p-1 border border-white/15 text-xs font-bold w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={() => setTutorLanguage('hi')}
@@ -1030,22 +1030,22 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
               ref={answerRef}
               className="bg-white dark:bg-slate-800 border-2 border-emerald-500/40 rounded-3xl p-6 sm:p-8 shadow-xl space-y-4 animate-in fade-in duration-300 ring-4 ring-emerald-500/10"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold">
+              <div className="flex flex-col gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
+                <div className="flex items-start gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold shrink-0 mt-0.5">
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
-                  <div>
-                    <h4 className="font-black text-sm sm:text-base text-slate-900 dark:text-white">
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-black text-sm sm:text-base text-slate-900 dark:text-white leading-snug">
                       AI Study Saathi Verified Academic Solution
                     </h4>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                    <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
                       UBTER Curriculum Aligned · Language: {tutorLanguage.toUpperCase()}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 dark:border-slate-700/60">
                   <button
                     onClick={() => {
                       if ('speechSynthesis' in window) {
@@ -1190,7 +1190,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
             {/* Dossier Body */}
             <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto text-xs">
               {/* Profile Card Top */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/40">
+              <div className="flex flex-col gap-4 p-4 rounded-2xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/40">
                 <div className="flex items-center gap-3.5">
                   <UserAvatar
                     name={currentUser.name}

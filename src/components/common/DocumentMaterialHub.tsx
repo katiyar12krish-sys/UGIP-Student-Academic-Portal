@@ -346,14 +346,14 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
       )}
 
       {/* Top Header Banner */}
-      <div className={`bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-4`}>
-        <div className="space-y-1.5">
-          <div className="flex items-center gap-2">
-            <span className="p-2.5 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col gap-4">
+        <div className="space-y-1.5 w-full">
+          <div className="flex items-start gap-2.5">
+            <span className="p-2.5 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 shrink-0 mt-0.5">
               <FolderDown className="w-5 h-5" />
             </span>
-            <div>
-              <div className="flex items-center gap-2">
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="text-[10px] font-black uppercase tracking-wider text-blue-600 dark:text-blue-400">
                   Academic Document & E-Library Hub
                 </span>
@@ -362,12 +362,12 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
                   PDFs · Images · Web Links
                 </span>
               </div>
-              <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
+              <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white leading-snug">
                 {currentMode === 'student' ? 'My Course Documents & Study Material Downloads' : 'Unified Document & Material Hub (Staff Upload)'}
               </h2>
             </div>
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
+          <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
             {currentMode === 'student'
               ? 'Access verified lecture notes, lab manuals, CAD drawings, and reference video links filtered specifically for your course enrollment.'
               : 'Upload and organize official course documents for students across branches. Staff can attach PDFs, technical images/diagrams, and external resource links with detailed descriptions.'}
@@ -375,14 +375,14 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
         </div>
 
         {/* Action Controls */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full sm:w-auto">
+        <div className="flex flex-wrap items-center gap-2.5 w-full pt-1 border-t border-slate-100 dark:border-slate-800">
           {(currentMode === 'faculty' || currentMode === 'admin') && (
             <button
               onClick={() => {
                 resetForm();
                 setIsUploadModalOpen(true);
               }}
-              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Upload className="w-4 h-4" />
               <span>Upload Document / Link</span>
@@ -392,7 +392,7 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
           {currentMode === 'student' && (
             <button
               onClick={() => setFilterOnlyMyCourse(!filterOnlyMyCourse)}
-              className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center gap-2 cursor-pointer shadow-xs ${
+              className={`w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs ${
                 filterOnlyMyCourse
                   ? 'bg-emerald-600 text-white'
                   : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700'
@@ -437,21 +437,21 @@ export const DocumentMaterialHub: React.FC<DocumentMaterialHubProps> = ({
 
       {/* FILTER & SEARCH CONSOLE */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 shadow-xs space-y-3">
-        <div className={`flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-3 text-xs`}>
-          {/* Search Input */}
-          <div className={`relative w-full ${forceMobileView ? '' : 'md:w-80'}`}>
+        <div className="flex flex-col gap-3 text-xs">
+          {/* Search Input - Full width across screen */}
+          <div className="relative w-full">
             <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by title, subject, topics, tags..."
-              className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-xl font-medium"
+              className="w-full pl-9 pr-3 py-2.5 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-xl font-medium"
             />
           </div>
 
           {/* Type Filters: All / PDF / Image / Link */}
-          <div className="flex flex-wrap items-center gap-1.5 w-full md:w-auto">
+          <div className="flex flex-wrap items-center gap-1.5 w-full">
             {[
               { id: 'all', label: 'All Types', icon: Layers },
               { id: 'pdf', label: 'PDF Documents', icon: FileText },

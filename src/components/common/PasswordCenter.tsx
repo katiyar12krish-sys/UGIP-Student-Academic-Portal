@@ -138,12 +138,14 @@ export const PasswordCenter: React.FC = () => {
       )}
 
       {/* students + parents */}
-      <section className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2"><GraduationCap className="w-4 h-4 text-blue-700" /> Student & parent logins</h4>
-          <p className="text-sm text-slate-500">Class-wise list with login IDs and passwords, new passwords, parent logins and printable login slips.</p>
+      <section className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-5 shadow-sm flex flex-col gap-3.5">
+        <div className="w-full">
+          <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2"><GraduationCap className="w-4 h-4 text-blue-700 shrink-0" /> Student & parent logins</h4>
+          <p className="text-sm text-slate-500 mt-1">Class-wise list with login IDs and passwords, new passwords, parent logins and printable login slips.</p>
         </div>
-        <button onClick={() => setShowStudents(true)} className="px-4 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold cursor-pointer">Open student logins</button>
+        <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+          <button onClick={() => setShowStudents(true)} className="w-full sm:w-auto px-4 py-2 rounded-lg bg-blue-700 hover:bg-blue-800 text-white text-sm font-semibold cursor-pointer">Open student logins</button>
+        </div>
       </section>
       {showStudents && <LoginManager onClose={() => setShowStudents(false)} />}
     </div>

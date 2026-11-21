@@ -255,20 +255,20 @@ export const QuestionPapersHub: React.FC<QuestionPapersHubProps> = ({ forceMobil
     <div className="space-y-4">
       {/* Title & Action Buttons */}
       <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-sm">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div className="min-w-0">
+        <div className="flex flex-col gap-3.5">
+          <div className="w-full">
             <h3 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2">
               <FileText className="w-5 h-5 text-blue-600 shrink-0" />
               <span>प्रश्न पत्र और उत्तर कुंजी / Question Papers & Answer Keys</span>
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">
               UBTER बोर्ड परीक्षा प्रारूप (कुल 50 अंक: खण्ड क 10x1 अंक, खण्ड ख 5x4 अंक, खण्ड ग 2x10 अंक)। प्रश्न पत्र व उत्तर कुंजी ऑनलाइन देखें या PDF डाउनलोड करें।
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:flex sm:items-center gap-2 w-full sm:w-auto">
+          <div className="flex flex-wrap items-center gap-2.5 w-full pt-1 border-t border-slate-100 dark:border-slate-800/60">
             <button
               onClick={() => setPanel(panel === 'download' ? 'none' : 'download')}
-              className={`${btn} w-full sm:w-auto border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800`}
+              className={`${btn} flex-1 sm:flex-initial justify-center border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800`}
             >
               <FolderDown className="w-4 h-4 text-emerald-600" />
               <span>पेपर डाउनलोड (Download)</span>
@@ -276,7 +276,7 @@ export const QuestionPapersHub: React.FC<QuestionPapersHubProps> = ({ forceMobil
             {isStaff && (
               <button
                 onClick={() => setPanel(panel === 'upload' ? 'none' : 'upload')}
-                className={`${btn} w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white shadow-sm`}
+                className={`${btn} flex-1 sm:flex-initial justify-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm`}
               >
                 <FolderUp className="w-4 h-4" />
                 <span>नया पेपर अपलोड (Upload)</span>
@@ -980,12 +980,12 @@ const DownloadPanel: React.FC<{ papers: QuestionPaper[]; onClose: () => void }> 
           {list.map((p) => (
             <li
               key={p.id}
-              className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs"
+              className="flex flex-col gap-2 p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs"
             >
               <span className="font-bold text-slate-800 dark:text-slate-100">
                 {p.title} {p.examYear ? `(${p.examYear})` : ''}
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-200/60 dark:border-slate-700/60">
                 <button
                   type="button"
                   onClick={() => triggerDownload(p.paper.name, p.paper.url)}

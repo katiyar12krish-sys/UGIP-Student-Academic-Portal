@@ -139,18 +139,20 @@ export const AcademicYearManager: React.FC<{ onChanged?: () => void }> = ({ onCh
     <div className="space-y-6">
       {/* ---------- 1. current year ---------- */}
       <section className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm">
-        <div className="bg-gradient-to-r from-slate-900 to-blue-900 text-white px-6 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="bg-gradient-to-r from-slate-900 to-blue-900 text-white px-6 py-5 flex flex-col gap-4">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center"><CalendarClock className="w-6 h-6" /></div>
+            <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center shrink-0"><CalendarClock className="w-6 h-6" /></div>
             <div>
               <p className="text-xs uppercase tracking-widest text-blue-100 font-semibold">Current academic session</p>
               <h2 className="text-2xl font-bold">{cal.academicYear}</h2>
               <p className="text-sm text-blue-50">{evenHalf ? 'Even semesters (2, 4, 6) · January – June' : 'Odd semesters (1, 3, 5) · July – December'}</p>
             </div>
           </div>
-          <button onClick={load} disabled={busy} className="self-start sm:self-auto inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-sm font-semibold cursor-pointer disabled:opacity-60">
-            <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> Refresh
-          </button>
+          <div className="pt-2 border-t border-white/10">
+            <button onClick={load} disabled={busy} className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-sm font-semibold cursor-pointer disabled:opacity-60">
+              <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} /> Refresh
+            </button>
+          </div>
         </div>
         <div className="px-6 py-4 flex gap-3 items-start text-sm text-slate-700 dark:text-slate-300 bg-blue-50/60 dark:bg-blue-950/20 border-t border-blue-100 dark:border-blue-900">
           {cal.autoEnabled ? <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" /> : <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />}

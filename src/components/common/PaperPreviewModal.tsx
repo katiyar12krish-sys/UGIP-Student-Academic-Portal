@@ -203,24 +203,22 @@ export const PaperPreviewModal: React.FC<PaperPreviewModalProps> = ({ paper, isO
         </div>
 
         {/* Footer with Download */}
-        <div className="bg-slate-50 dark:bg-slate-800/80 px-4 sm:px-6 py-3.5 border-t border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-          <div>
-            {downloadSuccess && (
-              <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 animate-in fade-in">
-                <CheckCircle className="w-4 h-4" /> Download started!
-              </span>
-            )}
-          </div>
-          <div className="flex items-center justify-end gap-2">
+        <div className="bg-slate-50 dark:bg-slate-800/80 px-4 sm:px-6 py-3.5 border-t border-slate-200 dark:border-slate-700 flex flex-col gap-2.5">
+          {downloadSuccess && (
+            <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5 animate-in fade-in">
+              <CheckCircle className="w-4 h-4" /> Download started!
+            </span>
+          )}
+          <div className="flex flex-wrap items-center justify-end gap-2 w-full">
             <button
               onClick={onClose}
-              className="px-3.5 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors cursor-pointer"
+              className="flex-1 sm:flex-none px-3.5 py-2 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl transition-colors cursor-pointer text-center"
             >
               Close
             </button>
             <button
               onClick={handleDownload}
-              className="px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              className="flex-1 sm:flex-none px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <Download className="w-4 h-4" /> Download Document ({paper.fileSizeBytes})
             </button>

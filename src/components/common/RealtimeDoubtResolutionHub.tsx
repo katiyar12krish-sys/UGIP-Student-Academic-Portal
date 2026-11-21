@@ -185,9 +185,9 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
     <div className="space-y-6">
       <ClassQuestionBoard mode={mode} />
       {/* HEADER */}
-      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <div className="flex items-center gap-2 mb-1">
+      <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 sm:p-6 shadow-sm flex flex-col gap-3.5">
+        <div className="w-full">
+          <div className="flex flex-wrap items-center gap-2 mb-1.5">
             <span className="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-indigo-100 dark:bg-indigo-900/50 text-indigo-800 dark:text-indigo-300 uppercase tracking-wider">
               Real-Time Academic Q&A
             </span>
@@ -195,23 +195,27 @@ export const RealtimeDoubtResolutionHub: React.FC<RealtimeDoubtResolutionHubProp
               Direct Expert Connectivity
             </span>
           </div>
-          <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+          <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
             Real-Time Doubt Resolution & Faculty Q&A
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
             {isStudent
               ? 'Ask your subject teacher a question. The teacher answers here, and the answer stays saved for you.'
               : 'Students of your subjects ask questions here. Open a doubt on the left, type your answer and press Send.'}
           </p>
         </div>
 
-        {isStudent && <button
-          onClick={() => setShowAskModal(true)}
-          className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer shrink-0"
-        >
-          <Plus className="w-4 h-4" />
-          <span>Ask New Academic Doubt</span>
-        </button>}
+        {isStudent && (
+          <div className="pt-0.5">
+            <button
+              onClick={() => setShowAskModal(true)}
+              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <Plus className="w-4 h-4" />
+              <span>Ask New Academic Doubt</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* HOW IT WORKS */}

@@ -299,7 +299,7 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
 
       {/* Faculty/Admin Student Switcher Bar */}
       {isFacultyOrAdmin && viewMode === 'individual' && (
-        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="bg-white dark:bg-slate-800 p-4 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 flex items-center justify-center font-bold">
               <Users className="w-5 h-5" />
@@ -463,7 +463,7 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
         <div className="space-y-6">
           {/* Student Profile & Longitudinal KPI Strip */}
           <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-700 shadow-xs space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b pb-5 border-slate-100 dark:border-slate-700">
+            <div className="flex flex-col gap-3.5 border-b pb-5 border-slate-100 dark:border-slate-700">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-black text-xl shadow-md">
                   {studentData.studentName.slice(0, 2).toUpperCase()}
@@ -617,19 +617,19 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
           <div className={`grid gap-6 ${forceMobileView ? 'grid-cols-1' : 'grid-cols-1 lg:grid-cols-3'}`}>
             {/* Chart 1: Daily Quiz Success vs Failure Rate (Stacked Bar Visualization) */}
             <div className={`${forceMobileView ? '' : 'lg:col-span-2'} bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4`}>
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
-                <div>
+              <div className="flex flex-col gap-2.5 border-b pb-3 border-slate-100 dark:border-slate-700">
+                <div className="w-full">
                   <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
-                    <BarChart3 className="w-5 h-5 text-indigo-600" />
+                    <BarChart3 className="w-5 h-5 text-indigo-600 shrink-0" />
                     <span>Daily Quiz Performance (Success vs Failure Rates)</span>
                   </h4>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
                     Day-by-day count of Correct (Success) and Incorrect (Failure) answers attempted.
                   </p>
                 </div>
 
                 {/* Filter Time Range */}
-                <div className="flex items-center bg-slate-100 dark:bg-slate-700 p-1 rounded-xl text-xs font-semibold">
+                <div className="flex flex-wrap items-center bg-slate-100 dark:bg-slate-700 p-1 rounded-xl text-xs font-semibold w-fit">
                   {[
                     { id: 'all', label: 'All Days' },
                     { id: '30d', label: '30 Days' },
@@ -821,21 +821,21 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
           {/* SECTION 2: LONGITUDINAL PROGRESS REPORT (FIRST DAY TO CURRENT DATE) */}
           {/* ========================================================================= */}
           <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-700 shadow-xs space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-4 border-slate-100 dark:border-slate-700">
-              <div>
+            <div className="flex flex-col gap-2.5 border-b pb-4 border-slate-100 dark:border-slate-700">
+              <div className="w-full">
                 <span className="text-[10px] font-black uppercase tracking-wider text-indigo-600 flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+                  <Sparkles className="w-3.5 h-3.5 text-indigo-500 shrink-0" />
                   Longitudinal Academic Growth Report
                 </span>
-                <h4 className="text-lg font-bold text-slate-900 dark:text-white mt-0.5">
+                <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white mt-1 leading-tight">
                   Improvement Trajectory: First Day ({studentData.firstDayDate}) ➔ Current Date ({studentData.currentDate})
                 </h4>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
                   Continuous performance curve tracking foundational entry benchmark up to current semester mastery.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 pt-1">
                 <span className="px-3 py-1 rounded-xl text-xs font-bold bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800">
                   {studentData.longitudinalMilestones.length} Official Checkpoints
                 </span>
@@ -1067,24 +1067,24 @@ export const StudentPerformanceAnalyticsDashboard: React.FC<StudentPerformanceAn
           {/* SECTION 3: DETAILED DAILY QUIZ LOG TABLE */}
           {/* ========================================================================= */}
           <div className="bg-white dark:bg-slate-800 rounded-3xl p-6 sm:p-7 border border-slate-200 dark:border-slate-700 shadow-xs space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
-              <div>
+            <div className="flex flex-col gap-2.5 border-b pb-3 border-slate-100 dark:border-slate-700">
+              <div className="w-full">
                 <h4 className="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
-                  <FileText className="w-5 h-5 text-indigo-600" />
+                  <FileText className="w-5 h-5 text-indigo-600 shrink-0" />
                   <span>Daily Quiz Performance Session Log</span>
                 </h4>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
                   Granular session history recording topic, difficulty, questions attempted, correct/wrong split and success/failure rates.
                 </p>
               </div>
 
               {/* Subject Filter Dropdown */}
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold text-slate-500">Filter Subject:</span>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="text-xs font-semibold text-slate-500 shrink-0">Filter Subject:</span>
                 <select
                   value={selectedSubjectFilter}
                   onChange={(e) => setSelectedSubjectFilter(e.target.value)}
-                  className="px-3 py-1.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-100"
+                  className="px-3 py-1.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-100 max-w-full cursor-pointer"
                 >
                   <option value="all">All Subjects</option>
                   {studentData.subjectBreakdown.map((s, idx) => (

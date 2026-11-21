@@ -739,20 +739,20 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
       {/* 4. STUDENT DIRECTORY WITH SAVED PASSWORDS (User's requirement!) */}
       {activeTab === 'students' && (
         <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b pb-3 border-slate-100 dark:border-slate-700">
-            <div>
+          <div className="flex flex-col gap-3.5 border-b pb-3 border-slate-100 dark:border-slate-700">
+            <div className="w-full">
               <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-600" />
+                <Users className="w-5 h-5 text-blue-600 shrink-0" />
                 <span>Student Directory & Logins</span>
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 mt-1">
                 Passwords are stored encrypted. Open “Logins & Passwords” in the menu to see a student's password or make a new one.
               </p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-100 dark:border-slate-800">
               <button
                 onClick={() => setShowAddStudentModal(true)}
-                className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-xs"
+                className="w-full sm:w-auto px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
               >
                 <Plus className="w-4 h-4" /> Add Student & Password
               </button>
@@ -1002,38 +1002,40 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
       {/* ONLINE QUIZZES FOR SUBJECTS (User requirement: "har subject ka online quiz ka upload kenw ka bhi do") */}
       {activeTab === 'subject-quizzes' && (
         <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs">
-            <div>
+          <div className="flex flex-col gap-3.5 bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs">
+            <div className="w-full">
               <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-indigo-600" />
+                <HelpCircle className="w-5 h-5 text-indigo-600 shrink-0" />
                 <span>Subject Online Quizzes & MCQs Bank</span>
               </h3>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 mt-1">
                 Create online quizzes with questions, options, correct answers and detailed explanations for your branch subjects.
               </p>
             </div>
-            <button
-              onClick={() => {
-                setQuizForm({
-                  subjectId: currentFacultySubject?.id || (subjects[0]?.id || ''),
-                  title: '',
-                  durationMinutes: 20,
-                  totalMarks: 20,
-                  question1: '',
-                  optA: '',
-                  optB: '',
-                  optC: '',
-                  optD: '',
-                  correctAnswer: 'A',
-                  explanation: '',
-                });
-                setShowNewQuizModal(true);
-              }}
-              className="px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center gap-2 shadow-xs cursor-pointer"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Upload / Create Online Quiz</span>
-            </button>
+            <div className="pt-2 border-t border-slate-100 dark:border-slate-700">
+              <button
+                onClick={() => {
+                  setQuizForm({
+                    subjectId: currentFacultySubject?.id || (subjects[0]?.id || ''),
+                    title: '',
+                    durationMinutes: 20,
+                    totalMarks: 20,
+                    question1: '',
+                    optA: '',
+                    optB: '',
+                    optC: '',
+                    optD: '',
+                    correctAnswer: 'A',
+                    explanation: '',
+                  });
+                  setShowNewQuizModal(true);
+                }}
+                className="w-full sm:w-auto px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Create Online Quiz</span>
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

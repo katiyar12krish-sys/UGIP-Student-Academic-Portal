@@ -209,8 +209,15 @@ button.bg-blue-600, a.bg-blue-600, button.bg-blue-700, button.bg-blue-900 {
 
 /* Force vertical flow on desktop-only flex rows inside phone frame */
 .ugip-phone-frame .lg\:flex-row:not(.ugip-keep-row),
-.ugip-phone-frame .md\:flex-row:not(.ugip-keep-row) {
+.ugip-phone-frame .md\:flex-row:not(.ugip-keep-row),
+.ugip-phone-frame .sm\:flex-row:not(.ugip-keep-row) {
   flex-direction: column !important;
+  align-items: stretch !important;
+}
+
+/* Ensure controls underneath headers span full width or align nicely */
+.ugip-phone-frame .sm\:w-auto:not(.ugip-keep-width) {
+  width: 100% !important;
 }
 
 /* Allow 2-column stats cards */

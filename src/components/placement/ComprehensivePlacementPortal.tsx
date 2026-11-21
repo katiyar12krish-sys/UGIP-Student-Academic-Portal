@@ -615,7 +615,7 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
       {/* Top Banner & Header */}
       <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-xl border border-blue-500/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-        <div className={`relative z-10 flex flex-col ${forceMobileView ? '' : 'md:flex-row md:items-center'} justify-between gap-6`}>
+        <div className="relative z-10 flex flex-col gap-4">
           <div className="space-y-2">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-400/30 flex items-center gap-1.5">
@@ -634,7 +634,7 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 w-full md:w-auto">
+          <div className="flex flex-wrap items-center gap-2.5 w-full pt-2 border-t border-white/10">
             {(currentUser.role === 'admin' || currentUser.role === 'faculty') && (
               <button
                 onClick={() => handleInitiateProtectedAction('add-drive')}
@@ -708,12 +708,12 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
       {activeTab === 'drives' && (
         <div className="space-y-5 animate-in fade-in duration-150">
           {/* Controls: Branch Filter & Search */}
-          <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col gap-3">
+            <div className="flex flex-wrap items-center gap-2 w-full">
               <span className="text-xs font-bold text-slate-500 dark:text-slate-400 flex items-center gap-1">
                 <Filter className="w-3.5 h-3.5" /> Filter Branch:
               </span>
-              <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold">
+              <div className="flex flex-wrap items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold">
                 {(['All', 'CSE', 'Civil'] as const).map((b) => (
                   <button
                     key={b}
@@ -1300,10 +1300,10 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
       {/* ========================================================================= */}
       {activeTab === 'share-experience' && (
         <div className="space-y-6 animate-in fade-in duration-150">
-          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col gap-3.5">
+            <div className="w-full">
               <h3 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-blue-600" />
+                <MessageSquare className="w-5 h-5 text-blue-600 shrink-0" />
                 <span>Share Your Experience (अनुभव साझा करें / Alumni & Peer Community)</span>
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
@@ -1311,13 +1311,15 @@ export const ComprehensivePlacementPortal: React.FC<ComprehensivePlacementPortal
               </p>
             </div>
 
-            <button
-              onClick={() => setShowShareModal(true)}
-              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Share My Experience</span>
-            </button>
+            <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+              <button
+                onClick={() => setShowShareModal(true)}
+                className="w-full sm:w-auto px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Share My Experience</span>
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -491,20 +491,20 @@ export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ 
         )}
 
         {/* Filter and Search Bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
-          <div className="relative w-full sm:w-80">
+        <div className="flex flex-col gap-3 text-xs">
+          <div className="relative w-full">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
             <input
               type="text"
               value={searchFilter}
               onChange={(e) => setSearchFilter(e.target.value)}
               placeholder="Search by material title or subject code..."
-              className="w-full pl-9 pr-3 py-1.5 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-lg font-medium"
+              className="w-full pl-9 pr-3 py-2 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 rounded-lg font-medium"
             />
           </div>
 
-          <div className="flex items-center gap-1.5 w-full sm:w-auto overflow-x-auto">
-            <span className="text-[11px] text-slate-400 font-semibold uppercase">Type:</span>
+          <div className="flex flex-wrap items-center gap-1.5 w-full">
+            <span className="text-[11px] text-slate-400 font-semibold uppercase mr-1">Type:</span>
             {['all', 'Lecture Notes', 'Assignment & Task', 'Formula Sheet', 'Circular Notice'].map((t) => (
               <button
                 key={t}
@@ -1186,7 +1186,7 @@ export const ClassSubjectDispatcher: React.FC<ClassSubjectDispatcherProps> = ({ 
                 {classStudents.map((stu) => (
                   <div
                     key={stu.id}
-                    className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs"
+                    className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-2.5 text-xs"
                   >
                     <div className="flex items-center gap-3">
                       <UserAvatar

@@ -667,22 +667,22 @@ export const AIQuizDrillAndAnalytics: React.FC<AIQuizDrillAndAnalyticsProps> = (
       {activeView === 'analytics' && (
         <div className="space-y-6 animate-in fade-in duration-150">
           <div className="bg-white dark:bg-slate-900 rounded-3xl p-6 border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
+            <div className="flex flex-col gap-3.5">
+              <div className="w-full">
                 <h4 className="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                  <BarChart3 className="w-5 h-5 text-indigo-600" />
+                  <BarChart3 className="w-5 h-5 text-indigo-600 shrink-0" />
                   <span>Comprehensive Student Progress Analytics (Day 1 vs Day 2 vs Today)</span>
                 </h4>
-                <p className="text-xs text-slate-500 dark:text-slate-400">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                   Tracks continuous day-by-day trajectory across subjects. Highlights who improved from Day 1 to Today and who requires remedial intervention.
                 </p>
               </div>
 
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                 <span className="text-xs font-bold text-slate-400 flex items-center gap-1">
                   <Filter className="w-3.5 h-3.5" /> Branch:
                 </span>
-                <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold">
+                <div className="flex flex-wrap items-center bg-slate-100 dark:bg-slate-800 rounded-xl p-1 text-xs font-bold">
                   {(['All', 'CSE', 'Civil'] as const).map((b) => (
                     <button
                       key={b}

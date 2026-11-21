@@ -29,12 +29,17 @@ export const SubjectTeacherAssigner: React.FC = () => {
   const sel = 'p-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-600 rounded-lg text-xs font-bold';
   return (
     <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 shadow-xs space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
-        <div>
-          <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2"><BookOpen className="w-4 h-4 text-blue-600" /> Subject teachers (semester-wise)</h3>
-          <p className="text-xs text-slate-500">विषय के आगे शिक्षक चुनें। Faculty login में शिक्षक सिर्फ अपने विषय से ही लॉग इन कर पाएगा। / A teacher can sign in only for the subjects given here.</p>
+      <div className="flex flex-col gap-3">
+        <div className="w-full">
+          <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+            <BookOpen className="w-4 h-4 text-blue-600 shrink-0" />
+            <span>Subject teachers (semester-wise)</span>
+          </h3>
+          <p className="text-xs text-slate-500 mt-1 leading-relaxed">
+            विषय के आगे शिक्षक चुनें। Faculty login में शिक्षक सिर्फ अपने विषय से ही लॉग इन कर पाएगा। / A teacher can sign in only for the subjects given here.
+          </p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center gap-2 pt-1">
           <select value={branch} onChange={(e) => setBranch(e.target.value as any)} className={sel} aria-label="Branch">
             <option value="CSE">CSE</option><option value="Civil">Civil</option>
           </select>

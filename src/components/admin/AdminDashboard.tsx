@@ -109,7 +109,7 @@ const FacultyCredentialEditor: React.FC<{ faculty: UserProfile }> = ({ faculty }
       </span>
       <span className="text-[10px] text-amber-700 dark:text-amber-400 font-medium">Admin Controlled</span>
     </div>
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 text-xs">
+    <div className="flex flex-col gap-2 text-xs">
       <div>
         <span className="block text-[10px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">Username</span>
         <span className="font-mono font-bold text-slate-800 dark:text-slate-100">{faculty.username || '—'}</span>
@@ -117,7 +117,7 @@ const FacultyCredentialEditor: React.FC<{ faculty: UserProfile }> = ({ faculty }
       <button
         type="button"
         onClick={() => issueTempPasswordFor(faculty.id, faculty.name)}
-        className="w-full sm:w-auto px-3 py-1.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shadow-2xs text-center justify-center shrink-0"
+        className="w-full px-3 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg text-xs font-bold transition-colors cursor-pointer shadow-2xs text-center justify-center shrink-0"
       >
         Issue new password
       </button>

@@ -61,15 +61,17 @@ export const ClassQuestionBoard: React.FC<{ mode: 'student' | 'faculty' | 'admin
   if (mode === 'student' && !posts.length) return null;
   return (
     <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-5 shadow-sm space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div>
-          <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2"><HelpCircle className="w-4 h-4 text-indigo-600" /> Class questions & PDFs</h3>
-          <p className="text-xs text-slate-500">{mode === 'student' ? 'Questions and files posted by the college for your class.' : 'Post a question (with answer and PDF if you like) for a whole class.'}</p>
+      <div className="flex flex-col gap-3">
+        <div className="w-full">
+          <h3 className="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2"><HelpCircle className="w-4 h-4 text-indigo-600 shrink-0" /> Class questions & PDFs</h3>
+          <p className="text-xs text-slate-500 mt-1">{mode === 'student' ? 'Questions and files posted by the college for your class.' : 'Post a question (with answer and PDF if you like) for a whole class.'}</p>
         </div>
         {mode !== 'student' && (
-          <button onClick={() => setOpen((o) => !o)} className="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center gap-1.5 cursor-pointer shrink-0">
-            {open ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />} {open ? 'Close' : 'Post a question'}
-          </button>
+          <div className="w-full sm:w-auto">
+            <button onClick={() => setOpen((o) => !o)} className="w-full sm:w-auto px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
+              {open ? <X className="w-4 h-4" /> : <Plus className="w-4 h-4" />} {open ? 'Close' : 'Post a question'}
+            </button>
+          </div>
         )}
       </div>
 

@@ -319,9 +319,9 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
     <div className="space-y-6">
       {/* HEADER & FILTERS */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 p-6 shadow-sm space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-5">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
+        <div className="flex flex-col gap-3.5 border-b border-slate-100 dark:border-slate-800 pb-5">
+          <div className="w-full">
+            <div className="flex flex-wrap items-center gap-2 mb-1.5">
               <span className="px-2.5 py-0.5 rounded-md text-[11px] font-bold bg-amber-100 dark:bg-amber-900/50 text-amber-800 dark:text-amber-300 uppercase tracking-wider">
                 HOD & Faculty Exam Portal
               </span>
@@ -329,22 +329,24 @@ export const OnlineTestAssignmentManager: React.FC<OnlineTestAssignmentManagerPr
                 Targeted Alert Engine
               </span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
+            <h2 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
               Online Tests, Assignments & Timed Submission Tracker
             </h2>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-0.5">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
               Conduct online tests and assignments. Dispatch automated deadline alerts <span className="font-bold text-amber-600 dark:text-amber-400">ONLY to students who haven't submitted yet</span>.
             </p>
           </div>
 
           {(mode === 'faculty' || mode === 'admin') && (
-            <button
-              onClick={() => setShowCreateModal(true)}
-              className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
-            >
-              <Plus className="w-4 h-4" />
-              <span>Create Online Test / Task</span>
-            </button>
+            <div className="pt-0.5">
+              <button
+                onClick={() => setShowCreateModal(true)}
+                className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-bold text-xs sm:text-sm shadow-md transition-all flex items-center gap-2 cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>Create Online Test / Task</span>
+              </button>
+            </div>
           )}
         </div>
 
