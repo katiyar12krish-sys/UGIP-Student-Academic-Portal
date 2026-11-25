@@ -369,7 +369,16 @@ export const CollegeProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const setLanguage = (lang: SupportedLanguage) => {
     setLanguageState(lang);
     localStorage.setItem(STORAGE_KEYS.LANGUAGE, lang);
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang;
+    }
   };
+
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language;
+    }
+  }, [language]);
 
   // Dark Mode Theme state
   const [theme, setThemeState] = useState<AppTheme>(() => {

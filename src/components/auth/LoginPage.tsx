@@ -17,18 +17,40 @@ import { PortalAuthModal } from './PortalAuthModal';
 import type { Role } from '../../types';
 
 /** The three login boxes, with Student placed first for convenience. */
-const BOXES: { role: Role; title: string; sub: string; icon: React.ElementType; tint: string; ring: string }[] = [
-  { role: 'student', title: 'Student', sub: 'Roll No. & Password', icon: GraduationCap, tint: 'from-blue-600 to-indigo-600', ring: 'ring-blue-500' },
-  { role: 'faculty', title: 'Faculty', sub: 'Subject Lecturers & HODs', icon: UserCheck, tint: 'from-emerald-700 to-teal-500', ring: 'ring-emerald-600' },
-  { role: 'admin', title: 'Admin', sub: 'Principal & Office Only', icon: ShieldCheck, tint: 'from-slate-900 to-slate-700', ring: 'ring-slate-700' },
-];
-
 // Screen part: login page.
 export const LoginPage: React.FC<{ onSignedIn: (role: Role) => void }> = ({ onSignedIn }) => {
   const { t, language, setLanguage, theme, toggleTheme } = useCollege();
   // Role (kept in screen state)
   const [role, setRole] = useState<Role | null>(null);     // null = no box chosen yet
-  const chosen = BOXES.find((b) => b.role === role);
+
+  const boxes: { role: Role; title: string; sub: string; icon: React.ElementType; tint: string; ring: string }[] = [
+    {
+      role: 'student',
+      title: language === 'hi' ? 'छात्र (Student)' : 'Student',
+      sub: language === 'hi' ? 'रोल नंबर और पासवर्ड' : 'Roll No. & Password',
+      icon: GraduationCap,
+      tint: 'from-blue-600 to-indigo-600',
+      ring: 'ring-blue-500',
+    },
+    {
+      role: 'faculty',
+      title: language === 'hi' ? 'शिक्षक (Faculty)' : 'Faculty',
+      sub: language === 'hi' ? 'विषय प्रवक्ता व विभागाध्यक्ष' : 'Subject Lecturers & HODs',
+      icon: UserCheck,
+      tint: 'from-emerald-700 to-teal-500',
+      ring: 'ring-emerald-600',
+    },
+    {
+      role: 'admin',
+      title: language === 'hi' ? 'प्रशासन (Admin)' : 'Admin',
+      sub: language === 'hi' ? 'प्रधानाचार्य एवं कार्यालय' : 'Principal & Office Only',
+      icon: ShieldCheck,
+      tint: 'from-slate-900 to-slate-700',
+      ring: 'ring-slate-700',
+    },
+  ];
+
+  const chosen = boxes.find((b) => b.role === role);
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row ugip-app-bg text-slate-900 dark:text-slate-100">
@@ -71,7 +93,7 @@ export const LoginPage: React.FC<{ onSignedIn: (role: Role) => void }> = ({ onSi
 
           {/* three login boxes */}
           <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3" role="tablist" aria-label="Choose how you sign in">
-            {BOXES.map((b) => {
+            {boxes.map((b) => {
               const on = role === b.role;
               return (
                 <button key={b.role} role="tab" aria-selected={on} onClick={() => setRole(b.role)}
@@ -97,7 +119,11 @@ export const LoginPage: React.FC<{ onSignedIn: (role: Role) => void }> = ({ onSi
             <div className="mt-5 w-full rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden">
               <div className={`h-1.5 bg-gradient-to-r ${chosen ? chosen.tint : 'from-slate-500 to-slate-400'}`} />
               <div className="px-6 pt-5">
-                <p className="text-base font-bold text-slate-900 dark:text-white">{role === 'parent' ? 'Parent Login' : `${chosen?.title} Login`}</p>
+                <p className="text-base font-bold text-slate-900 dark:text-white">
+                  {role === 'parent'
+                    ? (language === 'hi' ? 'अभिभावक लॉगिन (Parent Login)' : 'Parent Login')
+                    : `${chosen?.title} ${language === 'hi' ? 'लॉगिन' : 'Login'}`}
+                </p>
               </div>
               {/* key={role}: a fresh, empty form for every role */}
               <PortalAuthModal key={role} inline isOpen targetRole={role} onClose={() => setRole(null)} onSuccess={() => onSignedIn(role)} />
@@ -105,7 +131,7 @@ export const LoginPage: React.FC<{ onSignedIn: (role: Role) => void }> = ({ onSi
           )}
 
           <button onClick={() => setRole('parent')} className="mt-6 self-center text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-blue-900 dark:hover:text-blue-200 inline-flex items-center gap-1.5 cursor-pointer">
-            <Users className="w-4 h-4" /> Parent login
+            <Users className="w-4 h-4" /> {language === 'hi' ? 'अभिभावक लॉगिन (Parent login)' : 'Parent login'}
           </button>
         </main>
 

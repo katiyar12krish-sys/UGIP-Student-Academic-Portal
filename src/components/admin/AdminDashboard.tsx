@@ -143,6 +143,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
     attendanceSummary,
     getFacultyTodayPunch,
     notices,
+    language,
     t,
     getAttendancePercent,
     refreshAcademic,
@@ -277,38 +278,40 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
   const attTotals = Object.values(attendanceSummary).reduce((a, r) => ({ total: a.total + (r.total || 0), attended: a.attended + (r.attended || 0) }), { total: 0, attended: 0 });
   const avgAttendance = attTotals.total ? Math.round((attTotals.attended / attTotals.total) * 1000) / 10 : null;
 
+  const isHi = language === 'hi';
+
   const adminNavTabs = [
-    { id: 'overview', label: t.overview, icon: BarChart3, category: 'Core Admin' },
-    { id: 'class-database', label: `Students · 1st, 2nd, 3rd Yr (${studentsList.length})`, icon: GraduationCap, badge: `${studentsList.length}`, category: 'Students' },
-    { id: 'academic-year', label: 'Academic Year & Promotion', icon: CalendarDays, badge: 'New', category: 'Core Admin' },
-    { id: 'board-results', label: 'UBTER Board Results', icon: Award, badge: 'New', category: 'Academics & Exams' },
-    { id: 'papers', label: 'Question Papers & Answer Keys', icon: FileText, badge: '50M', category: 'Academics & Exams' },
-    { id: 'attendance-register', label: 'Attendance Register (edit)', icon: UserCheck, category: 'Attendance' },
-    { id: 'attendance-analysis', label: 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Auto', category: 'Attendance' },
-    { id: 'staff-attendance', label: t.staffGateRegister, icon: UserCheck, category: 'Attendance' },
-    { id: 'online-tests', label: 'Online Tests & Tasks', icon: Award, badge: 'Alerts', category: 'Academics & Exams' },
-    { id: 'doubt-resolution', label: 'Real-Time Doubt Q&A', icon: HelpCircle, badge: 'Live Chat', category: 'Academics & Exams' },
-    { id: 'class-dispatch', label: 'Class & Subject Dispatcher', icon: Send, badge: 'Direct', category: 'Academics & Exams' },
-    { id: 'data-center', label: 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New', category: 'Data & Access' },
-    { id: 'logins', label: 'Logins & Passwords', icon: KeyRound, badge: 'Vault', category: 'Data & Access' },
-    { id: 'faculty', label: `Faculty Role Control (${facultyList.length})`, icon: Users, badge: 'Admin Only', category: 'Faculty' },
-    { id: 'security-audit', label: 'Security Audit Logs', icon: Activity, badge: 'SHA-256', category: 'Security' },
-    { id: 'subjects', label: `${t.curriculum} (${subjects.length})`, icon: BookOpen, category: 'Academics & Exams' },
-    { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: 'Academics & Exams' },
-    { id: 'timetable', label: t.timetable, icon: Clock, category: 'Academics & Exams' },
-    { id: 'practicals', label: t.practicals, icon: FlaskConical, category: 'Academics & Exams' },
-    { id: 'materials', label: t.studyMaterials, icon: FolderDown, category: 'Academics & Exams' },
-    { id: 'placements', label: 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil', category: 'Placement' },
-    { id: 'placement-tracker', label: 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New', category: 'Placement' },
-    { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal', category: 'Students' },
-    { id: 'categories', label: t.categoryRoster, icon: Shield, category: 'Students' },
-    { id: 'achievements', label: t.honorsGallery, icon: Trophy, category: 'Placement' },
-    { id: 'news', label: `${t.newsCirculars} (${notices.length})`, icon: Megaphone, category: 'Core Admin' },
-    { id: 'ai-diagnostics', label: 'AI Diagnostic Engine', icon: Sparkles, badge: 'AI', category: 'Core Admin' },
-    { id: 'my-profile', label: 'My Profile & Password', icon: UserCog, category: 'Data & Access' },
+    { id: 'overview', label: isHi ? 'सिंहावलोकन व आँकड़े' : 'Overview & Stats', icon: BarChart3, category: isHi ? 'मुख्य प्रशासन' : 'Core Admin' },
+    { id: 'class-database', label: isHi ? `छात्र डेटाबेस · 1st, 2nd, 3rd Yr (${studentsList.length})` : `Students · 1st, 2nd, 3rd Yr (${studentsList.length})`, icon: GraduationCap, badge: `${studentsList.length}`, category: isHi ? 'छात्र प्रबंधन' : 'Students' },
+    { id: 'academic-year', label: isHi ? 'शैक्षणिक सत्र व पदोन्नति' : 'Academic Year & Promotion', icon: CalendarDays, badge: 'New', category: isHi ? 'मुख्य प्रशासन' : 'Core Admin' },
+    { id: 'board-results', label: isHi ? 'यूबीटीईआर बोर्ड परिणाम' : 'UBTER Board Results', icon: Award, badge: 'New', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'papers', label: isHi ? 'प्रश्न पत्र एवं उत्तर कुंजी' : 'Question Papers & Answer Keys', icon: FileText, badge: '50M', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'attendance-register', label: isHi ? 'उपस्थिति रजिस्टर (संपादित)' : 'Attendance Register (edit)', icon: UserCheck, category: isHi ? 'उपस्थिति' : 'Attendance' },
+    { id: 'attendance-analysis', label: isHi ? 'बैच उपस्थिति विश्लेषण (1st, 2nd, 3rd Yr)' : 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Auto', category: isHi ? 'उपस्थिति' : 'Attendance' },
+    { id: 'staff-attendance', label: isHi ? 'स्टाफ गेट रजिस्टर' : 'Staff Gate Register', icon: UserCheck, category: isHi ? 'उपस्थिति' : 'Attendance' },
+    { id: 'online-tests', label: isHi ? 'ऑनलाइन टेस्ट व असाइनमेंट' : 'Online Tests & Tasks', icon: Award, badge: 'Alerts', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'doubt-resolution', label: isHi ? 'लाइव संशय समाधान (Doubts Q&A)' : 'Real-Time Doubt Q&A', icon: HelpCircle, badge: 'Live Chat', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'class-dispatch', label: isHi ? 'कक्षा व विषय सामग्री प्रेषक' : 'Class & Subject Dispatcher', icon: Send, badge: 'Direct', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'data-center', label: isHi ? 'डेटा सेंटर (डाउनलोड / अपलोड)' : 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New', category: isHi ? 'डेटा एवं एक्सेस' : 'Data & Access' },
+    { id: 'logins', label: isHi ? 'लॉगिन व पासवर्ड वॉल्ट' : 'Logins & Passwords', icon: KeyRound, badge: 'Vault', category: isHi ? 'डेटा एवं एक्सेस' : 'Data & Access' },
+    { id: 'faculty', label: isHi ? `शिक्षक अधिकार नियंत्रण (${facultyList.length})` : `Faculty Role Control (${facultyList.length})`, icon: Users, badge: 'Admin Only', category: isHi ? 'शिक्षक' : 'Faculty' },
+    { id: 'security-audit', label: isHi ? 'सुरक्षा ऑडिट लॉग्स' : 'Security Audit Logs', icon: Activity, badge: 'SHA-256', category: isHi ? 'सुरक्षा' : 'Security' },
+    { id: 'subjects', label: isHi ? `पाठ्यक्रम एवं विषय (${subjects.length})` : `Curriculum & Subjects (${subjects.length})`, icon: BookOpen, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'syllabus', label: isHi ? 'सिलेबस (यूबीटीईआर)' : 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'timetable', label: isHi ? 'समय सारणी (Timetable)' : 'Timetable', icon: Clock, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'practicals', label: isHi ? 'प्रयोगशाला प्रैक्टिकल (Labs)' : 'Lab Practicals', icon: FlaskConical, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'materials', label: isHi ? 'ई-लर्निंग एवं स्टडी नोट्स' : 'E-Learning & Materials', icon: FolderDown, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Exams' },
+    { id: 'placements', label: isHi ? 'करियर व प्लेसमेंट हब' : 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil', category: isHi ? 'प्लेसमेंट' : 'Placement' },
+    { id: 'placement-tracker', label: isHi ? 'प्लेसमेंट ट्रैकर (रिज्यूमे · टेस्ट)' : 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New', category: isHi ? 'प्लेसमेंट' : 'Placement' },
+    { id: 'performance-analytics', label: isHi ? 'छात्र प्रगति विश्लेषण' : 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal', category: isHi ? 'छात्र प्रबंधन' : 'Students' },
+    { id: 'categories', label: isHi ? 'आरक्षण श्रेणी रोस्टर' : 'Category Roster', icon: Shield, category: isHi ? 'छात्र प्रबंधन' : 'Students' },
+    { id: 'achievements', label: isHi ? 'उपलब्धियां और गैलरी' : 'Honors Gallery', icon: Trophy, category: isHi ? 'प्लेसमेंट' : 'Placement' },
+    { id: 'news', label: isHi ? `कॉलेज सूचनाएं (${notices.length})` : `News & Circulars (${notices.length})`, icon: Megaphone, category: isHi ? 'मुख्य प्रशासन' : 'Core Admin' },
+    { id: 'ai-diagnostics', label: isHi ? 'एआई डायग्नोस्टिक इंजन' : 'AI Diagnostic Engine', icon: Sparkles, badge: 'AI', category: isHi ? 'मुख्य प्रशासन' : 'Core Admin' },
+    { id: 'my-profile', label: isHi ? 'मेरी प्रोफाइल व पासवर्ड' : 'My Profile & Password', icon: UserCog, category: isHi ? 'डेटा एवं एक्सेस' : 'Data & Access' },
   ];
 
-  const quickTabs = [
+  const quickTabs = isHi ? [
     { id: 'overview', label: '🏠 होम' },
     { id: 'class-database', label: `👥 छात्र (${studentsList.length})` },
     { id: 'attendance-register', label: '📊 हाजिरी रजिस्टर' },
@@ -337,6 +340,35 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
     { id: 'subjects', label: '📚 विषय व शिक्षक' },
     { id: 'staff-attendance', label: '🚪 स्टाफ गेट रजिस्टर' },
     { id: 'my-profile', label: '👤 प्रोफाइल व पासवर्ड' },
+  ] : [
+    { id: 'overview', label: '🏠 Home' },
+    { id: 'class-database', label: `👥 Students (${studentsList.length})` },
+    { id: 'attendance-register', label: '📊 Attendance' },
+    { id: 'papers', label: '📝 Papers (50M)' },
+    { id: 'board-results', label: '🏆 Board Results' },
+    { id: 'ai-diagnostics', label: '🤖 AI Diagnostics' },
+    { id: 'doubt-resolution', label: '💬 Doubts Q&A' },
+    { id: 'data-center', label: '📁 Data Center' },
+    { id: 'logins', label: '🔑 Passwords' },
+    { id: 'class-dispatch', label: '📤 Material Dispatch' },
+    { id: 'online-tests', label: '✍️ Online Tests' },
+    { id: 'materials', label: '📂 Document Hub' },
+    { id: 'attendance-analysis', label: '📈 Attendance Trends' },
+    { id: 'faculty', label: '👨‍🏫 Faculty Control' },
+    { id: 'news', label: `📢 Notices (${notices.length})` },
+    { id: 'academic-year', label: '🗓️ Year & Promotion' },
+    { id: 'timetable', label: '📅 Timetable' },
+    { id: 'syllabus', label: '📖 Syllabus' },
+    { id: 'practicals', label: '🔬 Practical Labs' },
+    { id: 'placements', label: '💼 Placement Hub' },
+    { id: 'placement-tracker', label: '🎯 Placement Tracker' },
+    { id: 'performance-analytics', label: '📊 Performance' },
+    { id: 'categories', label: '📑 Category Roster' },
+    { id: 'achievements', label: '🏅 Honors Gallery' },
+    { id: 'security-audit', label: '🔒 Security Logs' },
+    { id: 'subjects', label: '📚 Curriculum' },
+    { id: 'staff-attendance', label: '🚪 Staff Attendance' },
+    { id: 'my-profile', label: '👤 Profile' },
   ];
 
   const activeTabObj = adminNavTabs.find((t) => t.id === activeTab || (t.id === 'class-database' && activeTab === 'students')) || adminNavTabs[0];
@@ -468,15 +500,15 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           <div className="space-y-2 max-w-2xl">
             <div className="flex flex-wrap items-center gap-2">
               <span className="px-2.5 py-1 rounded-md text-[11px] font-bold bg-blue-600/20 text-blue-400 border border-blue-500/30 flex items-center gap-1.5 uppercase tracking-wider">
-                <ShieldCheck className="w-3.5 h-3.5" /> Chief Administrator
+                <ShieldCheck className="w-3.5 h-3.5" /> {isHi ? 'मुख्य प्रशासक (Chief Administrator)' : 'Chief Administrator'}
               </span>
               <span className="text-xs text-slate-400 font-medium">{t.academicSession}</span>
             </div>
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight text-white leading-tight">
-              Uttarakhand Government Institute of Polytechnic
+              {isHi ? 'उत्तराखंड राजकीय पॉलिटेक्निक संस्थान' : 'Uttarakhand Government Institute of Polytechnic'}
             </h2>
             <p className="text-xs sm:text-sm text-slate-300">
-              Master Administration, Role Management, and Encrypted Security Vault
+              {isHi ? 'समग्र कॉलेज प्रबंधन, शिक्षक अधिकार एवं सुरक्षित डेटा वॉल्ट' : 'Master Administration, Role Management, and Encrypted Security Vault'}
             </p>
           </div>
 
@@ -486,14 +518,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
               className="w-full sm:w-auto justify-center px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
             >
               <Camera className="w-4 h-4 text-white" />
-              <span>Student QR Scanner</span>
+              <span>{isHi ? 'छात्र QR स्कैनर' : 'Student QR Scanner'}</span>
             </button>
             <button
               onClick={() => setShowAddStudentModal(true)}
               className="w-full sm:w-auto justify-center px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl text-xs font-bold border border-slate-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer"
             >
               <Plus className="w-4 h-4" />
-              <span>Add Student & Password</span>
+              <span>{isHi ? 'नया छात्र व पासवर्ड जोड़ें' : 'Add Student & Password'}</span>
             </button>
             {onLogout && (
               <button
@@ -502,7 +534,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
                 title="Exit Admin Portal & Return Home"
               >
                 <LogOut className="w-4 h-4 text-white" />
-                <span>पोर्टल से बाहर निकलें (Exit)</span>
+                <span>{isHi ? 'पोर्टल से बाहर निकलें (Exit)' : 'Exit Admin Portal'}</span>
               </button>
             )}
           </div>
@@ -518,7 +550,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
               <ActiveIcon className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">Active Admin Section</div>
+              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">
+                {isHi ? 'सक्रिय प्रशासनिक अनुभाग' : 'Active Admin Section'}
+              </div>
               <div className="text-xs font-black text-slate-900 dark:text-white truncate">{activeTabObj.label}</div>
             </div>
           </div>
@@ -527,7 +561,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
             className="px-3.5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-xs shrink-0 cursor-pointer active:scale-95 transition-transform"
           >
             <Menu className="w-4 h-4" />
-            <span>सभी मेनू ({adminNavTabs.length})</span>
+            <span>{isHi ? 'सभी मेनू' : 'All Menus'} ({adminNavTabs.length})</span>
           </button>
         </div>
 
@@ -600,37 +634,49 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           <div className={`ugip-stats grid ${forceMobileView ? 'grid-cols-2 gap-2.5' : 'grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 md:gap-6'}`}>
             <div className="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">Total Students</p>
+                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                  {isHi ? 'कुल नामांकित छात्र' : 'Total Students'}
+                </p>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
                   {studentsList.length}
                 </h3>
               </div>
               <p className="text-[11px] sm:text-xs text-emerald-600 dark:text-emerald-400 mt-2 font-semibold flex items-center gap-1 leading-tight">
                 <TrendingUp className="w-3.5 h-3.5 shrink-0" />
-                <span className="truncate">Saved Passwords</span>
+                <span className="truncate">{isHi ? 'सुरक्षित पासवर्ड' : 'Saved Passwords'}</span>
               </p>
             </div>
             <div className="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">Faculty Controlled</p>
+                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                  {isHi ? 'शिक्षक नियंत्रण' : 'Faculty Controlled'}
+                </p>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
                   {facultyList.length}
                 </h3>
               </div>
-              <p className="text-[11px] sm:text-xs text-slate-500 mt-2 font-semibold leading-tight truncate">Safety First: Admin Auth Only</p>
+              <p className="text-[11px] sm:text-xs text-slate-500 mt-2 font-semibold leading-tight truncate">
+                {isHi ? 'सुरक्षा प्रथम: केवल प्रशासन' : 'Safety First: Admin Auth Only'}
+              </p>
             </div>
             <div className="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">Avg. Attendance</p>
+                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                  {isHi ? 'औसत उपस्थिति' : 'Avg. Attendance'}
+                </p>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
                   {avgAttendance === null ? '–' : `${avgAttendance}%`}
                 </h3>
               </div>
-              <p className="text-[11px] sm:text-xs text-blue-600 dark:text-blue-400 mt-2 font-semibold leading-tight truncate">UBTER Min Req: 75%</p>
+              <p className="text-[11px] sm:text-xs text-blue-600 dark:text-blue-400 mt-2 font-semibold leading-tight truncate">
+                {isHi ? 'यूबीटीईआर न्यूनतम: 75%' : 'UBTER Min Req: 75%'}
+              </p>
             </div>
             <div className="bg-white dark:bg-slate-800 p-3.5 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">At-Risk Students</p>
+                <p className="text-[10px] sm:text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider truncate">
+                  {isHi ? 'संवेदनशील छात्र' : 'At-Risk Students'}
+                </p>
                 <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
                   {weakStudents.filter((s) => s.riskLevel === 'High').length}
                 </h3>
@@ -639,7 +685,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
                 onClick={() => setActiveTab('ai-diagnostics')}
                 className="text-[11px] sm:text-xs text-amber-600 dark:text-amber-400 mt-2 font-bold hover:underline block text-left cursor-pointer truncate"
               >
-                Review diagnostic plan →
+                {isHi ? 'सुधार योजना देखें →' : 'Review diagnostic plan →'}
               </button>
             </div>
           </div>
@@ -1235,13 +1281,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
               <div className="flex items-center justify-between gap-2 mb-2">
                 <div>
                   <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                    <span>📱 एडमिन पोर्टल मेनू</span>
+                    <span>{isHi ? '📱 एडमिन पोर्टल मेनू' : '📱 Admin Portal Menu'}</span>
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
-                      {adminNavTabs.length} ऑप्शन्स
+                      {adminNavTabs.length} {isHi ? 'ऑप्शन्स' : 'Options'}
                     </span>
                   </h3>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                    Chief Administrator • 28 Full Management Tools
+                    {isHi ? 'मुख्य प्रशासक • 28 प्रबंधन टूल्स' : 'Chief Administrator • 28 Full Management Tools'}
                   </p>
                 </div>
                 <button
@@ -1262,7 +1308,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
                   type="text"
                   value={menuSearchQuery}
                   onChange={(e) => setMenuSearchQuery(e.target.value)}
-                  placeholder="🔍 कोई भी विकल्प खोजें / Search 28 options..."
+                  placeholder={isHi ? "🔍 कोई भी विकल्प खोजें (28 टूल्स)..." : "🔍 Search any admin menu (28 tools)..."}
                   className="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {menuSearchQuery && (
@@ -1281,7 +1327,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
               {menuSearchQuery.trim() ? (
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
-                    Matching Options ({adminNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
+                    {isHi ? 'मिलते-जुलते विकल्प' : 'Matching Options'} ({adminNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
                   </div>
                   <div className="grid grid-cols-1 gap-1">
                     {adminNavTabs
@@ -1319,25 +1365,43 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
                   </div>
                 </div>
               ) : (
-                ['Core Admin', 'Students', 'Academics & Exams', 'Attendance', 'Data & Access', 'Faculty', 'Placement', 'Security'].map((cat) => {
+                (isHi
+                  ? ['मुख्य प्रशासन', 'छात्र प्रबंधन', 'अकादमिक एवं परीक्षाएं', 'उपस्थिति', 'डेटा एवं एक्सेस', 'शिक्षक', 'प्लेसमेंट', 'सुरक्षा']
+                  : ['Core Admin', 'Students', 'Academics & Exams', 'Attendance', 'Data & Access', 'Faculty', 'Placement', 'Security']
+                ).map((cat) => {
                   const catTabs = adminNavTabs.filter((t) => t.category === cat);
                   if (catTabs.length === 0) return null;
-                  const catLabel =
-                    cat === 'Core Admin'
+                  const catLabel = isHi
+                    ? cat === 'मुख्य प्रशासन'
                       ? '⚙️ कॉलेज एडमिनिस्ट्रेशन (Core Admin)'
-                      : cat === 'Students'
+                      : cat === 'छात्र प्रबंधन'
                       ? '👥 छात्र डेटाबेस व एनालिटिक्स (150 Students)'
-                      : cat === 'Academics & Exams'
+                      : cat === 'अकादमिक एवं परीक्षाएं'
                       ? '📚 परीक्षा, सिलेबस एवं क्वेश्चन पेपर्स (50M)'
-                      : cat === 'Attendance'
+                      : cat === 'उपस्थिति'
                       ? '📊 उपस्थिति व अटेंडेंस रजिस्टर (Attendance)'
-                      : cat === 'Data & Access'
+                      : cat === 'डेटा एवं एक्सेस'
                       ? '📁 डेटा सेंटर, एक्सेल व लॉगिन पासवर्ड्स'
-                      : cat === 'Faculty'
+                      : cat === 'शिक्षक'
                       ? '👨‍🏫 फैकल्टी कंट्रोल व असाइनमेंट'
-                      : cat === 'Placement'
+                      : cat === 'प्लेसमेंट'
                       ? '💼 प्लेसमेंट हब, रिज्यूमे एवं अचीवमेंट्स'
-                      : '🔒 सिक्यूरिटी एवं ऑडिट लॉग्स';
+                      : '🔒 सिक्यूरिटी एवं ऑडिट लॉग्स'
+                    : cat === 'Core Admin'
+                      ? '⚙️ Core Administration'
+                      : cat === 'Students'
+                      ? '👥 Students Database & Analytics (150 Students)'
+                      : cat === 'Academics & Exams'
+                      ? '📚 Exams, Syllabus & Question Papers (50M)'
+                      : cat === 'Attendance'
+                      ? '📊 Attendance Register & Analysis'
+                      : cat === 'Data & Access'
+                      ? '📁 Data Center, Excel & Logins'
+                      : cat === 'Faculty'
+                      ? '👨‍🏫 Faculty Role Control & Teaching'
+                      : cat === 'Placement'
+                      ? '💼 Career, Placements & Resume Tracker'
+                      : '🔒 Security & Audit Logs';
 
                   return (
                     <div key={cat} className="space-y-1.5">
@@ -1396,7 +1460,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           }`}
         >
           <BarChart3 className="w-4 h-4" />
-          <span>होम</span>
+          <span>{isHi ? 'होम' : 'Home'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('class-database')}
@@ -1405,7 +1469,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           }`}
         >
           <GraduationCap className="w-4 h-4" />
-          <span>छात्र 150</span>
+          <span>{isHi ? `छात्र ${studentsList.length}` : `Students ${studentsList.length}`}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('attendance-register')}
@@ -1414,7 +1478,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           }`}
         >
           <UserCheck className="w-4 h-4" />
-          <span>हाजिरी</span>
+          <span>{isHi ? 'हाजिरी' : 'Attendance'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('papers')}
@@ -1423,7 +1487,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           }`}
         >
           <FileText className="w-4 h-4" />
-          <span>पेपर्स</span>
+          <span>{isHi ? 'पेपर्स' : 'Papers'}</span>
         </button>
         <button
           onClick={() => setMobileMenuOpen(true)}
@@ -1432,7 +1496,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout, forceM
           <div className="w-4 h-4 flex items-center justify-center">
             <Menu className="w-4 h-4" />
           </div>
-          <span>मेनू ({adminNavTabs.length})</span>
+          <span>{isHi ? 'मेनू' : 'Menu'} ({adminNavTabs.length})</span>
         </button>
       </nav>
     </div>

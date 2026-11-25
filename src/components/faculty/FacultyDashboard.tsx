@@ -104,6 +104,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
     deleteOnlineQuiz,
     onlineTestAssignments,
     studentDoubtTickets,
+    language,
     t,
     getAttendancePercent,
   } = useCollege();
@@ -337,31 +338,33 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
     return matchesBranch && matchesQ;
   });
 
+  const isHi = language === 'hi';
+
   const facultyNavTabs = [
-    { id: 'class-database', label: '1st, 2nd, 3rd Yr Database & Excel', icon: FileSpreadsheet, badge: 'Live Excel', category: 'Database & Students' },
-    { id: 'attendance-analysis', label: 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Automatic', category: 'Attendance & Classes' },
-    { id: 'online-tests', label: `Online Tests & Timed Tasks (${onlineTestAssignments.length})`, icon: Award, badge: 'Targeted Alerts', category: 'Academics & Tests' },
-    { id: 'doubt-resolution', label: `Real-Time Doubt Q&A (${studentDoubtTickets.length})`, icon: HelpCircle, badge: 'Live Chat', category: 'Academics & Tests' },
-    { id: 'class-dispatch', label: 'Class & Subject Dispatcher', icon: Send, badge: 'Targeted', category: 'Academics & Tests' },
-    { id: 'material-hub', label: 'Document & Material Hub', icon: FolderDown, badge: 'PDF / Img / Links', category: 'Academics & Tests' },
-    { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: 'Academics & Tests' },
-    { id: 'question-papers', label: 'Question Papers & Answer Keys', icon: FileText, badge: 'New', category: 'Academics & Tests' },
-    { id: 'qr-attendance', label: 'QR Class Attendance', icon: QrCode, badge: 'Live', category: 'Attendance & Classes' },
-    { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal', category: 'Database & Students' },
-    { id: 'placements', label: 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil', category: 'Placement & Career' },
-    { id: 'practicals', label: t.practicals, icon: FlaskConical, category: 'Academics & Tests' },
-    { id: 'board-results', label: 'UBTER Board Results', icon: Award, category: 'Academics & Tests' },
-    { id: 'attendance-register', label: 'Attendance Register (edit)', icon: UserCheck, category: 'Attendance & Classes' },
-    { id: 'my-profile', label: 'My Profile & Password', icon: UserCog, category: 'Account & Data' },
-    { id: 'placement-tracker', label: 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New', category: 'Placement & Career' },
-    { id: 'logins', label: 'Logins & Passwords', icon: KeyRound, category: 'Account & Data' },
-    { id: 'timetable', label: t.timetable, icon: Clock, category: 'Academics & Tests' },
-    { id: 'data-center', label: 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New', category: 'Account & Data' },
-    { id: 'categories', label: t.categoryRoster, icon: Shield, category: 'Database & Students' },
-    { id: 'news', label: `${t.newsCirculars} (${notices.length})`, icon: Megaphone, category: 'Account & Data' },
+    { id: 'class-database', label: isHi ? 'छात्र डेटाबेस एवं एक्सेल' : '1st, 2nd, 3rd Yr Database & Excel', icon: FileSpreadsheet, badge: 'Live Excel', category: isHi ? 'छात्र प्रबंधन' : 'Database & Students' },
+    { id: 'attendance-analysis', label: isHi ? 'बैच उपस्थिति विश्लेषण (1st, 2nd, 3rd Yr)' : 'Batch Attendance Analysis (1st, 2nd, 3rd Yr)', icon: TrendingUp, badge: 'Automatic', category: isHi ? 'उपस्थिति एवं कक्षाएं' : 'Attendance & Classes' },
+    { id: 'online-tests', label: isHi ? `ऑनलाइन टेस्ट व असाइनमेंट (${onlineTestAssignments.length})` : `Online Tests & Timed Tasks (${onlineTestAssignments.length})`, icon: Award, badge: 'Targeted Alerts', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'doubt-resolution', label: isHi ? `लाइव संशय समाधान (${studentDoubtTickets.length})` : `Real-Time Doubt Q&A (${studentDoubtTickets.length})`, icon: HelpCircle, badge: 'Live Chat', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'class-dispatch', label: isHi ? 'कक्षा व विषय सामग्री प्रेषक' : 'Class & Subject Dispatcher', icon: Send, badge: 'Targeted', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'material-hub', label: isHi ? 'दस्तावेज एवं स्टडी नोट्स हब' : 'Document & Material Hub', icon: FolderDown, badge: 'PDF / Img / Links', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'syllabus', label: isHi ? 'सिलेबस (यूबीटीईआर)' : 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'question-papers', label: isHi ? 'प्रश्न पत्र एवं उत्तर कुंजी' : 'Question Papers & Answer Keys', icon: FileText, badge: 'New', category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'qr-attendance', label: isHi ? 'QR कक्षा उपस्थिति (Live)' : 'QR Class Attendance', icon: QrCode, badge: 'Live', category: isHi ? 'उपस्थिति एवं कक्षाएं' : 'Attendance & Classes' },
+    { id: 'performance-analytics', label: isHi ? 'छात्र प्रगति विश्लेषण' : 'Student Performance Analytics', icon: BarChart3, badge: 'Longitudinal', category: isHi ? 'छात्र प्रबंधन' : 'Database & Students' },
+    { id: 'placements', label: isHi ? 'करियर व प्लेसमेंट हब' : 'Career & Placement Hub', icon: Briefcase, badge: 'CS & Civil', category: isHi ? 'प्लेसमेंट एवं करियर' : 'Placement & Career' },
+    { id: 'practicals', label: isHi ? 'प्रयोगशाला प्रैक्टिकल (Labs)' : 'Lab Practicals', icon: FlaskConical, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'board-results', label: isHi ? 'यूबीटीईआर बोर्ड परिणाम' : 'UBTER Board Results', icon: Award, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'attendance-register', label: isHi ? 'उपस्थिति रजिस्टर (संपादित)' : 'Attendance Register (edit)', icon: UserCheck, category: isHi ? 'उपस्थिति एवं कक्षाएं' : 'Attendance & Classes' },
+    { id: 'my-profile', label: isHi ? 'मेरी प्रोफाइल व पासवर्ड' : 'My Profile & Password', icon: UserCog, category: isHi ? 'खाता एवं डेटा' : 'Account & Data' },
+    { id: 'placement-tracker', label: isHi ? 'प्लेसमेंट ट्रैकर (रिज्यूमे · टेस्ट)' : 'Placement Tracker (Resume · Tests)', icon: Target, badge: 'New', category: isHi ? 'प्लेसमेंट एवं करियर' : 'Placement & Career' },
+    { id: 'logins', label: isHi ? 'लॉगिन व पासवर्ड्स' : 'Logins & Passwords', icon: KeyRound, category: isHi ? 'खाता एवं डेटा' : 'Account & Data' },
+    { id: 'timetable', label: isHi ? 'समय सारणी (Timetable)' : 'Timetable', icon: Clock, category: isHi ? 'अकादमिक एवं परीक्षाएं' : 'Academics & Tests' },
+    { id: 'data-center', label: isHi ? 'डेटा सेंटर (डाउनलोड/अपलोड)' : 'Data Center (Download / Upload)', icon: FileSpreadsheet, badge: 'New', category: isHi ? 'खाता एवं डेटा' : 'Account & Data' },
+    { id: 'categories', label: isHi ? 'आरक्षण श्रेणी रोस्टर' : 'Category Roster', icon: Shield, category: isHi ? 'छात्र प्रबंधन' : 'Database & Students' },
+    { id: 'news', label: isHi ? `कॉलेज सूचनाएं (${notices.length})` : `News & Circulars (${notices.length})`, icon: Megaphone, category: isHi ? 'खाता एवं डेटा' : 'Account & Data' },
   ].filter((tab) => tabAllowed(tab.id));
 
-  const quickTabs = [
+  const quickTabs = isHi ? [
     { id: 'class-database', label: '👥 छात्र डेटाबेस' },
     { id: 'qr-attendance', label: '📷 QR हाजिरी' },
     { id: 'question-papers', label: '📝 पेपर्स (50M)' },
@@ -378,6 +381,23 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
     { id: 'data-center', label: '📁 डेटा सेंटर' },
     { id: 'news', label: `📢 सूचनाएं (${notices.length})` },
     { id: 'my-profile', label: '👤 प्रोफाइल' },
+  ].filter((tab) => tabAllowed(tab.id)) : [
+    { id: 'class-database', label: '👥 Students' },
+    { id: 'qr-attendance', label: '📷 QR Attendance' },
+    { id: 'question-papers', label: '📝 Papers (50M)' },
+    { id: 'doubt-resolution', label: `💬 Doubts (${studentDoubtTickets.length})` },
+    { id: 'class-dispatch', label: '📤 Dispatch' },
+    { id: 'material-hub', label: '📁 Materials' },
+    { id: 'attendance-analysis', label: '📊 Attendance' },
+    { id: 'syllabus', label: '📖 Syllabus' },
+    { id: 'online-tests', label: '✍️ Tests' },
+    { id: 'board-results', label: '🏆 Results' },
+    { id: 'attendance-register', label: '📋 Register' },
+    { id: 'timetable', label: '📅 Timetable' },
+    { id: 'placement-tracker', label: '💼 Placement' },
+    { id: 'data-center', label: '📁 Data Center' },
+    { id: 'news', label: `📢 Notices (${notices.length})` },
+    { id: 'my-profile', label: '👤 Profile' },
   ].filter((tab) => tabAllowed(tab.id));
 
   const activeTabObj = facultyNavTabs.find((t) => t.id === activeTab) || facultyNavTabs[0];
@@ -447,7 +467,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
               className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
             >
               <QrCode className="w-4 h-4 text-white" />
-              <span>Scan Student QR</span>
+              <span>{isHi ? 'छात्र QR स्कैन करें' : 'Scan Student QR'}</span>
             </button>
             <button
               id="faculty-add-student-btn"
@@ -455,7 +475,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
               className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
             >
               <Plus className="w-4 h-4 text-emerald-200" />
-              <span>Add Student & Password</span>
+              <span>{isHi ? 'नया छात्र व पासवर्ड जोड़ें' : 'Add Student & Password'}</span>
             </button>
             <button
               id="faculty-gate-punch-btn"
@@ -463,7 +483,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
               className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer"
             >
               <UserCheck className="w-4 h-4 text-amber-400" />
-              <span>Staff Gate Punch</span>
+              <span>{isHi ? 'स्टाफ गेट पंच' : 'Staff Gate Punch'}</span>
             </button>
             {onLogout && (
               <button
@@ -473,7 +493,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
                 title="Exit Faculty Portal & Return Home"
               >
                 <LogOut className="w-4 h-4 text-white" />
-                <span>पोर्टल से बाहर निकलें (Exit)</span>
+                <span>{isHi ? 'पोर्टल से बाहर निकलें (Exit)' : 'Exit Faculty Portal'}</span>
               </button>
             )}
           </div>
@@ -489,7 +509,9 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
               <ActiveIcon className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">Active Faculty Section</div>
+              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">
+                {isHi ? 'सक्रिय शिक्षक अनुभाग' : 'Active Faculty Section'}
+              </div>
               <div className="text-xs font-black text-slate-900 dark:text-white truncate">{activeTabObj?.label}</div>
             </div>
           </div>
@@ -498,7 +520,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
             className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-xs shrink-0 cursor-pointer"
           >
             <Menu className="w-3.5 h-3.5" />
-            <span>सभी मेनू ({facultyNavTabs.length})</span>
+            <span>{isHi ? 'सभी मेनू' : 'All Menus'} ({facultyNavTabs.length})</span>
           </button>
         </div>
 
@@ -1527,19 +1549,31 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
                   </div>
                 </div>
               ) : (
-                ['Database & Students', 'Attendance & Classes', 'Academics & Tests', 'Placement & Career', 'Account & Data'].map((cat) => {
+                (isHi
+                  ? ['छात्र प्रबंधन', 'उपस्थिति एवं कक्षाएं', 'अकादमिक एवं परीक्षाएं', 'प्लेसमेंट एवं करियर', 'खाता एवं डेटा']
+                  : ['Database & Students', 'Attendance & Classes', 'Academics & Tests', 'Placement & Career', 'Account & Data']
+                ).map((cat) => {
                   const catTabs = facultyNavTabs.filter((t) => t.category === cat);
                   if (catTabs.length === 0) return null;
-                  const catLabel =
-                    cat === 'Database & Students'
+                  const catLabel = isHi
+                    ? cat === 'छात्र प्रबंधन'
                       ? '👥 छात्र डेटाबेस व एनालिटिक्स (1st, 2nd, 3rd Yr)'
-                      : cat === 'Attendance & Classes'
+                      : cat === 'उपस्थिति एवं कक्षाएं'
                       ? '📷 QR हाजिरी व अटेंडेंस एनालिसिस'
-                      : cat === 'Academics & Tests'
+                      : cat === 'अकादमिक एवं परीक्षाएं'
                       ? '📚 परीक्षा, क्वेश्चन पेपर्स (50M) व लाइव डाउट्स'
-                      : cat === 'Placement & Career'
+                      : cat === 'प्लेसमेंट एवं करियर'
                       ? '💼 प्लेसमेंट हब व रिज्यूमे ट्रैकर'
-                      : '📁 डेटा सेंटर, पासवर्ड्स व प्रोफाइल';
+                      : '📁 डेटा सेंटर, पासवर्ड्स व प्रोफाइल'
+                    : cat === 'Database & Students'
+                      ? '👥 Student Database & Analytics'
+                      : cat === 'Attendance & Classes'
+                      ? '📷 QR Attendance & Class Analysis'
+                      : cat === 'Academics & Tests'
+                      ? '📚 Exams, Question Papers (50M) & Doubts'
+                      : cat === 'Placement & Career'
+                      ? '💼 Career, Placements & Resume Tracker'
+                      : '📁 Data Center, Passwords & Profile';
 
                   return (
                     <div key={cat} className="space-y-1.5">
@@ -1598,7 +1632,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
           }`}
         >
           <FileSpreadsheet className="w-4 h-4" />
-          <span>डेटाबेस</span>
+          <span>{isHi ? 'डेटाबेस' : 'Database'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('qr-attendance')}
@@ -1607,7 +1641,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
           }`}
         >
           <QrCode className="w-4 h-4" />
-          <span>QR हाजिरी</span>
+          <span>{isHi ? 'QR हाजिरी' : 'Attendance'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('question-papers')}
@@ -1616,7 +1650,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
           }`}
         >
           <FileText className="w-4 h-4" />
-          <span>पेपर्स</span>
+          <span>{isHi ? 'पेपर्स' : 'Papers'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('doubt-resolution')}
@@ -1625,7 +1659,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
           }`}
         >
           <HelpCircle className="w-4 h-4" />
-          <span>डाउट्स</span>
+          <span>{isHi ? 'डाउट्स' : 'Doubts'}</span>
         </button>
         <button
           onClick={() => setMobileMenuOpen(true)}
@@ -1634,7 +1668,7 @@ export const FacultyDashboard: React.FC<FacultyDashboardProps> = ({ onLogout, fo
           <div className="w-4 h-4 flex items-center justify-center">
             <Menu className="w-4 h-4" />
           </div>
-          <span>मेनू ({facultyNavTabs.length})</span>
+          <span>{isHi ? 'मेनू' : 'Menu'} ({facultyNavTabs.length})</span>
         </button>
       </nav>
     </div>

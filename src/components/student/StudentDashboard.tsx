@@ -112,7 +112,9 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
     studentDoubtTickets,
     askStudentDoubt,
     t,
+    language,
   } = useCollege();
+  const isHi = language === 'hi';
 
   // Which tab is open right now
   const [activeTab, setActiveTab] = useState<
@@ -367,49 +369,49 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
   };
 
   const studentNavTabs = [
-    { id: 'overview', label: t.overview, icon: Layers, category: 'Academics' },
-    { id: 'my-profile', label: 'My Profile (edit)', icon: UserCog, category: 'Account' },
-    { id: 'syllabus', label: 'Syllabus (UBTER)', icon: BookOpen, badge: 'Unit-wise', category: 'Academics' },
-    { id: 'online-tests', label: `Online Tests (${onlineTestAssignments.filter(t => t.branch === currentUser.branch && t.year === currentUser.year).length})`, icon: Award, badge: 'Due', category: 'Assessment' },
-    { id: 'doubt-chat', label: `Doubt Resolution (Q&A)`, icon: MessageSquareQuote, badge: 'Live Chat', category: 'AI & Doubts' },
-    { id: 'class-materials', label: `Class Subject Materials (${myClassDispatches.length})`, icon: Send, badge: 'Direct', category: 'Academics' },
-    { id: 'material-hub', label: 'Document & Material Hub', icon: FolderDown, badge: 'Course PDFs', category: 'Academics' },
-    { id: 'exam-schedule', label: t.examSchedule, icon: Calendar, badge: 'Datesheet', category: 'Academics' },
-    { id: 'ubter-result', label: 'UBTER Result', icon: ExternalLink, badge: 'Official', category: 'Assessment' },
-    { id: 'my-qr-id', label: 'My Student QR & ID', icon: QrCode, category: 'Account' },
-    { id: 'timetable', label: t.timetable, icon: Clock, category: 'Academics' },
-    { id: 'practicals', label: t.practicals, icon: FlaskConical, category: 'Academics' },
-    { id: 'attendance', label: `${t.attendance} (${attStats.overallPercent}%)`, icon: QrCode, badge: `${attStats.overallPercent}%`, category: 'Assessment' },
-    { id: 'results', label: t.resultsMarks, icon: Award, category: 'Assessment' },
-    { id: 'placements', label: 'TPO Placement Portal', icon: Briefcase, badge: 'Jobs 2026', category: 'Career' },
-    { id: 'placement-prep', label: 'Placement Practice & Resume Score', icon: Target, badge: 'New', category: 'Career' },
-    { id: 'mock-interview', label: 'Mock Interview Portal', icon: Video, badge: 'Camera + AI', category: 'Career' },
-    { id: 'achievements', label: t.honorsGallery, icon: Trophy, category: 'Career' },
-    { id: 'pyq', label: 'Question Papers & Answer Keys', icon: Download, badge: 'UBTER 50M', category: 'Academics' },
-    { id: 'performance-analytics', label: 'Student Performance Analytics', icon: BarChart3, badge: 'Day 1 ➔ Today', category: 'Assessment' },
-    { id: 'ai-tutor', label: 'AI Study Saathi', icon: Sparkles, badge: '24/7 AI', category: 'AI & Doubts' },
+    { id: 'overview', label: isHi ? 'ओवरव्यू (होम)' : (t.overview || 'Overview'), icon: Layers, category: 'Academics' },
+    { id: 'my-profile', label: isHi ? 'मेरी प्रोफाइल (एडिट)' : 'My Profile (edit)', icon: UserCog, category: 'Account' },
+    { id: 'syllabus', label: isHi ? 'सिलेबस (UBTER)' : 'Syllabus (UBTER)', icon: BookOpen, badge: isHi ? 'यूनिट-वाइज' : 'Unit-wise', category: 'Academics' },
+    { id: 'online-tests', label: isHi ? `ऑनलाइन टेस्ट (${onlineTestAssignments.filter(t => t.branch === currentUser.branch && t.year === currentUser.year).length})` : `Online Tests (${onlineTestAssignments.filter(t => t.branch === currentUser.branch && t.year === currentUser.year).length})`, icon: Award, badge: isHi ? 'बकाया' : 'Due', category: 'Assessment' },
+    { id: 'doubt-chat', label: isHi ? 'डाउट समाधान (Q&A)' : 'Doubt Resolution (Q&A)', icon: MessageSquareQuote, badge: isHi ? 'लाइव चैट' : 'Live Chat', category: 'AI & Doubts' },
+    { id: 'class-materials', label: isHi ? `क्लास सामग्री (${myClassDispatches.length})` : `Class Subject Materials (${myClassDispatches.length})`, icon: Send, badge: isHi ? 'डायरेक्ट' : 'Direct', category: 'Academics' },
+    { id: 'material-hub', label: isHi ? 'दस्तावेज व नोट्स हब' : 'Document & Material Hub', icon: FolderDown, badge: isHi ? 'कोर्स PDFs' : 'Course PDFs', category: 'Academics' },
+    { id: 'exam-schedule', label: isHi ? 'परीक्षा डेटशीट' : (t.examSchedule || 'Exam Schedule'), icon: Calendar, badge: isHi ? 'डेटशीट' : 'Datesheet', category: 'Academics' },
+    { id: 'ubter-result', label: isHi ? 'UBTER बोर्ड रिजल्ट' : 'UBTER Result', icon: ExternalLink, badge: isHi ? 'ऑफिशियल' : 'Official', category: 'Assessment' },
+    { id: 'my-qr-id', label: isHi ? 'मेरा छात्र QR व ID' : 'My Student QR & ID', icon: QrCode, category: 'Account' },
+    { id: 'timetable', label: isHi ? 'टाइमटेबल' : (t.timetable || 'Timetable'), icon: Clock, category: 'Academics' },
+    { id: 'practicals', label: isHi ? 'प्रैक्टिकल्स व लैब्स' : (t.practicals || 'Practicals'), icon: FlaskConical, category: 'Academics' },
+    { id: 'attendance', label: `${isHi ? 'हाजिरी' : t.attendance} (${attStats.overallPercent}%)`, icon: QrCode, badge: `${attStats.overallPercent}%`, category: 'Assessment' },
+    { id: 'results', label: isHi ? 'मार्क्स व परीक्षा फल' : (t.resultsMarks || 'Results & Marks'), icon: Award, category: 'Assessment' },
+    { id: 'placements', label: isHi ? 'TPO प्लेसमेंट पोर्टल' : 'TPO Placement Portal', icon: Briefcase, badge: 'Jobs 2026', category: 'Career' },
+    { id: 'placement-prep', label: isHi ? 'प्लेसमेंट प्रैक्टिस व रिज्यूमे' : 'Placement Practice & Resume Score', icon: Target, badge: 'New', category: 'Career' },
+    { id: 'mock-interview', label: isHi ? 'मॉक इंटरव्यू पोर्टल' : 'Mock Interview Portal', icon: Video, badge: isHi ? 'कैमरा + AI' : 'Camera + AI', category: 'Career' },
+    { id: 'achievements', label: isHi ? 'ऑनर्स व उपलब्धियां' : (t.honorsGallery || 'Achievements Gallery'), icon: Trophy, category: 'Career' },
+    { id: 'pyq', label: isHi ? 'पुराने पेपर्स व उत्तर कुंजी' : 'Question Papers & Answer Keys', icon: Download, badge: 'UBTER 50M', category: 'Academics' },
+    { id: 'performance-analytics', label: isHi ? 'छात्र परफॉर्मेंस एनालिटिक्स' : 'Student Performance Analytics', icon: BarChart3, badge: isHi ? 'डे 1 ➔ आज' : 'Day 1 ➔ Today', category: 'Assessment' },
+    { id: 'ai-tutor', label: isHi ? 'AI स्टडी साथी' : 'AI Study Saathi', icon: Sparkles, badge: '24/7 AI', category: 'AI & Doubts' },
   ];
 
   const quickTabs = [
-    { id: 'overview', label: '🏠 होम' },
-    { id: 'pyq', label: '📝 पेपर्स (50M)' },
-    { id: 'attendance', label: `📊 हाजिरी (${attStats.overallPercent}%)` },
-    { id: 'doubt-chat', label: '💬 डाउट्स Q&A' },
-    { id: 'online-tests', label: '✍️ टेस्ट' },
-    { id: 'material-hub', label: '📁 नोट्स व पीडीएफ' },
-    { id: 'results', label: '🏆 मार्क्स' },
-    { id: 'ai-tutor', label: '🤖 AI साथी' },
-    { id: 'syllabus', label: '📖 सिलेबस UBTER' },
-    { id: 'timetable', label: '📅 टाइमटेबल' },
-    { id: 'exam-schedule', label: '🗓️ परीक्षा डेटशीट' },
-    { id: 'ubter-result', label: '🌐 बोर्ड रिजल्ट' },
-    { id: 'practicals', label: '🔬 प्रैक्टिकल्स' },
-    { id: 'placements', label: '💼 प्लेसमेंट हब' },
-    { id: 'placement-prep', label: '🎯 रिज्यूमे स्कोर' },
-    { id: 'mock-interview', label: '🎥 मॉक इंटरव्यू' },
-    { id: 'my-qr-id', label: '📷 स्टूडेंट QR' },
-    { id: 'achievements', label: '🏅 ऑनर्स गैलरी' },
-    { id: 'my-profile', label: '👤 प्रोफाइल व पासवर्ड' },
+    { id: 'overview', label: isHi ? '🏠 होम' : '🏠 Home' },
+    { id: 'pyq', label: isHi ? '📝 पेपर्स (50M)' : '📝 Papers (50M)' },
+    { id: 'attendance', label: `${isHi ? '📊 हाजिरी' : '📊 Attendance'} (${attStats.overallPercent}%)` },
+    { id: 'doubt-chat', label: isHi ? '💬 डाउट्स Q&A' : '💬 Doubts Q&A' },
+    { id: 'online-tests', label: isHi ? '✍️ टेस्ट' : '✍️ Tests' },
+    { id: 'material-hub', label: isHi ? '📁 नोट्स व पीडीएफ' : '📁 Notes & PDFs' },
+    { id: 'results', label: isHi ? '🏆 मार्क्स' : '🏆 Marks' },
+    { id: 'ai-tutor', label: isHi ? '🤖 AI साथी' : '🤖 AI Saathi' },
+    { id: 'syllabus', label: isHi ? '📖 सिलेबस UBTER' : '📖 UBTER Syllabus' },
+    { id: 'timetable', label: isHi ? '📅 टाइमटेबल' : '📅 Timetable' },
+    { id: 'exam-schedule', label: isHi ? '🗓️ परीक्षा डेटशीट' : '🗓️ Exam Datesheet' },
+    { id: 'ubter-result', label: isHi ? '🌐 बोर्ड रिजल्ट' : '🌐 Board Result' },
+    { id: 'practicals', label: isHi ? '🔬 प्रैक्टिकल्स' : '🔬 Practicals' },
+    { id: 'placements', label: isHi ? '💼 प्लेसमेंट हब' : '💼 Placements' },
+    { id: 'placement-prep', label: isHi ? '🎯 रिज्यूमे स्कोर' : '🎯 Resume Score' },
+    { id: 'mock-interview', label: isHi ? '🎥 मॉक इंटरव्यू' : '🎥 Mock Interview' },
+    { id: 'my-qr-id', label: isHi ? '📷 स्टूडेंट QR' : '📷 Student QR' },
+    { id: 'achievements', label: isHi ? '🏅 ऑनर्स गैलरी' : '🏅 Honors' },
+    { id: 'my-profile', label: isHi ? '👤 प्रोफाइल व पासवर्ड' : '👤 Profile & Password' },
   ];
 
   const activeTabObj = studentNavTabs.find((t) => t.id === activeTab) || studentNavTabs[0];
@@ -472,10 +474,10 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
             <button
               onClick={() => setShowDossierModal(true)}
               className="px-3.5 py-2.5 bg-blue-500/20 hover:bg-blue-500/30 text-blue-200 border border-blue-400/40 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
-              title="View your verified Aadhar, parents, 10th/12th and semester marks"
+              title={isHi ? 'अपना सत्यापित आधार, माता-पिता, 10वीं/12वीं व सेमेस्टर अंक देखें' : 'View your verified Aadhar, parents, 10th/12th and semester marks'}
             >
               <FileText className="w-4 h-4 text-blue-300" />
-              <span>My Dossier & Marks</span>
+              <span>{isHi ? 'मेरा डोजियर व अंक' : 'My Dossier & Marks'}</span>
             </button>
             <div className="bg-white/5 border border-white/10 p-2.5 rounded-xl text-center min-w-[90px]">
               <span className="text-[10px] uppercase font-bold text-slate-400 block">{t.attendance}</span>
@@ -491,10 +493,10 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
               <button
                 onClick={onLogout}
                 className="px-4 py-2.5 bg-rose-600 hover:bg-rose-500 text-white font-black text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5 cursor-pointer"
-                title="Exit Student Dashboard & Return Home"
+                title={isHi ? 'छात्र पोर्टल से बाहर निकलें व मुख्य पृष्ठ पर लौटें' : 'Exit Student Dashboard & Return Home'}
               >
                 <LogOut className="w-4 h-4 text-white" />
-                <span>पोर्टल से बाहर निकलें (Exit)</span>
+                <span>{isHi ? 'पोर्टल से बाहर निकलें (Exit)' : 'Exit Portal'}</span>
               </button>
             )}
           </div>
@@ -551,7 +553,9 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
               <ActiveIcon className="w-4 h-4" />
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">Active Section</div>
+              <div className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider truncate">
+                {isHi ? 'सक्रिय अनुभाग' : 'Active Section'}
+              </div>
               <div className="text-xs font-black text-slate-900 dark:text-white truncate">{activeTabObj.label}</div>
             </div>
           </div>
@@ -560,7 +564,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
             className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl text-xs font-extrabold flex items-center gap-1.5 shadow-xs shrink-0 cursor-pointer"
           >
             <Menu className="w-3.5 h-3.5" />
-            <span>सभी मेनू ({studentNavTabs.length})</span>
+            <span>{isHi ? 'सभी मेनू' : 'All Menus'} ({studentNavTabs.length})</span>
           </button>
         </div>
 
@@ -634,30 +638,38 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           <div className="ugip-stats grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Class Enrolled</span>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">
+                  {isHi ? 'नामांकित कक्षा' : 'Class Enrolled'}
+                </span>
                 <p className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white mt-1">
                   {currentUser.branch}
                 </p>
               </div>
-              <p className="text-[11px] sm:text-xs text-blue-600 dark:text-blue-400 font-semibold mt-2 truncate">Year {currentUser.year} · Sem {currentUser.semester}</p>
+              <p className="text-[11px] sm:text-xs text-blue-600 dark:text-blue-400 font-semibold mt-2 truncate">
+                {isHi ? `वर्ष ${currentUser.year} · सेमेस्टर ${currentUser.semester}` : `Year ${currentUser.year} · Sem ${currentUser.semester}`}
+              </p>
             </div>
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Class Materials</span>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">
+                  {isHi ? 'कक्षा अध्ययन सामग्री' : 'Class Materials'}
+                </span>
                 <p className="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400 mt-1">
-                  {myClassDispatches.length} Packs
+                  {myClassDispatches.length} {isHi ? 'पैक्स' : 'Packs'}
                 </p>
               </div>
               <button
                 onClick={() => setActiveTab('class-materials')}
                 className="text-[11px] sm:text-xs text-emerald-600 hover:underline font-bold mt-2 block text-left truncate"
               >
-                View Dispatched Tasks →
+                {isHi ? 'जारी सामग्री देखें →' : 'View Dispatched Tasks →'}
               </button>
             </div>
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Attendance Status</span>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">
+                  {isHi ? 'हाजिरी स्थिति' : 'Attendance Status'}
+                </span>
                 <p
                   className={`text-xl sm:text-2xl font-black mt-1 ${
                     attStats.overallPercent >= 75 ? 'text-emerald-600' : 'text-rose-600'
@@ -666,14 +678,20 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                   {attStats.overallPercent}%
                 </p>
               </div>
-              <p className="text-[10px] sm:text-[11px] text-slate-500 mt-2 truncate">Min 75% required for UBTER Exam</p>
+              <p className="text-[10px] sm:text-[11px] text-slate-500 mt-2 truncate">
+                {isHi ? 'UBTER परीक्षा हेतु न्यूनतम 75% अनिवार्य' : 'Min 75% required for UBTER Exam'}
+              </p>
             </div>
             <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3.5 sm:p-5 shadow-xs min-w-0 flex flex-col justify-between">
               <div>
-                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">Sessional Average</span>
+                <span className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wider truncate block">
+                  {isHi ? 'सत्रीय औसत' : 'Sessional Average'}
+                </span>
                 <p className="text-xl sm:text-2xl font-black text-blue-600 dark:text-blue-400 mt-1">{acadSummary.avgMarksPercent}%</p>
               </div>
-              <p className="text-[10px] sm:text-[11px] text-emerald-600 font-semibold mt-2 truncate">Passed: {acadSummary.passedTestsCount} Tests</p>
+              <p className="text-[10px] sm:text-[11px] text-emerald-600 font-semibold mt-2 truncate">
+                {isHi ? `उत्तीर्ण: ${acadSummary.passedTestsCount} टेस्ट` : `Passed: ${acadSummary.passedTestsCount} Tests`}
+              </p>
             </div>
           </div>
 
@@ -1665,9 +1683,9 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
               <div className="flex items-center justify-between gap-2 mb-2">
                 <div>
                   <h3 className="font-black text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                    <span>📱 छात्र पोर्टल मेनू</span>
+                    <span>{isHi ? '📱 छात्र पोर्टल मेनू' : '📱 Student Portal Menu'}</span>
                     <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300">
-                      {studentNavTabs.length} ऑप्शन्स
+                      {studentNavTabs.length} {isHi ? 'ऑप्शन्स' : 'Options'}
                     </span>
                   </h3>
                   <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
@@ -1692,7 +1710,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                   type="text"
                   value={menuSearchQuery}
                   onChange={(e) => setMenuSearchQuery(e.target.value)}
-                  placeholder="🔍 कोई भी विकल्प खोजें / Search student options..."
+                  placeholder={isHi ? '🔍 कोई भी विकल्प खोजें / Search student options...' : '🔍 Search student options...'}
                   className="w-full pl-9 pr-8 py-2 text-xs rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 {menuSearchQuery && (
@@ -1711,7 +1729,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
               {menuSearchQuery.trim() ? (
                 <div className="space-y-1.5">
                   <div className="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-slate-500 px-1">
-                    Matching Options ({studentNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
+                    {isHi ? 'मिलते-जुलते विकल्प' : 'Matching Options'} ({studentNavTabs.filter((t) => t.label.toLowerCase().includes(menuSearchQuery.toLowerCase())).length})
                   </div>
                   <div className="grid grid-cols-1 gap-1">
                     {studentNavTabs
@@ -1752,16 +1770,25 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
                 ['Academics', 'Assessment', 'AI & Doubts', 'Career', 'Account'].map((cat) => {
                   const catTabs = studentNavTabs.filter((t) => t.category === cat);
                   if (catTabs.length === 0) return null;
-                  const catLabel =
-                    cat === 'Academics'
-                      ? '📚 शैक्षणिक एवं अध्ययन (Academics & Study)'
+                  const catLabel = isHi
+                    ? cat === 'Academics'
+                      ? '📚 शैक्षणिक एवं अध्ययन'
                       : cat === 'Assessment'
                       ? '📊 हाजिरी, परीक्षा एवं रिजल्ट्स'
                       : cat === 'AI & Doubts'
                       ? '🤖 AI टूल्स एवं डाउट समाधान'
                       : cat === 'Career'
                       ? '💼 करियर, प्लेसमेंट व इंटरव्यू'
-                      : '👤 मेरा अकाउंट एवं सुरक्षा';
+                      : '👤 मेरा खाता एवं सुरक्षा'
+                    : cat === 'Academics'
+                    ? '📚 Academics & Study Materials'
+                    : cat === 'Assessment'
+                    ? '📊 Attendance, Exams & Results'
+                    : cat === 'AI & Doubts'
+                    ? '🤖 AI Tools & Doubts'
+                    : cat === 'Career'
+                    ? '💼 Career, Placements & Mock Tests'
+                    : '👤 My Account & Security';
 
                   return (
                     <div key={cat} className="space-y-1.5">
@@ -1820,7 +1847,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           }`}
         >
           <Layers className="w-4 h-4" />
-          <span>होम</span>
+          <span>{isHi ? 'होम' : 'Home'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('pyq')}
@@ -1829,7 +1856,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           }`}
         >
           <Download className="w-4 h-4" />
-          <span>पेपर्स</span>
+          <span>{isHi ? 'पेपर्स' : 'Papers'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('attendance')}
@@ -1838,7 +1865,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           }`}
         >
           <QrCode className="w-4 h-4" />
-          <span>हाजिरी</span>
+          <span>{isHi ? 'हाजिरी' : 'Attendance'}</span>
         </button>
         <button
           onClick={() => handleSwitchTab('results')}
@@ -1847,7 +1874,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           }`}
         >
           <Award className="w-4 h-4" />
-          <span>मार्क्स</span>
+          <span>{isHi ? 'मार्क्स' : 'Marks'}</span>
         </button>
         <button
           onClick={() => setMobileMenuOpen(true)}
@@ -1856,7 +1883,7 @@ export const StudentDashboard: React.FC<StudentDashboardProps> = ({ onOpenQRScan
           <div className="w-4 h-4 flex items-center justify-center">
             <Menu className="w-4 h-4" />
           </div>
-          <span>मेनू ({studentNavTabs.length})</span>
+          <span>{isHi ? 'मेनू' : 'Menu'} ({studentNavTabs.length})</span>
         </button>
       </nav>
     </div>

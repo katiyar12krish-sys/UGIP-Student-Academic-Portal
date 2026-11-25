@@ -38,9 +38,16 @@ const ROLE_TITLE: Record<string, string> = {
   parent: 'Parent Portal Sign-In',
 };
 
+const ROLE_TITLE_HI: Record<string, string> = {
+  admin: 'प्रशासन पोर्टल में लॉगिन (Admin)',
+  faculty: 'शिक्षक पोर्टल में लॉगिन (Faculty)',
+  student: 'छात्र पोर्टल में लॉगिन (Student)',
+  parent: 'अभिभावक पोर्टल में लॉगिन (Parent)',
+};
+
 // Screen part: portal auth modal.
 export const PortalAuthModal: React.FC<PortalAuthModalProps> = ({ isOpen, onClose, targetRole, onSuccess, inline = false }) => {
-  const { login, loginMfa, changePassword, refreshAuthUser } = useCollege();
+  const { login, loginMfa, changePassword, refreshAuthUser, language } = useCollege();
   // Username (kept in screen state)
   const [username, setUsername] = useState(targetRole === 'admin' ? 'admin' : '');
   // Faculty: subject-wise login (the subjects that have a teacher, from the server)
@@ -222,11 +229,21 @@ export const PortalAuthModal: React.FC<PortalAuthModalProps> = ({ isOpen, onClos
               </div>
               <div>
                 <h3 className="text-base font-bold text-white tracking-tight">
-                  {isForgotMode ? 'Forgot Password' : mustChange ? 'Set Your New Password'
-                    : step === 'totp' ? 'Two-Step Verification' : step === 'mfaSetup' ? 'Set Up Two-Step Verification'
-                    : step === 'consent' ? 'Privacy & Consent' : ROLE_TITLE[targetRole]}
+                  {isForgotMode
+                    ? (language === 'hi' ? 'पासवर्ड भूल गए (Forgot Password)' : 'Forgot Password')
+                    : mustChange
+                    ? (language === 'hi' ? 'नया पासवर्ड सेट करें' : 'Set Your New Password')
+                    : step === 'totp'
+                    ? (language === 'hi' ? 'दो-चरणीय सत्यापन (2-Step Verification)' : 'Two-Step Verification')
+                    : step === 'mfaSetup'
+                    ? (language === 'hi' ? 'दो-चरणीय सत्यापन सेटअप' : 'Set Up Two-Step Verification')
+                    : step === 'consent'
+                    ? (language === 'hi' ? 'गोपनीयता एवं सहमति' : 'Privacy & Consent')
+                    : (language === 'hi' ? ROLE_TITLE_HI[targetRole] || ROLE_TITLE[targetRole] : ROLE_TITLE[targetRole])}
                 </h3>
-                <p className="text-[11px] text-slate-300">Uttarakhand Government Institute of Polytechnic</p>
+                <p className="text-[11px] text-slate-300">
+                  {language === 'hi' ? 'उत्तराखंड राजकीय पॉलिटेक्निक संस्थान' : 'Uttarakhand Government Institute of Polytechnic'}
+                </p>
               </div>
             </div>
             <button
@@ -335,13 +352,17 @@ export const PortalAuthModal: React.FC<PortalAuthModalProps> = ({ isOpen, onClos
             ) : (
             <div>
               <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
-                {targetRole === 'student' ? 'Roll / UBTER Number' : targetRole === 'parent' ? 'Parent Username (given by the college)' : 'Username'}
+                {targetRole === 'student'
+                  ? (language === 'hi' ? 'रोल नंबर / यूबीटीईआर संख्या' : 'Roll / UBTER Number')
+                  : targetRole === 'parent'
+                  ? (language === 'hi' ? 'अभिभावक यूजरनेम (कॉलेज द्वारा प्रदत्त)' : 'Parent Username (given by the college)')
+                  : (language === 'hi' ? 'यूजरनेम (Username)' : 'Username')}
               </label>
               <input
                 type="text"
                 autoComplete="username"
                 inputMode={targetRole === 'student' ? 'numeric' : 'text'}
-                placeholder={targetRole === 'student' ? 'e.g. 24090050007' : targetRole === 'parent' ? 'e.g. p24090050007' : 'Your username'}
+                placeholder={targetRole === 'student' ? (language === 'hi' ? 'उदा. 24090050007' : 'e.g. 24090050007') : targetRole === 'parent' ? 'e.g. p24090050007' : (language === 'hi' ? 'अपना यूजरनेम' : 'Your username')}
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className={`${inputCls} font-mono`}
@@ -354,21 +375,21 @@ export const PortalAuthModal: React.FC<PortalAuthModalProps> = ({ isOpen, onClos
               <div className="flex items-center justify-between mb-1.5">
                 <label className="text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
                   <KeyRound className="w-3.5 h-3.5 text-slate-500" />
-                  <span>Password</span>
+                  <span>{language === 'hi' ? 'पासवर्ड (Password)' : 'Password'}</span>
                 </label>
                 <button
                   type="button"
                   onClick={() => { setIsForgotMode(true); setErrorMsg(''); }}
                   className="text-[11px] font-bold text-blue-600 dark:text-blue-400 hover:underline cursor-pointer"
                 >
-                  Forgot Password?
+                  {language === 'hi' ? 'पासवर्ड भूल गए?' : 'Forgot Password?'}
                 </button>
               </div>
               <div className="relative">
                 <input
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="current-password"
-                  placeholder="Enter password"
+                  placeholder={language === 'hi' ? 'पासवर्ड दर्ज करें' : 'Enter password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className={`${inputCls} pl-3 pr-10 font-mono`}
@@ -398,14 +419,14 @@ export const PortalAuthModal: React.FC<PortalAuthModalProps> = ({ isOpen, onClos
                 onClick={() => { reset(); onClose(); }}
                 className={`${inline ? 'hidden' : ''} px-4 py-2 text-xs font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors cursor-pointer`}
               >
-                Cancel
+                {language === 'hi' ? 'रद्द करें' : 'Cancel'}
               </button>
               <button
                 type="submit"
                 disabled={busy}
                 className={`${inline ? 'w-full justify-center py-3 text-sm bg-blue-900 hover:bg-blue-800' : 'bg-blue-600 hover:bg-blue-700'} px-5 py-2.5 disabled:opacity-60 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors shadow-md cursor-pointer`}
               >
-                <span>{busy ? 'Checking…' : 'Sign In'}</span>
+                <span>{busy ? (language === 'hi' ? 'जाँच हो रही है…' : 'Checking…') : (language === 'hi' ? 'लॉगिन करें' : 'Sign In')}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

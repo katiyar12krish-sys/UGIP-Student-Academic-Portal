@@ -70,7 +70,74 @@ export interface TranslationDictionary {
   alertExam: string;
   alertCircular: string;
   alertSystem: string;
+
+  // Portal Nav & Tabs
+  home: string;
+  students: string;
+  academicYear: string;
+  boardResults: string;
+  questionPapers: string;
+  attendanceRegister: string;
+  attendanceAnalysis: string;
+  staffAttendance: string;
+  onlineTests: string;
+  doubtResolution: string;
+  classDispatch: string;
+  dataCenter: string;
+  passwords: string;
+  facultyControl: string;
+  securityAudit: string;
+  subjectsTeachers: string;
+  syllabus: string;
+  documentHub: string;
+  placementHub: string;
+  placementTracker: string;
+  performanceAnalytics: string;
+  noticesTitle: string;
+  myProfile: string;
+  menu: string;
+  allMenus: string;
+  closeMenu: string;
+  searchMenuPlaceholder: string;
+  exitPortal: string;
+
+  // Header & Roles
+  chiefAdmin: string;
+  adminSubtitle: string;
+  studentScanner: string;
+  addStudentBtn: string;
+
+  // Stats
+  totalStudents: string;
+  savedPasswords: string;
+  facultyControlled: string;
+  safetyFirst: string;
+  avgAttendance: string;
+  ubterMinReq: string;
+  atRiskStudents: string;
+  reviewDiagnosticPlan: string;
+
+  // Login
+  signIn: string;
+  chooseRole: string;
+  studentCardTitle: string;
+  studentCardSub: string;
+  facultyCardTitle: string;
+  facultyCardSub: string;
+  adminCardTitle: string;
+  adminCardSub: string;
+  parentLoginLink: string;
+  usernamePlaceholder: string;
+  passwordPlaceholder: string;
+  enterPasswordPlaceholder: string;
+  showPassword: string;
+  forgotPassword: string;
+  signInBtn: string;
 }
+
+export const tr = (lang: SupportedLanguage | undefined, en: string, hi: string): string => {
+  return lang === 'hi' ? hi : en;
+};
 
 export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
   en: {
@@ -136,6 +203,69 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     alertExam: 'Exam Notification',
     alertCircular: 'Official Circular',
     alertSystem: 'System Notice',
+
+    // Portal Nav & Tabs
+    home: 'Home',
+    students: 'Students',
+    academicYear: 'Academic Year & Promotion',
+    boardResults: 'UBTER Board Results',
+    questionPapers: 'Question Papers & Answer Keys',
+    attendanceRegister: 'Attendance Register',
+    attendanceAnalysis: 'Batch Attendance Analysis',
+    staffAttendance: 'Staff Gate Register',
+    onlineTests: 'Online Tests & Tasks',
+    doubtResolution: 'Real-Time Doubt Q&A',
+    classDispatch: 'Class & Subject Dispatcher',
+    dataCenter: 'Data Center',
+    passwords: 'Logins & Passwords',
+    facultyControl: 'Faculty Role Control',
+    securityAudit: 'Security Audit Logs',
+    subjectsTeachers: 'Curriculum & Subjects',
+    syllabus: 'Syllabus (UBTER)',
+    documentHub: 'Document & Material Hub',
+    placementHub: 'Career & Placement Hub',
+    placementTracker: 'Placement Tracker',
+    performanceAnalytics: 'Student Performance Analytics',
+    noticesTitle: 'News & Circulars',
+    myProfile: 'My Profile & Password',
+    menu: 'Menu',
+    allMenus: 'All Menus & Modules',
+    closeMenu: 'Close Menu',
+    searchMenuPlaceholder: 'Search menus and tools...',
+    exitPortal: 'Exit Portal',
+
+    // Header & Roles
+    chiefAdmin: 'Chief Administrator',
+    adminSubtitle: 'Master Administration, Role Management, and Encrypted Security Vault',
+    studentScanner: 'Student QR Scanner',
+    addStudentBtn: 'Add Student & Password',
+
+    // Stats
+    totalStudents: 'Total Students',
+    savedPasswords: 'Saved Passwords',
+    facultyControlled: 'Faculty Controlled',
+    safetyFirst: 'Safety First: Admin Auth Only',
+    avgAttendance: 'Avg. Attendance',
+    ubterMinReq: 'UBTER Min Req: 75%',
+    atRiskStudents: 'At-Risk Students',
+    reviewDiagnosticPlan: 'Review diagnostic plan →',
+
+    // Login
+    signIn: 'Sign in',
+    chooseRole: 'Choose who you are',
+    studentCardTitle: 'Student',
+    studentCardSub: 'Roll No. & Password',
+    facultyCardTitle: 'Faculty',
+    facultyCardSub: 'Subject Lecturers & HODs',
+    adminCardTitle: 'Admin',
+    adminCardSub: 'Principal & Office Only',
+    parentLoginLink: 'Parent Portal Login →',
+    usernamePlaceholder: 'Username / Roll No. / Staff ID',
+    passwordPlaceholder: 'Password',
+    enterPasswordPlaceholder: 'Enter your password...',
+    showPassword: 'Show Password',
+    forgotPassword: 'Forgot Password?',
+    signInBtn: 'Sign In to Portal',
   },
   hi: {
     collegeName: 'उत्तराखंड राजकीय पॉलिटेक्निक संस्थान',
@@ -200,6 +330,69 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     alertExam: 'परीक्षा सूचना',
     alertCircular: 'आधिकारिक परिपत्र',
     alertSystem: 'प्रणाली सूचना',
+
+    // Portal Nav & Tabs
+    home: 'होम',
+    students: 'छात्र डेटाबेस',
+    academicYear: 'शैक्षणिक सत्र व पदोन्नति',
+    boardResults: 'यूबीटीईआर बोर्ड परिणाम',
+    questionPapers: 'प्रश्न पत्र एवं उत्तर कुंजी',
+    attendanceRegister: 'उपस्थिति रजिस्टर',
+    attendanceAnalysis: 'बैच उपस्थिति विश्लेषण',
+    staffAttendance: 'स्टाफ गेट रजिस्टर',
+    onlineTests: 'ऑनलाइन टेस्ट व असाइनमेंट',
+    doubtResolution: 'लाइव संशय समाधान (Doubts)',
+    classDispatch: 'कक्षा व विषय सामग्री प्रेषक',
+    dataCenter: 'डेटा सेंटर (डाउनलोड/अपलोड)',
+    passwords: 'लॉगिन व पासवर्ड्स',
+    facultyControl: 'शिक्षक नियंत्रण (Faculty Control)',
+    securityAudit: 'सुरक्षा ऑडिट लॉग्स',
+    subjectsTeachers: 'पाठ्यक्रम एवं विषय',
+    syllabus: 'सिलेबस (यूबीटीईआर)',
+    documentHub: 'दस्तावेज व सामग्री हब',
+    placementHub: 'करियर व प्लेसमेंट हब',
+    placementTracker: 'प्लेसमेंट ट्रैकर (रिज्यूमे/टेस्ट)',
+    performanceAnalytics: 'छात्र प्रगति विश्लेषण',
+    noticesTitle: 'कॉलेज सूचनाएं व परिपत्र',
+    myProfile: 'मेरी प्रोफाइल व पासवर्ड',
+    menu: 'मेनू',
+    allMenus: 'सभी मेनू एवं अनुभाग',
+    closeMenu: 'मेनू बंद करें',
+    searchMenuPlaceholder: 'मेनू और टूल्स खोजें...',
+    exitPortal: 'पोर्टल से बाहर निकलें',
+
+    // Header & Roles
+    chiefAdmin: 'मुख्य प्रशासक (Chief Administrator)',
+    adminSubtitle: 'समग्र कॉलेज प्रशासन, शिक्षक अधिकार एवं सुरक्षित डेटा वॉल्ट',
+    studentScanner: 'छात्र QR स्कैनर',
+    addStudentBtn: 'नया छात्र व पासवर्ड जोड़ें',
+
+    // Stats
+    totalStudents: 'कुल नामांकित छात्र',
+    savedPasswords: 'सुरक्षित पासवर्ड',
+    facultyControlled: 'शिक्षक नियंत्रण',
+    safetyFirst: 'सुरक्षा प्रथम: केवल प्रशासन',
+    avgAttendance: 'औसत उपस्थिति',
+    ubterMinReq: 'यूबीटीईआर न्यूनतम: 75%',
+    atRiskStudents: 'संवेदनशील छात्र',
+    reviewDiagnosticPlan: 'सुधार योजना देखें →',
+
+    // Login
+    signIn: 'लॉगिन करें',
+    chooseRole: 'अपना प्रकार चुनें',
+    studentCardTitle: 'छात्र (Student)',
+    studentCardSub: 'रोल नंबर और पासवर्ड',
+    facultyCardTitle: 'शिक्षक (Faculty)',
+    facultyCardSub: 'विषय प्रवक्ता व विभागाध्यक्ष',
+    adminCardTitle: 'प्रशासन (Admin)',
+    adminCardSub: 'प्रधानाचार्य एवं कार्यालय',
+    parentLoginLink: 'अभिभावक लॉगिन (Parent Login) →',
+    usernamePlaceholder: 'यूजरनेम / रोल नंबर / स्टाफ आईडी',
+    passwordPlaceholder: 'पासवर्ड',
+    enterPasswordPlaceholder: 'अपना पासवर्ड दर्ज करें...',
+    showPassword: 'पासवर्ड देखें',
+    forgotPassword: 'पासवर्ड भूल गए?',
+    signInBtn: 'पोर्टल में प्रवेश करें',
   },
   ur: {
     collegeName: 'اتراکھنڈ گورنمنٹ انسٹی ٹیوٹ آف پولی ٹیکنک (Uttarakhand Government Institute of Polytechnic)',
@@ -264,5 +457,65 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     alertExam: 'Imtehan Ki Ittela',
     alertCircular: 'Sarkari Circular',
     alertSystem: 'System Alert',
+
+    // Portal Nav & Tabs
+    home: 'Home',
+    students: 'Talib-e-Ilm',
+    academicYear: 'Academic Year',
+    boardResults: 'UBTER Board Nateeja',
+    questionPapers: 'Question Papers',
+    attendanceRegister: 'Haziri Register',
+    attendanceAnalysis: 'Haziri Analysis',
+    staffAttendance: 'Staff Gate Register',
+    onlineTests: 'Online Tests',
+    doubtResolution: 'Doubt Q&A',
+    classDispatch: 'Material Dispatch',
+    dataCenter: 'Data Center',
+    passwords: 'Passwords',
+    facultyControl: 'Faculty Control',
+    securityAudit: 'Security Audit',
+    subjectsTeachers: 'Subjects',
+    syllabus: 'Syllabus',
+    documentHub: 'Document Hub',
+    placementHub: 'Placement Hub',
+    placementTracker: 'Placement Tracker',
+    performanceAnalytics: 'Performance Analytics',
+    noticesTitle: 'Notices',
+    myProfile: 'Profile',
+    menu: 'Menu',
+    allMenus: 'All Menus',
+    closeMenu: 'Close Menu',
+    searchMenuPlaceholder: 'Search...',
+    exitPortal: 'Exit Portal',
+
+    chiefAdmin: 'Chief Administrator',
+    adminSubtitle: 'Administration & Role Management',
+    studentScanner: 'Student QR Scanner',
+    addStudentBtn: 'Add Student',
+
+    totalStudents: 'Total Students',
+    savedPasswords: 'Saved Passwords',
+    facultyControlled: 'Faculty Controlled',
+    safetyFirst: 'Safety First',
+    avgAttendance: 'Avg. Attendance',
+    ubterMinReq: 'UBTER Min: 75%',
+    atRiskStudents: 'At-Risk Students',
+    reviewDiagnosticPlan: 'Review plan →',
+
+    signIn: 'Sign in',
+    chooseRole: 'Apna role chunein',
+    studentCardTitle: 'Student',
+    studentCardSub: 'Roll No. & Password',
+    facultyCardTitle: 'Faculty',
+    facultyCardSub: 'Lecturers & HODs',
+    adminCardTitle: 'Admin',
+    adminCardSub: 'Principal & Office',
+    parentLoginLink: 'Parent login →',
+    usernamePlaceholder: 'Username / Roll No.',
+    passwordPlaceholder: 'Password',
+    enterPasswordPlaceholder: 'Password likhein...',
+    showPassword: 'Show Password',
+    forgotPassword: 'Password bhool gaye?',
+    signInBtn: 'Sign In',
   },
 };
